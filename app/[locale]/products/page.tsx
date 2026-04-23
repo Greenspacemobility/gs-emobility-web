@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { Zap, ArrowRight, CheckCircle2, Home, Building2, Car, Sun } from 'lucide-react'
@@ -11,7 +11,8 @@ export async function generateMetadata({ params: { locale } }: { params: { local
   return { title: t('badge'), description: t('subtitle') }
 }
 
-export default function ProductsPage() {
+export default function ProductsPage({ params: { locale } }: { params: { locale: string } }) {
+  setRequestLocale(locale)
   const t = useTranslations('products')
 
   const wallboxProducts = [

@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import { Mail, MapPin, Clock, Zap, MessageSquare } from 'lucide-react'
 import AnimateIn from '@/components/AnimateIn'
@@ -11,7 +11,8 @@ export async function generateMetadata({ params: { locale } }: { params: { local
   return { title: t('badge'), description: t('subtitle') }
 }
 
-export default function ContactPage() {
+export default function ContactPage({ params: { locale } }: { params: { locale: string } }) {
+  setRequestLocale(locale)
   const t = useTranslations('contact')
 
   const contactInfo = [

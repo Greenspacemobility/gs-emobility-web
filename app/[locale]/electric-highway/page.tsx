@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import {
@@ -15,7 +15,8 @@ export async function generateMetadata({ params: { locale } }: { params: { local
   return { title: t('badge'), description: t('subtitle') }
 }
 
-export default function ElectricHighwayPage() {
+export default function ElectricHighwayPage({ params: { locale } }: { params: { locale: string } }) {
+  setRequestLocale(locale)
   const t = useTranslations('highway')
   const th = useTranslations('hub')
 
