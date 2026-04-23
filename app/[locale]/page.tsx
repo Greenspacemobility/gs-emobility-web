@@ -6,6 +6,7 @@ import {
   ArrowRight, ChevronDown, Home, Building2, Zap,
   Car, Sun, Smartphone, CheckCircle2, Globe, Wrench, Cpu, Leaf
 } from 'lucide-react'
+import Image from 'next/image'
 import AnimateIn from '@/components/AnimateIn'
 import Badge from '@/components/Badge'
 import CountUp from '@/components/CountUp'
@@ -20,19 +21,23 @@ function HeroSection() {
   const locale = useTranslations('nav')
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background grid */}
-      <div className="absolute inset-0 bg-gradient-hero" />
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0,200,83,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(0,200,83,0.5) 1px, transparent 1px)`,
-          backgroundSize: '60px 60px',
-        }}
+      {/* Real hero background image */}
+      <Image
+        src="/images/hero-bg.jpg"
+        alt="Hero background"
+        fill
+        priority
+        className="object-cover object-center"
+        quality={90}
       />
+      {/* Dark overlay to keep text readable */}
+      <div className="absolute inset-0 bg-navy-900/70" />
+      {/* Green tint gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-navy-900/60 via-transparent to-navy-900/80" />
 
       {/* Glow orbs */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-green-500/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-navy-500/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-green-500/5 rounded-full blur-3xl" />
 
       <div className="container-wide relative z-10 pt-24 pb-16 text-center">
         <AnimateIn delay={0}>
@@ -135,12 +140,12 @@ function StatsSection() {
 function SolutionsSection() {
   const t = useTranslations('solutions')
   const items = [
-    { icon: Home,       key: 'residential' },
-    { icon: Building2,  key: 'commercial' },
-    { icon: Zap,        key: 'public' },
-    { icon: Car,        key: 'fleet' },
-    { icon: Sun,        key: 'solar' },
-    { icon: Smartphone, key: 'software' },
+    { icon: Home,       key: 'residential', img: '/images/service-installations.png' },
+    { icon: Building2,  key: 'commercial',  img: '/images/service-cooperation.jpg' },
+    { icon: Zap,        key: 'public',      img: '/images/service-chargers.jpg' },
+    { icon: Car,        key: 'fleet',       img: '/images/service-training.jpg' },
+    { icon: Sun,        key: 'solar',       img: '/images/service-promotion.png' },
+    { icon: Smartphone, key: 'software',    img: '/images/service-platform.jpg' },
   ] as const
 
   return (
@@ -161,18 +166,30 @@ function SolutionsSection() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {items.map(({ icon: Icon, key }, i) => (
+          {items.map(({ icon: Icon, key, img }, i) => (
             <AnimateIn key={key} delay={i * 80}>
-              <div className="glass rounded-2xl p-7 group hover:border-green-500/25 hover:bg-white/[0.06] transition-all duration-300 h-full">
-                <div className="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center mb-5 group-hover:bg-green-500/20 transition-colors">
-                  <Icon className="w-5 h-5 text-green-400" />
+              <div className="relative rounded-2xl overflow-hidden group hover:scale-[1.02] transition-all duration-300 h-full min-h-[260px]">
+                {/* Background image */}
+                <Image
+                  src={img}
+                  alt={t(`${key}.title` as any)}
+                  fill
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                />
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-900/95 via-navy-900/60 to-navy-900/20 group-hover:from-navy-900/90 transition-colors" />
+                {/* Content */}
+                <div className="relative z-10 p-7 flex flex-col justify-end h-full">
+                  <div className="w-10 h-10 rounded-xl bg-green-500/20 backdrop-blur-sm flex items-center justify-center mb-4 group-hover:bg-green-500/30 transition-colors">
+                    <Icon className="w-5 h-5 text-green-400" />
+                  </div>
+                  <h3 className="font-display font-bold text-white text-lg mb-2">
+                    {t(`${key}.title` as any)}
+                  </h3>
+                  <p className="text-white/60 text-sm leading-relaxed">
+                    {t(`${key}.desc` as any)}
+                  </p>
                 </div>
-                <h3 className="font-display font-bold text-white text-lg mb-3">
-                  {t(`${key}.title` as any)}
-                </h3>
-                <p className="text-white/50 text-sm leading-relaxed">
-                  {t(`${key}.desc` as any)}
-                </p>
               </div>
             </AnimateIn>
           ))}
