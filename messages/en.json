@@ -1,0 +1,196 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "electricHighway": "Electric Highway",
+    "about": "About",
+    "contact": "Contact",
+    "cta": "Get a Quote"
+  },
+  "hero": {
+    "badge": "E-Mobility Leaders",
+    "headline1": "The future of",
+    "headline2": "electric mobility",
+    "headline3": "is now.",
+    "subtitle": "Greenspace E-Mobility is the reference in charging solutions and e-mobility for the region. We drive the transition to cleaner, more sustainable transportation.",
+    "cta1": "Explore solutions",
+    "cta2": "Electric Highway"
+  },
+  "stats": {
+    "title": "Leading the energy transition",
+    "chargingPoints": "Charging Points",
+    "chargingPointsDesc": "installed across the region",
+    "partners": "Strategic Partners",
+    "partnersDesc": "manufacturers and distributors",
+    "countries": "Countries",
+    "countriesDesc": "of active operation",
+    "co2": "Tons of CO₂",
+    "co2Desc": "reduced annually"
+  },
+  "solutions": {
+    "badge": "Our Solutions",
+    "title": "Everything you need to electrify your mobility",
+    "subtitle": "From residential charging to high-power public infrastructure, we have the perfect solution for every need.",
+    "residential": {
+      "title": "Residential Charging",
+      "desc": "Smart home chargers with Wi-Fi connectivity, energy management and solar panel compatibility."
+    },
+    "commercial": {
+      "title": "Commercial Charging",
+      "desc": "Solutions for businesses, fleets and parking lots with centralized management and integrated billing."
+    },
+    "public": {
+      "title": "Public DC Charging",
+      "desc": "High-power chargers (50–350 kW) for public access, routes and mobility hubs."
+    },
+    "fleet": {
+      "title": "Fleet Management",
+      "desc": "Software and hardware to optimize electric fleet charging, reducing operational costs."
+    },
+    "solar": {
+      "title": "Solar Integration",
+      "desc": "We combine photovoltaic energy with charging systems to maximize savings and sustainability."
+    },
+    "software": {
+      "title": "Digital Platform",
+      "desc": "App and web portal for real-time monitoring, consumption reports and remote charger management."
+    }
+  },
+  "highway": {
+    "badge": "Electric Highway",
+    "title": "The most ambitious charging network in the region",
+    "subtitle": "A continuous charging corridor connecting cities, boosting electric tourism and democratizing sustainable mobility.",
+    "feature1Title": "Full Coverage",
+    "feature1Desc": "Stations every 100 km on main routes, ensuring no trip runs out of energy.",
+    "feature2Title": "Ultra-Fast Charging",
+    "feature2Desc": "DC technology up to 150 kW. From 0 to 80% in less than 30 minutes.",
+    "feature3Title": "Smart Grid",
+    "feature3Desc": "Dynamic energy management, renewable energy integration and frictionless payments.",
+    "feature4Title": "Mobility Hub",
+    "feature4Desc": "Spaces designed for rest, commerce and services, turning charging into an experience.",
+    "cta": "Learn about the project",
+    "mapTitle": "Active Coverage Network"
+  },
+  "hub": {
+    "badge": "Electric Hub",
+    "title": "Next-generation E-Mobility Centers",
+    "subtitle": "Electric Hubs are strategic points where fast charging meets services, data and the EV community.",
+    "point1": "Multiple simultaneous connectors",
+    "point2": "Integration with navigation apps",
+    "point3": "100% certified renewable energy",
+    "point4": "Lounge and driver services",
+    "cta": "See locations"
+  },
+  "partners": {
+    "badge": "Our Partners",
+    "title": "Technology from the world's best manufacturers",
+    "subtitle": "We work with leading e-mobility brands to guarantee world-class quality, warranty and technical support."
+  },
+  "whyUs": {
+    "badge": "Why Greenspace?",
+    "title": "The expertise your project needs",
+    "reason1Title": "Regional Expertise",
+    "reason1Desc": "We know the context, regulations and needs of the Latin American market better than anyone.",
+    "reason2Title": "Full Service",
+    "reason2Desc": "From initial consulting to installation, maintenance and 24/7 technical support.",
+    "reason3Title": "Cutting-Edge Tech",
+    "reason3Desc": "We only work with certified manufacturers and globally proven technology.",
+    "reason4Title": "Green Commitment",
+    "reason4Desc": "Every project we execute directly contributes to emissions reduction in the region."
+  },
+  "cta": {
+    "title": "Ready to electrify your mobility?",
+    "subtitle": "Let's talk. Our team of experts will design the perfect solution for your home, business or project.",
+    "button": "Request a Quote",
+    "buttonAlt": "Learn more"
+  },
+  "about": {
+    "badge": "Our Story",
+    "title": "Pioneers of e-mobility in the region",
+    "p1": "Greenspace E-Mobility was born with a clear mission: to accelerate the transition to electric mobility in Latin America. Since our beginnings, we have combined cutting-edge technology with deep knowledge of the regional market.",
+    "p2": "We are authorized distributors of the world's most recognized brands in electric vehicle charging, offering a comprehensive service from initial consulting to continuous infrastructure operation.",
+    "p3": "Our vision is a continent where mobility is 100% electric, accessible and powered by renewable energy. Every charger we install is a step toward that future.",
+    "missionTitle": "Mission",
+    "missionText": "To democratize electric mobility in Latin America, making charging as easy, fast and affordable as traditional fueling.",
+    "visionTitle": "Vision",
+    "visionText": "To be the largest and most reliable e-mobility network in Latin America by 2030.",
+    "valuesTitle": "Values",
+    "value1": "Sustainability",
+    "value2": "Innovation",
+    "value3": "Reliability",
+    "value4": "Accessibility"
+  },
+  "products": {
+    "badge": "Product Catalog",
+    "title": "Charging solutions for every application",
+    "subtitle": "Certified chargers from the best brands, with warranty, professional installation and technical support.",
+    "wallboxTitle": "Wallbox Chargers",
+    "wallboxDesc": "The most awarded brand in smart charging for home and business.",
+    "ac": "AC Charging",
+    "dc": "DC Charging",
+    "learnMore": "View details",
+    "requestQuote": "Request price",
+    "pulsar": {
+      "name": "Pulsar Plus",
+      "desc": "The most compact and powerful residential charger. 7.4 kW, Wi-Fi connectivity, app control.",
+      "power": "7.4 kW",
+      "type": "AC Single-phase"
+    },
+    "commander2": {
+      "name": "Commander 2",
+      "desc": "Commercial charger with touchscreen, RFID and advanced energy management. Ideal for offices and parking lots.",
+      "power": "22 kW",
+      "type": "AC Three-phase"
+    },
+    "hypernova": {
+      "name": "Hypernova",
+      "desc": "Wallbox's ultra-fast DC charger. Up to 400 kW, recharge in minutes.",
+      "power": "up to 400 kW",
+      "type": "DC CCS/CHAdeMO"
+    },
+    "neo": {
+      "name": "Neo",
+      "desc": "Premium design home charger with integrated smart energy management.",
+      "power": "11 kW",
+      "type": "AC Three-phase"
+    }
+  },
+  "contact": {
+    "badge": "Contact Us",
+    "title": "Let's talk about your project",
+    "subtitle": "Complete the form and one of our experts will contact you within 24 hours.",
+    "nameLabel": "Full name",
+    "emailLabel": "Email address",
+    "phoneLabel": "Phone number",
+    "typeLabel": "Project type",
+    "type1": "Residential",
+    "type2": "Commercial / Business",
+    "type3": "Public Infrastructure",
+    "type4": "Electric Fleet",
+    "type5": "Other",
+    "messageLabel": "Tell us about your project",
+    "submit": "Send message",
+    "successTitle": "Message sent!",
+    "successText": "Thank you for contacting us. We will reply within 24 hours.",
+    "infoTitle": "Contact information",
+    "email": "info@gs-emobility.com",
+    "location": "Central America & Caribbean"
+  },
+  "footer": {
+    "tagline": "The e-mobility reference in the region.",
+    "solutions": "Solutions",
+    "residential": "Residential Charging",
+    "commercial": "Commercial Charging",
+    "public": "Public Charging",
+    "fleet": "Electric Fleets",
+    "company": "Company",
+    "about": "About Us",
+    "partners": "Partners",
+    "highway": "Electric Highway",
+    "blog": "Blog",
+    "legal": "Legal",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "copyright": "© 2024 Greenspace E-Mobility. All rights reserved."
+  }
+}

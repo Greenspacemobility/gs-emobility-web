@@ -1,0 +1,196 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "products": "Productos",
+    "electricHighway": "Autopista Eléctrica",
+    "about": "Nosotros",
+    "contact": "Contacto",
+    "cta": "Cotizar"
+  },
+  "hero": {
+    "badge": "Líderes en Electromovilidad",
+    "headline1": "El futuro de la",
+    "headline2": "movilidad eléctrica",
+    "headline3": "es hoy.",
+    "subtitle": "Greenspace E-Mobility es la referencia en soluciones de carga y electromovilidad para la región. Impulsamos la transición hacia un transporte más limpio y sostenible.",
+    "cta1": "Explorar soluciones",
+    "cta2": "Autopista Eléctrica"
+  },
+  "stats": {
+    "title": "Liderando la transición energética",
+    "chargingPoints": "Puntos de Carga",
+    "chargingPointsDesc": "instalados en la región",
+    "partners": "Socios Estratégicos",
+    "partnersDesc": "fabricantes y distribuidores",
+    "countries": "Países",
+    "countriesDesc": "de operación activa",
+    "co2": "Toneladas CO₂",
+    "co2Desc": "reducidas anualmente"
+  },
+  "solutions": {
+    "badge": "Nuestras Soluciones",
+    "title": "Todo lo que necesitas para electrificar tu movilidad",
+    "subtitle": "Desde carga residencial hasta infraestructura pública de alta potencia, tenemos la solución perfecta para cada necesidad.",
+    "residential": {
+      "title": "Carga Residencial",
+      "desc": "Cargadores inteligentes para el hogar con conectividad Wi-Fi, gestión de energía y compatibilidad con paneles solares."
+    },
+    "commercial": {
+      "title": "Carga Comercial",
+      "desc": "Soluciones para empresas, flotas y estacionamientos con gestión centralizada y facturación integrada."
+    },
+    "public": {
+      "title": "Carga Pública DC",
+      "desc": "Cargadores de alta potencia (50–350 kW) para acceso público, rutas y hubs de movilidad."
+    },
+    "fleet": {
+      "title": "Gestión de Flotas",
+      "desc": "Software y hardware para optimizar la carga de flotas eléctricas, reduciendo costos operativos."
+    },
+    "solar": {
+      "title": "Integración Solar",
+      "desc": "Combinamos energía fotovoltaica con sistemas de carga para maximizar el ahorro y la sostenibilidad."
+    },
+    "software": {
+      "title": "Plataforma Digital",
+      "desc": "App y portal web para monitoreo en tiempo real, reportes de consumo y gestión remota de cargadores."
+    }
+  },
+  "highway": {
+    "badge": "Autopista Eléctrica",
+    "title": "La red de carga más ambiciosa de la región",
+    "subtitle": "Un corredor de carga continuo que conecta ciudades, impulsa el turismo eléctrico y democratiza la movilidad sostenible.",
+    "feature1Title": "Cobertura Total",
+    "feature1Desc": "Estaciones cada 100 km en rutas principales, asegurando que ningún viaje quede sin energía.",
+    "feature2Title": "Carga Ultrarrápida",
+    "feature2Desc": "Tecnología DC de hasta 150 kW. De 0 a 80% en menos de 30 minutos.",
+    "feature3Title": "Red Inteligente",
+    "feature3Desc": "Gestión dinámica de energía, integración con energías renovables y pagos sin fricción.",
+    "feature4Title": "Hub de Movilidad",
+    "feature4Desc": "Espacios diseñados para descanso, comercio y servicios, convirtiendo la carga en una experiencia.",
+    "cta": "Conocer el proyecto",
+    "mapTitle": "Red de Cobertura Activa"
+  },
+  "hub": {
+    "badge": "Electric Hub",
+    "title": "Centros de Electromovilidad de nueva generación",
+    "subtitle": "Los Electric Hubs son puntos estratégicos donde la carga rápida se une con servicios, datos y comunidad EV.",
+    "point1": "Múltiples conectores simultáneos",
+    "point2": "Integración con apps de navegación",
+    "point3": "Energía 100% renovable certificada",
+    "point4": "Lounge y servicios para el conductor",
+    "cta": "Ver ubicaciones"
+  },
+  "partners": {
+    "badge": "Nuestros Socios",
+    "title": "Tecnología de los mejores fabricantes del mundo",
+    "subtitle": "Trabajamos con las marcas líderes en electromovilidad para garantizar calidad, garantía y soporte técnico de clase mundial."
+  },
+  "whyUs": {
+    "badge": "¿Por qué Greenspace?",
+    "title": "La experiencia que tu proyecto necesita",
+    "reason1Title": "Experiencia Regional",
+    "reason1Desc": "Conocemos el contexto, la regulación y las necesidades del mercado latinoamericano mejor que nadie.",
+    "reason2Title": "Servicio Integral",
+    "reason2Desc": "Desde la consultoría inicial hasta la instalación, mantenimiento y soporte técnico 24/7.",
+    "reason3Title": "Tecnología de Punta",
+    "reason3Desc": "Solo trabajamos con fabricantes certificados y tecnología probada a nivel mundial.",
+    "reason4Title": "Compromiso Verde",
+    "reason4Desc": "Cada proyecto que ejecutamos contribuye directamente a la reducción de emisiones en la región."
+  },
+  "cta": {
+    "title": "¿Listo para electrificar tu movilidad?",
+    "subtitle": "Hablemos. Nuestro equipo de expertos diseñará la solución perfecta para tu hogar, empresa o proyecto.",
+    "button": "Solicitar Cotización",
+    "buttonAlt": "Conocer más"
+  },
+  "about": {
+    "badge": "Nuestra Historia",
+    "title": "Pioneros de la electromovilidad en la región",
+    "p1": "Greenspace E-Mobility nació con una misión clara: acelerar la transición hacia la movilidad eléctrica en América Latina. Desde nuestros inicios, hemos combinado tecnología de vanguardia con un profundo conocimiento del mercado regional.",
+    "p2": "Somos distribuidores autorizados de las marcas más reconocidas del mundo en carga de vehículos eléctricos, y ofrecemos un servicio integral que va desde la asesoría inicial hasta la operación continua de infraestructura.",
+    "p3": "Nuestra visión es un continente donde la movilidad sea 100% eléctrica, accesible y alimentada por energía renovable. Cada cargador que instalamos es un paso hacia ese futuro.",
+    "missionTitle": "Misión",
+    "missionText": "Democratizar la movilidad eléctrica en América Latina, haciendo que la carga sea tan fácil, rápida y asequible como repostar combustible tradicional.",
+    "visionTitle": "Visión",
+    "visionText": "Ser la red de electromovilidad más grande y confiable de América Latina para 2030.",
+    "valuesTitle": "Valores",
+    "value1": "Sostenibilidad",
+    "value2": "Innovación",
+    "value3": "Confiabilidad",
+    "value4": "Accesibilidad"
+  },
+  "products": {
+    "badge": "Catálogo de Productos",
+    "title": "Soluciones de carga para cada aplicación",
+    "subtitle": "Cargadores certificados de las mejores marcas, con garantía, instalación profesional y soporte técnico.",
+    "wallboxTitle": "Cargadores Wallbox",
+    "wallboxDesc": "La marca más premiada en carga inteligente para hogar y empresa.",
+    "ac": "Carga AC",
+    "dc": "Carga DC",
+    "learnMore": "Ver detalles",
+    "requestQuote": "Solicitar precio",
+    "pulsar": {
+      "name": "Pulsar Plus",
+      "desc": "El cargador residencial más compacto y potente. 7.4 kW, conectividad Wi-Fi, control desde la app.",
+      "power": "7.4 kW",
+      "type": "AC Monofásico"
+    },
+    "commander2": {
+      "name": "Commander 2",
+      "desc": "Cargador comercial con pantalla táctil, RFID y gestión de energía avanzada. Ideal para oficinas y estacionamientos.",
+      "power": "22 kW",
+      "type": "AC Trifásico"
+    },
+    "hypernova": {
+      "name": "Hypernova",
+      "desc": "El cargador DC ultrarrápido de Wallbox. Hasta 400 kW, recarga en minutos.",
+      "power": "hasta 400 kW",
+      "type": "DC CCS/CHAdeMO"
+    },
+    "neo": {
+      "name": "Neo",
+      "desc": "Cargador para hogar con diseño premium y gestión energética inteligente integrada.",
+      "power": "11 kW",
+      "type": "AC Trifásico"
+    }
+  },
+  "contact": {
+    "badge": "Contáctanos",
+    "title": "Hablemos de tu proyecto",
+    "subtitle": "Completa el formulario y un experto de nuestro equipo te contactará en menos de 24 horas.",
+    "nameLabel": "Nombre completo",
+    "emailLabel": "Correo electrónico",
+    "phoneLabel": "Teléfono",
+    "typeLabel": "Tipo de proyecto",
+    "type1": "Residencial",
+    "type2": "Comercial / Empresarial",
+    "type3": "Infraestructura Pública",
+    "type4": "Flota Eléctrica",
+    "type5": "Otro",
+    "messageLabel": "Cuéntanos tu proyecto",
+    "submit": "Enviar mensaje",
+    "successTitle": "¡Mensaje enviado!",
+    "successText": "Gracias por contactarnos. Te responderemos en menos de 24 horas.",
+    "infoTitle": "Información de contacto",
+    "email": "info@gs-emobility.com",
+    "location": "América Central y Caribe"
+  },
+  "footer": {
+    "tagline": "La referencia en electromovilidad de la región.",
+    "solutions": "Soluciones",
+    "residential": "Carga Residencial",
+    "commercial": "Carga Comercial",
+    "public": "Carga Pública",
+    "fleet": "Flotas Eléctricas",
+    "company": "Empresa",
+    "about": "Nosotros",
+    "partners": "Socios",
+    "highway": "Autopista Eléctrica",
+    "blog": "Blog",
+    "legal": "Legal",
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "copyright": "© 2024 Greenspace E-Mobility. Todos los derechos reservados."
+  }
+}
