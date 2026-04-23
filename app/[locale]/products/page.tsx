@@ -40,7 +40,7 @@ export default function ProductsPage() {
       color: 'from-orange-500/20 to-navy-700',
       features: ['Diseño premium', 'Power sharing', 'Solar ready', 'Control remoto'],
     },
-  ] as const
+  ] satisfies { key: string; badge: string; color: string; features: readonly string[]; highlight?: boolean }[]
 
   const useCases = [
     { icon: Home,      title: 'Residencial',   desc: 'Cargadores inteligentes para el hogar. Instala en tu garaje y carga durante la noche con tarifas reducidas.' },
