@@ -1,8 +1,9 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useTranslations, useLocale } from 'next-intl'
-import { Zap, Mail, MapPin, Instagram, Linkedin, Twitter } from 'lucide-react'
+import { Mail, MapPin, Instagram, Linkedin, Twitter } from 'lucide-react'
 
 export default function Footer() {
   const t = useTranslations('footer')
@@ -14,13 +15,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href={`/${locale}`} className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-green-500 flex items-center justify-center">
-                <Zap className="w-4 h-4 text-navy-900" strokeWidth={2.5} />
-              </div>
-              <span className="font-display font-bold text-white text-lg">
-                GS <span className="text-gradient">E-Mobility</span>
-              </span>
+            <Link href={`/${locale}`} className="flex items-center mb-4">
+              <Image
+                src="/images/logo-white.png"
+                alt="Greenspace E-Mobility"
+                width={160}
+                height={44}
+                className="h-8 w-auto object-contain"
+              />
             </Link>
             <p className="text-white/50 text-sm leading-relaxed mb-6">{t('tagline')}</p>
             <div className="flex gap-3">

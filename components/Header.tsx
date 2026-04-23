@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useTranslations, useLocale } from 'next-intl'
-import { Menu, X, Zap } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 
 export default function Header() {
   const t = useTranslations('nav')
@@ -40,13 +41,15 @@ export default function Header() {
     >
       <div className="container-wide flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
-        <Link href={`/${locale}`} className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-lg bg-green-500 flex items-center justify-center glow-green-sm group-hover:scale-110 transition-transform">
-            <Zap className="w-4 h-4 text-navy-900" strokeWidth={2.5} />
-          </div>
-          <span className="font-display font-bold text-white text-lg tracking-tight">
-            GS <span className="text-gradient">E-Mobility</span>
-          </span>
+        <Link href={`/${locale}`} className="flex items-center group">
+          <Image
+            src="/images/logo-white.png"
+            alt="Greenspace E-Mobility"
+            width={180}
+            height={50}
+            className="h-9 w-auto object-contain group-hover:opacity-90 transition-opacity"
+            priority
+          />
         </Link>
 
         {/* Desktop Nav */}
