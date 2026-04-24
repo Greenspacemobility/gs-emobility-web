@@ -140,12 +140,12 @@ function StatsSection() {
 function SolutionsSection() {
   const t = useTranslations('solutions')
   const items = [
-    { icon: Home,       key: 'residential', img: '/images/service-installations.png' },
-    { icon: Building2,  key: 'commercial',  img: '/images/service-cooperation.jpg' },
-    { icon: Zap,        key: 'public',      img: '/images/service-chargers.jpg' },
-    { icon: Car,        key: 'fleet',       img: '/images/service-training.jpg' },
-    { icon: Sun,        key: 'solar',       img: '/images/service-promotion.png' },
-    { icon: Smartphone, key: 'software',    img: '/images/service-platform.jpg' },
+    { icon: Home,       key: 'residential', img: '/images/sol-residential.jpg' },
+    { icon: Building2,  key: 'commercial',  img: '/images/sol-commercial.jpg' },
+    { icon: Zap,        key: 'public',      img: '/images/sol-public.jpg' },
+    { icon: Car,        key: 'fleet',       img: '/images/sol-fleet.jpg' },
+    { icon: Sun,        key: 'solar',       img: '/images/sol-solar.jpg' },
+    { icon: Smartphone, key: 'software',    img: '/images/sol-software.jpg' },
   ] as const
 
   return (
