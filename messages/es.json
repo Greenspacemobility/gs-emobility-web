@@ -31,29 +31,92 @@
     "badge": "Nuestras Soluciones",
     "title": "Todo lo que necesitas para electrificar tu movilidad",
     "subtitle": "Desde carga residencial hasta infraestructura pública de alta potencia, tenemos la solución perfecta para cada necesidad.",
+    "featuresLabel": "Características incluidas",
+    "contactCta": "Solicitar cotización",
+    "learnMore": "Ver productos",
     "residential": {
       "title": "Carga Residencial",
-      "desc": "Cargadores inteligentes para el hogar con conectividad Wi-Fi, gestión de energía y compatibilidad con paneles solares."
+      "desc": "Cargadores inteligentes para el hogar con conectividad Wi-Fi, gestión de energía y compatibilidad con paneles solares.",
+      "chargingType": "Solo AC",
+      "detail": "La solución ideal para cargar tu vehículo eléctrico en casa. Nuestros cargadores AC de pared se instalan en tu garaje o cochera y te permiten cargar durante la noche, aprovechando las tarifas eléctricas más bajas. Compatibles con todos los vehículos eléctricos del mercado y con paneles solares para maximizar tu ahorro.",
+      "features": [
+        "Cargadores AC de 7.4 kW a 22 kW",
+        "Conectividad Wi-Fi y app móvil",
+        "Integración con paneles solares",
+        "Gestión de energía inteligente",
+        "Instalación profesional certificada",
+        "Compatible con todos los vehículos eléctricos"
+      ]
     },
     "commercial": {
       "title": "Carga Comercial",
-      "desc": "Soluciones para empresas, flotas y estacionamientos con gestión centralizada y facturación integrada."
+      "desc": "Soluciones para empresas, flotas y estacionamientos con gestión centralizada y facturación integrada.",
+      "chargingType": "AC + DC",
+      "detail": "Solución integral para empresas, hoteles, centros comerciales y estacionamientos. Combinamos cargadores AC para uso prolongado con cargadores DC para recargas rápidas, todo gestionado desde una plataforma centralizada con facturación automática y reportes de consumo.",
+      "features": [
+        "Cargadores AC de 7.4 kW a 22 kW para estacionamiento",
+        "Cargadores DC de 50 kW a 150 kW para carga rápida",
+        "Gestión centralizada y facturación integrada",
+        "Integración con sistemas de control de acceso",
+        "Branding corporativo personalizado",
+        "Reportes de consumo y ROI en tiempo real"
+      ]
     },
     "public": {
       "title": "Carga Pública DC",
-      "desc": "Cargadores de alta potencia (50–350 kW) para acceso público, rutas y hubs de movilidad."
+      "desc": "Cargadores de alta potencia (50–350 kW) para acceso público, rutas y hubs de movilidad.",
+      "chargingType": "DC Rápida",
+      "detail": "Infraestructura de carga pública de alta potencia para rutas nacionales, centros urbanos y hubs de movilidad. Nuestros cargadores DC soportan múltiples conectores y sistemas de pago sin registro, maximizando la accesibilidad para todos los conductores.",
+      "features": [
+        "Potencia de 50 kW a 350 kW por puerto",
+        "Conectores CCS2, CHAdeMO y Tipo 2",
+        "Pago con tarjeta, app o RFID",
+        "Monitoreo remoto y soporte 24/7",
+        "Diseño robusto para uso intensivo outdoor",
+        "Integración con redes de roaming internacionales"
+      ]
     },
     "fleet": {
       "title": "Gestión de Flotas",
-      "desc": "Software y hardware para optimizar la carga de flotas eléctricas, reduciendo costos operativos."
+      "desc": "Software y hardware para optimizar la carga de flotas eléctricas, reduciendo costos operativos.",
+      "chargingType": "AC + DC",
+      "detail": "Gestiona toda tu flota eléctrica desde un solo panel de control. Optimizamos la carga según tarifas eléctricas, turnos operativos y necesidades de cada vehículo para minimizar costos y garantizar disponibilidad total de la flota.",
+      "features": [
+        "Carga AC nocturna en depósito (7.4–22 kW)",
+        "DC rápida para recargas de emergencia",
+        "Software de gestión y planificación de flota",
+        "Balance de carga inteligente",
+        "Reportes por vehículo, conductor y ruta",
+        "Integración con sistemas de telemática y ERP"
+      ]
     },
     "solar": {
       "title": "Integración Solar",
-      "desc": "Combinamos energía fotovoltaica con sistemas de carga para maximizar el ahorro y la sostenibilidad."
+      "desc": "Combinamos energía fotovoltaica con sistemas de carga para maximizar el ahorro y la sostenibilidad.",
+      "chargingType": "Solar + AC",
+      "detail": "Maximiza el uso de tu energía solar para cargar tus vehículos eléctricos. Nuestros sistemas integran paneles fotovoltaicos, baterías de almacenamiento y cargadores inteligentes para que puedas cargar con energía 100% renovable y reducir tu factura eléctrica hasta en un 70%.",
+      "features": [
+        "Integración fotovoltaica directa con el cargador",
+        "Almacenamiento en baterías (BESS)",
+        "Optimización de autoconsumo solar",
+        "Compatible con Vehicle-to-Grid (V2G)",
+        "Reducción de factura eléctrica hasta 70%",
+        "Monitoreo de huella de carbono en tiempo real"
+      ]
     },
     "software": {
       "title": "Plataforma Digital",
-      "desc": "App y portal web para monitoreo en tiempo real, reportes de consumo y gestión remota de cargadores."
+      "desc": "App y portal web para monitoreo en tiempo real, reportes de consumo y gestión remota de cargadores.",
+      "chargingType": "Software OCPP",
+      "detail": "Plataforma de gestión de red de cargadores compatible con el estándar OCPP. Controla, factura y analiza toda tu infraestructura de carga desde un único dashboard, con app móvil para conductores y opciones white-label para operadores.",
+      "features": [
+        "Compatible con OCPP 1.6 y 2.0",
+        "Dashboard en tiempo real",
+        "Gestión de usuarios, tarifas y acceso",
+        "API para integraciones con terceros",
+        "App móvil para conductores",
+        "Opción white-label para operadores"
+      ]
     }
   },
   "highway": {

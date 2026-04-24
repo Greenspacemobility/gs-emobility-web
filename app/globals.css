@@ -88,3 +88,12 @@ body {
   background: rgba(0, 200, 83, 0.3);
   color: white;
 }
+
+/* Modal slide-up animation */
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-up {
+  animation: slide-up 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}

@@ -31,29 +31,92 @@
     "badge": "Our Solutions",
     "title": "Everything you need to electrify your mobility",
     "subtitle": "From residential charging to high-power public infrastructure, we have the perfect solution for every need.",
+    "featuresLabel": "Included features",
+    "contactCta": "Request a quote",
+    "learnMore": "View products",
     "residential": {
       "title": "Residential Charging",
-      "desc": "Smart home chargers with Wi-Fi connectivity, energy management and solar panel compatibility."
+      "desc": "Smart home chargers with Wi-Fi connectivity, energy management and solar panel compatibility.",
+      "chargingType": "AC Only",
+      "detail": "The ideal solution to charge your electric vehicle at home. Our wall-mounted AC chargers install in your garage and let you charge overnight, taking advantage of lower electricity rates. Compatible with all EVs on the market and with solar panels to maximize your savings.",
+      "features": [
+        "AC chargers from 7.4 kW to 22 kW",
+        "Wi-Fi connectivity and mobile app",
+        "Solar panel integration",
+        "Smart energy management",
+        "Certified professional installation",
+        "Compatible with all electric vehicles"
+      ]
     },
     "commercial": {
       "title": "Commercial Charging",
-      "desc": "Solutions for businesses, fleets and parking lots with centralized management and integrated billing."
+      "desc": "Solutions for businesses, fleets and parking lots with centralized management and integrated billing.",
+      "chargingType": "AC + DC",
+      "detail": "A complete solution for businesses, hotels, shopping centers and parking lots. We combine AC chargers for extended stays with DC chargers for fast turnarounds, all managed from a centralized platform with automatic billing and consumption reports.",
+      "features": [
+        "AC chargers 7.4 kW to 22 kW for parking",
+        "DC chargers 50 kW to 150 kW for fast charging",
+        "Centralized management and integrated billing",
+        "Access control system integration",
+        "Custom corporate branding",
+        "Real-time consumption and ROI reports"
+      ]
     },
     "public": {
       "title": "Public DC Charging",
-      "desc": "High-power chargers (50–350 kW) for public access, routes and mobility hubs."
+      "desc": "High-power chargers (50–350 kW) for public access, routes and mobility hubs.",
+      "chargingType": "DC Fast Charging",
+      "detail": "High-power public charging infrastructure for national routes, urban centers and mobility hubs. Our DC chargers support multiple connectors and registration-free payment systems, maximizing accessibility for all drivers.",
+      "features": [
+        "Power from 50 kW to 350 kW per port",
+        "CCS2, CHAdeMO and Type 2 connectors",
+        "Card, app or RFID payment",
+        "Remote monitoring and 24/7 support",
+        "Rugged design for outdoor heavy use",
+        "Integration with international roaming networks"
+      ]
     },
     "fleet": {
       "title": "Fleet Management",
-      "desc": "Software and hardware to optimize electric fleet charging, reducing operational costs."
+      "desc": "Software and hardware to optimize electric fleet charging, reducing operational costs.",
+      "chargingType": "AC + DC",
+      "detail": "Manage your entire electric fleet from a single control panel. We optimize charging based on electricity rates, operational shifts and each vehicle's needs to minimize costs and guarantee full fleet availability.",
+      "features": [
+        "Overnight AC depot charging (7.4–22 kW)",
+        "DC fast charging for emergency top-ups",
+        "Fleet management and scheduling software",
+        "Intelligent load balancing",
+        "Reports by vehicle, driver and route",
+        "Telematics and ERP system integration"
+      ]
     },
     "solar": {
       "title": "Solar Integration",
-      "desc": "We combine photovoltaic energy with charging systems to maximize savings and sustainability."
+      "desc": "We combine photovoltaic energy with charging systems to maximize savings and sustainability.",
+      "chargingType": "Solar + AC",
+      "detail": "Maximize your solar energy to charge your electric vehicles. Our systems integrate photovoltaic panels, battery storage and smart chargers so you can charge with 100% renewable energy and reduce your electricity bill by up to 70%.",
+      "features": [
+        "Direct photovoltaic integration with charger",
+        "Battery energy storage (BESS)",
+        "Solar self-consumption optimization",
+        "Vehicle-to-Grid (V2G) ready",
+        "Up to 70% electricity bill reduction",
+        "Real-time carbon footprint monitoring"
+      ]
     },
     "software": {
       "title": "Digital Platform",
-      "desc": "App and web portal for real-time monitoring, consumption reports and remote charger management."
+      "desc": "App and web portal for real-time monitoring, consumption reports and remote charger management.",
+      "chargingType": "OCPP Software",
+      "detail": "OCPP-compliant charging network management platform. Control, bill and analyze your entire charging infrastructure from a single dashboard, with a driver mobile app and white-label options for operators.",
+      "features": [
+        "OCPP 1.6 and 2.0 compliant",
+        "Real-time dashboard",
+        "User, tariff and access management",
+        "API for third-party integrations",
+        "Driver mobile app",
+        "White-label option for operators"
+      ]
     }
   },
   "highway": {
