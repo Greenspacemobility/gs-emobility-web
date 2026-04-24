@@ -26,6 +26,7 @@ export default function Header() {
   const navLinks = [
     { href: `/${locale}`, label: t('home') },
     { href: `/${locale}/products`, label: t('products') },
+    { href: `/${locale}/platform`, label: t('platform') },
     { href: `/${locale}/electric-highway`, label: t('electricHighway') },
     { href: `/${locale}/about`, label: t('about') },
     { href: `/${locale}/contact`, label: t('contact') },

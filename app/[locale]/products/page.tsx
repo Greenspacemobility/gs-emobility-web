@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import { Zap, ArrowRight, CheckCircle2, Home, Building2, Car, Sun, Battery, BatteryCharging } from 'lucide-react'
+import { Zap, ArrowRight, CheckCircle2, Home, Building2, Car, Sun, Battery, BatteryCharging, Monitor } from 'lucide-react'
 import AnimateIn from '@/components/AnimateIn'
 import Badge from '@/components/Badge'
 
@@ -140,6 +140,34 @@ export default function ProductsPage({ params: { locale } }: { params: { locale:
               </AnimateIn>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Platform card */}
+      <section className="pb-4">
+        <div className="container-wide">
+          <AnimateIn>
+            <div className="glass rounded-2xl overflow-hidden relative group hover:border-green-500/30 transition-all">
+              <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 via-transparent to-blue-500/5" />
+              <div className="relative z-10 p-8 md:p-10 flex flex-col md:flex-row items-center gap-8">
+                <div className="w-16 h-16 rounded-2xl bg-green-500/15 flex items-center justify-center shrink-0 group-hover:bg-green-500/25 transition-colors">
+                  <Monitor className="w-7 h-7 text-green-400" />
+                </div>
+                <div className="flex-1 text-center md:text-left">
+                  <span className="text-green-400 text-xs font-bold uppercase tracking-widest">{t('platformBadge')}</span>
+                  <h3 className="font-display font-bold text-white text-2xl mt-1 mb-2">{t('platformTitle')}</h3>
+                  <p className="text-white/55 max-w-2xl">{t('platformDesc')}</p>
+                </div>
+                <Link
+                  href={`/${locale}/platform`}
+                  className="shrink-0 inline-flex items-center gap-2 bg-green-500 hover:bg-green-400 text-navy-900 font-semibold px-6 py-3 rounded-xl transition-all glow-green-sm"
+                >
+                  {t('platformCta')}
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+          </AnimateIn>
         </div>
       </section>
 
