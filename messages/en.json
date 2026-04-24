@@ -169,6 +169,16 @@
   },
   "about": {
     "badge": "Our Story",
+    "boardBadge": "Board of Directors",
+    "boardTitle": "The team behind Greenspace",
+    "boardSubtitle": "EV-relevant executive experience across charging infrastructure, cross-border logistics, energy systems, and investment discipline.",
+    "board": {
+      "william": "10+ years in EV charging, energy systems, and fleet electrification. Founder of Greenspace, developing charging hubs and logistics corridors across Panama, Mexico, the U.S., and Norway. Former Senior Charger Hardware Manager at Circle K.",
+      "mike": "18+ years in logistics, transportation, and supply chain transformation across North and Central America. Expert in Mexico-U.S. cross-border trade and multimodal corridor development. Former Maersk, CEMEX, FEMSA, and Uber Freight.",
+      "moises": "Senior finance leader with 10+ years across Latin America, North America, and the Caribbean. Specialist in FP&A, commercial finance, P&L management, and business transformation.",
+      "ruben": "Energy and digital transformation executive with 15+ years in the Norwegian energy sector. Specialist in electrification and large-scale infrastructure delivery. Former senior leader at Aker Solutions.",
+      "horacio": "Senior strategist with 14+ years leading transport and logistics operations on the Mexico-U.S. border. Expert in binational freight flows and fleet electrification for all fleet sizes."
+    },
     "title": "Pioneers of e-mobility in the region",
     "p1": "Greenspace E-Mobility was born with a clear mission: to accelerate the transition to electric mobility in Latin America. Since our beginnings, we have combined cutting-edge technology with deep knowledge of the regional market.",
     "p2": "We are authorized distributors of the world's most recognized brands in electric vehicle charging, offering a comprehensive service from initial consulting to continuous infrastructure operation.",

@@ -169,6 +169,16 @@
   },
   "about": {
     "badge": "Nuestra Historia",
+    "boardBadge": "Consejo Directivo",
+    "boardTitle": "El equipo detrás de Greenspace",
+    "boardSubtitle": "Experiencia ejecutiva en infraestructura de carga, logística transfronteriza, sistemas de energía y disciplina de inversión.",
+    "board": {
+      "william": "10+ años en carga EV, sistemas de energía y electrificación de flotas. Fundador de Greenspace, desarrollando hubs de carga y corredores logísticos en Panamá, México, EE.UU. y Noruega. Ex Senior Charger Hardware Manager en Circle K.",
+      "mike": "18+ años en logística, transporte y transformación de cadena de suministro en Norte y Centroamérica. Experto en comercio transfronterizo México-EE.UU. Ex Maersk, CEMEX, FEMSA y Uber Freight.",
+      "moises": "Líder financiero senior con 10+ años en Latinoamérica, Norteamérica y el Caribe. Especialista en FP&A, finanzas comerciales, gestión de P&L y transformación empresarial.",
+      "ruben": "Ejecutivo de energía y transformación digital con 15+ años en el sector energético noruego. Especialista en electrificación e infraestructura a gran escala. Ex líder senior en Aker Solutions.",
+      "horacio": "Estratega senior con 14+ años liderando operaciones de transporte y logística en la frontera México-EE.UU. Experto en flujos de carga binacionales y electrificación de flotas."
+    },
     "title": "Pioneros de la electromovilidad en la región",
     "p1": "Greenspace E-Mobility nació con una misión clara: acelerar la transición hacia la movilidad eléctrica en América Latina. Desde nuestros inicios, hemos combinado tecnología de vanguardia con un profundo conocimiento del mercado regional.",
     "p2": "Somos distribuidores autorizados de las marcas más reconocidas del mundo en carga de vehículos eléctricos, y ofrecemos un servicio integral que va desde la asesoría inicial hasta la operación continua de infraestructura.",

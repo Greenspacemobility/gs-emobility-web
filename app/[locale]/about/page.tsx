@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import { Zap, Target, Eye, Heart, ArrowRight } from 'lucide-react'
+import { Zap, Target, Eye, Heart, ArrowRight, Linkedin } from 'lucide-react'
 import AnimateIn from '@/components/AnimateIn'
 import Badge from '@/components/Badge'
 
@@ -23,11 +23,47 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
     { key: 'value4', icon: Eye,    color: 'from-orange-500/20' },
   ] as const
 
-  const team = [
-    { name: 'William Hurtado', role: 'CEO & Co-Founder', initials: 'WH' },
-    { name: 'E-Mobility Team', role: 'Ingeniería & Proyectos', initials: 'ET' },
-    { name: 'Partnerships', role: 'Desarrollo de Negocio', initials: 'PA' },
-    { name: 'Tech Support', role: 'Soporte & Operaciones', initials: 'TS' },
+  const board = [
+    {
+      name: 'William Pui Martinez',
+      role: 'CEO / Founder',
+      initials: 'WP',
+      photo: '/images/team-william.jpg',
+      bio: t('board.william'),
+      linkedin: 'https://www.linkedin.com/in/williampui/',
+    },
+    {
+      name: 'Mike Trevino',
+      role: 'Chief Commercial Officer',
+      initials: 'MT',
+      photo: '/images/team-mike.jpg',
+      bio: t('board.mike'),
+      linkedin: 'https://www.linkedin.com/in/migueltrevinomtz/',
+    },
+    {
+      name: 'Moises Perez',
+      role: 'Chief Financial Officer',
+      initials: 'MP',
+      photo: '/images/team-moises.jpg',
+      bio: t('board.moises'),
+      linkedin: 'https://www.linkedin.com/in/moises-perez-robles-56267855/',
+    },
+    {
+      name: 'Ruben Rock',
+      role: 'COO / General Manager Mexico',
+      initials: 'RR',
+      photo: '/images/team-ruben.jpg',
+      bio: t('board.ruben'),
+      linkedin: 'https://www.linkedin.com/in/ruben-rock/?locale=en',
+    },
+    {
+      name: 'Horacio de la Torre',
+      role: 'CLO / General Manager USA',
+      initials: 'HT',
+      photo: '/images/team-horacio.jpg',
+      bio: t('board.horacio'),
+      linkedin: 'https://www.linkedin.com/in/horacio-de-la-torre-89a625362/',
+    },
   ]
 
   const partners = [
@@ -114,24 +150,29 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
         </div>
       </section>
 
-      {/* Team */}
+      {/* Board of Directors */}
       <section className="section-padding">
         <div className="container-wide">
           <div className="text-center mb-16">
-            <AnimateIn><h2 className="font-display text-4xl font-bold text-white mb-4">Nuestro equipo</h2></AnimateIn>
-            <AnimateIn delay={100}><p className="text-white/40 max-w-xl mx-auto">Expertos apasionados por la electromovilidad y comprometidos con la sostenibilidad regional.</p></AnimateIn>
+            <AnimateIn><Badge className="mb-6">{t('boardBadge')}</Badge></AnimateIn>
+            <AnimateIn delay={100}>
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">{t('boardTitle')}</h2>
+            </AnimateIn>
+            <AnimateIn delay={200}>
+              <p className="text-white/40 max-w-2xl mx-auto">{t('boardSubtitle')}</p>
+            </AnimateIn>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {team.map((member, i) => (
-              <AnimateIn key={member.name} delay={i * 80}>
-                <div className="glass rounded-2xl p-6 text-center group hover:border-green-500/20 transition-all">
-                  <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-green-500/20 to-navy-600 flex items-center justify-center mx-auto mb-4 group-hover:from-green-500/30 transition-colors">
-                    <span className="font-display font-bold text-white text-xl">{member.initials}</span>
-                  </div>
-                  <h3 className="font-semibold text-white mb-1">{member.name}</h3>
-                  <p className="text-green-400 text-xs font-medium">{member.role}</p>
-                </div>
-              </AnimateIn>
+
+          {/* Top row — 3 cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+            {board.slice(0, 3).map((member, i) => (
+              <BoardCard key={member.name} member={member} delay={i * 80} />
+            ))}
+          </div>
+          {/* Bottom row — 2 cards centered */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            {board.slice(3).map((member, i) => (
+              <BoardCard key={member.name} member={member} delay={(i + 3) * 80} />
             ))}
           </div>
         </div>
@@ -188,5 +229,49 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
         </div>
       </section>
     </>
+  )
+}
+
+interface BoardMember {
+  name: string
+  role: string
+  initials: string
+  photo: string
+  bio: string
+  linkedin: string
+}
+
+function BoardCard({ member, delay }: { member: BoardMember; delay: number }) {
+  return (
+    <AnimateIn delay={delay}>
+      <div className="glass rounded-2xl p-7 flex flex-col items-center text-center group hover:border-green-500/25 transition-all h-full">
+        {/* Avatar */}
+        <div className="relative w-24 h-24 mb-5 shrink-0">
+          <div className="w-24 h-24 rounded-full bg-gradient-to-br from-green-500/30 to-navy-700 flex items-center justify-center ring-2 ring-green-500/20 group-hover:ring-green-500/50 transition-all overflow-hidden">
+            <span className="font-display font-bold text-white text-2xl select-none">
+              {member.initials}
+            </span>
+          </div>
+        </div>
+
+        {/* Name & role */}
+        <h3 className="font-display font-bold text-white text-lg mb-1">{member.name}</h3>
+        <p className="text-green-400 text-xs font-semibold uppercase tracking-widest mb-4">{member.role}</p>
+
+        {/* Bio */}
+        <p className="text-white/50 text-sm leading-relaxed flex-1 mb-5">{member.bio}</p>
+
+        {/* LinkedIn */}
+        <a
+          href={member.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-white/40 hover:text-blue-400 transition-colors text-sm font-medium"
+        >
+          <Linkedin className="w-4 h-4" />
+          LinkedIn
+        </a>
+      </div>
+    </AnimateIn>
   )
 }
