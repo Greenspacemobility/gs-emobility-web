@@ -3,7 +3,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import {
-  ArrowRight, ChevronDown, CheckCircle2, Globe, Wrench, Cpu, Leaf
+  ArrowRight, ChevronDown, Zap, CheckCircle2, Globe, Wrench, Cpu, Leaf
 } from 'lucide-react'
 import Image from 'next/image'
 import AnimateIn from '@/components/AnimateIn'
