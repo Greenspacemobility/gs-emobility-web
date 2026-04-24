@@ -147,7 +147,10 @@
   "partners": {
     "badge": "Nuestros Socios",
     "title": "Tecnología de los mejores fabricantes del mundo",
-    "subtitle": "Trabajamos con las marcas líderes en electromovilidad para garantizar calidad, garantía y soporte técnico de clase mundial."
+    "subtitle": "Trabajamos con las marcas líderes en electromovilidad para garantizar calidad, garantía y soporte técnico de clase mundial.",
+    "partnerAutel": "Cargadores AC/DC",
+    "partnerSinexcel": "Electrónica de potencia",
+    "partnerGresgying": "Carga rápida DC"
   },
   "whyUs": {
     "badge": "¿Por qué Greenspace?",

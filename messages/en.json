@@ -147,7 +147,10 @@
   "partners": {
     "badge": "Our Partners",
     "title": "Technology from the world's best manufacturers",
-    "subtitle": "We work with leading e-mobility brands to guarantee world-class quality, warranty and technical support."
+    "subtitle": "We work with leading e-mobility brands to guarantee world-class quality, warranty and technical support.",
+    "partnerAutel": "AC/DC Chargers",
+    "partnerSinexcel": "Power electronics",
+    "partnerGresgying": "DC Fast Charging"
   },
   "whyUs": {
     "badge": "Why Greenspace?",

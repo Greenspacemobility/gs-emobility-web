@@ -67,12 +67,9 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
   ]
 
   const partners = [
-    { name: 'Wallbox', category: 'Cargadores AC/DC', color: 'bg-blue-500/10 text-blue-300' },
-    { name: 'ABB', category: 'Infraestructura DC', color: 'bg-red-500/10 text-red-300' },
-    { name: 'Schneider Electric', category: 'Gestión de energía', color: 'bg-green-500/10 text-green-300' },
-    { name: 'Efacec', category: 'Carga rápida', color: 'bg-purple-500/10 text-purple-300' },
-    { name: 'Tritium', category: 'DC Fast Charging', color: 'bg-yellow-500/10 text-yellow-300' },
-    { name: 'Phoenix Contact', category: 'Conectores', color: 'bg-orange-500/10 text-orange-300' },
+    { name: 'Autel Energy', category: tp('partnerAutel'), color: 'bg-blue-500/10 text-blue-300' },
+    { name: 'Sinexcel', category: tp('partnerSinexcel'), color: 'bg-green-500/10 text-green-300' },
+    { name: 'Gresgying', category: tp('partnerGresgying'), color: 'bg-purple-500/10 text-purple-300' },
   ]
 
   return (
