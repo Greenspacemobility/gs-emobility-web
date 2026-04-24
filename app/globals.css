@@ -97,3 +97,18 @@ body {
 .animate-slide-up {
   animation: slide-up 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
+
+/* Leaflet highway map tooltips */
+.highway-map-tooltip {
+  background: rgba(10, 22, 40, 0.92) !important;
+  border: 1px solid rgba(0, 200, 83, 0.3) !important;
+  border-radius: 8px !important;
+  padding: 5px 10px !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4) !important;
+  backdrop-filter: blur(8px);
+}
+.highway-map-tooltip::before {
+  border-top-color: rgba(0, 200, 83, 0.3) !important;
+}
+/* Hide leaflet attribution */
+.leaflet-control-attribution { display: none !important; }

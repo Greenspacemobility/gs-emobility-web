@@ -10,6 +10,7 @@ import AnimateIn from '@/components/AnimateIn'
 import Badge from '@/components/Badge'
 import CountUp from '@/components/CountUp'
 import SolutionsSection from '@/components/SolutionsSection'
+import HighwayMap from '@/components/HighwayMap'
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'hero' })
@@ -190,87 +191,29 @@ function HighwayTeaser() {
           {/* Map / visual */}
           <AnimateIn direction="right" delay={200}>
             <div className="glass rounded-3xl overflow-hidden relative" style={{ aspectRatio: '1/1' }}>
-              <div className="absolute inset-0 bg-gradient-to-br from-navy-800 to-navy-900" />
-              {/* Grid background */}
-              <div className="absolute inset-0 opacity-5"
-                style={{ backgroundImage: 'linear-gradient(rgba(0,200,83,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(0,200,83,0.5) 1px, transparent 1px)', backgroundSize: '40px 40px' }}
-              />
-              <div className="absolute inset-0 p-5 flex flex-col">
-                <p className="text-white/20 text-xs uppercase tracking-widest mb-2">{t('mapTitle')}</p>
-                <div className="flex-1 relative">
-                  <svg className="w-full h-full" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-
-                    {/* US–Mexico border line at Laredo latitude */}
-                    <line x1="0" y1="270" x2="400" y2="270" stroke="white" strokeOpacity="0.12" strokeWidth="1" strokeDasharray="6 4" />
-                    <text x="8" y="262" fill="white" fillOpacity="0.18" fontSize="8" fontFamily="sans-serif" fontWeight="700" letterSpacing="2">TEXAS</text>
-                    <text x="8" y="288" fill="white" fillOpacity="0.18" fontSize="8" fontFamily="sans-serif" fontWeight="700" letterSpacing="2">MEXICO</text>
-
-                    {/* ── Phase 1: Monterrey → Laredo ── */}
-                    <path d="M 78 368 C 82 340 88 312 102 272"
-                      stroke="#00C853" strokeWidth="2.5" strokeDasharray="7 4" strokeOpacity="0.9" fill="none" />
-
-                    {/* ── Phase 1 cont: Laredo → Dallas ── */}
-                    <path d="M 102 268 C 140 210 180 140 218 72"
-                      stroke="#00C853" strokeWidth="2.5" strokeDasharray="7 4" strokeOpacity="0.9" fill="none" />
-
-                    {/* ── Phase 2: Dallas → Houston ── */}
-                    <path d="M 222 70 C 260 110 290 150 318 188"
-                      stroke="#38BDF8" strokeWidth="2.5" strokeDasharray="7 4" strokeOpacity="0.9" fill="none" />
-
-                    {/* ── Phase 3: Houston → Laredo ── */}
-                    <path d="M 316 192 C 260 225 190 248 106 268"
-                      stroke="#FB923C" strokeWidth="2.5" strokeDasharray="7 4" strokeOpacity="0.85" fill="none" />
-
-                    {/* Phase labels */}
-                    <text x="56" y="322" fill="#00C853" fillOpacity="0.7" fontSize="8" fontFamily="sans-serif" fontWeight="600">Phase 1</text>
-                    <text x="270" y="128" fill="#38BDF8" fillOpacity="0.7" fontSize="8" fontFamily="sans-serif" fontWeight="600">Phase 2</text>
-                    <text x="196" y="248" fill="#FB923C" fillOpacity="0.7" fontSize="8" fontFamily="sans-serif" fontWeight="600">Phase 3</text>
-
-                    {/* ── City: Monterrey ── */}
-                    <circle cx="78" cy="368" r="18" fill="#00C853" fillOpacity="0.12" />
-                    <circle cx="78" cy="368" r="9" fill="#00C853" />
-                    <circle cx="78" cy="368" r="4" fill="white" />
-                    <text x="92" y="364" fill="white" fillOpacity="0.9" fontSize="10.5" fontFamily="sans-serif" fontWeight="700">Monterrey</text>
-                    <text x="92" y="377" fill="white" fillOpacity="0.4" fontSize="8" fontFamily="sans-serif">México</text>
-
-                    {/* ── City: Laredo (Border Crossing) ── */}
-                    <circle cx="102" cy="268" r="16" fill="#00C853" fillOpacity="0.12" />
-                    <circle cx="102" cy="268" r="7" fill="#00C853" />
-                    <circle cx="102" cy="268" r="3" fill="white" />
-                    {/* border cross icon */}
-                    <text x="114" y="264" fill="white" fillOpacity="0.9" fontSize="10.5" fontFamily="sans-serif" fontWeight="700">Laredo</text>
-                    <text x="114" y="276" fill="#00C853" fillOpacity="0.7" fontSize="8" fontFamily="sans-serif">Cross Border ✦</text>
-
-                    {/* ── City: Dallas ── */}
-                    <circle cx="220" cy="70" r="18" fill="#00C853" fillOpacity="0.12" />
-                    <circle cx="220" cy="70" r="9" fill="#00C853" />
-                    <circle cx="220" cy="70" r="4" fill="white" />
-                    <text x="234" y="66" fill="white" fillOpacity="0.9" fontSize="10.5" fontFamily="sans-serif" fontWeight="700">Dallas</text>
-                    <text x="234" y="78" fill="white" fillOpacity="0.4" fontSize="8" fontFamily="sans-serif">Texas</text>
-
-                    {/* ── City: Houston ── */}
-                    <circle cx="318" cy="190" r="18" fill="#38BDF8" fillOpacity="0.12" />
-                    <circle cx="318" cy="190" r="9" fill="#38BDF8" />
-                    <circle cx="318" cy="190" r="4" fill="white" />
-                    <text x="332" y="186" fill="white" fillOpacity="0.9" fontSize="10.5" fontFamily="sans-serif" fontWeight="700">Houston</text>
-                    <text x="332" y="198" fill="white" fillOpacity="0.4" fontSize="8" fontFamily="sans-serif">Texas</text>
-
-                    {/* Legend */}
-                    <rect x="6" y="336" width="122" height="56" rx="6" fill="white" fillOpacity="0.04" stroke="white" strokeOpacity="0.08" strokeWidth="1" />
-                    <circle cx="18" cy="350" r="4" fill="#00C853" />
-                    <text x="27" y="354" fill="white" fillOpacity="0.6" fontSize="8" fontFamily="sans-serif">Phase 1 — MTY › LRD › DAL</text>
-                    <circle cx="18" cy="364" r="4" fill="#38BDF8" />
-                    <text x="27" y="368" fill="white" fillOpacity="0.6" fontSize="8" fontFamily="sans-serif">Phase 2 — DAL › HOU</text>
-                    <circle cx="18" cy="378" r="4" fill="#FB923C" />
-                    <text x="27" y="382" fill="white" fillOpacity="0.6" fontSize="8" fontFamily="sans-serif">Phase 3 — HOU › LRD</text>
-
-                  </svg>
-                </div>
+              {/* Real map */}
+              <div className="absolute inset-0">
+                <HighwayMap />
               </div>
 
-              {/* Overlay badge */}
-              <div className="absolute bottom-5 right-5 glass rounded-xl px-4 py-3 flex items-center gap-2 border border-green-500/20">
-                <div className="w-7 h-7 rounded-lg bg-green-500/20 flex items-center justify-center">
+              {/* Phase legend — top left */}
+              <div className="absolute top-4 left-4 z-[1000] glass rounded-xl px-4 py-3 border border-white/10 space-y-1.5">
+                <p className="text-white/30 text-[9px] uppercase tracking-widest mb-2">{t('mapTitle')}</p>
+                {[
+                  { color: '#00C853', label: 'Phase 1 — MTY › LRD › DAL' },
+                  { color: '#38BDF8', label: 'Phase 2 — DAL › HOU' },
+                  { color: '#FB923C', label: 'Phase 3 — HOU › LRD' },
+                ].map(({ color, label }) => (
+                  <div key={label} className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ background: color }} />
+                    <span className="text-white/70 text-[10px] font-medium">{label}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Bottom badge */}
+              <div className="absolute bottom-4 left-4 right-4 z-[1000] glass rounded-xl px-4 py-3 flex items-center gap-3 border border-green-500/20">
+                <div className="w-7 h-7 rounded-lg bg-green-500/20 flex items-center justify-center shrink-0">
                   <Zap className="w-3.5 h-3.5 text-green-400" />
                 </div>
                 <div>
