@@ -148,9 +148,9 @@
     "badge": "Nuestros Socios",
     "title": "Tecnología de los mejores fabricantes del mundo",
     "subtitle": "Trabajamos con las marcas líderes en electromovilidad para garantizar calidad, garantía y soporte técnico de clase mundial.",
-    "partnerAutel": "Cargadores AC/DC",
-    "partnerSinexcel": "Electrónica de potencia",
-    "partnerGresgying": "Carga rápida DC"
+    "partnerAutel": "AC · DC · Almacenamiento",
+    "partnerSinexcel": "DC · Almacenamiento",
+    "partnerGresgying": "AC · DC · Almacenamiento"
   },
   "whyUs": {
     "badge": "¿Por qué Greenspace?",
@@ -197,39 +197,41 @@
     "value4": "Accesibilidad"
   },
   "products": {
-    "badge": "Catálogo de Productos",
-    "title": "Soluciones de carga para cada aplicación",
-    "subtitle": "Cargadores certificados de las mejores marcas, con garantía, instalación profesional y soporte técnico.",
-    "wallboxTitle": "Cargadores Wallbox",
-    "wallboxDesc": "La marca más premiada en carga inteligente para hogar y empresa.",
+    "badge": "Nuestras Marcas",
+    "title": "Hardware de carga de primer nivel mundial",
+    "subtitle": "Distribuimos y desplegamos equipos de las marcas líderes en carga AC, DC y almacenamiento de energía.",
     "ac": "Carga AC",
     "dc": "Carga DC",
-    "learnMore": "Ver detalles",
-    "requestQuote": "Solicitar precio",
-    "pulsar": {
-      "name": "Pulsar Plus",
-      "desc": "El cargador residencial más compacto y potente. 7.4 kW, conectividad Wi-Fi, control desde la app.",
-      "power": "7.4 kW",
-      "type": "AC Monofásico"
-    },
-    "commander2": {
-      "name": "Commander 2",
-      "desc": "Cargador comercial con pantalla táctil, RFID y gestión de energía avanzada. Ideal para oficinas y estacionamientos.",
-      "power": "22 kW",
-      "type": "AC Trifásico"
-    },
-    "hypernova": {
-      "name": "Hypernova",
-      "desc": "El cargador DC ultrarrápido de Wallbox. Hasta 400 kW, recarga en minutos.",
-      "power": "hasta 400 kW",
-      "type": "DC CCS/CHAdeMO"
-    },
-    "neo": {
-      "name": "Neo",
-      "desc": "Cargador para hogar con diseño premium y gestión energética inteligente integrada.",
-      "power": "11 kW",
-      "type": "AC Trifásico"
-    }
+    "storage": "Almacenamiento",
+    "featured": "Destacado",
+    "requestQuote": "Solicitar cotización",
+    "autelAc": "Cargadores residenciales y comerciales de 7.4 kW a 22 kW, con conectividad inteligente y app.",
+    "autelDc": "Cargadores rápidos DC de 60 kW a 360 kW para uso público, flotas y corredores.",
+    "autelStorage": "Sistemas de almacenamiento de energía en batería (BESS) para optimizar el autoconsumo.",
+    "sinexcelDc": "Cargadores DC de alta potencia y sistemas de conversión de energía de precisión industrial.",
+    "sinexcelStorage": "Sistemas BESS modulares de alta densidad energética para infraestructura crítica.",
+    "gresgyingAc": "Cargadores AC compactos y robustos para instalaciones residenciales, hoteleras y corporativas.",
+    "gresgyingDc": "Cargadores DC rápidos y ultrarrápidos para hubs públicos y corredores de carga.",
+    "gresgyingStorage": "Soluciones de almacenamiento integradas con carga solar y gestión de demanda.",
+    "sectorsTitle": "Soluciones por sector",
+    "sectorsSubtitle": "Diseñamos la solución ideal según el tipo de instalación y el volumen de carga requerido.",
+    "sectorResidential": "Residencial",
+    "sectorResidentialDesc": "Cargadores AC inteligentes para el hogar. Instala en tu garaje y carga durante la noche con tarifas reducidas.",
+    "sectorCommercial": "Comercial y Empresarial",
+    "sectorCommercialDesc": "Soluciones AC y DC para flotas empresariales, estacionamientos de empleados y centros de distribución.",
+    "sectorFleet": "Flotas Eléctricas",
+    "sectorFleetDesc": "Hardware y software para gestionar la carga de flotas completas, reduciendo costos y maximizando disponibilidad.",
+    "sectorSolar": "Solar + EV",
+    "sectorSolarDesc": "Integra tu instalación fotovoltaica con la carga de vehículos y almacenamiento para autonomía energética total.",
+    "includedBadge": "Servicio completo",
+    "includedTitle": "Todo incluido en cada proyecto",
+    "includedDesc": "No vendemos solo hardware. Entregamos soluciones completas con instalación, soporte y plataforma de gestión incluidos.",
+    "include1": "Asesoría técnica personalizada",
+    "include2": "Instalación certificada",
+    "include3": "Garantía del fabricante",
+    "include4": "Soporte técnico 24/7",
+    "include5": "Acceso a plataforma de gestión",
+    "include6": "Mantenimiento preventivo"
   },
   "contact": {
     "badge": "Contáctanos",

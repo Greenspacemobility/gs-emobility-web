@@ -148,9 +148,9 @@
     "badge": "Our Partners",
     "title": "Technology from the world's best manufacturers",
     "subtitle": "We work with leading e-mobility brands to guarantee world-class quality, warranty and technical support.",
-    "partnerAutel": "AC/DC Chargers",
-    "partnerSinexcel": "Power electronics",
-    "partnerGresgying": "DC Fast Charging"
+    "partnerAutel": "AC · DC · Storage",
+    "partnerSinexcel": "DC · Storage",
+    "partnerGresgying": "AC · DC · Storage"
   },
   "whyUs": {
     "badge": "Why Greenspace?",
@@ -197,39 +197,41 @@
     "value4": "Accessibility"
   },
   "products": {
-    "badge": "Product Catalog",
-    "title": "Charging solutions for every application",
-    "subtitle": "Certified chargers from the best brands, with warranty, professional installation and technical support.",
-    "wallboxTitle": "Wallbox Chargers",
-    "wallboxDesc": "The most awarded brand in smart charging for home and business.",
+    "badge": "Our Brands",
+    "title": "World-class EV charging hardware",
+    "subtitle": "We distribute and deploy equipment from leading brands in AC charging, DC charging, and energy storage.",
     "ac": "AC Charging",
     "dc": "DC Charging",
-    "learnMore": "View details",
-    "requestQuote": "Request price",
-    "pulsar": {
-      "name": "Pulsar Plus",
-      "desc": "The most compact and powerful residential charger. 7.4 kW, Wi-Fi connectivity, app control.",
-      "power": "7.4 kW",
-      "type": "AC Single-phase"
-    },
-    "commander2": {
-      "name": "Commander 2",
-      "desc": "Commercial charger with touchscreen, RFID and advanced energy management. Ideal for offices and parking lots.",
-      "power": "22 kW",
-      "type": "AC Three-phase"
-    },
-    "hypernova": {
-      "name": "Hypernova",
-      "desc": "Wallbox's ultra-fast DC charger. Up to 400 kW, recharge in minutes.",
-      "power": "up to 400 kW",
-      "type": "DC CCS/CHAdeMO"
-    },
-    "neo": {
-      "name": "Neo",
-      "desc": "Premium design home charger with integrated smart energy management.",
-      "power": "11 kW",
-      "type": "AC Three-phase"
-    }
+    "storage": "Energy Storage",
+    "featured": "Featured",
+    "requestQuote": "Request a quote",
+    "autelAc": "Residential and commercial chargers from 7.4 kW to 22 kW, with smart connectivity and app control.",
+    "autelDc": "DC fast chargers from 60 kW to 360 kW for public use, fleets, and charging corridors.",
+    "autelStorage": "Battery energy storage systems (BESS) to optimize self-consumption and reduce energy costs.",
+    "sinexcelDc": "High-power DC chargers and precision industrial power conversion systems.",
+    "sinexcelStorage": "High energy density modular BESS for critical infrastructure and grid stabilization.",
+    "gresgyingAc": "Compact and robust AC chargers for residential, hotel, and corporate installations.",
+    "gresgyingDc": "Fast and ultra-fast DC chargers for public hubs and charging corridors.",
+    "gresgyingStorage": "Integrated storage solutions combining solar charging and demand management.",
+    "sectorsTitle": "Solutions by sector",
+    "sectorsSubtitle": "We design the ideal solution based on the type of installation and required charging volume.",
+    "sectorResidential": "Residential",
+    "sectorResidentialDesc": "Smart AC home chargers. Install in your garage and charge overnight at reduced rates.",
+    "sectorCommercial": "Commercial & Business",
+    "sectorCommercialDesc": "AC and DC solutions for corporate fleets, employee parking, and distribution centers.",
+    "sectorFleet": "Electric Fleets",
+    "sectorFleetDesc": "Hardware and software to manage full fleet charging, reducing costs and maximizing availability.",
+    "sectorSolar": "Solar + EV",
+    "sectorSolarDesc": "Integrate your photovoltaic system with vehicle charging and storage for total energy independence.",
+    "includedBadge": "Full service",
+    "includedTitle": "Everything included in every project",
+    "includedDesc": "We don't just sell hardware. We deliver complete solutions with installation, support and management platform included.",
+    "include1": "Personalized technical consulting",
+    "include2": "Certified installation",
+    "include3": "Manufacturer warranty",
+    "include4": "24/7 technical support",
+    "include5": "Management platform access",
+    "include6": "Preventive maintenance"
   },
   "contact": {
     "badge": "Contact Us",

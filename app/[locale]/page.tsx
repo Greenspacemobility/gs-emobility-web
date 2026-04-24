@@ -291,7 +291,7 @@ function WhyUsSection() {
 
 function PartnersSection() {
   const t = useTranslations('partners')
-  const partners = ['Wallbox', 'ABB', 'Schneider', 'Efacec', 'Tritium', 'Phoenix Contact']
+  const partners = ['Autel Energy', 'Sinexcel', 'Gresgying']
   return (
     <section className="py-20 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-navy-800/20 to-transparent" />
