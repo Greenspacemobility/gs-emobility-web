@@ -3,22 +3,30 @@
 import { MapContainer, TileLayer, Polyline, CircleMarker, Tooltip } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 
-const cities: Record<string, { pos: [number, number]; color: string; border?: boolean }> = {
-  Monterrey:  { pos: [25.6866, -100.3161], color: '#00C853' },
-  Laredo:     { pos: [27.5306,  -99.4803], color: '#00C853', border: true },
-  Dallas:     { pos: [32.7767,  -96.7970], color: '#00C853' },
-  Houston:    { pos: [29.7604,  -95.3698], color: '#38BDF8' },
+/* ─── City definitions ──────────────────────────────────────────────────── */
+type CityDef = {
+  name: string
+  pos: [number, number]
+  color: string
+  dir: 'left' | 'right' | 'bottom'
+  border: boolean
+  waypoint: boolean
 }
 
-const monterrey = cities.Monterrey.pos
-const laredo    = cities.Laredo.pos
-const dallas    = cities.Dallas.pos
-const houston   = cities.Houston.pos
+const cities: CityDef[] = [
+  { name: 'Monterrey',   pos: [25.6866, -100.3161], color: '#00C853', dir: 'bottom', border: false, waypoint: false },
+  { name: 'Laredo',      pos: [27.5306,  -99.4803], color: '#00C853', dir: 'left',   border: true,  waypoint: false },
+  { name: 'San Antonio', pos: [29.4241,  -98.4936], color: '#00C853', dir: 'left',   border: false, waypoint: true  },
+  { name: 'Dallas',      pos: [32.7767,  -96.7970], color: '#38BDF8', dir: 'right',  border: false, waypoint: false },
+  { name: 'Houston',     pos: [29.7604,  -95.3698], color: '#38BDF8', dir: 'right',  border: false, waypoint: false },
+]
+
+const [mty, lrd, sat, dal, hou] = cities.map(c => c.pos)
 
 export default function HighwayMapInner() {
   return (
     <MapContainer
-      center={[29.8, -98.2]}
+      center={[29.4, -98.0]}
       zoom={5}
       style={{ width: '100%', height: '100%', borderRadius: '1.5rem' }}
       zoomControl={false}
@@ -29,46 +37,54 @@ export default function HighwayMapInner() {
       keyboard={false}
       attributionControl={false}
     >
-      {/* Dark map tiles — no API key needed */}
       <TileLayer
         url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
+        attribution='&copy; OpenStreetMap &copy; CARTO'
       />
 
-      {/* Phase 1 — green: Monterrey → Laredo → Dallas */}
-      <Polyline
-        positions={[monterrey, laredo, dallas]}
-        pathOptions={{ color: '#00C853', weight: 3, dashArray: '10 6', opacity: 0.9 }}
-      />
+      {/* Phase 1 — green: Monterrey → Laredo → San Antonio → Dallas */}
+      <Polyline positions={[mty, lrd, sat, dal]} pathOptions={{ color: '#00C853', weight: 8,   opacity: 0.12 }} />
+      <Polyline positions={[mty, lrd, sat, dal]} pathOptions={{ color: '#00C853', weight: 2.5, opacity: 0.95, dashArray: '8 5' }} />
 
       {/* Phase 2 — blue: Dallas → Houston */}
-      <Polyline
-        positions={[dallas, houston]}
-        pathOptions={{ color: '#38BDF8', weight: 3, dashArray: '10 6', opacity: 0.9 }}
-      />
+      <Polyline positions={[dal, hou]} pathOptions={{ color: '#38BDF8', weight: 8,   opacity: 0.12 }} />
+      <Polyline positions={[dal, hou]} pathOptions={{ color: '#38BDF8', weight: 2.5, opacity: 0.95, dashArray: '8 5' }} />
 
       {/* Phase 3 — orange: Houston → Laredo */}
-      <Polyline
-        positions={[houston, laredo]}
-        pathOptions={{ color: '#FB923C', weight: 3, dashArray: '10 6', opacity: 0.85 }}
-      />
+      <Polyline positions={[hou, lrd]} pathOptions={{ color: '#FB923C', weight: 8,   opacity: 0.12 }} />
+      <Polyline positions={[hou, lrd]} pathOptions={{ color: '#FB923C', weight: 2.5, opacity: 0.85, dashArray: '8 5' }} />
 
-      {/* City markers */}
-      {Object.entries(cities).map(([name, { pos, color, border }]) => (
+      {/* City markers + labels */}
+      {cities.map(city => (
         <CircleMarker
-          key={name}
-          center={pos}
-          radius={9}
-          pathOptions={{ fillColor: color, color: 'white', weight: 2, fillOpacity: 1 }}
+          key={city.name}
+          center={city.pos}
+          radius={city.waypoint ? 5 : 8}
+          pathOptions={{
+            fillColor: city.color,
+            color: city.waypoint ? 'rgba(255,255,255,0.35)' : 'white',
+            weight: city.waypoint ? 1.5 : 2,
+            fillOpacity: city.waypoint ? 0.6 : 1,
+          }}
         >
           <Tooltip
             permanent
-            direction="top"
-            offset={[0, -12]}
+            direction={city.dir}
+            offset={
+              city.dir === 'left'   ? [-12, 0] :
+              city.dir === 'bottom' ? [0, 8]   :
+                                      [12, 0]
+            }
             className="highway-map-tooltip"
           >
-            <span style={{ fontWeight: 700, fontSize: 12, color: 'white' }}>{name}</span>
-            {border && <span style={{ display: 'block', fontSize: 10, color: '#00C853', marginTop: 1 }}>Cross Border</span>}
+            <span style={{ fontWeight: city.waypoint ? 500 : 700, fontSize: city.waypoint ? 10 : 12, color: city.waypoint ? 'rgba(255,255,255,0.5)' : '#fff' }}>
+              {city.name}
+            </span>
+            {city.border && (
+              <span style={{ display: 'block', fontSize: 9, color: '#00C853', marginTop: 1, letterSpacing: '0.05em' }}>
+                Border Crossing
+              </span>
+            )}
           </Tooltip>
         </CircleMarker>
       ))}
