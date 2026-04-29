@@ -56,7 +56,7 @@
       "detail": "A complete solution for businesses, hotels, shopping centers and parking lots. We combine AC chargers for extended stays with DC chargers for fast turnarounds, all managed from a centralized platform with automatic billing and consumption reports.",
       "features": [
         "AC chargers 7.4 kW to 22 kW for parking",
-        "DC chargers 50 kW to 150 kW for fast charging",
+        "DC chargers from 50 kW to 400 kW for fast charging",
         "Centralized management and integrated billing",
         "Access control system integration",
         "Custom corporate branding",
@@ -127,7 +127,7 @@
     "feature1Title": "Full Coverage",
     "feature1Desc": "Stations every 100 km on main routes, ensuring no trip runs out of energy.",
     "feature2Title": "Ultra-Fast Charging",
-    "feature2Desc": "DC technology up to 150 kW. From 0 to 80% in less than 30 minutes.",
+    "feature2Desc": "DC technology from 400 kW up to MCS charging. From 0 to 80% in under 20 minutes.",
     "feature3Title": "Smart Grid",
     "feature3Desc": "Dynamic energy management, renewable energy integration and frictionless payments.",
     "feature4Title": "Mobility Hub",
