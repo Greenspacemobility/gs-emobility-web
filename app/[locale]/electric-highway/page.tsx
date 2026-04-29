@@ -3,7 +3,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import {
-  Zap, MapPin, Clock, Wifi, Coffee, ShoppingBag,
+  Zap, MapPin, Wifi, Coffee, ShoppingBag,
   ArrowRight, CheckCircle2, BatteryCharging, Route, BarChart3
 } from 'lucide-react'
 import AnimateIn from '@/components/AnimateIn'
@@ -17,36 +17,36 @@ export async function generateMetadata({ params: { locale } }: { params: { local
 
 export default function ElectricHighwayPage({ params: { locale } }: { params: { locale: string } }) {
   setRequestLocale(locale)
-  const t = useTranslations('highway')
+  const t  = useTranslations('highway')
   const th = useTranslations('hub')
 
   const networkStats = [
-    { value: 18, suffix: '', label: 'Estaciones activas' },
-    { value: 500, suffix: ' km', label: 'Red cubierta' },
-    { value: 99, suffix: '%', label: 'Uptime garantizado' },
-    { value: 30, suffix: ' min', label: 'Carga 0→80%' },
+    { value: 18,  suffix: '',          label: t('stat1Label') },
+    { value: 500, suffix: t('stat2Suffix'), label: t('stat2Label') },
+    { value: 99,  suffix: t('stat3Suffix'), label: t('stat3Label') },
+    { value: 20,  suffix: t('stat4Suffix'), label: t('stat4Label') },
   ]
 
   const highwayFeatures = [
-    { icon: Route, title: t('feature1Title'), desc: t('feature1Desc') },
-    { icon: Zap, title: t('feature2Title'), desc: t('feature2Desc') },
-    { icon: Wifi, title: t('feature3Title'), desc: t('feature3Desc') },
+    { icon: Route,  title: t('feature1Title'), desc: t('feature1Desc') },
+    { icon: Zap,    title: t('feature2Title'), desc: t('feature2Desc') },
+    { icon: Wifi,   title: t('feature3Title'), desc: t('feature3Desc') },
     { icon: Coffee, title: t('feature4Title'), desc: t('feature4Desc') },
   ]
 
   const hubServices = [
-    { icon: BatteryCharging, title: 'Carga simultánea', desc: 'Hasta 8 vehículos en simultáneo por Hub, con conectores CCS, CHAdeMO y Tipo 2.' },
-    { icon: Wifi, title: 'Conectividad total', desc: 'Wi-Fi gratuito de alta velocidad y app de monitoreo en tiempo real.' },
-    { icon: Coffee, title: 'Área de descanso', desc: 'Lounge con asientos, climatización y área de trabajo para aprovechar el tiempo de carga.' },
-    { icon: ShoppingBag, title: 'Servicios y comercio', desc: 'Tiendas, cafeterías y servicios integrados en cada Hub para una experiencia completa.' },
-    { icon: BarChart3, title: 'Datos en tiempo real', desc: 'Pantallas con disponibilidad, tiempos de espera y métricas de consumo energético.' },
-    { icon: MapPin, title: 'Integración con apps', desc: 'Compatible con Google Maps, Waze, PlugShare y las principales apps EV del mercado.' },
+    { icon: BatteryCharging, title: t('hub1Title'), desc: t('hub1Desc') },
+    { icon: Wifi,            title: t('hub2Title'), desc: t('hub2Desc') },
+    { icon: Coffee,          title: t('hub3Title'), desc: t('hub3Desc') },
+    { icon: ShoppingBag,     title: t('hub4Title'), desc: t('hub4Desc') },
+    { icon: BarChart3,       title: t('hub5Title'), desc: t('hub5Desc') },
+    { icon: MapPin,          title: t('hub6Title'), desc: t('hub6Desc') },
   ]
 
   const timeline = [
-    { phase: 'Fase 1', year: '2024', title: 'Corredor Central', desc: '6 estaciones estratégicas en la ruta principal, conectando las capitales.', status: 'active' },
-    { phase: 'Fase 2', year: '2025', title: 'Expansión Costera', desc: 'Red de hubs en rutas turísticas y costeras de alto tráfico.', status: 'building' },
-    { phase: 'Fase 3', year: '2026', title: 'Cobertura Regional', desc: 'Conexión total entre países, convirtiendo la región en un corredor eléctrico.', status: 'planned' },
+    { phase: t('phase1Name'), year: t('phase1Year'), title: t('phase1Title'), desc: t('phase1Desc'), status: 'active'    },
+    { phase: t('phase2Name'), year: t('phase2Year'), title: t('phase2Title'), desc: t('phase2Desc'), status: 'building'  },
+    { phase: t('phase3Name'), year: t('phase3Year'), title: t('phase3Title'), desc: t('phase3Desc'), status: 'planned'   },
   ]
 
   return (
@@ -59,10 +59,8 @@ export default function ElectricHighwayPage({ params: { locale } }: { params: { 
             backgroundImage: `repeating-linear-gradient(90deg, rgba(0,200,83,0.5) 0px, rgba(0,200,83,0.5) 2px, transparent 2px, transparent 60px)`,
           }}
         />
-        {/* Animated road */}
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-green-500/40 to-transparent" />
         <div className="absolute top-1/3 left-0 right-0 h-px bg-gradient-to-r from-transparent via-green-500/10 to-transparent" />
-
         <div className="absolute top-1/4 -left-24 w-96 h-96 bg-green-500/8 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 -right-24 w-72 h-72 bg-navy-500/20 rounded-full blur-3xl" />
 
@@ -114,8 +112,12 @@ export default function ElectricHighwayPage({ params: { locale } }: { params: { 
       <section className="section-padding">
         <div className="container-wide">
           <div className="text-center mb-16">
-            <AnimateIn><h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">La red más avanzada de la región</h2></AnimateIn>
-            <AnimateIn delay={100}><p className="text-white/40 max-w-xl mx-auto">Cada estación está diseñada para máximo rendimiento, confiabilidad y experiencia de usuario.</p></AnimateIn>
+            <AnimateIn>
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">{t('featuresTitle')}</h2>
+            </AnimateIn>
+            <AnimateIn delay={100}>
+              <p className="text-white/40 max-w-xl mx-auto">{t('featuresSubtitle')}</p>
+            </AnimateIn>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {highwayFeatures.map(({ icon: Icon, title, desc }, i) => (
@@ -187,21 +189,23 @@ export default function ElectricHighwayPage({ params: { locale } }: { params: { 
       <section className="section-padding">
         <div className="container-wide">
           <div className="text-center mb-16">
-            <AnimateIn><h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">Roadmap de expansión</h2></AnimateIn>
-            <AnimateIn delay={100}><p className="text-white/40 max-w-xl mx-auto">Un plan ambicioso y estructurado para cubrir la región completa.</p></AnimateIn>
+            <AnimateIn>
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">{t('roadmapTitle')}</h2>
+            </AnimateIn>
+            <AnimateIn delay={100}>
+              <p className="text-white/40 max-w-xl mx-auto">{t('roadmapSubtitle')}</p>
+            </AnimateIn>
           </div>
           <div className="relative">
-            {/* Vertical line */}
             <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-green-500/50 via-green-500/20 to-transparent" />
             <div className="space-y-12">
               {timeline.map((item, i) => (
                 <AnimateIn key={i} delay={i * 150} direction={i % 2 === 0 ? 'left' : 'right'}>
                   <div className={`flex gap-8 items-start ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                     <div className={`flex-1 ${i % 2 === 0 ? 'md:text-right' : 'md:text-left'} hidden md:block`} />
-                    {/* Dot */}
                     <div className="relative flex items-center justify-center">
                       <div className={`w-12 h-12 rounded-full flex items-center justify-center z-10 ${
-                        item.status === 'active' ? 'bg-green-500 glow-green' :
+                        item.status === 'active'   ? 'bg-green-500 glow-green' :
                         item.status === 'building' ? 'bg-navy-600 border-2 border-green-500/50' :
                         'glass border border-white/10'
                       }`}>
@@ -217,11 +221,11 @@ export default function ElectricHighwayPage({ params: { locale } }: { params: { 
                           {item.status === 'active' && (
                             <span className="text-xs text-green-400 flex items-center gap-1">
                               <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                              Activo
+                              {t('statusActive')}
                             </span>
                           )}
                           {item.status === 'building' && (
-                            <span className="text-xs text-yellow-400/80">En construcción</span>
+                            <span className="text-xs text-yellow-400/80">{t('statusBuilding')}</span>
                           )}
                         </div>
                         <h3 className="font-display font-bold text-white text-xl mb-2">{item.title}</h3>
@@ -244,18 +248,18 @@ export default function ElectricHighwayPage({ params: { locale } }: { params: { 
               <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 via-transparent to-navy-700/20" />
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-0.5 bg-gradient-to-r from-transparent via-green-500/60 to-transparent" />
               <div className="relative z-10">
-                <Badge className="mb-6">¿Listo para sumarte?</Badge>
+                <Badge className="mb-6">{t('ctaBadge')}</Badge>
                 <h2 className="font-display text-3xl md:text-5xl font-bold text-white mb-4">
-                  Sé parte de la Autopista Eléctrica
+                  {t('ctaJoinTitle')}
                 </h2>
                 <p className="text-white/50 max-w-lg mx-auto mb-8">
-                  Municipios, concesionarios, centros comerciales y empresas de turismo: únete a la red más importante de electromovilidad de la región.
+                  {t('ctaJoinDesc')}
                 </p>
                 <Link
                   href="/contact"
                   className="group inline-flex items-center gap-2 bg-green-500 hover:bg-green-400 text-navy-900 font-semibold px-8 py-4 rounded-2xl transition-all glow-green"
                 >
-                  Hablar con un experto
+                  {t('ctaJoinButton')}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
