@@ -4,7 +4,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import {
   Zap, MapPin, Wifi, Coffee, ShoppingBag,
-  ArrowRight, CheckCircle2, BatteryCharging, Route, BarChart3
+  ArrowRight, CheckCircle2, BatteryCharging, Route, BarChart3, Sun, Truck
 } from 'lucide-react'
 import AnimateIn from '@/components/AnimateIn'
 import Badge from '@/components/Badge'
@@ -21,26 +21,26 @@ export default function ElectricHighwayPage({ params: { locale } }: { params: { 
   const th = useTranslations('hub')
 
   const networkStats = [
-    { value: 18,  suffix: '',          label: t('stat1Label') },
-    { value: 500, suffix: t('stat2Suffix'), label: t('stat2Label') },
+    { value: 8,   suffix: '',              label: t('stat1Label') },
+    { value: 850, suffix: t('stat2Suffix'), label: t('stat2Label') },
     { value: 99,  suffix: t('stat3Suffix'), label: t('stat3Label') },
     { value: 20,  suffix: t('stat4Suffix'), label: t('stat4Label') },
   ]
 
   const highwayFeatures = [
-    { icon: Route,  title: t('feature1Title'), desc: t('feature1Desc') },
-    { icon: Zap,    title: t('feature2Title'), desc: t('feature2Desc') },
-    { icon: Wifi,   title: t('feature3Title'), desc: t('feature3Desc') },
-    { icon: Coffee, title: t('feature4Title'), desc: t('feature4Desc') },
+    { icon: Route,           title: t('feature1Title'), desc: t('feature1Desc') },
+    { icon: Zap,             title: t('feature2Title'), desc: t('feature2Desc') },
+    { icon: BatteryCharging, title: t('feature3Title'), desc: t('feature3Desc') },
+    { icon: Truck,           title: t('feature4Title'), desc: t('feature4Desc') },
   ]
 
   const hubServices = [
-    { icon: BatteryCharging, title: t('hub1Title'), desc: t('hub1Desc') },
-    { icon: Wifi,            title: t('hub2Title'), desc: t('hub2Desc') },
-    { icon: Coffee,          title: t('hub3Title'), desc: t('hub3Desc') },
-    { icon: ShoppingBag,     title: t('hub4Title'), desc: t('hub4Desc') },
-    { icon: BarChart3,       title: t('hub5Title'), desc: t('hub5Desc') },
-    { icon: MapPin,          title: t('hub6Title'), desc: t('hub6Desc') },
+    { icon: Zap,         title: t('hub1Title'), desc: t('hub1Desc') },
+    { icon: Sun,         title: t('hub2Title'), desc: t('hub2Desc') },
+    { icon: Coffee,      title: t('hub3Title'), desc: t('hub3Desc') },
+    { icon: ShoppingBag, title: t('hub4Title'), desc: t('hub4Desc') },
+    { icon: BarChart3,   title: t('hub5Title'), desc: t('hub5Desc') },
+    { icon: Wifi,        title: t('hub6Title'), desc: t('hub6Desc') },
   ]
 
   const timeline = [
