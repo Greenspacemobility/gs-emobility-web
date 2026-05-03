@@ -17,16 +17,16 @@ const cities: CityDef[] = [
   { name: 'Monterrey',   pos: [25.6866, -100.3161], color: '#00C853', dir: 'bottom', border: false, waypoint: false },
   { name: 'Laredo',      pos: [27.5306,  -99.4803], color: '#00C853', dir: 'left',   border: true,  waypoint: false },
   { name: 'San Antonio', pos: [29.4241,  -98.4936], color: '#00C853', dir: 'left',   border: false, waypoint: true  },
-  { name: 'Dallas',      pos: [32.7767,  -96.7970], color: '#38BDF8', dir: 'right',  border: false, waypoint: false },
-  { name: 'Houston',     pos: [29.7604,  -95.3698], color: '#38BDF8', dir: 'right',  border: false, waypoint: false },
+  { name: 'Temple',      pos: [31.0982,  -97.3428], color: '#00C853', dir: 'right',  border: false, waypoint: true  },
+  { name: 'Dallas',      pos: [32.7767,  -96.7970], color: '#00C853', dir: 'right',  border: false, waypoint: false },
 ]
 
-const [mty, lrd, sat, dal, hou] = cities.map(c => c.pos)
+const [mty, lrd, sat, tpl, dal] = cities.map(c => c.pos)
 
 export default function HighwayMapInner() {
   return (
     <MapContainer
-      center={[29.4, -98.0]}
+      center={[29.2, -98.6]}
       zoom={5}
       style={{ width: '100%', height: '100%', borderRadius: '1.5rem' }}
       zoomControl={false}
@@ -42,17 +42,9 @@ export default function HighwayMapInner() {
         attribution='&copy; OpenStreetMap &copy; CARTO'
       />
 
-      {/* Phase 1 — green: Monterrey → Laredo → San Antonio → Dallas */}
-      <Polyline positions={[mty, lrd, sat, dal]} pathOptions={{ color: '#00C853', weight: 8,   opacity: 0.12 }} />
-      <Polyline positions={[mty, lrd, sat, dal]} pathOptions={{ color: '#00C853', weight: 2.5, opacity: 0.95, dashArray: '8 5' }} />
-
-      {/* Phase 2 — blue: Dallas → Houston */}
-      <Polyline positions={[dal, hou]} pathOptions={{ color: '#38BDF8', weight: 8,   opacity: 0.12 }} />
-      <Polyline positions={[dal, hou]} pathOptions={{ color: '#38BDF8', weight: 2.5, opacity: 0.95, dashArray: '8 5' }} />
-
-      {/* Phase 3 — orange: Houston → Laredo */}
-      <Polyline positions={[hou, lrd]} pathOptions={{ color: '#FB923C', weight: 8,   opacity: 0.12 }} />
-      <Polyline positions={[hou, lrd]} pathOptions={{ color: '#FB923C', weight: 2.5, opacity: 0.85, dashArray: '8 5' }} />
+      {/* Corridor route: Monterrey → Laredo → San Antonio → Temple → Dallas */}
+      <Polyline positions={[mty, lrd, sat, tpl, dal]} pathOptions={{ color: '#00C853', weight: 8,   opacity: 0.12 }} />
+      <Polyline positions={[mty, lrd, sat, tpl, dal]} pathOptions={{ color: '#00C853', weight: 2.5, opacity: 0.95, dashArray: '8 5' }} />
 
       {/* City markers + labels */}
       {cities.map(city => (

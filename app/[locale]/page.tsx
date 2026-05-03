@@ -206,9 +206,7 @@ function HighwayTeaser() {
               <div className="absolute top-4 left-4 z-[1000] glass rounded-xl px-3 py-2.5 border border-white/10 space-y-1.5">
                 <p className="text-white/30 text-[9px] uppercase tracking-widest mb-2">{t('mapTitle')}</p>
                 {[
-                  { color: '#00C853', label: 'Phase 1 — MTY › SAT › DAL' },
-                  { color: '#38BDF8', label: 'Phase 2 — DAL › HOU' },
-                  { color: '#FB923C', label: 'Phase 3 — HOU › LRD' },
+                  { color: '#00C853', label: 'Hwy 85 MX + I-35 US · 4 Phases · 15 Sites' },
                 ].map(({ color, label }) => (
                   <div key={label} className="flex items-center gap-2">
                     <span className="inline-block w-5 h-[2px] rounded-full shrink-0" style={{ background: color }} />
@@ -223,8 +221,8 @@ function HighwayTeaser() {
                   <Zap className="w-3.5 h-3.5 text-green-400" />
                 </div>
                 <div>
-                  <p className="text-white font-semibold text-xs">Monterrey → San Antonio → Dallas → Houston</p>
-                  <p className="text-white/40 text-[10px]">3 phases · I-35 cross-border corridor</p>
+                  <p className="text-white font-semibold text-xs">Monterrey → Laredo → San Antonio → Temple → Dallas</p>
+                  <p className="text-white/40 text-[10px]">4 phases · 15 Green Hubs · Hwy 85 MX + I-35 US</p>
                 </div>
               </div>
             </div>

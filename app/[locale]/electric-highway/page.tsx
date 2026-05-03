@@ -21,10 +21,10 @@ export default function ElectricHighwayPage({ params: { locale } }: { params: { 
   const th = useTranslations('hub')
 
   const networkStats = [
-    { value: 8,   suffix: '',              label: t('stat1Label') },
-    { value: 850, suffix: t('stat2Suffix'), label: t('stat2Label') },
-    { value: 99,  suffix: t('stat3Suffix'), label: t('stat3Label') },
-    { value: 20,  suffix: t('stat4Suffix'), label: t('stat4Label') },
+    { value: 5,  suffix: '',              label: t('stat1Label') },
+    { value: 15, suffix: t('stat2Suffix'), label: t('stat2Label') },
+    { value: 99, suffix: t('stat3Suffix'), label: t('stat3Label') },
+    { value: 20, suffix: t('stat4Suffix'), label: t('stat4Label') },
   ]
 
   const highwayFeatures = [
@@ -44,9 +44,10 @@ export default function ElectricHighwayPage({ params: { locale } }: { params: { 
   ]
 
   const timeline = [
-    { phase: t('phase1Name'), year: t('phase1Year'), title: t('phase1Title'), desc: t('phase1Desc'), status: 'active'    },
-    { phase: t('phase2Name'), year: t('phase2Year'), title: t('phase2Title'), desc: t('phase2Desc'), status: 'building'  },
-    { phase: t('phase3Name'), year: t('phase3Year'), title: t('phase3Title'), desc: t('phase3Desc'), status: 'planned'   },
+    { phase: t('phase1Name'), year: t('phase1Year'), title: t('phase1Title'), desc: t('phase1Desc'), status: 'active'   },
+    { phase: t('phase2Name'), year: t('phase2Year'), title: t('phase2Title'), desc: t('phase2Desc'), status: 'building' },
+    { phase: t('phase3Name'), year: t('phase3Year'), title: t('phase3Title'), desc: t('phase3Desc'), status: 'planned'  },
+    { phase: t('phase4Name'), year: t('phase4Year'), title: t('phase4Title'), desc: t('phase4Desc'), status: 'planned'  },
   ]
 
   return (
@@ -226,6 +227,9 @@ export default function ElectricHighwayPage({ params: { locale } }: { params: { 
                           )}
                           {item.status === 'building' && (
                             <span className="text-xs text-yellow-400/80">{t('statusBuilding')}</span>
+                          )}
+                          {item.status === 'planned' && (
+                            <span className="text-xs text-white/30">{t('statusPlanned')}</span>
                           )}
                         </div>
                         <h3 className="font-display font-bold text-white text-xl mb-2">{item.title}</h3>
