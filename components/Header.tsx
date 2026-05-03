@@ -28,6 +28,7 @@ export default function Header() {
     { href: `/${locale}/products`, label: t('products') },
     { href: `/${locale}/platform`, label: t('platform') },
     { href: `/${locale}/electric-highway`, label: t('electricHighway') },
+    { href: `/${locale}/projects`, label: t('projects') },
     { href: `/${locale}/about`, label: t('about') },
     { href: `/${locale}/contact`, label: t('contact') },
   ]
