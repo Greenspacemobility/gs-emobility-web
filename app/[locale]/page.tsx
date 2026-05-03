@@ -3,7 +3,8 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import {
-  ArrowRight, ChevronDown, Zap, CheckCircle2, Globe, Wrench, Cpu, Leaf
+  ArrowRight, ChevronDown, Zap, CheckCircle2, Globe, Wrench, Cpu, Leaf,
+  MapPin, Truck, Settings
 } from 'lucide-react'
 import Image from 'next/image'
 import AnimateIn from '@/components/AnimateIn'
@@ -56,8 +57,14 @@ function HeroSection() {
         </AnimateIn>
 
         <AnimateIn delay={200}>
-          <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-12">
+          <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
             {t('subtitle')}
+          </p>
+        </AnimateIn>
+
+        <AnimateIn delay={280}>
+          <p className="text-white/30 text-xs md:text-sm tracking-widest uppercase mb-10 font-medium">
+            {t('proofLine')}
           </p>
         </AnimateIn>
 
@@ -80,10 +87,9 @@ function HeroSection() {
 
 function HeroCTALink() {
   const t = useTranslations('hero')
-  const locale = useTranslations('nav')
   return (
     <Link
-      href="#solutions"
+      href="/contact"
       className="group flex items-center gap-2 bg-green-500 hover:bg-green-400 text-navy-900 font-semibold px-8 py-4 rounded-2xl transition-all duration-200 glow-green hover:scale-105 text-base"
     >
       {t('cta1')}
@@ -96,7 +102,7 @@ function HeroHighwayLink() {
   const t = useTranslations('hero')
   return (
     <Link
-      href="#highway"
+      href="/electric-highway"
       className="flex items-center gap-2 glass border border-white/10 hover:border-green-500/30 text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-200 text-base hover:bg-white/5"
     >
       <Zap className="w-4 h-4 text-green-400" />
@@ -242,6 +248,75 @@ function HighwayCTALink() {
   )
 }
 
+function ModelsSection() {
+  const t = useTranslations('models')
+  return (
+    <section className="section-padding relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-navy-900/0 via-navy-800/40 to-navy-900/0" />
+      <div className="container-wide relative z-10">
+        <div className="text-center mb-16">
+          <AnimateIn><Badge className="mb-6">{t('badge')}</Badge></AnimateIn>
+          <AnimateIn delay={100}>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4 max-w-3xl mx-auto leading-tight">
+              {t('title')}
+            </h2>
+          </AnimateIn>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-8">
+          {/* Europe */}
+          <AnimateIn direction="left" delay={100}>
+            <div className="glass rounded-3xl p-8 md:p-10 h-full hover:border-blue-500/25 transition-all group">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-xl bg-blue-500/15 flex items-center justify-center group-hover:bg-blue-500/25 transition-colors">
+                  <Globe className="w-5 h-5 text-blue-400" />
+                </div>
+                <div>
+                  <span className="text-blue-400 text-xs font-bold uppercase tracking-widest">{t('europeTag')}</span>
+                  <h3 className="font-display font-bold text-white text-xl">{t('europeTitle')}</h3>
+                </div>
+              </div>
+              <p className="text-white/50 leading-relaxed mb-8">{t('europeDesc')}</p>
+              <ul className="space-y-3">
+                {[t('europePoint1'), t('europePoint2'), t('europePoint3')].map((point, i) => (
+                  <li key={i} className="flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0" />
+                    <span className="text-white/70 text-sm">{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </AnimateIn>
+
+          {/* Americas */}
+          <AnimateIn direction="right" delay={200}>
+            <div className="glass rounded-3xl p-8 md:p-10 h-full border-green-500/20 hover:border-green-500/40 transition-all group glow-green-sm">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-xl bg-green-500/15 flex items-center justify-center group-hover:bg-green-500/25 transition-colors">
+                  <Truck className="w-5 h-5 text-green-400" />
+                </div>
+                <div>
+                  <span className="text-green-400 text-xs font-bold uppercase tracking-widest">{t('americasTag')}</span>
+                  <h3 className="font-display font-bold text-white text-xl">{t('americasTitle')}</h3>
+                </div>
+              </div>
+              <p className="text-white/50 leading-relaxed mb-8">{t('americasDesc')}</p>
+              <ul className="space-y-3">
+                {[t('americasPoint1'), t('americasPoint2'), t('americasPoint3')].map((point, i) => (
+                  <li key={i} className="flex items-center gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 shrink-0" />
+                    <span className="text-white/70 text-sm">{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </AnimateIn>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function WhyUsSection() {
   const t = useTranslations('whyUs')
   const reasons = [
@@ -362,7 +437,7 @@ function CTASecondaryButton() {
   const t = useTranslations('cta')
   return (
     <Link
-      href="/about"
+      href="/electric-highway"
       className="flex items-center justify-center gap-2 glass border border-white/10 hover:border-white/20 text-white font-semibold px-8 py-4 rounded-2xl transition-all duration-200 text-base"
     >
       {t('buttonAlt')}
@@ -376,6 +451,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
     <>
       <HeroSection />
       <StatsSection />
+      <ModelsSection />
       <SolutionsSection />
       <HighwayTeaser />
       <WhyUsSection />
