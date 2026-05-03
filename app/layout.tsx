@@ -3,7 +3,7 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Greenspace E-Mobility',
-  description: 'La referencia en electromovilidad de la región.',
+  description: 'Leading cross-border electric infrastructure across the Americas.',
   icons: {
     icon: '/favicon.png',
     apple: '/favicon.png',

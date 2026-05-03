@@ -10,7 +10,7 @@ export default function Footer() {
   const locale = useLocale()
 
   return (
-    <footer className="bg-navy-900 border-t border-white/5">
+    <footer className="bg-navy-900 border-t border-green-500/10">
       <div className="container-wide py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}

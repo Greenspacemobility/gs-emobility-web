@@ -266,13 +266,13 @@ function ModelsSection() {
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Europe */}
           <AnimateIn direction="left" delay={100}>
-            <div className="glass rounded-3xl p-8 md:p-10 h-full hover:border-blue-500/25 transition-all group">
+            <div className="glass rounded-3xl p-8 md:p-10 h-full hover:border-emerald-500/25 transition-all group">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-blue-500/15 flex items-center justify-center group-hover:bg-blue-500/25 transition-colors">
-                  <Globe className="w-5 h-5 text-blue-400" />
+                <div className="w-10 h-10 rounded-xl bg-emerald-500/15 flex items-center justify-center group-hover:bg-emerald-500/25 transition-colors">
+                  <Globe className="w-5 h-5 text-emerald-400" />
                 </div>
                 <div>
-                  <span className="text-blue-400 text-xs font-bold uppercase tracking-widest">{t('europeTag')}</span>
+                  <span className="text-emerald-400 text-xs font-bold uppercase tracking-widest">{t('europeTag')}</span>
                   <h3 className="font-display font-bold text-white text-xl">{t('europeTitle')}</h3>
                 </div>
               </div>
@@ -280,7 +280,7 @@ function ModelsSection() {
               <ul className="space-y-3">
                 {[t('europePoint1'), t('europePoint2'), t('europePoint3')].map((point, i) => (
                   <li key={i} className="flex items-center gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
                     <span className="text-white/70 text-sm">{point}</span>
                   </li>
                 ))}

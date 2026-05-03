@@ -36,5 +36,9 @@ export default function CountUp({ end, suffix = '', duration = 2000 }: Props) {
     return () => observer.disconnect()
   }, [end, duration])
 
-  return <span ref={ref}>{count.toLocaleString()}{suffix}</span>
+  return (
+    <span ref={ref} style={{ fontVariantNumeric: 'tabular-nums', letterSpacing: '-0.03em' }}>
+      {count.toLocaleString()}{suffix}
+    </span>
+  )
 }

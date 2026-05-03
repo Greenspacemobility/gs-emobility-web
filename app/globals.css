@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap');
+/* Montserrat — brand font matching gs-emobility.com */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap');
 
 :root {
-  --font-inter: 'Inter', system-ui, sans-serif;
-  --font-syne: 'Syne', system-ui, sans-serif;
+  --font-montserrat: 'Montserrat', system-ui, sans-serif;
 }
 
 * {
@@ -18,46 +18,91 @@ html {
 }
 
 body {
-  font-family: var(--font-inter);
-  background-color: #0A1628;
+  font-family: var(--font-montserrat);
+  background-color: #060E09;
   color: #ffffff;
   overflow-x: hidden;
+  /* Subtle green tint to base text rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Typography treatments ──────────────────────────────────────────────── */
+
+/* Display headings — tight tracking gives the "tech" precision feel */
+.font-display {
+  font-family: var(--font-montserrat);
+  letter-spacing: -0.025em;
+}
+
+/* h1/h2 tighten even further at large sizes */
+h1.font-display,
+.text-5xl.font-display,
+.text-6xl.font-display,
+.text-7xl.font-display {
+  letter-spacing: -0.035em;
+}
+
+/* Stat / number figures — tabular numerals for alignment */
+.font-display.tabular {
+  font-variant-numeric: tabular-nums;
 }
 
 @layer utilities {
+  /* ─── Gradients ──────────────────────────────────────── */
+
+  /* Primary text gradient — electric green to vivid lime */
   .text-gradient {
-    background: linear-gradient(135deg, #00C853 0%, #69f0ae 100%);
+    background: linear-gradient(135deg, #00C853 0%, #00E87A 60%, #69F0AE 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
+  /* Secondary — forest mid-green to teal (used for Phase 2/3 map routes) */
   .text-gradient-blue {
-    background: linear-gradient(135deg, #5a79b7 0%, #9fb1d5 100%);
+    background: linear-gradient(135deg, #4A9A70 0%, #7ABFA0 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
+  /* ─── Glass cards (forest-dark palette) ──────────────── */
 
   .glass {
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(255, 255, 255, 0.035);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.07);
   }
 
   .glass-dark {
-    background: rgba(10, 22, 40, 0.8);
+    background: rgba(6, 14, 9, 0.85);
     backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.06);
   }
 
+  /* Glass with subtle forest-green tint */
+  .glass-forest {
+    background: rgba(13, 79, 61, 0.12);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 200, 83, 0.12);
+  }
+
+  /* ─── Glow effects ────────────────────────────────────── */
+
   .glow-green {
-    box-shadow: 0 0 40px rgba(0, 200, 83, 0.2);
+    box-shadow: 0 0 40px rgba(0, 200, 83, 0.25), 0 0 80px rgba(0, 200, 83, 0.08);
   }
 
   .glow-green-sm {
-    box-shadow: 0 0 20px rgba(0, 200, 83, 0.15);
+    box-shadow: 0 0 20px rgba(0, 200, 83, 0.18);
   }
+
+  .glow-forest {
+    box-shadow: 0 0 40px rgba(13, 79, 61, 0.35);
+  }
+
+  /* ─── Layout ──────────────────────────────────────────── */
 
   .section-padding {
     @apply py-20 md:py-32;
@@ -66,30 +111,48 @@ body {
   .container-wide {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
+
+  /* ─── Typography utilities ────────────────────────────── */
+
+  /* Tech label — uppercase + wide tracking (badges, overlines) */
+  .label-tech {
+    font-family: var(--font-montserrat);
+    font-weight: 600;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* Headline tight — for large hero text */
+  .heading-tight {
+    letter-spacing: -0.035em;
+    font-weight: 800;
+    line-height: 1.05;
+  }
 }
 
-/* Scrollbar */
+/* ─── Scrollbar ──────────────────────────────────────────────────────────── */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #0A1628;
+  background: #060E09;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e3870;
+  background: #1A3D2E;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #00C853;
 }
 
-/* Selection */
+/* ─── Selection ──────────────────────────────────────────────────────────── */
 ::selection {
-  background: rgba(0, 200, 83, 0.3);
+  background: rgba(0, 200, 83, 0.28);
   color: white;
 }
 
-/* Modal slide-up animation */
+/* ─── Animations ─────────────────────────────────────────────────────────── */
 @keyframes slide-up {
   from { opacity: 0; transform: translateY(40px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -98,18 +161,26 @@ body {
   animation: slide-up 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-/* Leaflet highway map tooltips */
+/* ─── Leaflet highway map ────────────────────────────────────────────────── */
 .highway-map-tooltip {
-  background: rgba(6, 16, 30, 0.95) !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  background: rgba(4, 12, 6, 0.96) !important;
+  border: 1px solid rgba(0, 200, 83, 0.18) !important;
   border-radius: 7px !important;
   padding: 4px 9px !important;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.6) !important;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.7) !important;
   white-space: nowrap !important;
+  font-family: var(--font-montserrat) !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
 }
-/* Hide the default leaflet tooltip arrow */
 .highway-map-tooltip::before {
   display: none !important;
 }
-/* Hide leaflet attribution */
 .leaflet-control-attribution { display: none !important; }
+
+/* ─── Focus rings (accessibility) ───────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid rgba(0, 200, 83, 0.6);
+  outline-offset: 2px;
+}
