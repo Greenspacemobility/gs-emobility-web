@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
-import { MapPin, Users, Building2, Calendar, PlayCircle, ArrowRight } from 'lucide-react'
+import { MapPin, Users, Building2, Calendar, Star, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import AnimateIn from '@/components/AnimateIn'
 import Badge from '@/components/Badge'
@@ -16,14 +16,31 @@ export default function ProjectsPage({ params: { locale } }: { params: { locale:
   setRequestLocale(locale)
   const t = useTranslations('projects')
 
-  const p1Stats = [
-    { icon: MapPin,    val: t('p1Stat1Val'), label: t('p1Stat1Label') },
-    { icon: Users,     val: t('p1Stat2Val'), label: t('p1Stat2Label') },
-    { icon: Building2, val: t('p1Stat3Val'), label: t('p1Stat3Label') },
-    { icon: Calendar,  val: t('p1Stat4Val'), label: t('p1Stat4Label') },
+  const projects = [
+    {
+      key: 'p1',
+      video: '/videos/dhl-panama.mp4',
+      poster: '/videos/dhl-panama-poster.jpg',
+      stats: [
+        { icon: MapPin,    val: t('p1Stat1Val'), label: t('p1Stat1Label') },
+        { icon: Users,     val: t('p1Stat2Val'), label: t('p1Stat2Label') },
+        { icon: Building2, val: t('p1Stat3Val'), label: t('p1Stat3Label') },
+        { icon: Calendar,  val: t('p1Stat4Val'), label: t('p1Stat4Label') },
+      ],
+    },
+    {
+      key: 'p2',
+      video: '/videos/banco-general-panama.mp4',
+      poster: '/videos/banco-general-panama-poster.jpg',
+      stats: [
+        { icon: MapPin,    val: t('p2Stat1Val'), label: t('p2Stat1Label') },
+        { icon: Star,      val: t('p2Stat2Val'), label: t('p2Stat2Label') },
+        { icon: Building2, val: t('p2Stat3Val'), label: t('p2Stat3Label') },
+        { icon: Calendar,  val: t('p2Stat4Val'), label: t('p2Stat4Label') },
+      ],
+    },
   ]
 
-  /* Placeholder slots for future projects */
   const upcoming = [
     { country: 'Mexico',  flag: '🇲🇽', sector: 'Electric Highway' },
     { country: 'USA',     flag: '🇺🇸', sector: 'Fleet Electrification' },
@@ -61,82 +78,90 @@ export default function ProjectsPage({ params: { locale } }: { params: { locale:
         </div>
       </section>
 
-      {/* ── Panama × DHL ─────────────────────────────────────────────────── */}
+      {/* ── Panama projects ───────────────────────────────────────────────── */}
       <section className="section-padding">
         <div className="container-wide">
 
-          {/* Country divider */}
+          {/* Country header */}
           <AnimateIn>
-            <div className="flex items-center gap-4 mb-10">
+            <div className="flex items-center gap-4 mb-12">
               <span className="text-2xl">🇵🇦</span>
-              <span className="font-display font-bold text-white text-xl">{t('p1Country')}</span>
+              <span className="font-display font-bold text-white text-xl">Panama</span>
               <div className="flex-1 h-px bg-white/8" />
-              <span className="text-white/25 text-xs uppercase tracking-widest">2024</span>
+              <span className="text-xs font-semibold text-green-400 bg-green-500/10 px-3 py-1 rounded-full">
+                2 Projects
+              </span>
             </div>
           </AnimateIn>
 
-          {/* Main project card */}
-          <AnimateIn delay={80}>
-            <div className="glass rounded-3xl overflow-hidden border border-white/[0.08] hover:border-green-500/20 transition-colors">
-              <div className="grid lg:grid-cols-[5fr_7fr] gap-0">
+          {/* Project cards */}
+          <div className="space-y-8">
+            {projects.map(({ key, video, poster, stats }, idx) => (
+              <AnimateIn key={key} delay={idx * 120}>
+                <div className="glass rounded-3xl overflow-hidden border border-white/[0.08] hover:border-green-500/20 transition-colors">
+                  <div className="grid lg:grid-cols-[5fr_7fr] gap-0">
 
-                {/* Video column */}
-                <div className="relative bg-navy-900/60 flex items-center justify-center p-6 lg:p-8 min-h-[480px]">
-                  <VideoPlayer
-                    src="/videos/dhl-panama.mp4"
-                    poster="/videos/dhl-panama-poster.jpg"
-                    label={t('videoLabel')}
-                  />
-                </div>
-
-                {/* Info column */}
-                <div className="p-8 lg:p-12 flex flex-col justify-between">
-                  <div>
-                    {/* Partner badge */}
-                    <div className="flex items-center gap-3 mb-6">
-                      <span className="text-xs font-semibold text-green-400 bg-green-500/10 px-3 py-1.5 rounded-full tracking-wide">
-                        {t('p1Badge')}
-                      </span>
+                    {/* Video */}
+                    <div className="relative bg-navy-900/60 flex items-center justify-center p-6 lg:p-8 min-h-[480px]">
+                      <VideoPlayer
+                        src={video}
+                        poster={poster}
+                        label={t('videoLabel')}
+                      />
                     </div>
 
-                    {/* Title */}
-                    <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-5 leading-tight">
-                      {t('p1Title')}
-                    </h2>
-
-                    {/* Description */}
-                    <p className="text-white/55 leading-relaxed text-[0.95rem] mb-8">
-                      {t('p1Desc')}
-                    </p>
-
-                    {/* Stats row */}
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
-                      {p1Stats.map(({ icon: Icon, val, label }, i) => (
-                        <div key={i} className="glass-forest rounded-xl p-4 text-center">
-                          <Icon className="w-4 h-4 text-green-400 mx-auto mb-2 opacity-70" />
-                          <div className="font-display font-bold text-white text-sm">{val}</div>
-                          <div className="text-white/35 text-[10px] mt-0.5">{label}</div>
+                    {/* Info */}
+                    <div className="p-8 lg:p-12 flex flex-col justify-between">
+                      <div>
+                        {/* Badge */}
+                        <div className="flex items-center gap-3 mb-6">
+                          <span className="text-xs font-semibold text-green-400 bg-green-500/10 px-3 py-1.5 rounded-full tracking-wide">
+                            {t(`${key}Badge` as any)}
+                          </span>
                         </div>
-                      ))}
-                    </div>
-                  </div>
 
-                  {/* DHL partner branding strip */}
-                  <div className="flex items-center gap-3 pt-6 border-t border-white/[0.07]">
-                    <span className="text-white/25 text-xs uppercase tracking-widest">Partner</span>
-                    <div className="glass rounded-lg px-4 py-2">
-                      <span className="font-display font-bold text-white/80 text-sm tracking-wider">DHL</span>
-                      <span className="text-white/30 text-xs ml-2">Panama</span>
+                        {/* Title */}
+                        <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-5 leading-tight">
+                          {t(`${key}Title` as any)}
+                        </h2>
+
+                        {/* Description */}
+                        <p className="text-white/55 leading-relaxed text-[0.95rem] mb-8">
+                          {t(`${key}Desc` as any)}
+                        </p>
+
+                        {/* Stats */}
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+                          {stats.map(({ icon: Icon, val, label }, i) => (
+                            <div key={i} className="glass-forest rounded-xl p-4 text-center">
+                              <Icon className="w-4 h-4 text-green-400 mx-auto mb-2 opacity-70" />
+                              <div className="font-display font-bold text-white text-sm">{val}</div>
+                              <div className="text-white/35 text-[10px] mt-0.5 leading-snug">{label}</div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Partner strip */}
+                      <div className="flex items-center gap-3 pt-6 border-t border-white/[0.07]">
+                        <span className="text-white/25 text-xs uppercase tracking-widest">Partner</span>
+                        <div className="glass rounded-lg px-4 py-2">
+                          <span className="font-display font-bold text-white/80 text-sm tracking-wider">
+                            {t(`${key}Partner` as any)}
+                          </span>
+                          <span className="text-white/30 text-xs ml-2">Panama</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </AnimateIn>
+              </AnimateIn>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* ── Coming soon cards ────────────────────────────────────────────── */}
+      {/* ── Coming soon ───────────────────────────────────────────────────── */}
       <section className="pb-24">
         <div className="container-wide">
           <AnimateIn>
@@ -159,7 +184,7 @@ export default function ProjectsPage({ params: { locale } }: { params: { locale:
             ))}
           </div>
 
-          {/* Coming soon text block */}
+          {/* CTA block */}
           <AnimateIn>
             <div className="glass rounded-3xl p-10 md:p-14 text-center max-w-2xl mx-auto">
               <h3 className="font-display text-2xl md:text-3xl font-bold text-white mb-4">
