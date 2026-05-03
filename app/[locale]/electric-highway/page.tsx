@@ -48,6 +48,7 @@ export default function ElectricHighwayPage({ params: { locale } }: { params: { 
     { phase: t('phase2Name'), year: t('phase2Year'), title: t('phase2Title'), desc: t('phase2Desc'), status: 'building' },
     { phase: t('phase3Name'), year: t('phase3Year'), title: t('phase3Title'), desc: t('phase3Desc'), status: 'planned'  },
     { phase: t('phase4Name'), year: t('phase4Year'), title: t('phase4Title'), desc: t('phase4Desc'), status: 'planned'  },
+    { phase: t('phase5Name'), year: t('phase5Year'), title: t('phase5Title'), desc: t('phase5Desc'), status: 'future'   },
   ]
 
   return (
@@ -242,15 +243,20 @@ export default function ElectricHighwayPage({ params: { locale } }: { params: { 
                       <div className={`w-12 h-12 rounded-full flex items-center justify-center z-10 ${
                         item.status === 'active'   ? 'bg-green-500 glow-green' :
                         item.status === 'building' ? 'bg-navy-600 border-2 border-green-500/50' :
+                        item.status === 'future'   ? 'bg-navy-600 border-2 border-sky-400/50' :
                         'glass border border-white/10'
                       }`}>
-                        <Zap className={`w-5 h-5 ${item.status === 'active' ? 'text-navy-900' : 'text-white/40'}`} />
+                        <Zap className={`w-5 h-5 ${item.status === 'active' ? 'text-navy-900' : item.status === 'future' ? 'text-sky-400/60' : 'text-white/40'}`} />
                       </div>
                     </div>
                     <div className="flex-1">
                       <div className="glass rounded-2xl p-6 hover:border-green-500/20 transition-colors">
                         <div className="flex items-center gap-3 mb-3">
-                          <span className="text-xs font-semibold text-green-400 bg-green-500/10 px-3 py-1 rounded-full">
+                          <span className={`text-xs font-semibold px-3 py-1 rounded-full ${
+                            item.status === 'future'
+                              ? 'text-sky-400 bg-sky-400/10'
+                              : 'text-green-400 bg-green-500/10'
+                          }`}>
                             {item.phase} · {item.year}
                           </span>
                           {item.status === 'active' && (
@@ -264,6 +270,9 @@ export default function ElectricHighwayPage({ params: { locale } }: { params: { 
                           )}
                           {item.status === 'planned' && (
                             <span className="text-xs text-white/30">{t('statusPlanned')}</span>
+                          )}
+                          {item.status === 'future' && (
+                            <span className="text-xs text-sky-400/60">{t('statusFuture')}</span>
                           )}
                         </div>
                         <h3 className="font-display font-bold text-white text-xl mb-2">{item.title}</h3>
