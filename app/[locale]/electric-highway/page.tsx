@@ -91,7 +91,41 @@ export default function ElectricHighwayPage({ params: { locale } }: { params: { 
         </div>
       </section>
 
-      {/* Network stats */}
+      {/* Corridor context strip */}
+      <section className="py-14 border-b border-white/[0.06]">
+        <div className="container-wide">
+          <AnimateIn>
+            <p className="text-center text-white/25 text-[10px] uppercase tracking-[0.2em] mb-10">
+              {t('corridorEyebrow')}
+            </p>
+          </AnimateIn>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            {[
+              { val: t('corridorStat1Val'), label: t('corridorStat1Label') },
+              { val: t('corridorStat2Val'), label: t('corridorStat2Label') },
+              { val: t('corridorStat3Val'), label: t('corridorStat3Label') },
+              { val: t('corridorStat4Val'), label: t('corridorStat4Label') },
+            ].map((s, i) => (
+              <AnimateIn key={i} delay={i * 80}>
+                <div className="text-center">
+                  <div className="font-display text-4xl md:text-5xl font-bold text-gradient mb-2"
+                       style={{ letterSpacing: '-0.03em' }}>
+                    {s.val}
+                  </div>
+                  <div className="text-white/40 text-xs leading-snug max-w-[140px] mx-auto">{s.label}</div>
+                </div>
+              </AnimateIn>
+            ))}
+          </div>
+          <AnimateIn delay={300}>
+            <p className="text-center text-white/20 text-[10px] max-w-xl mx-auto leading-relaxed">
+              {t('corridorNote')}
+            </p>
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* Project stats */}
       <section className="py-16">
         <div className="container-wide">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
