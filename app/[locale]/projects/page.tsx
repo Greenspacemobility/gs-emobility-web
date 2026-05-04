@@ -256,46 +256,61 @@ export default function ProjectsPage({ params: { locale } }: { params: { locale:
               <div className="absolute inset-0 bg-gradient-to-br from-green-500/[0.05] to-transparent pointer-events-none" />
               <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-green-500/5 rounded-full blur-3xl pointer-events-none translate-x-1/2 -translate-y-1/2" />
 
-              <div className="relative z-10 p-8 lg:p-14">
-                <div className="flex flex-wrap items-center gap-3 mb-6">
-                  <span className="text-xs font-semibold text-green-400 bg-green-500/10 px-3 py-1.5 rounded-full tracking-wide">
-                    {t('ehBadge')}
-                  </span>
-                  <span className="text-xs font-semibold text-amber-400 bg-amber-500/10 px-3 py-1.5 rounded-full tracking-wide">
-                    {t('ehStatus')}
-                  </span>
+              <div className="relative z-10 grid lg:grid-cols-[3fr_2fr]">
+                {/* Content */}
+                <div className="p-8 lg:p-14">
+                  <div className="flex flex-wrap items-center gap-3 mb-6">
+                    <span className="text-xs font-semibold text-green-400 bg-green-500/10 px-3 py-1.5 rounded-full tracking-wide">
+                      {t('ehBadge')}
+                    </span>
+                    <span className="text-xs font-semibold text-amber-400 bg-amber-500/10 px-3 py-1.5 rounded-full tracking-wide">
+                      {t('ehStatus')}
+                    </span>
+                  </div>
+
+                  <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-5 leading-tight max-w-3xl">
+                    {t('ehTitle')}
+                  </h2>
+                  <p className="text-white/60 leading-relaxed text-base mb-10 max-w-2xl">
+                    {t('ehDesc')}
+                  </p>
+
+                  {/* Stats */}
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10 max-w-2xl">
+                    {[
+                      { val: t('ehStat1Val'), label: t('ehStat1Label'), icon: Globe },
+                      { val: t('ehStat2Val'), label: t('ehStat2Label'), icon: Zap },
+                      { val: t('ehStat3Val'), label: t('ehStat3Label'), icon: MapPin },
+                      { val: t('ehStat4Val'), label: t('ehStat4Label'), icon: Calendar },
+                    ].map(({ val, label, icon: Icon }, i) => (
+                      <div key={i} className="glass-forest rounded-xl p-4 text-center">
+                        <Icon className="w-4 h-4 text-green-400 mx-auto mb-2 opacity-70" />
+                        <div className="font-display font-bold text-white text-lg">{val}</div>
+                        <div className="text-white/35 text-[10px] mt-0.5 leading-snug">{label}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <Link
+                    href={`/${locale}/electric-highway`}
+                    className="group inline-flex items-center gap-2 bg-green-500 hover:bg-green-400 text-navy-900 font-semibold px-7 py-3.5 rounded-2xl transition-all glow-green text-sm"
+                  >
+                    {t('ehCta')}
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
                 </div>
 
-                <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-5 leading-tight max-w-3xl">
-                  {t('ehTitle')}
-                </h2>
-                <p className="text-white/60 leading-relaxed text-base mb-10 max-w-2xl">
-                  {t('ehDesc')}
-                </p>
-
-                {/* Stats */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10 max-w-2xl">
-                  {[
-                    { val: t('ehStat1Val'), label: t('ehStat1Label'), icon: Globe },
-                    { val: t('ehStat2Val'), label: t('ehStat2Label'), icon: Zap },
-                    { val: t('ehStat3Val'), label: t('ehStat3Label'), icon: MapPin },
-                    { val: t('ehStat4Val'), label: t('ehStat4Label'), icon: Calendar },
-                  ].map(({ val, label, icon: Icon }, i) => (
-                    <div key={i} className="glass-forest rounded-xl p-4 text-center">
-                      <Icon className="w-4 h-4 text-green-400 mx-auto mb-2 opacity-70" />
-                      <div className="font-display font-bold text-white text-lg">{val}</div>
-                      <div className="text-white/35 text-[10px] mt-0.5 leading-snug">{label}</div>
-                    </div>
-                  ))}
+                {/* Image */}
+                <div className="hidden lg:block relative overflow-hidden min-h-[360px]">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/images/projects/electric-highway-corridor.webp"
+                    alt="US-Mexico Electric Freight Corridor"
+                    className="absolute inset-0 w-full h-full object-cover opacity-60"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-navy-900/70 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy-900/40 to-transparent" />
                 </div>
-
-                <Link
-                  href={`/${locale}/electric-highway`}
-                  className="group inline-flex items-center gap-2 bg-green-500 hover:bg-green-400 text-navy-900 font-semibold px-7 py-3.5 rounded-2xl transition-all glow-green text-sm"
-                >
-                  {t('ehCta')}
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
               </div>
             </div>
           </AnimateIn>
@@ -303,56 +318,77 @@ export default function ProjectsPage({ params: { locale } }: { params: { locale:
           {/* Windrose × Allogic card */}
           <AnimateIn delay={160}>
             <div className="glass rounded-3xl overflow-hidden border border-white/[0.08] hover:border-green-500/20 transition-colors">
-              <div className="p-8 lg:p-12">
-                <div className="flex flex-wrap items-center gap-3 mb-6">
-                  <span className="text-xs font-semibold text-green-400 bg-green-500/10 px-3 py-1.5 rounded-full tracking-wide">
-                    {t('wrBadge')}
-                  </span>
-                </div>
-                <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
-                  {t('wrTitle')}
-                </h2>
-                <p className="text-white/55 leading-relaxed text-[0.95rem] mb-8 max-w-2xl">
-                  {t('wrDesc')}
-                </p>
+              <div className="grid lg:grid-cols-[5fr_4fr] gap-0">
 
-                {/* Stats */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8 max-w-xl">
-                  {[
-                    { val: t('wrStat1Val'), label: t('wrStat1Label'), icon: MapPin },
-                    { val: t('wrStat2Val'), label: t('wrStat2Label'), icon: Truck },
-                    { val: t('wrStat3Val'), label: t('wrStat3Label'), icon: Zap },
-                    { val: t('wrStat4Val'), label: t('wrStat4Label'), icon: Star },
-                  ].map(({ val, label, icon: Icon }, i) => (
-                    <div key={i} className="glass-forest rounded-xl p-4 text-center">
-                      <Icon className="w-4 h-4 text-green-400 mx-auto mb-2 opacity-70" />
-                      <div className="font-display font-bold text-white text-sm">{val}</div>
-                      <div className="text-white/35 text-[10px] mt-0.5 leading-snug">{label}</div>
-                    </div>
-                  ))}
-                </div>
+                {/* Content */}
+                <div className="p-8 lg:p-12">
+                  <div className="flex flex-wrap items-center gap-3 mb-6">
+                    <span className="text-xs font-semibold text-green-400 bg-green-500/10 px-3 py-1.5 rounded-full tracking-wide">
+                      {t('wrBadge')}
+                    </span>
+                  </div>
+                  <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
+                    {t('wrTitle')}
+                  </h2>
+                  <p className="text-white/55 leading-relaxed text-[0.95rem] mb-8 max-w-2xl">
+                    {t('wrDesc')}
+                  </p>
 
-                <div className="flex flex-wrap items-center gap-6 pt-6 border-t border-white/[0.07]">
-                  {/* Press citation */}
-                  <a
-                    href="https://www.reuters.com/business/autos-transportation/chinese-electric-truck-maker-windrose-makes-first-us-delivery-2026-04-08/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-white/50 hover:text-green-400 text-xs font-semibold transition-colors uppercase tracking-wide"
-                  >
-                    <ExternalLink className="w-3.5 h-3.5 shrink-0" />
-                    {t('wrPressCite')}
-                  </a>
-                  {/* Partner strip */}
-                  <div className="flex items-center gap-3">
-                    <span className="text-white/25 text-xs uppercase tracking-widest">Partners</span>
-                    <div className="glass rounded-lg px-4 py-2">
-                      <span className="font-display font-bold text-white/80 text-sm tracking-wider">
-                        {t('wrPartners')}
-                      </span>
+                  {/* Stats */}
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8 max-w-xl">
+                    {[
+                      { val: t('wrStat1Val'), label: t('wrStat1Label'), icon: MapPin },
+                      { val: t('wrStat2Val'), label: t('wrStat2Label'), icon: Truck },
+                      { val: t('wrStat3Val'), label: t('wrStat3Label'), icon: Zap },
+                      { val: t('wrStat4Val'), label: t('wrStat4Label'), icon: Star },
+                    ].map(({ val, label, icon: Icon }, i) => (
+                      <div key={i} className="glass-forest rounded-xl p-4 text-center">
+                        <Icon className="w-4 h-4 text-green-400 mx-auto mb-2 opacity-70" />
+                        <div className="font-display font-bold text-white text-sm">{val}</div>
+                        <div className="text-white/35 text-[10px] mt-0.5 leading-snug">{label}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="flex flex-wrap items-center gap-6 pt-6 border-t border-white/[0.07]">
+                    {/* Press citation */}
+                    <a
+                      href="https://www.reuters.com/business/autos-transportation/chinese-electric-truck-maker-windrose-makes-first-us-delivery-2026-04-08/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-white/50 hover:text-green-400 text-xs font-semibold transition-colors uppercase tracking-wide"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5 shrink-0" />
+                      {t('wrPressCite')}
+                    </a>
+                    {/* Partner strip */}
+                    <div className="flex items-center gap-3">
+                      <span className="text-white/25 text-xs uppercase tracking-widest">Partners</span>
+                      <div className="glass rounded-lg px-4 py-2">
+                        <span className="font-display font-bold text-white/80 text-sm tracking-wider">
+                          {t('wrPartners')}
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
+
+                {/* Photo */}
+                <div className="hidden lg:block relative overflow-hidden min-h-[320px]">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/images/projects/windrose-greenspace-ruta-verde.jpg"
+                    alt="Greenspace E-mobility team with Ruta Verde electric fleet"
+                    className="absolute inset-0 w-full h-full object-cover object-center"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-navy-900/60 via-transparent to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <span className="text-white/50 text-[10px] uppercase tracking-widest">
+                      Ruta Verde · Mexico
+                    </span>
+                  </div>
+                </div>
+
               </div>
             </div>
           </AnimateIn>
@@ -372,7 +408,25 @@ export default function ProjectsPage({ params: { locale } }: { params: { locale:
 
           {/* Expo E-Movilidad Panama — large card with timeline */}
           <AnimateIn delay={80}>
-            <div className="glass rounded-3xl border border-white/[0.08] hover:border-green-500/20 transition-colors p-8 lg:p-12 mb-8">
+            <div className="glass rounded-3xl border border-white/[0.08] hover:border-green-500/20 transition-colors overflow-hidden mb-8">
+
+              {/* Hero image banner */}
+              <div className="relative h-52 overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/projects/expo-emovilidad-panama-convention-center.jpg"
+                  alt="Expo E-Movilidad at Panama Convention Center"
+                  className="w-full h-full object-cover object-center opacity-75"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/40 to-transparent" />
+                <div className="absolute bottom-4 left-8">
+                  <span className="text-white/40 text-[10px] uppercase tracking-widest">
+                    Panama Convention Center · Panama City
+                  </span>
+                </div>
+              </div>
+
+              <div className="p-8 lg:p-12">
               <div className="mb-8">
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-3 leading-tight">
                   {t('expoTitle')}
@@ -424,7 +478,8 @@ export default function ProjectsPage({ params: { locale } }: { params: { locale:
                 {t('expoCta')}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
-            </div>
+              </div>{/* end p-8 lg:p-12 */}
+            </div>{/* end glass card */}
           </AnimateIn>
 
           {/* World EV Forum + CABEI — two side-by-side cards */}
