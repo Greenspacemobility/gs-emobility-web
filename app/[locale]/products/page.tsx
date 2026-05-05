@@ -2,6 +2,7 @@ import { useTranslations } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { Zap, ArrowRight, CheckCircle2, Home, Building2, Car, Sun, Battery, BatteryCharging, Monitor } from 'lucide-react'
 import AnimateIn from '@/components/AnimateIn'
 import Badge from '@/components/Badge'
@@ -70,7 +71,9 @@ export default function ProductsPage({ params: { locale } }: { params: { locale:
     <>
       {/* Hero */}
       <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-navy-900 to-navy-900/80" />
+        <Image src="/images/service-chargers.jpg" alt="EV Charging Infrastructure" fill priority className="object-cover object-center" quality={80} />
+        <div className="absolute inset-0 bg-navy-900/72" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-900/60 via-transparent to-navy-900/80" />
         <div className="absolute top-0 left-1/3 w-96 h-96 bg-green-500/5 rounded-full blur-3xl" />
         <div className="container-wide relative z-10 text-center">
           <AnimateIn><Badge className="mb-6">{t('badge')}</Badge></AnimateIn>

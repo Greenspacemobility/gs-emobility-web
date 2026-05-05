@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { Mail, MapPin, Clock, Zap, MessageSquare } from 'lucide-react'
 import AnimateIn from '@/components/AnimateIn'
 import Badge from '@/components/Badge'
@@ -69,7 +70,9 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
     <>
       {/* Hero */}
       <section className="relative pt-36 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-hero" />
+        <Image src="/images/expo-panama.jpg" alt="Greenspace E-mobility at Expo Panama" fill priority className="object-cover object-center" quality={80} />
+        <div className="absolute inset-0 bg-navy-900/72" />
+        <div className="absolute inset-0 bg-gradient-hero opacity-70" />
         <div className="absolute top-1/3 left-1/4 w-80 h-80 bg-green-500/8 rounded-full blur-3xl" />
         <div className="container-wide relative z-10 text-center">
           <AnimateIn><Badge className="mb-6">{t('badge')}</Badge></AnimateIn>
