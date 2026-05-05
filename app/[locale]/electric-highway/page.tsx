@@ -6,7 +6,6 @@ import {
   Zap, MapPin, Wifi, Coffee, ShoppingBag,
   ArrowRight, CheckCircle2, BatteryCharging, Route, BarChart3, Sun, Truck
 } from 'lucide-react'
-import Image from 'next/image'
 import AnimateIn from '@/components/AnimateIn'
 import Badge from '@/components/Badge'
 import CountUp from '@/components/CountUp'
@@ -56,9 +55,7 @@ export default function ElectricHighwayPage({ params: { locale } }: { params: { 
     <>
       {/* Hero */}
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden pt-20">
-        <Image src="/images/sol-fleet.jpg" alt="Electric fleet on the highway" fill priority className="object-cover object-center" quality={80} />
-        <div className="absolute inset-0 bg-navy-900/70" />
-        <div className="absolute inset-0 bg-gradient-to-br from-navy-900/70 via-navy-800/40 to-navy-900/80" />
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900" />
         <div className="absolute inset-0 opacity-[0.04]"
           style={{
             backgroundImage: `repeating-linear-gradient(90deg, rgba(0,200,83,0.5) 0px, rgba(0,200,83,0.5) 2px, transparent 2px, transparent 60px)`,

@@ -32,9 +32,7 @@ export default function PlatformPage({ params: { locale } }: { params: { locale:
     <>
       {/* Hero */}
       <section className="relative pt-32 pb-24 overflow-hidden">
-        <Image src="/images/service-platform.jpg" alt="Greenspace Platform Dashboard" fill priority className="object-cover object-center" quality={80} />
-        <div className="absolute inset-0 bg-navy-900/72" />
-        <div className="absolute inset-0 bg-gradient-hero opacity-70" />
+        <div className="absolute inset-0 bg-gradient-hero" />
         <div className="absolute top-1/4 right-0 w-[600px] h-[600px] bg-green-500/5 rounded-full blur-3xl" />
         <div className="absolute top-1/3 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl" />
 

@@ -5,7 +5,6 @@ import {
   MapPin, Users, Building2, Calendar, Star, ArrowRight,
   ExternalLink, Zap, Truck, Globe,
 } from 'lucide-react'
-import Image from 'next/image'
 import Link from 'next/link'
 import AnimateIn from '@/components/AnimateIn'
 import Badge from '@/components/Badge'
@@ -89,9 +88,7 @@ export default function ProjectsPage({ params: { locale } }: { params: { locale:
     <>
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <section className="relative min-h-[45vh] flex items-center justify-center overflow-hidden pt-20">
-        <Image src="/images/service-cooperation.jpg" alt="Greenspace E-mobility projects" fill priority className="object-cover object-center" quality={80} />
-        <div className="absolute inset-0 bg-navy-900/72" />
-        <div className="absolute inset-0 bg-gradient-to-br from-navy-900/70 via-navy-800/40 to-navy-900/80" />
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900" />
         <div
           className="absolute inset-0 opacity-[0.035]"
           style={{

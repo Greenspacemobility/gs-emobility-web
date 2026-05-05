@@ -6,7 +6,6 @@ import {
   ArrowRight, Linkedin, Target, Eye, Zap, Truck, Route, Globe, BatteryCharging,
   CheckCircle2, MapPin, Users
 } from 'lucide-react'
-import Image from 'next/image'
 import AnimateIn from '@/components/AnimateIn'
 import Badge from '@/components/Badge'
 
@@ -76,9 +75,7 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
     <>
       {/* ── HERO ─────────────────────────────────────────────────────── */}
       <section className="relative pt-36 pb-24 overflow-hidden">
-        <Image src="/images/service-cooperation.jpg" alt="Greenspace E-mobility team" fill priority className="object-cover object-center" quality={80} />
-        <div className="absolute inset-0 bg-navy-900/72" />
-        <div className="absolute inset-0 bg-gradient-hero opacity-70" />
+        <div className="absolute inset-0 bg-gradient-hero" />
         <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-green-500/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-forest-600/10 rounded-full blur-3xl" />
         {/* Vertical accent line */}
