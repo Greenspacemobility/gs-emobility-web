@@ -72,6 +72,7 @@ export default function Footer() {
                 { label: t('about'), href: `/${locale}/about` },
                 { label: t('highway'), href: `/${locale}/electric-highway` },
                 { label: t('partners'), href: `/${locale}/about#partners` },
+                { label: t('partnerSite'), href: `/${locale}/partner-site` },
                 { label: t('blog'), href: `/${locale}/blog` },
               ].map(({ label, href }) => (
                 <li key={href}>
