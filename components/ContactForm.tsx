@@ -43,7 +43,7 @@ export default function ContactForm() {
           <input
             name="name" type="text" required
             value={form.name} onChange={handleChange}
-            placeholder="Tu nombre"
+            placeholder={t('namePlaceholder')}
             className={inputClass}
           />
         </div>
@@ -75,7 +75,7 @@ export default function ContactForm() {
             value={form.type} onChange={handleChange}
             className={`${inputClass} cursor-pointer`}
           >
-            <option value="" disabled>Seleccionar...</option>
+            <option value="" disabled>{t('selectPlaceholder')}</option>
             <option value="residential">{t('type1')}</option>
             <option value="commercial">{t('type2')}</option>
             <option value="public">{t('type3')}</option>
@@ -90,7 +90,7 @@ export default function ContactForm() {
         <textarea
           name="message" required rows={5}
           value={form.message} onChange={handleChange}
-          placeholder="Describe tu proyecto o consulta..."
+          placeholder={t('messagePlaceholder')}
           className={`${inputClass} resize-none`}
         />
       </div>
@@ -101,7 +101,7 @@ export default function ContactForm() {
         className="w-full flex items-center justify-center gap-2 bg-green-500 hover:bg-green-400 disabled:opacity-70 text-navy-900 font-semibold py-4 rounded-xl transition-all duration-200 glow-green-sm hover:glow-green text-base"
       >
         {status === 'sending' ? (
-          <><Loader2 className="w-4 h-4 animate-spin" /> Enviando...</>
+          <><Loader2 className="w-4 h-4 animate-spin" /> {t('sending')}</>
         ) : (
           <><Send className="w-4 h-4" /> {t('submit')}</>
         )}

@@ -21,15 +21,15 @@
     "cta2": "Electric Highway"
   },
   "stats": {
-    "title": "Leading the energy transition",
-    "chargingPoints": "Charging Points",
-    "chargingPointsDesc": "installed across the region",
-    "partners": "Strategic Partners",
-    "partnersDesc": "manufacturers and distributors",
-    "countries": "Countries",
-    "countriesDesc": "of active operation",
-    "co2": "Tons of CO₂",
-    "co2Desc": "reduced annually"
+    "title": "Built on experience. Deployed at scale.",
+    "chargingPoints": "Years of Experience",
+    "chargingPointsDesc": "EV charging & fleet electrification",
+    "partners": "Target Green Hubs",
+    "partnersDesc": "Monterrey–Dallas corridor network",
+    "countries": "Priority Markets",
+    "countriesDesc": "Panama · Mexico · USA",
+    "co2": "kW+ Charging Power",
+    "co2Desc": "up to MCS for Class 8 trucks"
   },
   "solutions": {
     "badge": "Our Solutions",
@@ -73,7 +73,7 @@
       "detail": "High-power public charging infrastructure for national routes, urban centers and mobility hubs. Our DC chargers support multiple connectors and registration-free payment systems, maximizing accessibility for all drivers.",
       "features": [
         "Power from 50 kW to 350 kW per port",
-        "CCS2, CHAdeMO and Type 2 connectors",
+        "CCS1, CHAdeMO and SAE J1772 connectors",
         "Card, app or RFID payment",
         "Remote monitoring and 24/7 support",
         "Rugged design for outdoor heavy use",
@@ -140,9 +140,9 @@
     "feature1Title": "Monterrey — Dallas Corridor",
     "feature1Desc": "The Laredo crossing alone moves $354B in annual trade — 41% of all US-Mexico land freight, 15,000 trucks per day. Our 15-hub network along Hwy 85 MX and I-35 US places electric Class 8 trucks at the center of the continent's most critical commercial route.",
     "feature2Title": "400 kW to MCS Charging",
-    "feature2Desc": "Engineered for Class 8 trucks and high-utilization fleets. From 0 to 80% in under 20 minutes — designed for the pace of cross-border freight.",
-    "feature3Title": "100% Renewable Energy",
-    "feature3Desc": "On-site solar generation and battery storage at every Green Hub — 100% clean energy at every stop, fully independent of grid constraints.",
+    "feature2Desc": "Engineered for Class 8 trucks with CCS1 and MCS connectors. High-power charging designed for the pace of cross-border freight and dedicated EV fleet operations.",
+    "feature3Title": "Renewable Energy Integration",
+    "feature3Desc": "Each Green Hub is designed to combine grid power, on-site solar generation, and battery storage — reducing energy cost, improving uptime, and lowering grid dependency.",
     "feature4Title": "Green Hubs",
     "feature4Desc": "Every stop is a complete service hub — charging, rest, food, and real-time fleet data, purpose-built for dedicated EV truck operators on the corridor.",
     "cta": "View the project",
@@ -157,9 +157,9 @@
     "featuresTitle": "Built for the world's most demanding freight route",
     "featuresSubtitle": "15,000 trucks cross the Laredo bridge every day. Every design decision reflects the realities of that volume — power, uptime, and driver experience at scale.",
     "hub1Title": "High-Power Charging",
-    "hub1Desc": "400 kW to MCS per port — simultaneous charging for multiple Class 8 trucks, with CCS2 and Megawatt Charging System (MCS) connectors.",
-    "hub2Title": "100% Renewable Energy",
-    "hub2Desc": "On-site solar generation and battery storage at every hub — zero-emission charging with full grid independence at every stop.",
+    "hub1Desc": "400 kW to MCS per port — simultaneous charging for multiple Class 8 trucks, with CCS1 and Megawatt Charging System (MCS) connectors.",
+    "hub2Title": "Renewable Energy Integration",
+    "hub2Desc": "Each hub combines grid power with on-site solar generation and battery storage — designed to reduce energy cost, lower grid dependency, and improve operational uptime.",
     "hub3Title": "Driver Rest Facilities",
     "hub3Desc": "Lounge areas, climate control, showers, and workspace — designed for the real needs of long-haul truck drivers.",
     "hub4Title": "Food & Services",
@@ -286,7 +286,7 @@
     "boardTitle": "The team behind Greenspace",
     "boardSubtitle": "EV-relevant executive experience across charging infrastructure, cross-border logistics, energy systems, and investment discipline.",
     "board": {
-      "william": "10+ years in EV charging, energy systems, and fleet electrification. Founder of Greenspace, developing charging hubs and logistics corridors across Panama, Mexico, the U.S., and Norway. Former Senior Charger Hardware Manager at Circle K.",
+      "william": "11+ years in EV charging, energy systems, and fleet electrification. Founder of Greenspace, developing charging hubs and logistics corridors across Panama, Mexico, the U.S., and Norway. Former Senior Charger Hardware Manager at Circle K.",
       "mike": "18+ years in logistics, transportation, and supply chain transformation across North and Central America. Expert in Mexico-U.S. cross-border trade and multimodal corridor development. Former Maersk, CEMEX, FEMSA, and Uber Freight.",
       "moises": "Senior finance leader with 10+ years across Latin America, North America, and the Caribbean. Specialist in FP&A, commercial finance, P&L management, and business transformation.",
       "ruben": "Energy and digital transformation executive with 15+ years in the Norwegian energy sector. Specialist in electrification and large-scale infrastructure delivery. Former senior leader at Aker Solutions.",
@@ -545,7 +545,23 @@
     "whatsappSub": "WhatsApp Business · Immediate response",
     "coverageTitle": "Coverage",
     "coverageSub": "Regional presence",
-    "location": "Central America & Caribbean"
+    "location": "Panama · Mexico · USA",
+    "quickNoteTitle": "Fast response guaranteed",
+    "quickNoteDesc": "Our technical team reviews every request in detail to offer you the proposal best suited to your project.",
+    "faqTitle": "Frequently asked questions",
+    "faqSubtitle": "Answers to the most common questions from our clients.",
+    "faq1Q": "How long does installation take?",
+    "faq1A": "A standard residential installation is completed in 1 day. Commercial or public projects typically take 1 to 4 weeks depending on scope.",
+    "faq2Q": "Do you offer financing?",
+    "faq2A": "We work with financial partners for residential and commercial projects. Contact us to learn about the options available in your country.",
+    "faq3Q": "Which vehicles are compatible?",
+    "faq3A": "All our chargers are compatible with any electric or plug-in hybrid vehicle on the market (Tesla, BMW, Audi, Hyundai, KIA, etc.).",
+    "faq4Q": "What happens if the charger has a fault?",
+    "faq4A": "We provide 24/7 technical support and manufacturer warranty. In most cases we resolve incidents remotely or within 48 hours.",
+    "namePlaceholder": "Your name",
+    "selectPlaceholder": "Select...",
+    "messagePlaceholder": "Describe your project or inquiry...",
+    "sending": "Sending..."
   },
   "partnerSite": {
     "metaTitle": "Partner Your Site — Greenspace E-Mobility",
@@ -637,6 +653,6 @@
     "legal": "Legal",
     "privacy": "Privacy",
     "terms": "Terms",
-    "copyright": "© 2024 Greenspace E-Mobility. All rights reserved."
+    "copyright": "© 2025 Greenspace E-Mobility. All rights reserved."
   }
 }

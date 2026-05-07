@@ -54,22 +54,10 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
   ]
 
   const faqs = [
-    {
-      q: '¿Cuánto tiempo tarda la instalación?',
-      a: 'Una instalación residencial estándar se completa en 1 día. Proyectos comerciales o públicos varían entre 1 y 4 semanas según el alcance.',
-    },
-    {
-      q: '¿Ofrecen financiamiento?',
-      a: 'Trabajamos con aliados financieros para proyectos residenciales y comerciales. Contáctanos para conocer las opciones disponibles en tu país.',
-    },
-    {
-      q: '¿Qué vehículos son compatibles?',
-      a: 'Todos nuestros cargadores son compatibles con cualquier vehículo eléctrico o híbrido enchufable del mercado (Tesla, BMW, Audi, Hyundai, KIA, etc.).',
-    },
-    {
-      q: '¿Qué pasa si el cargador tiene una falla?',
-      a: 'Ofrecemos soporte técnico 24/7 y garantía del fabricante. En la mayoría de los casos resolvemos incidencias de forma remota o en menos de 48 horas.',
-    },
+    { q: t('faq1Q'), a: t('faq1A') },
+    { q: t('faq2Q'), a: t('faq2A') },
+    { q: t('faq3Q'), a: t('faq3A') },
+    { q: t('faq4Q'), a: t('faq4A') },
   ]
 
   return (
@@ -134,10 +122,10 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
                 <div className="glass rounded-2xl p-5 border-green-500/15">
                   <div className="flex items-center gap-2 mb-3">
                     <Zap className="w-4 h-4 text-green-400" />
-                    <span className="text-green-400 text-sm font-semibold">Respuesta rápida garantizada</span>
+                    <span className="text-green-400 text-sm font-semibold">{t('quickNoteTitle')}</span>
                   </div>
                   <p className="text-white/40 text-sm leading-relaxed">
-                    Nuestro equipo técnico revisa cada solicitud en detalle para ofrecerte la propuesta más ajustada a tu proyecto.
+                    {t('quickNoteDesc')}
                   </p>
                 </div>
               </AnimateIn>
@@ -150,8 +138,8 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
       <section className="section-padding">
         <div className="container-wide max-w-4xl">
           <div className="text-center mb-12">
-            <AnimateIn><h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">Preguntas frecuentes</h2></AnimateIn>
-            <AnimateIn delay={100}><p className="text-white/40">Las respuestas a las dudas más comunes de nuestros clientes.</p></AnimateIn>
+            <AnimateIn><h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">{t('faqTitle')}</h2></AnimateIn>
+            <AnimateIn delay={100}><p className="text-white/40">{t('faqSubtitle')}</p></AnimateIn>
           </div>
           <div className="space-y-4">
             {faqs.map(({ q, a }, i) => (

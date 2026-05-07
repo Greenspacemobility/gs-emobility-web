@@ -114,10 +114,10 @@ function HeroHighwayLink() {
 function StatsSection() {
   const t = useTranslations('stats')
   const stats = [
-    { value: 500, suffix: '+', label: t('chargingPoints'), sub: t('chargingPointsDesc') },
-    { value: 12, suffix: '+', label: t('partners'), sub: t('partnersDesc') },
-    { value: 6, suffix: '', label: t('countries'), sub: t('countriesDesc') },
-    { value: 1200, suffix: '+', label: t('co2'), sub: t('co2Desc') },
+    { value: 11, suffix: '+', label: t('chargingPoints'), sub: t('chargingPointsDesc') },
+    { value: 15, suffix: '', label: t('partners'), sub: t('partnersDesc') },
+    { value: 3, suffix: '', label: t('countries'), sub: t('countriesDesc') },
+    { value: 400, suffix: ' kW+', label: t('co2'), sub: t('co2Desc') },
   ]
   return (
     <section className="py-20 relative">

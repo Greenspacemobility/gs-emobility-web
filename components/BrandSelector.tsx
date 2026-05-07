@@ -70,7 +70,7 @@ export default function BrandSelector() {
       image: '/images/products/autel-dc-series.jpg',
       power: '120–480 kW',
       features: [
-        'Scalable 120–480 kW · Dual CCS2',
+        'Scalable 120–480 kW · Dual CCS1',
         '15.6" LCD · 4G / 5G · OCPP 2.0.1',
         'ISO 15118 Plug & Charge',
         'CE · UKCA · TÜV · IP54 / IK10',

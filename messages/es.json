@@ -21,15 +21,15 @@
     "cta2": "Autopista Eléctrica"
   },
   "stats": {
-    "title": "Liderando la transición energética",
-    "chargingPoints": "Puntos de Carga",
-    "chargingPointsDesc": "instalados en la región",
-    "partners": "Socios Estratégicos",
-    "partnersDesc": "fabricantes y distribuidores",
-    "countries": "Países",
-    "countriesDesc": "de operación activa",
-    "co2": "Toneladas CO₂",
-    "co2Desc": "reducidas anualmente"
+    "title": "Construido con experiencia. Desplegado a escala.",
+    "chargingPoints": "Años de Experiencia",
+    "chargingPointsDesc": "carga VE y electrificación de flotas",
+    "partners": "Green Hubs Objetivo",
+    "partnersDesc": "Red del corredor Monterrey–Dallas",
+    "countries": "Mercados Prioritarios",
+    "countriesDesc": "Panamá · México · EE.UU.",
+    "co2": "kW+ de Potencia de Carga",
+    "co2Desc": "hasta MCS para camiones Clase 8"
   },
   "solutions": {
     "badge": "Nuestras Soluciones",
@@ -73,7 +73,7 @@
       "detail": "Infraestructura de carga pública de alta potencia para rutas nacionales, centros urbanos y hubs de movilidad. Nuestros cargadores DC soportan múltiples conectores y sistemas de pago sin registro, maximizando la accesibilidad para todos los conductores.",
       "features": [
         "Potencia de 50 kW a 350 kW por puerto",
-        "Conectores CCS2, CHAdeMO y Tipo 2",
+        "Conectores CCS1, CHAdeMO y SAE J1772",
         "Pago con tarjeta, app o RFID",
         "Monitoreo remoto y soporte 24/7",
         "Diseño robusto para uso intensivo outdoor",
@@ -140,9 +140,9 @@
     "feature1Title": "Corredor Monterrey — Dallas",
     "feature1Desc": "Solo el cruce de Laredo mueve $354mil millones en comercio anual — el 41% de todo el transporte terrestre México-EE.UU., con 15,000 camiones por día. Nuestra red de 15 hubs por la Hwy 85 MX y la I-35 US coloca a los camiones eléctricos Clase 8 en el centro de la ruta comercial más crítica del continente.",
     "feature2Title": "400 kW a Carga MCS",
-    "feature2Desc": "Diseñado para camiones Clase 8 y flotas de alta utilización. De 0 a 80% en menos de 20 minutos — al ritmo del transporte transfronterizo.",
-    "feature3Title": "Energía 100% Renovable",
-    "feature3Desc": "Generación solar propia y almacenamiento en batería en cada Green Hub — energía 100% limpia en cada parada, totalmente independiente de la red eléctrica.",
+    "feature2Desc": "Diseñado para camiones Clase 8 con conectores CCS1 y MCS. Carga de alta potencia al ritmo del transporte transfronterizo y las operaciones de flotas VE dedicadas.",
+    "feature3Title": "Integración de Energía Renovable",
+    "feature3Desc": "Cada Green Hub está diseñado para combinar energía de la red, generación solar propia y almacenamiento en batería — reduciendo costos energéticos, mejorando la disponibilidad y disminuyendo la dependencia de la red.",
     "feature4Title": "Green Hubs",
     "feature4Desc": "Cada parada es un hub de servicios completo — carga, descanso, comida y datos de flota en tiempo real, diseñado para operadores de camiones eléctricos dedicados.",
     "cta": "Ver el proyecto",
@@ -157,9 +157,9 @@
     "featuresTitle": "Construido para la ruta de carga más exigente del mundo",
     "featuresSubtitle": "15,000 camiones cruzan el puente de Laredo cada día. Cada decisión de diseño refleja esa realidad — potencia, disponibilidad y experiencia del conductor a escala.",
     "hub1Title": "Carga de Alta Potencia",
-    "hub1Desc": "400 kW a MCS por puerto — carga simultánea para múltiples camiones Clase 8 con conectores CCS2 y Sistema de Carga de Megavatio (MCS).",
-    "hub2Title": "Energía 100% Renovable",
-    "hub2Desc": "Generación solar propia y almacenamiento en batería en cada hub — carga de cero emisiones con independencia total de la red eléctrica en cada parada.",
+    "hub1Desc": "400 kW a MCS por puerto — carga simultánea para múltiples camiones Clase 8 con conectores CCS1 y Sistema de Carga de Megavatio (MCS).",
+    "hub2Title": "Integración de Energía Renovable",
+    "hub2Desc": "Cada hub combina energía de la red con generación solar propia y almacenamiento en batería — diseñado para reducir costos energéticos, disminuir la dependencia de la red y mejorar la disponibilidad operativa.",
     "hub3Title": "Instalaciones para el Conductor",
     "hub3Desc": "Salas de descanso, climatización, duchas y espacio de trabajo — diseñados para las necesidades reales de los conductores de larga distancia.",
     "hub4Title": "Alimentos y Servicios",
@@ -286,7 +286,7 @@
     "boardTitle": "El equipo detrás de Greenspace",
     "boardSubtitle": "Experiencia ejecutiva en infraestructura de carga, logística transfronteriza, sistemas de energía y disciplina de inversión.",
     "board": {
-      "william": "10+ años en carga EV, sistemas de energía y electrificación de flotas. Fundador de Greenspace, desarrollando hubs de carga y corredores logísticos en Panamá, México, EE.UU. y Noruega. Ex Senior Charger Hardware Manager en Circle K.",
+      "william": "11+ años en carga EV, sistemas de energía y electrificación de flotas. Fundador de Greenspace, desarrollando hubs de carga y corredores logísticos en Panamá, México, EE.UU. y Noruega. Ex Senior Charger Hardware Manager en Circle K.",
       "mike": "18+ años en logística, transporte y transformación de cadena de suministro en Norte y Centroamérica. Experto en comercio transfronterizo México-EE.UU. Ex Maersk, CEMEX, FEMSA y Uber Freight.",
       "moises": "Líder financiero senior con 10+ años en Latinoamérica, Norteamérica y el Caribe. Especialista en FP&A, finanzas comerciales, gestión de P&L y transformación empresarial.",
       "ruben": "Ejecutivo de energía y transformación digital con 15+ años en el sector energético noruego. Especialista en electrificación e infraestructura a gran escala. Ex líder senior en Aker Solutions.",
@@ -545,7 +545,23 @@
     "whatsappSub": "WhatsApp Business · Respuesta inmediata",
     "coverageTitle": "Cobertura",
     "coverageSub": "Presencia regional",
-    "location": "América Central y Caribe"
+    "location": "Panamá · México · EE.UU.",
+    "quickNoteTitle": "Respuesta rápida garantizada",
+    "quickNoteDesc": "Nuestro equipo técnico revisa cada solicitud en detalle para ofrecerte la propuesta más ajustada a tu proyecto.",
+    "faqTitle": "Preguntas frecuentes",
+    "faqSubtitle": "Las respuestas a las dudas más comunes de nuestros clientes.",
+    "faq1Q": "¿Cuánto tiempo tarda la instalación?",
+    "faq1A": "Una instalación residencial estándar se completa en 1 día. Proyectos comerciales o públicos varían entre 1 y 4 semanas según el alcance.",
+    "faq2Q": "¿Ofrecen financiamiento?",
+    "faq2A": "Trabajamos con aliados financieros para proyectos residenciales y comerciales. Contáctanos para conocer las opciones disponibles en tu país.",
+    "faq3Q": "¿Qué vehículos son compatibles?",
+    "faq3A": "Todos nuestros cargadores son compatibles con cualquier vehículo eléctrico o híbrido enchufable del mercado (Tesla, BMW, Audi, Hyundai, KIA, etc.).",
+    "faq4Q": "¿Qué pasa si el cargador tiene una falla?",
+    "faq4A": "Ofrecemos soporte técnico 24/7 y garantía del fabricante. En la mayoría de los casos resolvemos incidencias de forma remota o en menos de 48 horas.",
+    "namePlaceholder": "Tu nombre",
+    "selectPlaceholder": "Seleccionar...",
+    "messagePlaceholder": "Describe tu proyecto o consulta...",
+    "sending": "Enviando..."
   },
   "partnerSite": {
     "metaTitle": "Asocia tu Sitio — Greenspace E-Mobility",
@@ -637,6 +653,6 @@
     "legal": "Legal",
     "privacy": "Privacidad",
     "terms": "Términos",
-    "copyright": "© 2024 Greenspace E-Mobility. Todos los derechos reservados."
+    "copyright": "© 2025 Greenspace E-Mobility. Todos los derechos reservados."
   }
 }
