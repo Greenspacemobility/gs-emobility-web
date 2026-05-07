@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useTranslations, useLocale } from 'next-intl'
-import { Mail, MapPin, Instagram, Linkedin, Twitter } from 'lucide-react'
+import { Mail, MapPin, Instagram, Linkedin, Twitter, Youtube } from 'lucide-react'
 
 export default function Footer() {
   const t = useTranslations('footer')
@@ -27,9 +27,10 @@ export default function Footer() {
             <p className="text-white/50 text-sm leading-relaxed mb-6">{t('tagline')}</p>
             <div className="flex gap-3">
               {[
-                { icon: Instagram, href: 'https://instagram.com/gs.emobility' },
-                { icon: Linkedin, href: 'https://linkedin.com/company/greenspace-emobility' },
-                { icon: Twitter, href: 'https://twitter.com/gsemobility' },
+                { icon: Instagram, href: 'https://www.instagram.com/greenspacemobility' },
+                { icon: Linkedin,  href: 'https://www.linkedin.com/company/greenspace-emobility/' },
+                { icon: Twitter,   href: 'https://twitter.com/GEMOBILITY' },
+                { icon: Youtube,   href: 'https://www.youtube.com/@greenspaceE-mobility' },
               ].map(({ icon: Icon, href }) => (
                 <a
                   key={href}

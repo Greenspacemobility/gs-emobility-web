@@ -28,13 +28,6 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
       linkedin: 'https://www.linkedin.com/in/williampui/',
     },
     {
-      name:     'Mike Trevino',
-      role:     'Chief Commercial Officer',
-      initials: 'MT',
-      bio:      t('board.mike'),
-      linkedin: 'https://www.linkedin.com/in/migueltrevinomtz/',
-    },
-    {
       name:     'Moises Perez',
       role:     'Chief Financial Officer',
       initials: 'MP',
@@ -60,7 +53,7 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
       role:     'Commercial Director, Panama',
       initials: 'RZ',
       bio:      t('board.ricardo'),
-      linkedin: 'https://www.linkedin.com/in/ricardozepeda/',
+      linkedin: '',
     },
   ]
 
@@ -379,7 +372,7 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
 
 /* ── Board card component ──────────────────────────────────────────────── */
 interface BoardMember {
-  name: string; role: string; initials: string; bio: string; linkedin: string
+  name: string; role: string; initials: string; bio: string; linkedin?: string
 }
 
 function BoardCard({ member, delay }: { member: BoardMember; delay: number }) {
@@ -403,16 +396,18 @@ function BoardCard({ member, delay }: { member: BoardMember; delay: number }) {
         {/* Bio */}
         <p className="text-white/50 text-sm leading-relaxed flex-1 mb-5">{member.bio}</p>
 
-        {/* LinkedIn */}
-        <a
-          href={member.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-white/35 hover:text-green-400 transition-colors text-sm font-medium"
-        >
-          <Linkedin className="w-4 h-4" />
-          LinkedIn
-        </a>
+        {/* LinkedIn — only shown when a URL is provided */}
+        {member.linkedin && (
+          <a
+            href={member.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-white/35 hover:text-green-400 transition-colors text-sm font-medium"
+          >
+            <Linkedin className="w-4 h-4" />
+            LinkedIn
+          </a>
+        )}
       </div>
     </AnimateIn>
   )
