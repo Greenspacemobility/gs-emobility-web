@@ -540,6 +540,10 @@
     "successText": "Thank you for contacting us. We will reply within 24 hours.",
     "infoTitle": "Contact information",
     "email": "info@gs-emobility.com",
+    "emailSub": "We respond in < 24 hrs",
+    "whatsappSub": "WhatsApp Business · Immediate response",
+    "coverageTitle": "Coverage",
+    "coverageSub": "Regional presence",
     "location": "Central America & Caribbean"
   },
   "footer": {

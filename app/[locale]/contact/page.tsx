@@ -1,7 +1,7 @@
 import { useTranslations } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
-import { Mail, MapPin, Clock, Zap, MessageSquare } from 'lucide-react'
+import { Mail, MapPin, Zap, MessageSquare } from 'lucide-react'
 import AnimateIn from '@/components/AnimateIn'
 import Badge from '@/components/Badge'
 import ContactForm from '@/components/ContactForm'
@@ -19,30 +19,37 @@ export default function ContactPage({ params: { locale } }: { params: { locale: 
     {
       icon: Mail,
       title: 'Email',
-      value: t('email'),
-      sub: 'Respondemos en < 24 hrs',
-      href: `mailto:${t('email')}`,
-    },
-    {
-      icon: MapPin,
-      title: 'Cobertura',
-      value: t('location'),
-      sub: 'Presencia regional',
-      href: null,
-    },
-    {
-      icon: Clock,
-      title: 'Horario',
-      value: 'Lun – Vie: 8am – 6pm',
-      sub: 'Soporte 24/7 para clientes',
-      href: null,
+      value: 'info@gs-emobility.com',
+      sub: t('emailSub'),
+      href: 'mailto:info@gs-emobility.com',
     },
     {
       icon: MessageSquare,
-      title: 'WhatsApp',
-      value: '+502 0000 0000',
-      sub: 'Respuesta inmediata',
-      href: 'https://wa.me/50200000000',
+      title: `WhatsApp · Panama`,
+      value: '+507 6180 8504',
+      sub: t('whatsappSub'),
+      href: 'https://wa.me/50761808504',
+    },
+    {
+      icon: MessageSquare,
+      title: `WhatsApp · Mexico`,
+      value: '+52 1 81 2201 1785',
+      sub: t('whatsappSub'),
+      href: 'https://wa.me/5218122011785',
+    },
+    {
+      icon: MessageSquare,
+      title: `WhatsApp · USA`,
+      value: '+1 956 334 7819',
+      sub: t('whatsappSub'),
+      href: 'https://wa.me/19563347819',
+    },
+    {
+      icon: MapPin,
+      title: t('coverageTitle'),
+      value: t('location'),
+      sub: t('coverageSub'),
+      href: null,
     },
   ]
 
