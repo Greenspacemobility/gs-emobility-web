@@ -77,15 +77,10 @@ export default function SiteForm() {
           <select name="country" required value={form.country} onChange={handleChange}
             className={`${inputClass} cursor-pointer`}>
             <option value="" disabled>{t('selectOption')}</option>
-            <option value="mx">Mexico</option>
-            <option value="us">United States</option>
             <option value="pa">Panama</option>
-            <option value="cr">Costa Rica</option>
-            <option value="gt">Guatemala</option>
-            <option value="hn">Honduras</option>
-            <option value="sv">El Salvador</option>
-            <option value="ni">Nicaragua</option>
-            <option value="co">Colombia</option>
+            <option value="mx">Mexico</option>
+            <option value="us_tx">United States — Texas</option>
+            <option value="us_other">United States — Other state</option>
             <option value="other">{t('otherOption')}</option>
           </select>
         </div>
