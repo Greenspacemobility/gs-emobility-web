@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { useTranslations, useLocale } from 'next-intl'
 import {
   Zap, Battery, BatteryCharging, CheckCircle2,
-  ChevronDown, ArrowRight,
+  ChevronDown,
 } from 'lucide-react'
 
 export default function BrandSelector() {
@@ -32,33 +32,7 @@ export default function BrandSelector() {
         { icon: Battery,         label: t('storage'), desc: t('autelStorage') },
       ],
     },
-    {
-      name: 'Sinexcel',
-      color: 'from-green-500/20 to-navy-700',
-      accentColor: 'text-green-400',
-      borderColor: 'border-green-500/40',
-      glowColor: 'shadow-[0_0_30px_rgba(34,197,94,0.10)]',
-      initials: 'SX',
-      highlight: false,
-      lines: [
-        { icon: BatteryCharging, label: t('dc'),      desc: t('sinexcelDc') },
-        { icon: Battery,         label: t('storage'), desc: t('sinexcelStorage') },
-      ],
-    },
-    {
-      name: 'Gresgying',
-      color: 'from-purple-500/20 to-navy-700',
-      accentColor: 'text-purple-400',
-      borderColor: 'border-purple-500/40',
-      glowColor: 'shadow-[0_0_30px_rgba(168,85,247,0.10)]',
-      initials: 'GG',
-      highlight: false,
-      lines: [
-        { icon: Zap,             label: t('ac'),      desc: t('gresgyingAc') },
-        { icon: BatteryCharging, label: t('dc'),      desc: t('gresgyingDc') },
-        { icon: Battery,         label: t('storage'), desc: t('gresgyingStorage') },
-      ],
-    },
+    // Sinexcel and Gresgying hidden — will be re-enabled in a future update
   ]
 
   /* ── Autel charger models ──────────────────────────────────── */
@@ -122,14 +96,14 @@ export default function BrandSelector() {
       <div className="container-wide">
 
         {/* ── Brand cards ─────────────────────────────────────── */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-0">
+        <div className="flex justify-center mb-0">
           {brands.map(({ name, color, accentColor, borderColor, glowColor, initials, highlight, lines }, i) => {
             const isOpen = open === name
             return (
               <div
                 key={name}
                 onClick={() => toggle(name)}
-                className={`relative glass rounded-2xl overflow-hidden flex flex-col h-full cursor-pointer transition-all duration-300 hover:scale-[1.01]
+                className={`relative glass rounded-2xl overflow-hidden flex flex-col h-full cursor-pointer transition-all duration-300 hover:scale-[1.01] w-full max-w-sm
                   ${isOpen ? `${borderColor} ${glowColor}` : highlight ? `${borderColor} shadow-[0_0_30px_rgba(59,130,246,0.12)]` : 'hover:border-white/15'}
                 `}
                 style={{ transitionProperty: 'transform, border-color, box-shadow' }}
@@ -247,57 +221,6 @@ export default function BrandSelector() {
           </div>
         )}
 
-        {/* Sinexcel */}
-        {open === 'Sinexcel' && (
-          <div className="mt-8 animate-in fade-in slide-in-from-top-4 duration-300">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="flex-1 h-px bg-white/8" />
-              <span className="text-[10px] font-bold text-green-400 uppercase tracking-[0.2em]">Sinexcel · {t('portfolioLabel')}</span>
-              <div className="flex-1 h-px bg-white/8" />
-            </div>
-            <div className="glass rounded-3xl p-8 md:p-12 border border-white/[0.08] flex flex-col md:flex-row items-center gap-8">
-              <div className="flex-1">
-                <span className="text-[10px] font-bold text-green-400 uppercase tracking-[0.15em]">{t('sinexcelTag')}</span>
-                <h3 className="font-display text-2xl font-bold text-white mt-2 mb-3">{t('sinexcelPortfolioTitle')}</h3>
-                <p className="text-white/50 leading-relaxed mb-0">{t('sinexcelPortfolioDesc')}</p>
-              </div>
-              <Link
-                href={`/${locale}/contact`}
-                onClick={e => e.stopPropagation()}
-                className="shrink-0 inline-flex items-center gap-2 bg-green-500/10 hover:bg-green-500 border border-green-500/20 hover:border-green-500 text-green-400 hover:text-navy-900 font-semibold px-7 py-3.5 rounded-xl transition-all duration-200"
-              >
-                {t('requestQuote')}
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </div>
-        )}
-
-        {/* Gresgying */}
-        {open === 'Gresgying' && (
-          <div className="mt-8 animate-in fade-in slide-in-from-top-4 duration-300">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="flex-1 h-px bg-white/8" />
-              <span className="text-[10px] font-bold text-purple-400 uppercase tracking-[0.2em]">Gresgying · {t('portfolioLabel')}</span>
-              <div className="flex-1 h-px bg-white/8" />
-            </div>
-            <div className="glass rounded-3xl p-8 md:p-12 border border-white/[0.08] flex flex-col md:flex-row items-center gap-8">
-              <div className="flex-1">
-                <span className="text-[10px] font-bold text-purple-400 uppercase tracking-[0.15em]">{t('gresgyingTag')}</span>
-                <h3 className="font-display text-2xl font-bold text-white mt-2 mb-3">{t('gresgyingPortfolioTitle')}</h3>
-                <p className="text-white/50 leading-relaxed mb-0">{t('gresgyingPortfolioDesc')}</p>
-              </div>
-              <Link
-                href={`/${locale}/contact`}
-                onClick={e => e.stopPropagation()}
-                className="shrink-0 inline-flex items-center gap-2 bg-purple-500/10 hover:bg-purple-500 border border-purple-500/20 hover:border-purple-500 text-purple-400 hover:text-white font-semibold px-7 py-3.5 rounded-xl transition-all duration-200"
-              >
-                {t('requestQuote')}
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </div>
-        )}
 
       </div>
     </section>
