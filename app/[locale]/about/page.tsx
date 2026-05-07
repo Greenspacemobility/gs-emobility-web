@@ -55,6 +55,13 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
       bio:      t('board.horacio'),
       linkedin: 'https://www.linkedin.com/in/horacio-de-la-torre-89a625362/',
     },
+    {
+      name:     'Ricardo Zepeda',
+      role:     'Commercial Director, Panama',
+      initials: 'RZ',
+      bio:      t('board.ricardo'),
+      linkedin: 'https://www.linkedin.com/in/ricardozepeda/',
+    },
   ]
 
   const whatWeDo = [
