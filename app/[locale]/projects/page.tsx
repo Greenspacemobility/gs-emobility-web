@@ -119,6 +119,28 @@ export default function ProjectsPage({ params: { locale } }: { params: { locale:
         </div>
       </section>
 
+      {/* ── Project categories summary strip ──────────────────────────── */}
+      <section className="py-10 border-b border-white/[0.05]">
+        <div className="container-wide">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { flag: '🇵🇦', label: t('panamaHeader'),   sub: t('panamaProjectsSub') },
+              { flag: '🇲🇽🇺🇸', label: t('mexicoUsaHeader'), sub: t('mexicoProjectsSub') },
+              { flag: '🌐', label: t('ecosystemHeader'),  sub: t('ecosystemProjectsSub') },
+              { flag: '📰', label: t('mediaHeader'),      sub: t('mediaProjectsSub') },
+            ].map(({ flag, label, sub }, i) => (
+              <AnimateIn key={i} delay={i * 80}>
+                <div className="glass rounded-2xl p-5 text-center hover:border-green-500/20 transition-all">
+                  <div className="text-2xl mb-2">{flag}</div>
+                  <div className="font-display font-bold text-white text-sm mb-1">{label}</div>
+                  <div className="text-white/35 text-xs">{sub}</div>
+                </div>
+              </AnimateIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── Section 2: Panama Projects ──────────────────────────────────── */}
       <section className="section-padding">
         <div className="container-wide">

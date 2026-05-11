@@ -66,19 +66,49 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
   ]
 
   const valueProItems = [
-    { icon: BatteryCharging, title: t('valuePro1Title'), desc: t('valuePro1Desc') },
-    { icon: Truck,           title: t('valuePro2Title'), desc: t('valuePro2Desc') },
-    { icon: Route,           title: t('valuePro3Title'), desc: t('valuePro3Desc') },
-    { icon: Zap,             title: t('valuePro4Title'), desc: t('valuePro4Desc') },
-    { icon: Sun,             title: t('valuePro5Title'), desc: t('valuePro5Desc') },
-    { icon: BarChart3,       title: t('valuePro6Title'), desc: t('valuePro6Desc') },
+    {
+      num: '01', icon: BarChart3, color: 'text-blue-400', bg: 'bg-blue-500/10',
+      title: t('valuePro1Title'), sub: t('valuePro1Sub'), desc: t('valuePro1Desc'),
+    },
+    {
+      num: '02', icon: Sun, color: 'text-amber-400', bg: 'bg-amber-500/10',
+      title: t('valuePro2Title'), sub: t('valuePro2Sub'), desc: t('valuePro2Desc'),
+    },
+    {
+      num: '03', icon: Zap, color: 'text-green-400', bg: 'bg-green-500/10',
+      title: t('valuePro3Title'), sub: t('valuePro3Sub'), desc: t('valuePro3Desc'),
+    },
+    {
+      num: '04', icon: BatteryCharging, color: 'text-emerald-400', bg: 'bg-emerald-500/10',
+      title: t('valuePro4Title'), sub: t('valuePro4Sub'), desc: t('valuePro4Desc'),
+    },
   ]
 
   const partners = [
-    { name: 'Autel Energy',        category: tp('partnerAutel'),     color: 'bg-blue-500/10 text-blue-300' },
-    { name: 'Windrose Technology', category: tp('partnerWindrose'),   color: 'bg-emerald-500/10 text-emerald-300' },
-    { name: 'Sinexcel',            category: tp('partnerSinexcel'),   color: 'bg-green-500/10 text-green-300' },
-    { name: 'Gresgying',           category: tp('partnerGresgying'),  color: 'bg-teal-500/10 text-teal-300' },
+    // OEM & Vehicle
+    { name: 'Audi',            category: 'OEM · Vehicle Partner',        initials: 'AU' },
+    { name: 'Hyundai',         category: 'OEM · Vehicle Partner',        initials: 'HY' },
+    { name: 'Tesla',           category: 'OEM · Vehicle Partner',        initials: 'TS' },
+    { name: 'Mercedes-Benz',   category: 'OEM · Vehicle Partner',        initials: 'MB' },
+    { name: 'BMW',             category: 'OEM · Vehicle Partner',        initials: 'BM' },
+    { name: 'BYD',             category: 'OEM · Vehicle Partner',        initials: 'BY' },
+    // Financial & Banking
+    { name: 'BAC Credomatic',  category: 'Financial Partner',            initials: 'BC' },
+    { name: 'Caja de Ahorros', category: 'Financial Partner',            initials: 'CA' },
+    { name: 'Banistmo',        category: 'Financial Partner',            initials: 'BN' },
+    // Charging & Energy
+    { name: 'Blink Charging',  category: 'Charging Network',             initials: 'BL' },
+    { name: 'NanoVolt',        category: 'Energy Technology',            initials: 'NV' },
+    { name: 'Cerro Energy',    category: 'Energy Partner',               initials: 'CE' },
+    { name: 'PegEnergy',       category: 'Energy Partner',               initials: 'PE' },
+    // Commercial & Logistics
+    { name: 'DHL',             category: 'Logistics · Fleet Client',     initials: 'DH' },
+    { name: 'Circle K',        category: 'Commercial Site Partner',      initials: 'CK' },
+    { name: 'Uber',            category: 'Mobility Partner',             initials: 'UB' },
+    { name: 'G-Corp',          category: 'Commercial Partner',           initials: 'GC' },
+    // EV & Trucks
+    { name: 'Windrose',        category: 'Class 8 Electric Trucks',      initials: 'WR' },
+    { name: 'Amara',           category: 'E-Mobility Partner',           initials: 'AM' },
   ]
 
   return (
@@ -295,7 +325,7 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
 
       {/* ── HOLISTIC VALUE PROPOSITION ───────────────────────────────── */}
       <section className="section-padding relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-green-500/4 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-800/40 via-transparent to-transparent" />
         <div className="container-wide relative z-10">
           <div className="text-center mb-14">
             <AnimateIn><Badge className="mb-6">{t('valueProBadge')}</Badge></AnimateIn>
@@ -306,19 +336,59 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
               <p className="text-white/40 max-w-2xl mx-auto leading-relaxed">{t('valueProSubtitle')}</p>
             </AnimateIn>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {valueProItems.map(({ icon: Icon, title, desc }, i) => (
-              <AnimateIn key={i} delay={i * 80}>
-                <div className="glass rounded-2xl p-7 group hover:border-green-500/25 transition-all h-full">
-                  <div className="w-11 h-11 rounded-xl bg-green-500/10 flex items-center justify-center mb-5 group-hover:bg-green-500/20 transition-colors">
-                    <Icon className="w-5 h-5 text-green-400" />
+
+          {/* 4-quadrant diagram layout */}
+          <AnimateIn delay={100}>
+            <div className="glass rounded-3xl overflow-hidden border border-white/10">
+              {/* 2x2 grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2">
+                {valueProItems.map(({ num, icon: Icon, color, bg, title, sub, desc }, i) => (
+                  <div
+                    key={i}
+                    className={`p-8 md:p-10 relative group hover:bg-white/[0.02] transition-all
+                      ${i === 0 ? 'border-b border-r border-white/[0.08]' : ''}
+                      ${i === 1 ? 'border-b border-white/[0.08]' : ''}
+                      ${i === 2 ? 'border-r border-white/[0.08]' : ''}
+                    `}
+                  >
+                    <div className="flex items-start gap-5">
+                      <div className={`w-12 h-12 rounded-2xl ${bg} flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform`}>
+                        <Icon className={`w-6 h-6 ${color}`} />
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-3 mb-2">
+                          <span className={`text-xs font-black ${color} opacity-60`}>{num}</span>
+                          <h3 className="font-display font-bold text-white text-lg">{title}</h3>
+                        </div>
+                        <p className={`text-xs font-bold uppercase tracking-widest ${color} mb-3`}>{sub}</p>
+                        <p className="text-white/50 text-sm leading-relaxed">{desc}</p>
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="font-display font-bold text-white mb-2">{title}</h3>
-                  <p className="text-white/50 text-sm leading-relaxed">{desc}</p>
+                ))}
+              </div>
+
+              {/* Bottom strip — Experience, Method & Technology */}
+              <div className="bg-green-500/10 border-t border-green-500/20 px-8 py-5">
+                <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-0">
+                  <div className="text-green-400 text-[10px] font-bold uppercase tracking-[0.2em] sm:mr-8 shrink-0">
+                    {t('valueProPillar')}
+                  </div>
+                  <div className="flex-1 grid grid-cols-3 gap-0 text-center">
+                    {[t('valueProInstall'), t('valueProMaintain'), t('valueProImprove')].map((label, i) => (
+                      <div
+                        key={i}
+                        className={`py-1.5 px-4 text-white/70 text-xs font-semibold
+                          ${i < 2 ? 'border-r border-white/10' : ''}`}
+                      >
+                        {label}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </AnimateIn>
-            ))}
-          </div>
+              </div>
+            </div>
+          </AnimateIn>
         </div>
       </section>
 
@@ -362,16 +432,16 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
               <p className="text-white/40 max-w-xl mx-auto">{t('partnersSubtitle')}</p>
             </AnimateIn>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
             {partners.map((p, i) => (
-              <AnimateIn key={p.name} delay={i * 80}>
-                <div className="glass rounded-2xl p-6 flex items-center gap-4 hover:border-green-500/20 transition-all group">
-                  <div className={`w-12 h-12 rounded-xl ${p.color} flex items-center justify-center text-sm font-bold shrink-0`}>
-                    {p.name.slice(0, 2).toUpperCase()}
+              <AnimateIn key={p.name} delay={i * 40}>
+                <div className="glass rounded-xl p-4 flex flex-col items-center text-center gap-2 hover:border-green-500/20 transition-all group">
+                  <div className="w-10 h-10 rounded-lg bg-white/8 flex items-center justify-center text-xs font-black text-white/70 shrink-0 group-hover:bg-green-500/10 group-hover:text-green-400 transition-all">
+                    {p.initials}
                   </div>
                   <div>
-                    <h3 className="font-display font-bold text-white">{p.name}</h3>
-                    <p className="text-white/40 text-xs">{p.category}</p>
+                    <p className="text-white/80 text-xs font-semibold leading-tight">{p.name}</p>
+                    <p className="text-white/30 text-[10px] mt-0.5 leading-tight">{p.category}</p>
                   </div>
                 </div>
               </AnimateIn>
