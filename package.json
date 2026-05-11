@@ -17,7 +17,8 @@
     "next-intl": "^3.17.2",
     "react": "^18",
     "react-dom": "^18",
-    "react-leaflet": "^4.2.1"
+    "react-leaflet": "^4.2.1",
+    "resend": "^6.12.3"
   },
   "devDependencies": {
     "@ffmpeg/ffmpeg": "^0.12.15",

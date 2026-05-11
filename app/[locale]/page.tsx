@@ -116,7 +116,7 @@ function StatsSection() {
   const stats = [
     { value: 11, suffix: '+', label: t('chargingPoints'), sub: t('chargingPointsDesc') },
     { value: 15, suffix: '', label: t('partners'), sub: t('partnersDesc') },
-    { value: 3, suffix: '', label: t('countries'), sub: t('countriesDesc') },
+    { value: 4, suffix: '', label: t('countries'), sub: t('countriesDesc') },
     { value: 400, suffix: ' kW+', label: t('co2'), sub: t('co2Desc') },
   ]
   return (
@@ -451,10 +451,9 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
       <HeroSection />
       <StatsSection />
       <ModelsSection />
-      <SolutionsSection />
       <HighwayTeaser />
+      <SolutionsSection />
       <WhyUsSection />
-      <PartnersSection />
       <CTASection />
     </>
   )

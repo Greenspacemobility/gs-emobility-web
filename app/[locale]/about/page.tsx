@@ -4,7 +4,7 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import {
   ArrowRight, Linkedin, Target, Eye, Zap, Truck, Route, Globe, BatteryCharging,
-  CheckCircle2, MapPin, Users
+  CheckCircle2, MapPin, Users, Sun, BarChart3, Handshake
 } from 'lucide-react'
 import AnimateIn from '@/components/AnimateIn'
 import Badge from '@/components/Badge'
@@ -65,10 +65,20 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
     { icon: Zap,             title: t('do5Title'), desc: t('do5Desc') },
   ]
 
+  const valueProItems = [
+    { icon: BatteryCharging, title: t('valuePro1Title'), desc: t('valuePro1Desc') },
+    { icon: Truck,           title: t('valuePro2Title'), desc: t('valuePro2Desc') },
+    { icon: Route,           title: t('valuePro3Title'), desc: t('valuePro3Desc') },
+    { icon: Zap,             title: t('valuePro4Title'), desc: t('valuePro4Desc') },
+    { icon: Sun,             title: t('valuePro5Title'), desc: t('valuePro5Desc') },
+    { icon: BarChart3,       title: t('valuePro6Title'), desc: t('valuePro6Desc') },
+  ]
+
   const partners = [
-    { name: 'Autel Energy', category: tp('partnerAutel'),    color: 'bg-green-500/10 text-green-300' },
-    { name: 'Sinexcel',     category: tp('partnerSinexcel'), color: 'bg-emerald-500/10 text-emerald-300' },
-    { name: 'Gresgying',    category: tp('partnerGresgying'), color: 'bg-teal-500/10 text-teal-300' },
+    { name: 'Autel Energy',        category: tp('partnerAutel'),     color: 'bg-blue-500/10 text-blue-300' },
+    { name: 'Windrose Technology', category: tp('partnerWindrose'),   color: 'bg-emerald-500/10 text-emerald-300' },
+    { name: 'Sinexcel',            category: tp('partnerSinexcel'),   color: 'bg-green-500/10 text-green-300' },
+    { name: 'Gresgying',           category: tp('partnerGresgying'),  color: 'bg-teal-500/10 text-teal-300' },
   ]
 
   return (
@@ -283,6 +293,35 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
         </div>
       </section>
 
+      {/* ── HOLISTIC VALUE PROPOSITION ───────────────────────────────── */}
+      <section className="section-padding relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-green-500/4 via-transparent to-transparent" />
+        <div className="container-wide relative z-10">
+          <div className="text-center mb-14">
+            <AnimateIn><Badge className="mb-6">{t('valueProBadge')}</Badge></AnimateIn>
+            <AnimateIn delay={100}>
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">{t('valueProTitle')}</h2>
+            </AnimateIn>
+            <AnimateIn delay={200}>
+              <p className="text-white/40 max-w-2xl mx-auto leading-relaxed">{t('valueProSubtitle')}</p>
+            </AnimateIn>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {valueProItems.map(({ icon: Icon, title, desc }, i) => (
+              <AnimateIn key={i} delay={i * 80}>
+                <div className="glass rounded-2xl p-7 group hover:border-green-500/25 transition-all h-full">
+                  <div className="w-11 h-11 rounded-xl bg-green-500/10 flex items-center justify-center mb-5 group-hover:bg-green-500/20 transition-colors">
+                    <Icon className="w-5 h-5 text-green-400" />
+                  </div>
+                  <h3 className="font-display font-bold text-white mb-2">{title}</h3>
+                  <p className="text-white/50 text-sm leading-relaxed">{desc}</p>
+                </div>
+              </AnimateIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── BOARD OF DIRECTORS ───────────────────────────────────────── */}
       <section className="section-padding">
         <div className="container-wide">
@@ -315,15 +354,15 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
       <section id="partners" className="section-padding">
         <div className="container-wide">
           <div className="text-center mb-16">
-            <AnimateIn><Badge className="mb-6">{tp('badge')}</Badge></AnimateIn>
+            <AnimateIn><Badge className="mb-6">{t('partnersBadge')}</Badge></AnimateIn>
             <AnimateIn delay={100}>
-              <h2 className="font-display text-4xl font-bold text-white mb-4">{tp('title')}</h2>
+              <h2 className="font-display text-4xl font-bold text-white mb-4">{t('partnersTitle')}</h2>
             </AnimateIn>
             <AnimateIn delay={200}>
-              <p className="text-white/40 max-w-xl mx-auto">{tp('subtitle')}</p>
+              <p className="text-white/40 max-w-xl mx-auto">{t('partnersSubtitle')}</p>
             </AnimateIn>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {partners.map((p, i) => (
               <AnimateIn key={p.name} delay={i * 80}>
                 <div className="glass rounded-2xl p-6 flex items-center gap-4 hover:border-green-500/20 transition-all group">

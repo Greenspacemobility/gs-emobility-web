@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import { ArrowRight, CheckCircle2, Home, Building2, Car, Sun, Monitor } from 'lucide-react'
+import { ArrowRight, CheckCircle2, Home, Building2, Car, Sun, Monitor, Truck, Zap, Battery, Route } from 'lucide-react'
 import AnimateIn from '@/components/AnimateIn'
 import Badge from '@/components/Badge'
 import BrandSelector from '@/components/BrandSelector'
@@ -72,6 +72,78 @@ export default function ProductsPage({ params: { locale } }: { params: { locale:
                   {t('platformCta')}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
+              </div>
+            </div>
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* Windrose Electric Trucks */}
+      <section id="windrose" className="section-padding">
+        <div className="container-wide">
+          <AnimateIn>
+            <div className="relative glass rounded-3xl overflow-hidden">
+              {/* Background accent */}
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/8 via-transparent to-navy-700/20 pointer-events-none" />
+              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent" />
+
+              <div className="relative z-10 p-10 md:p-14">
+                {/* Header */}
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-10">
+                  <div>
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-10 h-10 rounded-xl bg-emerald-500/15 flex items-center justify-center">
+                        <Truck className="w-5 h-5 text-emerald-400" />
+                      </div>
+                      <span className="text-emerald-400 text-xs font-bold uppercase tracking-[0.2em]">{t('windroseBadge')}</span>
+                    </div>
+                    <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-3 leading-snug">
+                      {t('windroseTitle')}
+                    </h2>
+                    <p className="text-white/50 text-sm leading-relaxed max-w-2xl">
+                      {t('windroseSubtitle')}
+                    </p>
+                  </div>
+                  <Link
+                    href={`/${locale}/contact`}
+                    className="shrink-0 inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-navy-900 font-semibold px-6 py-3 rounded-xl transition-all text-sm"
+                  >
+                    {t('windroseCta')}
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+
+                {/* Specs grid */}
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-10">
+                  {[
+                    { label: t('windroseRange'),    val: t('windroseRangeVal'),    icon: Route },
+                    { label: t('windrosePower'),     val: t('windrosePowerVal'),    icon: Zap },
+                    { label: t('windroseTorque'),    val: t('windroseTorqueVal'),   icon: Battery },
+                    { label: t('windroseCharging'),  val: t('windroseChargingVal'), icon: Zap },
+                    { label: t('windrosePayload'),   val: t('windrosePayloadVal'),  icon: Truck },
+                  ].map(({ label, val, icon: Icon }, i) => (
+                    <div key={i} className="bg-white/[0.04] rounded-2xl p-4 border border-white/[0.06] text-center">
+                      <Icon className="w-4 h-4 text-emerald-400 mx-auto mb-2" />
+                      <div className="font-display font-bold text-white text-sm mb-1">{val}</div>
+                      <div className="text-white/35 text-[10px] uppercase tracking-wider">{label}</div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Features */}
+                <div className="grid sm:grid-cols-2 gap-3">
+                  {[
+                    t('windroseFeature1'),
+                    t('windroseFeature2'),
+                    t('windroseFeature3'),
+                    t('windroseFeature4'),
+                  ].map((f, i) => (
+                    <div key={i} className="flex items-start gap-3 text-white/60 text-sm">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                      {f}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </AnimateIn>

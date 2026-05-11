@@ -20,8 +20,18 @@ export default function BookVisitForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setStatus('sending')
-    await new Promise((r) => setTimeout(r, 1500))
-    setStatus('sent')
+    try {
+      const res = await fetch('/api/book-visit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (!res.ok) throw new Error('Failed')
+      setStatus('sent')
+    } catch {
+      setStatus('idle')
+      alert('Something went wrong. Please email us directly at info@gs-emobility.com')
+    }
   }
 
   if (status === 'sent') {

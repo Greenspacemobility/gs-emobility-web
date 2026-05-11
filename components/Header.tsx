@@ -55,20 +55,28 @@ export default function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`text-[0.8rem] font-semibold tracking-wide uppercase transition-colors duration-200 ${
-                pathname === link.href
-                  ? 'text-green-400'
-                  : 'text-white/60 hover:text-white'
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+        <nav className="hidden md:flex items-center gap-6">
+          {navLinks.map((link) => {
+            const isHighway = link.href.includes('electric-highway')
+            const isActive = pathname === link.href
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`text-[0.8rem] font-semibold tracking-wide uppercase transition-colors duration-200 ${
+                  isHighway
+                    ? isActive
+                      ? 'text-green-400'
+                      : 'text-green-400 hover:text-green-300 relative after:absolute after:-bottom-0.5 after:left-0 after:right-0 after:h-px after:bg-green-500/50'
+                    : isActive
+                      ? 'text-green-400'
+                      : 'text-white/60 hover:text-white'
+                }`}
+              >
+                {link.label}
+              </Link>
+            )
+          })}
         </nav>
 
         {/* Actions */}

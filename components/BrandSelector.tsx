@@ -64,29 +64,16 @@ export default function BrandSelector() {
       ],
     },
     {
-      model: 'MaxiCharger DC Series DH240 / DH480',
-      badge: 'DC High-Power · up to 480 kW',
+      model: 'MaxiCharger DC HiPower 640',
+      badge: 'DC Ultra-Fast · 640 kW',
       badgeColor: 'bg-amber-500/15 text-amber-400 border border-amber-500/20',
-      image: '/images/products/autel-dc-series.jpg',
-      power: '120–480 kW',
+      image: '/images/products/autel-dc-hipower.png',
+      power: '640 kW system',
       features: [
-        'Scalable 120–480 kW · Dual CCS1',
-        '15.6" LCD · 4G / 5G · OCPP 2.0.1',
-        'ISO 15118 Plug & Charge',
-        'CE · UKCA · TÜV · IP54 / IK10',
-      ],
-    },
-    {
-      model: 'MaxiCharger DS600L Liquid-Cooled',
-      badge: 'DC Liquid-Cooled · 600 kW',
-      badgeColor: 'bg-cyan-500/15 text-cyan-400 border border-cyan-500/20',
-      image: '/images/products/autel-ds600l.png',
-      power: '360–600 kW',
-      features: [
-        '10 outputs · 97% peak efficiency',
-        'SiC modules · AI smart algorithms',
-        'PV-ESS-EV integration · 4G / 5G',
-        'IP55 · C5-M marine grade · 15-yr design life',
+        '360 kW per port · max 480 kW · Dual CCS1',
+        'Liquid-cooled · 8 vehicles simultaneously',
+        '150–950 V · 500 A (max 650 A)',
+        'UL 2202 · NEMA 3S · ~250 mi in 10 min',
       ],
     },
   ]
@@ -173,7 +160,7 @@ export default function BrandSelector() {
               <span className="text-[10px] font-bold text-blue-400 uppercase tracking-[0.2em]">Autel Energy · {t('portfolioLabel')}</span>
               <div className="flex-1 h-px bg-white/8" />
             </div>
-            <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-6">
+            <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6">
               {autelChargers.map(({ model, badge, badgeColor, image, power, features }) => (
                 <div
                   key={model}

@@ -82,6 +82,10 @@ export default function ProjectsPage({ params: { locale } }: { params: { locale:
       pub: t('m9Pub'), headline: t('m9Headline'),
       href: 'https://www.octanosmedia.com/post/autos-el%C3%A9ctricos-se-toman-el-panama-convention-center',
     },
+    {
+      pub: t('m10Pub'), headline: t('m10Headline'),
+      href: 'https://egade.tec.mx/es/egade-ideas/opinion/texas-y-nuevo-leon-se-conectan-al-futuro-nace-el-primer-corredor-electrico',
+    },
   ]
 
   return (

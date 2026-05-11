@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import type { Metadata } from 'next'
 import {
   Zap, MapPin, Wifi, Coffee, ShoppingBag,
@@ -9,6 +10,8 @@ import {
 import AnimateIn from '@/components/AnimateIn'
 import Badge from '@/components/Badge'
 import CountUp from '@/components/CountUp'
+
+const HighwayMap = dynamic(() => import('@/components/HighwayMap'), { ssr: false })
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'highway' })
@@ -24,7 +27,7 @@ export default function ElectricHighwayPage({ params: { locale } }: { params: { 
     { value: 5,  suffix: '',              label: t('stat1Label') },
     { value: 15, suffix: t('stat2Suffix'), label: t('stat2Label') },
     { value: 99, suffix: t('stat3Suffix'), label: t('stat3Label') },
-    { value: 20, suffix: t('stat4Suffix'), label: t('stat4Label') },
+    { value: 35, suffix: t('stat4Suffix'), label: t('stat4Label') },
   ]
 
   const highwayFeatures = [
@@ -88,6 +91,30 @@ export default function ElectricHighwayPage({ params: { locale } }: { params: { 
               {t('cta')}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* Intro + Map */}
+      <section className="section-padding relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-900/0 via-green-500/3 to-navy-900/0 pointer-events-none" />
+        <div className="container-wide relative z-10">
+          <div className="text-center mb-12 max-w-3xl mx-auto">
+            <AnimateIn>
+              <p className="text-green-400 text-xs font-bold uppercase tracking-[0.25em] mb-4">
+                {t('introLabel')}
+              </p>
+            </AnimateIn>
+            <AnimateIn delay={100}>
+              <p className="text-white/60 text-lg leading-relaxed">
+                {t('introText')}
+              </p>
+            </AnimateIn>
+          </div>
+          <AnimateIn delay={200}>
+            <div className="rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-black/40">
+              <HighwayMap />
+            </div>
           </AnimateIn>
         </div>
       </section>
