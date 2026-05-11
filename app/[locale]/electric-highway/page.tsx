@@ -112,7 +112,7 @@ export default function ElectricHighwayPage({ params: { locale } }: { params: { 
             </AnimateIn>
           </div>
           <AnimateIn delay={200}>
-            <div className="rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-black/40">
+            <div className="rounded-3xl overflow-hidden border border-white/10 shadow-2xl shadow-black/40" style={{ height: '520px' }}>
               <HighwayMap />
             </div>
           </AnimateIn>
