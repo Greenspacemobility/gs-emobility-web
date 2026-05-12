@@ -85,7 +85,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-white font-semibold mb-5 text-sm uppercase tracking-widest">Contact</h4>
+            <h4 className="text-white font-semibold mb-5 text-sm uppercase tracking-widest">{t('contact')}</h4>
             <ul className="space-y-4">
               <li className="flex items-center gap-3 text-white/50 text-sm">
                 <Mail className="w-4 h-4 text-green-500 shrink-0" />
@@ -93,10 +93,17 @@ export default function Footer() {
                   info@gs-emobility.com
                 </a>
               </li>
-              <li className="flex items-start gap-3 text-white/50 text-sm">
-                <MapPin className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />
-                <span>América Central & Caribe</span>
-              </li>
+              {[
+                { flag: '🇵🇦', label: 'Panama' },
+                { flag: '🇲🇽', label: 'Monterrey, México' },
+                { flag: '🇺🇸', label: 'Texas, USA' },
+                { flag: '🇳🇴', label: 'Oslo, Norway' },
+              ].map(({ flag, label }) => (
+                <li key={label} className="flex items-center gap-3 text-white/50 text-sm">
+                  <MapPin className="w-4 h-4 text-green-500 shrink-0" />
+                  <span>{flag} {label}</span>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
