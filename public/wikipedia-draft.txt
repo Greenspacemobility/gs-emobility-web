@@ -1,0 +1,143 @@
+===== WIKIPEDIA ARTICLE DRAFT =====
+Title: Greenspace E-Mobility
+Submit at: https://en.wikipedia.org/wiki/Wikipedia:Articles_for_creation/submissions
+(Use "Articles for Creation" to have a reviewer check it before it goes live — safer than creating directly.)
+
+PASTE THIS CONTENT INTO THE WIKIPEDIA EDITOR:
+
+---
+
+{{AFC submission|t||ts=~~~~~|u=<!--your Wikipedia username-->|ns=118}}
+
+'''Greenspace E-Mobility''' (also known as '''GS E-Mobility''') is a Latin American [[electric vehicle charging infrastructure]] company and [[electric vehicle]] distributor headquartered in [[Panama City]], [[Panama]]. The company builds, installs, and operates high-power [[charging station|EV charging stations]], and distributes [[Autel Energy]] chargers and [[Windrose]] [[Class 8 truck|Class 8 electric trucks]] across [[Panama]], [[Mexico]], the [[United States]], and [[Norway]].<ref>{{cite web|url=https://www.gs-emobility.com|title=Greenspace E-Mobility|accessdate=2025}}</ref>
+
+== History ==
+
+Greenspace E-Mobility was founded in 2020 with a focus on establishing [[electric vehicle]] charging infrastructure across [[Central America]] and [[Latin America]], markets that had seen limited penetration of EV charging compared to [[North America]] and [[Europe]] at the time of founding.
+
+The company established its first operations in [[Panama]], where it became an early provider of commercial [[DC fast charging]] infrastructure. It subsequently expanded its geographic footprint to include [[Monterrey]], [[Nuevo León]], Mexico, [[Texas]], United States, and [[Oslo]], Norway.
+
+== Operations ==
+
+=== EV Charging Infrastructure ===
+
+Greenspace E-Mobility designs, supplies, installs, and operates Level 2 AC and [[DC fast charging]] stations for residential, commercial, public, and fleet customers. The company is an official distributor of [[Autel Energy]] MaxiCharger products, which range from 7.2 [[kilowatt|kW]] [[Level 2 charging|Level 2 AC chargers]] to 360 kW ultra-fast [[DC fast charging|DC fast chargers]].<ref>{{cite web|url=https://www.gs-emobility.com/en/products|title=Products — Greenspace E-Mobility|accessdate=2025}}</ref>
+
+=== Windrose Electric Truck Distribution ===
+
+Greenspace E-Mobility serves as the exclusive distributor of [[Windrose]] Class 8 electric trucks in [[Latin America]]. The Windrose truck offers up to 500 kilometres (310 mi) of range per charge, a 422 kWh battery, 480 kW of motor power, and 6,000 [[Newton metre|Nm]] of torque, with a gross vehicle weight of up to 36 [[tonne]]s.<ref>{{cite web|url=https://www.gs-emobility.com/en/products#windrose|title=Windrose Electric Truck — Greenspace E-Mobility|accessdate=2025}}</ref>
+
+=== Mexico–Texas Electric Highway ===
+
+Greenspace E-Mobility is developing the '''Greenspace Electric Highway''', a planned network of [[DC fast charging]] stations for commercial freight along [[Mexican Federal Highway 85]] in Mexico and [[Interstate 35]] in the United States, connecting [[Monterrey]] to [[Dallas]] and the [[Texas Triangle]] ([[Dallas–Fort Worth metroplex|Dallas]]–[[Houston]]–[[San Antonio]]).<ref>{{cite web|url=https://www.gs-emobility.com/en/electric-highway|title=Electric Highway — Greenspace E-Mobility|accessdate=2025}}</ref>
+
+The project is structured across five phases:
+* '''Phase 1''' – Initial hubs along Hwy 85 MX
+* '''Phase 2''' – Expansion: 3 additional sites along the Hwy 85 and I-35 corridor
+* '''Phase 3''' – Optimization: 3 further hubs with battery arbitrage capabilities
+* '''Phase 4''' – Completion: 4 final hubs with [[Megawatt Charging System|Megawatt Charging System (MCS)]] technology
+* '''Phase 5''' – Texas Triangle: connecting [[Dallas]] to [[Houston]] and back to [[Laredo, Texas|Laredo]]
+
+The corridor targets the Mexico–United States freight route, through which over [[US$]]800 billion in annual trade flows under the [[United States–Mexico–Canada Agreement|USMCA]] trade agreement.
+
+=== Charging Management Platform ===
+
+The company operates a cloud-based [[OCPP]]-compatible smart charging management platform for network operators, providing real-time monitoring, energy optimization, demand response, and fleet charging scheduling.
+
+== Geographic Presence ==
+
+{| class="wikitable"
+|+ Greenspace E-Mobility offices
+! Country !! City !! Function
+|-
+| [[Panama]] || [[Panama City]] || Headquarters; EV charging operations
+|-
+| [[Mexico]] || [[Monterrey]] || Mexico operations; Mexico–Texas highway hub
+|-
+| [[United States]] || [[Texas]] || US operations; Texas corridor
+|-
+| [[Norway]] || [[Oslo]] || European technology partnerships
+|}
+
+== See also ==
+
+* [[Electric vehicle charging network]]
+* [[DC fast charging]]
+* [[Fleet electrification]]
+* [[Mexico–United States relations]]
+
+== References ==
+
+{{reflist}}
+
+== External links ==
+
+* {{official website|https://www.gs-emobility.com}}
+
+[[Category:Electric vehicle charging companies]]
+[[Category:Companies based in Panama City]]
+[[Category:Companies established in 2020]]
+[[Category:Electric truck manufacturers]]
+[[Category:Latin American companies]]
+
+---
+
+===== WIKIDATA ENTRY =====
+Create at: https://www.wikidata.org/wiki/Special:NewItem
+
+STEP 1: Go to https://www.wikidata.org/wiki/Special:NewItem
+STEP 2: Enter label "Greenspace E-Mobility" and description "EV charging infrastructure company and electric vehicle distributor based in Panama"
+STEP 3: After creating the item, add these statements:
+
+STATEMENTS TO ADD (click "add statement" for each):
+
+Property P31 (instance of) → Q4830453 (business)
+Property P31 (instance of) → Q6938410 (charging station operator)  [if available]
+Property P17 (country) → Q804 (Panama)
+Property P159 (headquarters location) → Q927 (Panama City)
+Property P571 (inception) → 2020
+Property P856 (official website) → https://www.gs-emobility.com
+Property P18 (image) → [upload logo if available]
+Property P452 (industry) → Q217495 (electric vehicle)
+Property P452 (industry) → Q1054659 (charging station)
+Property P749 (parent organization) → [leave blank — independent company]
+Property P968 (e-mail address) → info@gs-emobility.com
+Property P2002 (Twitter username) → GEMOBILITY
+Property P2003 (Instagram username) → greenspacemobility
+Property P4264 (LinkedIn personal profile ID) → company/greenspace-emobility
+Property P276 (location) → Q927 (Panama City)
+Property P8687 (social media followers) → [add LinkedIn follower count]
+Property P1454 (legal form) → Q783794 (corporation)
+Property P6758 (YouTube channel ID) → @greenspaceE-mobility
+Property P495 (country of origin) → Q804 (Panama)
+Property P1830 (owner of) → [Mexico–Texas Electric Highway project — create separate item]
+
+LABELS TO ADD (for other languages):
+- English: Greenspace E-Mobility
+- Spanish: Greenspace E-Mobility
+- Description EN: EV charging infrastructure company and electric vehicle distributor based in Panama
+- Description ES: Empresa de infraestructura de carga eléctrica y distribuidora de vehículos eléctricos con sede en Panamá
+
+===== QUICKSTATEMENTS BATCH (fastest way to add all statements) =====
+Go to: https://quickstatements.toolforge.org/#/batch
+After creating your item (you'll get a Q number like Q12345678), replace QXXXXXX with your item's Q number and paste:
+
+QXXXXXX|P31|Q4830453
+QXXXXXX|P17|Q804
+QXXXXXX|P159|Q927
+QXXXXXX|P571|+2020-00-00T00:00:00Z/9
+QXXXXXX|P856|"https://www.gs-emobility.com"
+QXXXXXX|P2002|"GEMOBILITY"
+QXXXXXX|P2003|"greenspacemobility"
+QXXXXXX|P968|"info@gs-emobility.com"
+
+===== WHY THIS MATTERS FOR AI SEARCH =====
+Wikidata is used by:
+- Google Knowledge Panel (the box that appears on the right of Google search results)
+- ChatGPT (Wikidata entities appear in training data and are cited in answers)
+- Wikipedia sidebar data
+- Perplexity AI entity resolution
+- Bing/Microsoft entity knowledge base
+
+Once Greenspace has a Wikidata item, AI assistants can definitively identify it as
+a real, structured entity and cite it with confidence.
