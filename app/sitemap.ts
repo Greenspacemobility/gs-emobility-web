@@ -12,6 +12,7 @@ const pages = [
   { path: '/about', priority: 0.8, changeFrequency: 'monthly' as const },
   { path: '/contact', priority: 0.8, changeFrequency: 'monthly' as const },
   { path: '/partner-site', priority: 0.7, changeFrequency: 'monthly' as const },
+  { path: '/faq', priority: 0.85, changeFrequency: 'weekly' as const },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {

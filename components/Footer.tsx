@@ -73,6 +73,7 @@ export default function Footer() {
                 { label: t('highway'), href: `/${locale}/electric-highway` },
                 { label: t('partners'), href: `/${locale}/about#partners` },
                 { label: t('partnerSite'), href: `/${locale}/partner-site` },
+                { label: t('faq'), href: `/${locale}/faq` },
               ].map(({ label, href }) => (
                 <li key={href}>
                   <Link href={href} className="text-white/50 hover:text-green-400 text-sm transition-colors">

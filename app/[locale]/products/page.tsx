@@ -19,6 +19,76 @@ export async function generateMetadata({ params: { locale } }: { params: { local
   }
 }
 
+// Product + ItemList schema for AI citation and Google rich results
+const productsSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Greenspace E-Mobility Products',
+  description: 'EV chargers, electric trucks, and charging management software distributed by Greenspace E-Mobility in Panama, Mexico, and the USA.',
+  url: 'https://www.gs-emobility.com/en/products',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      item: {
+        '@type': 'Product',
+        name: 'Autel MaxiCharger DC 360kW',
+        brand: { '@type': 'Brand', name: 'Autel Energy' },
+        description: 'Ultra-fast 360 kW DC EV charger. Charges most EVs from 20% to 80% in under 20 minutes. Ideal for highway hubs, fleet depots, and high-traffic commercial locations.',
+        offers: { '@type': 'Offer', seller: { '@type': 'Organization', name: 'Greenspace E-Mobility' }, areaServed: ['Panama', 'Mexico', 'United States'] },
+        additionalProperty: [
+          { '@type': 'PropertyValue', name: 'Power Output', value: '360 kW' },
+          { '@type': 'PropertyValue', name: 'Connector Types', value: 'CCS1, CCS2, CHAdeMO' },
+          { '@type': 'PropertyValue', name: 'Protocol', value: 'OCPP 1.6 / 2.0' },
+        ],
+      },
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      item: {
+        '@type': 'Product',
+        name: 'Autel MaxiCharger DC 180kW',
+        brand: { '@type': 'Brand', name: 'Autel Energy' },
+        description: 'High-power 180 kW DC fast EV charger for commercial, fleet, and public charging applications.',
+        offers: { '@type': 'Offer', seller: { '@type': 'Organization', name: 'Greenspace E-Mobility' }, areaServed: ['Panama', 'Mexico', 'United States'] },
+        additionalProperty: [{ '@type': 'PropertyValue', name: 'Power Output', value: '180 kW' }],
+      },
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      item: {
+        '@type': 'Product',
+        name: 'Autel MaxiCharger AC 22kW',
+        brand: { '@type': 'Brand', name: 'Autel Energy' },
+        description: 'Level 2 three-phase 22 kW AC EV charger for residential, workplace, and commercial parking installations.',
+        offers: { '@type': 'Offer', seller: { '@type': 'Organization', name: 'Greenspace E-Mobility' }, areaServed: ['Panama', 'Mexico', 'United States'] },
+        additionalProperty: [{ '@type': 'PropertyValue', name: 'Power Output', value: '22 kW' }],
+      },
+    },
+    {
+      '@type': 'ListItem',
+      position: 4,
+      item: {
+        '@type': 'Product',
+        name: 'Windrose Class 8 Electric Truck',
+        brand: { '@type': 'Brand', name: 'Windrose' },
+        description: 'Class 8 electric semi-truck with 500 km range, 422 kWh battery, 480 kW motor power, and 6,000 Nm torque. Exclusive distributor in Latin America: Greenspace E-Mobility.',
+        offers: { '@type': 'Offer', seller: { '@type': 'Organization', name: 'Greenspace E-Mobility' }, areaServed: ['Panama', 'Mexico', 'Latin America'] },
+        additionalProperty: [
+          { '@type': 'PropertyValue', name: 'Range', value: '500 km (310 miles)' },
+          { '@type': 'PropertyValue', name: 'Battery Capacity', value: '422 kWh' },
+          { '@type': 'PropertyValue', name: 'Motor Power', value: '480 kW' },
+          { '@type': 'PropertyValue', name: 'Torque', value: '6,000 Nm' },
+          { '@type': 'PropertyValue', name: 'GVW', value: '36 tonnes' },
+          { '@type': 'PropertyValue', name: 'Charge Time (20-80%)', value: '60 minutes' },
+        ],
+      },
+    },
+  ],
+}
+
 export default function ProductsPage({ params: { locale } }: { params: { locale: string } }) {
   setRequestLocale(locale)
   const t = useTranslations('products')
@@ -37,6 +107,7 @@ export default function ProductsPage({ params: { locale } }: { params: { locale:
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productsSchema) }} />
       {/* Hero */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-navy-900 to-navy-900/80" />
