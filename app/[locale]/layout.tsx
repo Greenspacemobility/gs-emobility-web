@@ -80,6 +80,9 @@ export async function generateMetadata({
     },
     verification: {
       google: process.env.GOOGLE_SITE_VERIFICATION,
+      other: {
+        'msvalidate.01': '24B63D31EE0546EC84973DBF123BA1DF',
+      },
     },
   }
 }
