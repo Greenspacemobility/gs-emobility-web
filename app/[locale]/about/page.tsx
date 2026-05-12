@@ -10,8 +10,14 @@ import AnimateIn from '@/components/AnimateIn'
 import Badge from '@/components/Badge'
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
-  const t = await getTranslations({ locale, namespace: 'about' })
-  return { title: 'About — Greenspace E-Mobility', description: t('p1') }
+  const description = locale === 'es'
+    ? 'Greenspace E-Mobility: pioneros en infraestructura de carga eléctrica en América Latina. Operamos en Panamá, México, Texas y Noruega, acelerando la electrificación de flotas y corredores logísticos.'
+    : 'Greenspace E-Mobility: pioneers in EV charging infrastructure across Latin America. Operating in Panama, Mexico, Texas and Norway, accelerating fleet electrification and logistics corridor decarbonization.'
+  return {
+    title: locale === 'es' ? 'Nosotros | Greenspace E-Mobility' : 'About Us | Greenspace E-Mobility',
+    description,
+    openGraph: { title: 'About Greenspace E-Mobility', description },
+  }
 }
 
 export default function AboutPage({ params: { locale } }: { params: { locale: string } }) {

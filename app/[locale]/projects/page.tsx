@@ -11,8 +11,15 @@ import Badge from '@/components/Badge'
 import VideoPlayer from '@/components/VideoPlayer'
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
-  const t = await getTranslations({ locale, namespace: 'projects' })
-  return { title: `${t('title')} — Greenspace E-Mobility`, description: t('subtitle') }
+  const description = locale === 'es'
+    ? 'Proyectos de carga eléctrica de Greenspace E-Mobility: hubs de carga en Panamá, corredor México-Texas, flotas eléctricas comerciales y más. Infraestructura real en operación.'
+    : 'Greenspace E-Mobility projects: EV charging hubs in Panama, Mexico-Texas corridor, commercial fleet electrification and more. Real infrastructure in operation across the Americas.'
+  return {
+    title: locale === 'es' ? 'Proyectos | Greenspace E-Mobility' : 'Projects | Greenspace E-Mobility',
+    description,
+    keywords: ['EV charging projects Panama', 'electric highway project', 'fleet electrification Latin America', 'charging hub deployment'],
+    openGraph: { title: 'Greenspace E-Mobility Projects', description },
+  }
 }
 
 export default function ProjectsPage({ params: { locale } }: { params: { locale: string } }) {

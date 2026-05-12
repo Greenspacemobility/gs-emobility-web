@@ -14,8 +14,15 @@ import CountUp from '@/components/CountUp'
 const HighwayMap = dynamic(() => import('@/components/HighwayMap'), { ssr: false })
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
-  const t = await getTranslations({ locale, namespace: 'highway' })
-  return { title: t('badge'), description: t('subtitle') }
+  const description = locale === 'es'
+    ? 'Autopista Eléctrica Greenspace: el primer corredor de carga para camiones eléctricos entre Monterrey, Laredo y Dallas. Infraestructura de carga ultrarrápida para flotas transfronterizas México-Texas.'
+    : 'Greenspace Electric Highway: the first electric truck charging corridor from Monterrey through Laredo to Dallas. Ultra-fast charging infrastructure for cross-border Mexico-Texas fleets.'
+  return {
+    title: locale === 'es' ? 'Autopista Eléctrica | Corredor México–Texas | Greenspace' : 'Electric Highway | Mexico–Texas EV Corridor | Greenspace',
+    description,
+    keywords: ['electric highway Mexico Texas', 'EV corridor Monterrey Dallas', 'cross border electric truck charging', 'autopista eléctrica', 'corredor eléctrico Monterrey Laredo'],
+    openGraph: { title: 'Greenspace Electric Highway — Mexico to Texas EV Corridor', description },
+  }
 }
 
 export default function ElectricHighwayPage({ params: { locale } }: { params: { locale: string } }) {

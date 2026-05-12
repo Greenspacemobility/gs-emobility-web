@@ -8,8 +8,15 @@ import Badge from '@/components/Badge'
 import BrandSelector from '@/components/BrandSelector'
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
-  const t = await getTranslations({ locale, namespace: 'products' })
-  return { title: t('badge'), description: t('subtitle') }
+  const description = locale === 'es'
+    ? 'Cargadores EV Autel de alta potencia, camiones eléctricos Windrose Clase 8, y plataforma de gestión de carga. Distribuidor oficial en Panamá, México y Texas.'
+    : 'Autel high-power EV chargers, Windrose Class 8 electric trucks, and smart charging management platform. Official distributor in Panama, Mexico and Texas.'
+  return {
+    title: locale === 'es' ? 'Productos | Cargadores EV y Camiones Eléctricos | Greenspace' : 'Products | EV Chargers & Electric Trucks | Greenspace',
+    description,
+    keywords: ['Autel EV charger distributor', 'Windrose electric truck', 'MaxiCharger DC', 'EV charger Panama', 'Class 8 electric truck Latin America', 'fleet charging solutions'],
+    openGraph: { title: 'Greenspace E-Mobility Products — EV Chargers & Electric Trucks', description },
+  }
 }
 
 export default function ProductsPage({ params: { locale } }: { params: { locale: string } }) {
