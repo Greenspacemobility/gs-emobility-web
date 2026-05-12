@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { Resend } from 'resend'
+import nodemailer from 'nodemailer'
 
 export async function POST(req: NextRequest) {
-  const resend = new Resend(process.env.RESEND_API_KEY)
   try {
     const body = await req.json()
     const { name, email, phone, country, address, siteType, date, time, notes } = body
@@ -11,10 +10,20 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
     }
 
-    const { error } = await resend.emails.send({
-      from: 'Greenspace E-Mobility <noreply@gs-emobility.com>',
-      to: ['info@gs-emobility.com'],
-      bcc: ['william.pui@gs-emobility.com'],
+    const transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true,
+      auth: {
+        user: process.env.GMAIL_USER,
+        pass: process.env.GMAIL_APP_PASSWORD,
+      },
+    })
+
+    await transporter.sendMail({
+      from: `"Greenspace E-Mobility" <${process.env.GMAIL_USER}>`,
+      to: 'info@gs-emobility.com',
+      bcc: 'william.pui@gs-emobility.com',
       replyTo: email,
       subject: `Site Visit Request — ${name} · ${country || 'Unknown'}`,
       html: `
@@ -74,11 +83,6 @@ export async function POST(req: NextRequest) {
         </div>
       `,
     })
-
-    if (error) {
-      console.error('Resend error:', error)
-      return NextResponse.json({ error: 'Failed to send email' }, { status: 500 })
-    }
 
     return NextResponse.json({ success: true })
   } catch (err) {
