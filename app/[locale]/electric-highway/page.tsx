@@ -58,7 +58,7 @@ export default function ElectricHighwayPage({ params: { locale } }: { params: { 
     { phase: t('phase2Name'), year: t('phase2Year'), title: t('phase2Title'), desc: t('phase2Desc'), status: 'building' },
     { phase: t('phase3Name'), year: t('phase3Year'), title: t('phase3Title'), desc: t('phase3Desc'), status: 'planned'  },
     { phase: t('phase4Name'), year: t('phase4Year'), title: t('phase4Title'), desc: t('phase4Desc'), status: 'planned'  },
-    { phase: t('phase5Name'), year: t('phase5Year'), title: t('phase5Title'), desc: t('phase5Desc'), status: 'future'   },
+    { phase: t('phase5Name'), year: t('phase5Year'), title: t('phase5Title'), desc: t('phase5Desc'), status: 'planned'  },
   ]
 
   return (
@@ -318,6 +318,69 @@ export default function ElectricHighwayPage({ params: { locale } }: { params: { 
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Phase 5 — Texas Triangle spotlight */}
+      <section className="section-padding relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-sky-500/5 via-transparent to-navy-900/0 pointer-events-none" />
+        <div className="container-wide relative z-10">
+          <AnimateIn>
+            <div className="glass rounded-3xl overflow-hidden border border-sky-400/25 relative">
+              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-sky-400/50 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-br from-sky-500/5 via-transparent to-transparent pointer-events-none" />
+              <div className="relative z-10 p-8 md:p-12">
+                <div className="flex flex-col lg:flex-row gap-10 items-start">
+                  <div className="flex-1">
+                    <span className="inline-flex items-center gap-2 text-sky-400 text-xs font-bold uppercase tracking-widest bg-sky-400/10 border border-sky-400/25 rounded-full px-4 py-1.5 mb-6">
+                      <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
+                      {t('phase5Name')} · {t('phase5Year')} · {t('statusPlanned')}
+                    </span>
+                    <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+                      {t('phase5Title')}
+                    </h2>
+                    <p className="text-white/55 leading-relaxed mb-8 max-w-xl">
+                      {t('phase5Desc')}
+                    </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                      {[
+                        { val: t('p5stat1Val'), label: t('p5stat1Label') },
+                        { val: t('p5stat2Val'), label: t('p5stat2Label') },
+                        { val: t('p5stat3Val'), label: t('p5stat3Label') },
+                      ].map((s, i) => (
+                        <div key={i} className="bg-white/[0.04] border border-sky-400/15 rounded-xl p-4 text-center">
+                          <div className="font-display font-bold text-sky-400 text-2xl mb-1">{s.val}</div>
+                          <div className="text-white/40 text-xs leading-snug">{s.label}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="lg:w-72 shrink-0">
+                    <div className="glass rounded-2xl border border-sky-400/20 p-6">
+                      <p className="text-sky-400 text-xs font-bold uppercase tracking-widest mb-4">{t('p5whyTitle')}</p>
+                      <ul className="space-y-3">
+                        {[t('p5why1'), t('p5why2'), t('p5why3'), t('p5why4')].map((point, i) => (
+                          <li key={i} className="flex items-start gap-3 text-sm text-white/60">
+                            <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
+                            {point}
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="mt-6 pt-5 border-t border-white/[0.06]">
+                        <Link
+                          href={`/${locale}/contact`}
+                          className="w-full inline-flex items-center justify-center gap-2 bg-sky-500/20 hover:bg-sky-500/30 border border-sky-400/30 text-sky-400 font-semibold text-sm px-5 py-3 rounded-xl transition-all"
+                        >
+                          {t('p5cta')}
+                          <ArrowRight className="w-4 h-4" />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </AnimateIn>
         </div>
       </section>
 
