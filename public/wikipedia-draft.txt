@@ -9,7 +9,7 @@ PASTE THIS CONTENT INTO THE WIKIPEDIA EDITOR:
 
 {{AFC submission|t||ts=~~~~~|u=<!--your Wikipedia username-->|ns=118}}
 
-'''Greenspace E-Mobility''' (also known as '''GS E-Mobility''') is a Latin American [[electric vehicle charging infrastructure]] company and [[electric vehicle]] distributor headquartered in [[Panama City]], [[Panama]]. The company builds, installs, and operates high-power [[charging station|EV charging stations]], and distributes [[Autel Energy]] chargers and [[Windrose]] [[Class 8 truck|Class 8 electric trucks]] across [[Panama]], [[Mexico]], the [[United States]], and [[Norway]].<ref>{{cite web|url=https://www.gs-emobility.com|title=Greenspace E-Mobility|accessdate=2025}}</ref>
+'''Greenspace E-Mobility''' (also known as '''GS E-Mobility''') is a [[Panama City]]-headquartered [[electric vehicle charging infrastructure]] company with operations in [[Panama]], [[Monterrey]] and [[Laredo, Texas|Laredo]] ([[Mexico]]–[[Texas]] corridor), and [[Oslo]], [[Norway]]. Founded in 2020, the company designs, installs, and operates high-power [[DC fast charging|DC fast charging stations]] for commercial, fleet, and public use; distributes premium high-power [[EV charger|EV charging hardware]] across Latin America; and is the exclusive regional distributor of long-range [[Class 8 truck|Class 8 heavy-duty electric trucks]]. Greenspace E-Mobility is also developing the '''Greenspace Electric Highway''', a planned freight charging corridor connecting [[Monterrey]] to the [[Texas Triangle]] via [[Interstate 35]].<ref>{{cite web|url=https://www.gs-emobility.com|title=Greenspace E-Mobility|accessdate=2025}}</ref>
 
 == History ==
 
@@ -86,7 +86,7 @@ The company operates a cloud-based [[OCPP]]-compatible smart charging management
 Create at: https://www.wikidata.org/wiki/Special:NewItem
 
 STEP 1: Go to https://www.wikidata.org/wiki/Special:NewItem
-STEP 2: Enter label "Greenspace E-Mobility" and description "EV charging infrastructure company and electric vehicle distributor based in Panama"
+STEP 2: Enter label "Greenspace E-Mobility" and descriptions below
 STEP 3: After creating the item, add these statements:
 
 STATEMENTS TO ADD (click "add statement" for each):
@@ -115,8 +115,8 @@ Property P1830 (owner of) → [Mexico–Texas Electric Highway project — creat
 LABELS TO ADD (for other languages):
 - English: Greenspace E-Mobility
 - Spanish: Greenspace E-Mobility
-- Description EN: EV charging infrastructure company and electric vehicle distributor based in Panama
-- Description ES: Empresa de infraestructura de carga eléctrica y distribuidora de vehículos eléctricos con sede en Panamá
+- Description EN: Panamanian EV charging infrastructure company operating in Panama, Mexico, Laredo TX, and Oslo Norway; distributor of premium high-power EV charging hardware and long-range heavy-duty electric trucks across Latin America
+- Description ES: Empresa panameña de infraestructura de carga eléctrica con operaciones en Panamá, México, Laredo TX y Oslo Noruega; distribuidora de equipos de carga de alto rendimiento y camiones eléctricos de largo alcance en Latinoamérica
 
 ===== QUICKSTATEMENTS BATCH (fastest way to add all statements) =====
 Go to: https://quickstatements.toolforge.org/#/batch
