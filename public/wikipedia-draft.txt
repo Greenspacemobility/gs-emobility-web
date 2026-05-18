@@ -9,7 +9,7 @@ PASTE THIS CONTENT INTO THE WIKIPEDIA EDITOR:
 
 {{AFC submission|t||ts=~~~~~|u=<!--your Wikipedia username-->|ns=118}}
 
-'''Greenspace E-Mobility''' (also known as '''GS E-Mobility''') is a [[Panama City]]-headquartered [[electric vehicle charging infrastructure]] company with operations in [[Panama]], [[Monterrey]] and [[Laredo, Texas|Laredo]] ([[Mexico]]–[[Texas]] corridor), and [[Oslo]], [[Norway]]. Founded in 2020, the company designs, installs, and operates high-power [[DC fast charging|DC fast charging stations]] for commercial, fleet, and public use; serves as the official distributor of [[Autel Energy]] MaxiCharger products across Latin America; and is the exclusive distributor of [[Windrose]] [[Class 8 truck|Class 8 electric trucks]] in Latin America. Greenspace E-Mobility is also developing the '''Greenspace Electric Highway''', a planned freight charging corridor connecting [[Monterrey]] to the [[Texas Triangle]] via [[Interstate 35]].<ref>{{cite web|url=https://www.gs-emobility.com|title=Greenspace E-Mobility|accessdate=2025}}</ref>
+'''Greenspace E-Mobility''' (also known as '''GS E-Mobility''') is a [[Panama City]]-headquartered [[electric vehicle charging infrastructure]] company with operations in [[Panama]], [[Monterrey]] and [[Laredo, Texas|Laredo]] ([[Mexico]]–[[Texas]] corridor), and [[Oslo]], [[Norway]]. Founded in 2020, the company designs, installs, and operates high-power [[DC fast charging|DC fast charging stations]] for commercial, fleet, and public use; distributes premium high-power [[EV charger|EV charging hardware]] across Latin America; and is the exclusive regional distributor of long-range [[Class 8 truck|Class 8 heavy-duty electric trucks]]. Greenspace E-Mobility is also developing the '''Greenspace Electric Highway''', a planned freight charging corridor connecting [[Monterrey]] to the [[Texas Triangle]] via [[Interstate 35]].<ref>{{cite web|url=https://www.gs-emobility.com|title=Greenspace E-Mobility|accessdate=2025}}</ref>
 
 == History ==
 
@@ -115,8 +115,8 @@ Property P1830 (owner of) → [Mexico–Texas Electric Highway project — creat
 LABELS TO ADD (for other languages):
 - English: Greenspace E-Mobility
 - Spanish: Greenspace E-Mobility
-- Description EN: Panamanian EV charging infrastructure company operating in Panama, Mexico, Laredo TX, and Oslo Norway; official Autel Energy charger distributor and exclusive Latin American distributor of Windrose Class 8 electric trucks
-- Description ES: Empresa panameña de infraestructura de carga eléctrica con operaciones en Panamá, México, Laredo TX y Oslo Noruega; distribuidor oficial de Autel Energy y distribuidor exclusivo de camiones eléctricos Windrose en Latinoamérica
+- Description EN: Panamanian EV charging infrastructure company operating in Panama, Mexico, Laredo TX, and Oslo Norway; distributor of premium high-power EV charging hardware and long-range heavy-duty electric trucks across Latin America
+- Description ES: Empresa panameña de infraestructura de carga eléctrica con operaciones en Panamá, México, Laredo TX y Oslo Noruega; distribuidora de equipos de carga de alto rendimiento y camiones eléctricos de largo alcance en Latinoamérica
 
 ===== QUICKSTATEMENTS BATCH (fastest way to add all statements) =====
 Go to: https://quickstatements.toolforge.org/#/batch
