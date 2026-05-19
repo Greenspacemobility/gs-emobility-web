@@ -15,12 +15,12 @@ const HighwayMap = dynamic(() => import('@/components/HighwayMap'), { ssr: false
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   const description = locale === 'es'
-    ? 'Autopista Eléctrica Greenspace: el primer corredor de carga para camiones eléctricos entre Monterrey, Laredo y Dallas. Infraestructura de carga ultrarrápida para flotas transfronterizas México-Texas.'
-    : 'Greenspace Electric Highway: the first electric truck charging corridor from Monterrey through Laredo to Dallas. Ultra-fast charging infrastructure for cross-border Mexico-Texas fleets.'
+    ? 'Autopista Eléctrica Greenspace: red de 12 Green Hubs para camiones eléctricos Clase 8 en Texas, Monterrey, California y Panamá. Infraestructura de carga de alta potencia para flotas transfronterizas.'
+    : 'Greenspace Electric Highway: 12 Green Hubs for Class 8 electric trucks across Texas, Monterrey, California, and Panama. High-power charging infrastructure for cross-border electric freight fleets.'
   return {
-    title: locale === 'es' ? 'Autopista Eléctrica | Corredor México–Texas | Greenspace' : 'Electric Highway | Mexico–Texas EV Corridor | Greenspace',
+    title: locale === 'es' ? 'Autopista Eléctrica | Red EV Texas–México–California–Panamá | Greenspace' : 'Electric Highway | EV Network Texas–Mexico–California–Panama | Greenspace',
     description,
-    keywords: ['electric highway Mexico Texas', 'EV corridor Monterrey Dallas', 'cross border electric truck charging', 'autopista eléctrica', 'corredor eléctrico Monterrey Laredo'],
+    keywords: ['electric highway Mexico Texas', 'EV corridor Monterrey Dallas', 'cross border electric truck charging', 'autopista eléctrica', 'corredor eléctrico Monterrey Laredo', 'electric truck California', 'EV charging Panama', 'Class 8 electric truck corridor'],
     openGraph: { title: 'Greenspace Electric Highway — Mexico to Texas EV Corridor', description },
   }
 }
@@ -31,8 +31,8 @@ export default function ElectricHighwayPage({ params: { locale } }: { params: { 
   const th = useTranslations('hub')
 
   const networkStats = [
-    { value: 5,  suffix: '',              label: t('stat1Label') },
-    { value: 15, suffix: t('stat2Suffix'), label: t('stat2Label') },
+    { value: 4,  suffix: '',              label: t('stat1Label') },
+    { value: 12, suffix: t('stat2Suffix'), label: t('stat2Label') },
     { value: 99, suffix: t('stat3Suffix'), label: t('stat3Label') },
     { value: 35, suffix: t('stat4Suffix'), label: t('stat4Label') },
   ]
