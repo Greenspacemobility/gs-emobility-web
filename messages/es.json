@@ -171,11 +171,11 @@
     "hub6Title": "Integración Total de Telemática",
     "hub6Desc": "Conectividad fluida con plataformas de telemática, habilitando datos del vehículo en tiempo real, historial de carga y analíticas operativas.",
     "roadmapTitle": "Despliegue del Corredor",
-    "roadmapSubtitle": "Cuatro mercados. Doce Green Hubs. Cien camiones Windrose Clase 8. Texas → Monterrey → California → Panamá — la red de transporte eléctrico más estratégica de las Américas.",
+    "roadmapSubtitle": "Cuatro mercados. Doce Green Hubs. Cien camiones eléctricos Clase 8. Texas → Monterrey → California → Panamá — la red de transporte eléctrico más estratégica de las Américas.",
     "phase1Name": "Fase 1",
     "phase1Year": "2026",
     "phase1Title": "Lanzamiento Texas — 4 Green Hubs",
-    "phase1Desc": "4 Green Hubs operativos en Texas (corredor Laredo–Dallas) al Q4 2026, estableciendo la primera infraestructura de carga de alta potencia para camiones eléctricos en el lado estadounidense de la frontera. Despliegue de los primeros 50 camiones eléctricos Windrose Clase 8 para operaciones de flota dedicadas.",
+    "phase1Desc": "4 Green Hubs operativos en Texas (corredor Laredo–Dallas) al Q4 2026, estableciendo la primera infraestructura de carga de alta potencia para camiones eléctricos en el lado estadounidense de la frontera. Despliegue de los primeros 50 camiones eléctricos Clase 8 para operaciones de flota dedicadas.",
     "phase2Name": "Fase 2",
     "phase2Year": "2027",
     "phase2Title": "Monterrey, México — 2 Green Hubs",
@@ -210,7 +210,7 @@
     "statusFuture": "Expansión Futura",
     "ctaBadge": "Únete al corredor",
     "ctaJoinTitle": "La ruta de carga más importante del continente está en transición eléctrica",
-    "ctaJoinDesc": "$354 mil millones en comercio anual. 6 millones de cruces de camiones. 12 Green Hubs. 100 camiones Windrose. La transición ya comenzó — operadores de flota, empresas logísticas e inversores: asóciate con nosotros para liderarla.",
+    "ctaJoinDesc": "$354 mil millones en comercio anual. 6 millones de cruces de camiones. 12 Green Hubs. 100 camiones eléctricos Clase 8. La transición ya comenzó — operadores de flota, empresas logísticas e inversores: asóciate con nosotros para liderarla.",
     "ctaJoinButton": "Ponte en contacto"
   },
   "hub": {

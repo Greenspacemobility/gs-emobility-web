@@ -171,11 +171,11 @@
     "hub6Title": "Full Telematics Integration",
     "hub6Desc": "Seamless connectivity with fleet telematics platforms, enabling live vehicle data, charging history, and operational analytics.",
     "roadmapTitle": "Corridor Rollout",
-    "roadmapSubtitle": "Four markets. Twelve Green Hubs. One hundred Windrose Class 8 trucks. Texas → Monterrey → California → Panama — the most strategic electric freight network in the Americas.",
+    "roadmapSubtitle": "Four markets. Twelve Green Hubs. One hundred Class 8 electric trucks. Texas → Monterrey → California → Panama — the most strategic electric freight network in the Americas.",
     "phase1Name": "Phase 1",
     "phase1Year": "2026",
     "phase1Title": "Texas Launch — 4 Green Hubs",
-    "phase1Desc": "4 Green Hubs operational in Texas (Laredo and Dallas corridor) by Q4 2026, establishing the first high-power EV charging infrastructure on the U.S. side of the Mexico border. Deployment of the first 50 Windrose Class 8 electric trucks for dedicated fleet operations on the corridor.",
+    "phase1Desc": "4 Green Hubs operational in Texas (Laredo and Dallas corridor) by Q4 2026, establishing the first high-power EV charging infrastructure on the U.S. side of the Mexico border. Deployment of the first 50 Class 8 electric trucks for dedicated fleet operations on the corridor.",
     "phase2Name": "Phase 2",
     "phase2Year": "2027",
     "phase2Title": "Monterrey, Mexico — 2 Green Hubs",
@@ -210,7 +210,7 @@
     "statusFuture": "Future Expansion",
     "ctaBadge": "Join the corridor",
     "ctaJoinTitle": "The most important freight route on the continent is going electric",
-    "ctaJoinDesc": "$354 billion in annual trade. 6 million truck crossings. 12 Green Hubs. 100 Windrose trucks. The transition has started — fleet operators, logistics companies, and infrastructure investors: partner with us to lead it.",
+    "ctaJoinDesc": "$354 billion in annual trade. 6 million truck crossings. 12 Green Hubs. 100 Class 8 electric trucks. The transition has started — fleet operators, logistics companies, and infrastructure investors: partner with us to lead it.",
     "ctaJoinButton": "Get in touch"
   },
   "hub": {
