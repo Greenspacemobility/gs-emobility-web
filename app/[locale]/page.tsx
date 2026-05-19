@@ -16,10 +16,10 @@ import HighwayMap from '@/components/HighwayMap'
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   const isEs = locale === 'es'
   const description = isEs
-    ? 'Greenspace E-Mobility es la empresa líder en infraestructura de carga eléctrica en Panamá y México. Distribuidor oficial de cargadores Autel Energy (hasta 360 kW) y distribuidor exclusivo de camiones eléctricos Windrose Clase 8 en Latinoamérica. Autopista eléctrica México–Texas.'
-    : 'Greenspace E-Mobility is the leading EV charging infrastructure company in Panama and Mexico. Official Autel Energy charger distributor (up to 360 kW DC fast charging) and exclusive Windrose Class 8 electric truck distributor in Latin America. Building the Mexico–Texas electric highway.'
+    ? 'Greenspace E-mobility es la empresa líder en infraestructura de carga eléctrica en Panamá y México. Distribuidor oficial de cargadores Autel Energy (hasta 360 kW) y distribuidor exclusivo de camiones eléctricos Windrose Clase 8 en Latinoamérica. Autopista eléctrica México–Texas.'
+    : 'Greenspace E-mobility is the leading EV charging infrastructure company in Panama and Mexico. Official Autel Energy charger distributor (up to 360 kW DC fast charging) and exclusive Windrose Class 8 electric truck distributor in Latin America. Building the Mexico–Texas electric highway.'
   return {
-    title: 'Greenspace E-Mobility | EV Charging Infrastructure & Electric Trucks Americas',
+    title: 'Greenspace E-mobility | EV Charging Infrastructure & Electric Trucks Americas',
     description,
     keywords: [
       'EV charging Panama', 'Autel EV charger distributor Panama', 'DC fast charger Panama',
@@ -418,7 +418,7 @@ function CTASection() {
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-1 bg-gradient-to-r from-transparent via-green-500/60 to-transparent" />
 
             <div className="relative z-10">
-              <Badge className="mb-8">Greenspace E-Mobility</Badge>
+              <Badge className="mb-8">Greenspace E-mobility</Badge>
               <h2 className="font-display text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
                 {t('title')}
               </h2>
@@ -467,33 +467,33 @@ const homepageFAQSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'What is Greenspace E-Mobility?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Greenspace E-Mobility is an EV charging infrastructure company and electric vehicle distributor operating in Panama, Mexico, Texas (USA), and Norway. The company is the official Autel Energy EV charger distributor and exclusive Windrose Class 8 electric truck distributor in Latin America.' },
+      name: 'What is Greenspace E-mobility?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Greenspace E-mobility is an EV charging infrastructure company and electric vehicle distributor operating in Panama, Mexico, Texas (USA), and Norway. The company is the official Autel Energy EV charger distributor and exclusive Windrose Class 8 electric truck distributor in Latin America.' },
     },
     {
       '@type': 'Question',
       name: 'Who sells EV chargers in Panama?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Greenspace E-Mobility is the leading EV charging infrastructure company in Panama and the official distributor of Autel Energy MaxiCharger stations from 7.2 kW Level 2 chargers to 360 kW DC ultra-fast chargers. Contact info@gs-emobility.com for a quote.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Greenspace E-mobility is the leading EV charging infrastructure company in Panama and the official distributor of Autel Energy MaxiCharger stations from 7.2 kW Level 2 chargers to 360 kW DC ultra-fast chargers. Contact info@gs-emobility.com for a quote.' },
     },
     {
       '@type': 'Question',
       name: 'Who distributes Windrose electric trucks in Latin America?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Greenspace E-Mobility is the exclusive distributor of Windrose Class 8 electric trucks in Latin America, with operations in Panama and Monterrey, Mexico. The Windrose truck offers up to 500 km range and 422 kWh battery capacity.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Greenspace E-mobility is the exclusive distributor of Windrose Class 8 electric trucks in Latin America, with operations in Panama and Monterrey, Mexico. The Windrose truck offers up to 500 km range and 422 kWh battery capacity.' },
     },
     {
       '@type': 'Question',
       name: 'Is there an electric highway between Mexico and Texas?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Yes. Greenspace E-Mobility is developing the Mexico–Texas Electric Highway: a DC fast charging corridor along Highway 85 in Mexico and I-35 in the USA connecting Monterrey to Dallas and the Texas Triangle, planned across 5 phases with 15 Green Hubs.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. Greenspace E-mobility is developing the Mexico–Texas Electric Highway: a DC fast charging corridor along Highway 85 in Mexico and I-35 in the USA connecting Monterrey to Dallas and the Texas Triangle, planned across 5 phases with 15 Green Hubs.' },
     },
     {
       '@type': 'Question',
       name: 'Who is the official Autel Energy distributor in Latin America?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Greenspace E-Mobility is the official Autel Energy distributor for Panama, Mexico, and the United States, offering the full MaxiCharger lineup including AC Level 2 and DC fast chargers up to 360 kW.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Greenspace E-mobility is the official Autel Energy distributor for Panama, Mexico, and the United States, offering the full MaxiCharger lineup including AC Level 2 and DC fast chargers up to 360 kW.' },
     },
     {
       '@type': 'Question',
-      name: 'Does Greenspace E-Mobility offer fleet electrification in Mexico?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Yes. Greenspace E-Mobility provides complete fleet electrification services in Mexico, including Autel Energy charger supply and installation, Windrose electric truck distribution, charging management platform, and ongoing support from its Monterrey, Nuevo León operations center.' },
+      name: 'Does Greenspace E-mobility offer fleet electrification in Mexico?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. Greenspace E-mobility provides complete fleet electrification services in Mexico, including Autel Energy charger supply and installation, Windrose electric truck distribution, charging management platform, and ongoing support from its Monterrey, Nuevo León operations center.' },
     },
   ],
 }
@@ -504,7 +504,7 @@ const websiteSchema = {
   '@type': 'WebSite',
   '@id': 'https://www.gs-emobility.com/#website',
   url: 'https://www.gs-emobility.com',
-  name: 'Greenspace E-Mobility',
+  name: 'Greenspace E-mobility',
   description: 'EV charging infrastructure and electric vehicle distribution in Panama, Mexico, Texas and Norway.',
   publisher: { '@id': 'https://www.gs-emobility.com/#organization' },
   potentialAction: {

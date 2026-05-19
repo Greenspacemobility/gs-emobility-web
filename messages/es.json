@@ -126,7 +126,7 @@
   "highway": {
     "badge": "Autopista Eléctrica",
     "introLabel": "Autopistas Eléctricas",
-    "introText": "Greenspace E-Mobility está creando el nuevo estándar para el transporte transfronterizo — una red integrada de Autopistas Eléctricas y Green Hubs en Texas, México, California y Panamá que electrificará los corredores de carga más críticos que conectan las Américas.",
+    "introText": "Greenspace E-mobility está creando el nuevo estándar para el transporte transfronterizo — una red integrada de Autopistas Eléctricas y Green Hubs en Texas, México, California y Panamá que electrificará los corredores de carga más críticos que conectan las Américas.",
     "title": "Liderando el Transporte Verde Transfronterizo",
     "subtitle": "$354 mil millones en comercio anual. 6 millones de cruces de camiones por año. Greenspace construye la infraestructura de carga que electrifica la red de transporte más estratégica de América del Norte — de Monterrey a Dallas, California y Panamá.",
     "corridorEyebrow": "El corredor en números",
@@ -399,7 +399,7 @@
     "include5": "Acceso a plataforma de gestión",
     "include6": "Mantenimiento preventivo",
     "platformBadge": "Software Incluido",
-    "platformTitle": "Plataforma Digital GS E-Mobility",
+    "platformTitle": "Plataforma Digital GS E-mobility",
     "platformDesc": "Gestiona toda tu red de carga, usuarios y pagos desde nuestra app móvil y portal web OCPP. Compatible con todos los cargadores AC y DC.",
     "platformCta": "Ver plataforma",
     "windroseBadge": "Camiones Eléctricos",
@@ -422,7 +422,7 @@
     "windroseCta": "Solicitar información del camión"
   },
   "platform": {
-    "metaTitle": "Plataforma Digital — Greenspace E-Mobility",
+    "metaTitle": "Plataforma Digital — Greenspace E-mobility",
     "metaDesc": "Gestiona tu infraestructura de carga en tiempo real con nuestra app y portal web OCPP.",
     "badge": "Plataforma Digital",
     "heroTitle": "Controla tu infraestructura de carga desde cualquier lugar",
@@ -682,7 +682,7 @@
     "successText": "Gracias — nuestro técnico confirmará tu cita y entregará una cotización completa en menos de 24 horas tras la visita."
   },
   "partnerSite": {
-    "metaTitle": "Asocia tu Sitio — Greenspace E-Mobility",
+    "metaTitle": "Asocia tu Sitio — Greenspace E-mobility",
     "metaDesc": "¿Tienes un sitio estratégico en Panamá, México o Texas? Co-invierte con Greenspace para desarrollar un hub de carga de alta potencia — combinando tu ubicación con nuestra tecnología y operación.",
     "badge": "Asociación de Sitios",
     "heroTitle": "¿Tienes un sitio? Construyamos un hub de carga juntos.",
@@ -773,6 +773,6 @@
     "privacy": "Privacidad",
     "terms": "Términos",
     "contact": "Contacto",
-    "copyright": "© 2025 Greenspace E-Mobility. Todos los derechos reservados."
+    "copyright": "© 2025 Greenspace E-mobility. Todos los derechos reservados."
   }
 }

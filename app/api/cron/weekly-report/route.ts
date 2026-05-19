@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer'
 
 // ─── Competitive intelligence prompt ─────────────────────────────────────────
 function buildCompetitivePrompt(weekNumber: number, year: number): string {
-  return `You are a senior market intelligence analyst for Greenspace E-Mobility, a company that:
+  return `You are a senior market intelligence analyst for Greenspace E-mobility, a company that:
 - Builds and operates high-power EV charging infrastructure in Panama, Mexico (Monterrey), Texas (USA), and Norway (Oslo)
 - Is the official Autel Energy EV charger distributor in Panama, Mexico, and the USA
 - Is the exclusive Windrose Class 8 electric truck distributor in Latin America
@@ -201,7 +201,7 @@ function buildReportEmail(report: any): string {
       <table width="100%" cellpadding="0" cellspacing="0">
         <tr>
           <td>
-            <div style="color:#22c55e;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;">Greenspace E-Mobility</div>
+            <div style="color:#22c55e;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;">Greenspace E-mobility</div>
             <div style="color:white;font-size:20px;font-weight:800;">Weekly Competitive Intelligence Report</div>
             <div style="color:rgba(255,255,255,0.4);font-size:12px;margin-top:4px;">${report.generatedDate} · ${report.weekLabel}</div>
           </td>
@@ -361,7 +361,7 @@ function buildReportEmail(report: any): string {
             <p style="font-size:11px;color:rgba(255,255,255,0.3);margin:0;line-height:1.6;">
               This report is generated automatically every Sunday by the Greenspace intelligence system.<br>
               Data is based on AI market knowledge — supplement with real-time competitor research.<br>
-              © ${new Date().getFullYear()} Greenspace E-Mobility · Confidential
+              © ${new Date().getFullYear()} Greenspace E-mobility · Confidential
             </p>
           </td>
           <td align="right" style="vertical-align:bottom;">

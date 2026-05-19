@@ -37,18 +37,18 @@ export async function generateMetadata({ params: { locale } }: { params: { local
 // ─── FAQ Data ─────────────────────────────────────────────────────────────────
 const FAQ_EN = [
   {
-    category: 'About Greenspace E-Mobility',
+    category: 'About Greenspace E-mobility',
     questions: [
       {
-        q: 'What is Greenspace E-Mobility?',
-        a: 'Greenspace E-Mobility is an EV charging infrastructure company and electric vehicle distributor founded in 2020. We build, install, and operate high-power charging stations, and distribute Autel Energy EV chargers and Windrose Class 8 electric trucks across Panama, Mexico, Texas (USA), and Norway.',
+        q: 'What is Greenspace E-mobility?',
+        a: 'Greenspace E-mobility is an EV charging infrastructure company and electric vehicle distributor founded in 2020. We build, install, and operate high-power charging stations, and distribute Autel Energy EV chargers and Windrose Class 8 electric trucks across Panama, Mexico, Texas (USA), and Norway.',
       },
       {
-        q: 'Where does Greenspace E-Mobility operate?',
-        a: 'Greenspace E-Mobility operates in four countries: Panama (headquarters), Monterrey, Mexico, Texas, USA, and Oslo, Norway. Our primary markets are Panama and Mexico, where we serve residential, commercial, fleet, and public charging customers.',
+        q: 'Where does Greenspace E-mobility operate?',
+        a: 'Greenspace E-mobility operates in four countries: Panama (headquarters), Monterrey, Mexico, Texas, USA, and Oslo, Norway. Our primary markets are Panama and Mexico, where we serve residential, commercial, fleet, and public charging customers.',
       },
       {
-        q: 'How can I contact Greenspace E-Mobility?',
+        q: 'How can I contact Greenspace E-mobility?',
         a: 'You can reach us by email at info@gs-emobility.com or by filling out the contact form at gs-emobility.com/contact. Our team speaks English and Spanish and serves clients across Panama, Mexico, and the United States.',
       },
       {
@@ -62,7 +62,7 @@ const FAQ_EN = [
     questions: [
       {
         q: 'Who is the official Autel Energy EV charger distributor in Panama and Mexico?',
-        a: 'Greenspace E-Mobility is the official Autel Energy distributor for Panama, Mexico, and the United States. We carry the full MaxiCharger lineup from 7.2 kW Level 2 chargers up to 360 kW ultra-fast DC chargers.',
+        a: 'Greenspace E-mobility is the official Autel Energy distributor for Panama, Mexico, and the United States. We carry the full MaxiCharger lineup from 7.2 kW Level 2 chargers up to 360 kW ultra-fast DC chargers.',
       },
       {
         q: 'What EV charger models does Greenspace offer?',
@@ -87,7 +87,7 @@ const FAQ_EN = [
     questions: [
       {
         q: 'Who is the Windrose electric truck distributor in Latin America?',
-        a: 'Greenspace E-Mobility is the exclusive distributor of Windrose Class 8 electric trucks in Latin America. We cover Panama, Mexico, and other markets across the region.',
+        a: 'Greenspace E-mobility is the exclusive distributor of Windrose Class 8 electric trucks in Latin America. We cover Panama, Mexico, and other markets across the region.',
       },
       {
         q: 'What is the range of the Windrose electric truck?',
@@ -99,7 +99,7 @@ const FAQ_EN = [
       },
       {
         q: 'Can I get a Windrose electric truck for my fleet in Mexico?',
-        a: 'Yes. Greenspace E-Mobility supplies Windrose Class 8 electric trucks in Mexico, with our distribution hub in Monterrey, Nuevo León. We handle importation, delivery, and provide the charging infrastructure for your depot. Contact us to discuss fleet needs and pricing.',
+        a: 'Yes. Greenspace E-mobility supplies Windrose Class 8 electric trucks in Mexico, with our distribution hub in Monterrey, Nuevo León. We handle importation, delivery, and provide the charging infrastructure for your depot. Contact us to discuss fleet needs and pricing.',
       },
       {
         q: 'What is the payload capacity of the Windrose electric truck?',
@@ -158,18 +158,18 @@ const FAQ_EN = [
 
 const FAQ_ES = [
   {
-    category: 'Sobre Greenspace E-Mobility',
+    category: 'Sobre Greenspace E-mobility',
     questions: [
       {
-        q: '¿Qué es Greenspace E-Mobility?',
-        a: 'Greenspace E-Mobility es una empresa de infraestructura de carga eléctrica y distribuidora de vehículos eléctricos fundada en 2020. Construimos, instalamos y operamos estaciones de carga de alta potencia, y distribuimos cargadores EV Autel Energy y camiones eléctricos Clase 8 Windrose en Panamá, México, Texas (EE. UU.) y Noruega.',
+        q: '¿Qué es Greenspace E-mobility?',
+        a: 'Greenspace E-mobility es una empresa de infraestructura de carga eléctrica y distribuidora de vehículos eléctricos fundada en 2020. Construimos, instalamos y operamos estaciones de carga de alta potencia, y distribuimos cargadores EV Autel Energy y camiones eléctricos Clase 8 Windrose en Panamá, México, Texas (EE. UU.) y Noruega.',
       },
       {
-        q: '¿En qué países opera Greenspace E-Mobility?',
-        a: 'Greenspace E-Mobility opera en cuatro países: Panamá (sede principal), Monterrey, México, Texas, EE. UU. y Oslo, Noruega. Nuestros mercados principales son Panamá y México, donde atendemos clientes residenciales, comerciales, flotas y carga pública.',
+        q: '¿En qué países opera Greenspace E-mobility?',
+        a: 'Greenspace E-mobility opera en cuatro países: Panamá (sede principal), Monterrey, México, Texas, EE. UU. y Oslo, Noruega. Nuestros mercados principales son Panamá y México, donde atendemos clientes residenciales, comerciales, flotas y carga pública.',
       },
       {
-        q: '¿Cómo puedo contactar a Greenspace E-Mobility?',
+        q: '¿Cómo puedo contactar a Greenspace E-mobility?',
         a: 'Puedes escribirnos a info@gs-emobility.com o usar el formulario de contacto en gs-emobility.com/contact. Nuestro equipo habla español e inglés y atiende clientes en Panamá, México y Estados Unidos.',
       },
       {
@@ -183,7 +183,7 @@ const FAQ_ES = [
     questions: [
       {
         q: '¿Quién es el distribuidor oficial de cargadores Autel Energy en Panamá y México?',
-        a: 'Greenspace E-Mobility es el distribuidor oficial de Autel Energy para Panamá, México y Estados Unidos. Ofrecemos toda la línea MaxiCharger, desde cargadores Level 2 de 7.2 kW hasta cargadores DC ultrarrápidos de 360 kW.',
+        a: 'Greenspace E-mobility es el distribuidor oficial de Autel Energy para Panamá, México y Estados Unidos. Ofrecemos toda la línea MaxiCharger, desde cargadores Level 2 de 7.2 kW hasta cargadores DC ultrarrápidos de 360 kW.',
       },
       {
         q: '¿Qué modelos de cargadores EV ofrece Greenspace?',
@@ -200,7 +200,7 @@ const FAQ_ES = [
     questions: [
       {
         q: '¿Quién distribuye los camiones eléctricos Windrose en Latinoamérica?',
-        a: 'Greenspace E-Mobility es el distribuidor exclusivo de camiones eléctricos Windrose Clase 8 en Latinoamérica, con presencia en Panamá y México (Monterrey).',
+        a: 'Greenspace E-mobility es el distribuidor exclusivo de camiones eléctricos Windrose Clase 8 en Latinoamérica, con presencia en Panamá y México (Monterrey).',
       },
       {
         q: '¿Cuál es la autonomía del camión eléctrico Windrose?',
@@ -208,7 +208,7 @@ const FAQ_ES = [
       },
       {
         q: '¿Puedo obtener un camión eléctrico Windrose para mi flota en México?',
-        a: 'Sí. Greenspace E-Mobility suministra camiones Windrose Clase 8 en México desde nuestro hub de distribución en Monterrey, Nuevo León. Gestionamos la importación, entrega e instalación de la infraestructura de carga para tu depósito. Contáctenos para hablar sobre tus necesidades de flota.',
+        a: 'Sí. Greenspace E-mobility suministra camiones Windrose Clase 8 en México desde nuestro hub de distribución en Monterrey, Nuevo León. Gestionamos la importación, entrega e instalación de la infraestructura de carga para tu depósito. Contáctenos para hablar sobre tus necesidades de flota.',
       },
     ],
   },

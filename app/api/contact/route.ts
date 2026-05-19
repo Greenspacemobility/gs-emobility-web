@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
-import nodemailer from 'nodemailer'
+import { Resend } from 'resend'
+
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(req: NextRequest) {
   try {
@@ -10,20 +12,10 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
     }
 
-    const transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
-      port: 465,
-      secure: true,
-      auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_APP_PASSWORD,
-      },
-    })
-
-    await transporter.sendMail({
-      from: `"Greenspace E-Mobility" <${process.env.GMAIL_USER}>`,
-      to: 'info@gs-emobility.com',
-      bcc: 'william.pui@gs-emobility.com',
+    const { error } = await resend.emails.send({
+      from: 'Greenspace E-mobility <notifications@gs-emobility.com>',
+      to: ['info@gs-emobility.com', 'william.pui@gs-emobility.com'],
+      bcc: ['ruben.rock@gs-emobility.com', 'Moises.perez@gs-emobility.com', 'Mike.trevino@gs-emobility.com', 'horacio.delatorre@gs-emobility.com', 'roberpiere.villar@gs-emobility.com', 'john.parchment@gs-emobility.com', 'ricardo.zepeda@gs-emobility.com'],
       replyTo: email,
       subject: `New Contact: ${interest || 'General Inquiry'} — ${name}`,
       html: `
@@ -57,6 +49,11 @@ export async function POST(req: NextRequest) {
         </div>
       `,
     })
+
+    if (error) {
+      console.error('Resend error (contact):', error)
+      return NextResponse.json({ error: 'Failed to send email' }, { status: 500 })
+    }
 
     return NextResponse.json({ success: true })
   } catch (err) {

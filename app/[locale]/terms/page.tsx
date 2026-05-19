@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import AnimateIn from '@/components/AnimateIn'
 
 export const metadata: Metadata = {
-  title: 'Terms of Use — Greenspace E-Mobility',
+  title: 'Terms of Use — Greenspace E-mobility',
   description: 'Terms and conditions for use of the Greenspace E-mobility website.',
 }
 

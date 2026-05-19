@@ -46,11 +46,10 @@ export default function Header() {
         <Link href={`/${locale}`} className="flex items-center group">
           <Image
             src="/images/logo-white.png"
-            alt="Greenspace E-Mobility"
+            alt="Greenspace E-mobility"
             width={180}
             height={50}
             className="h-9 w-auto object-contain group-hover:opacity-90 transition-opacity"
-            priority
           />
         </Link>
 

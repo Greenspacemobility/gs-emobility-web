@@ -15,7 +15,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
     title: locale === 'es' ? 'Productos | Cargadores EV y Camiones Eléctricos | Greenspace' : 'Products | EV Chargers & Electric Trucks | Greenspace',
     description,
     keywords: ['Autel EV charger distributor', 'Windrose electric truck', 'MaxiCharger DC', 'EV charger Panama', 'Class 8 electric truck Latin America', 'fleet charging solutions'],
-    openGraph: { title: 'Greenspace E-Mobility Products — EV Chargers & Electric Trucks', description },
+    openGraph: { title: 'Greenspace E-mobility Products — EV Chargers & Electric Trucks', description },
   }
 }
 
@@ -23,8 +23,8 @@ export async function generateMetadata({ params: { locale } }: { params: { local
 const productsSchema = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: 'Greenspace E-Mobility Products',
-  description: 'EV chargers, electric trucks, and charging management software distributed by Greenspace E-Mobility in Panama, Mexico, and the USA.',
+  name: 'Greenspace E-mobility Products',
+  description: 'EV chargers, electric trucks, and charging management software distributed by Greenspace E-mobility in Panama, Mexico, and the USA.',
   url: 'https://www.gs-emobility.com/en/products',
   itemListElement: [
     {
@@ -35,7 +35,7 @@ const productsSchema = {
         name: 'Autel MaxiCharger DC 360kW',
         brand: { '@type': 'Brand', name: 'Autel Energy' },
         description: 'Ultra-fast 360 kW DC EV charger. Charges most EVs from 20% to 80% in under 20 minutes. Ideal for highway hubs, fleet depots, and high-traffic commercial locations.',
-        offers: { '@type': 'Offer', seller: { '@type': 'Organization', name: 'Greenspace E-Mobility' }, areaServed: ['Panama', 'Mexico', 'United States'] },
+        offers: { '@type': 'Offer', seller: { '@type': 'Organization', name: 'Greenspace E-mobility' }, areaServed: ['Panama', 'Mexico', 'United States'] },
         additionalProperty: [
           { '@type': 'PropertyValue', name: 'Power Output', value: '360 kW' },
           { '@type': 'PropertyValue', name: 'Connector Types', value: 'CCS1, CCS2, CHAdeMO' },
@@ -51,7 +51,7 @@ const productsSchema = {
         name: 'Autel MaxiCharger DC 180kW',
         brand: { '@type': 'Brand', name: 'Autel Energy' },
         description: 'High-power 180 kW DC fast EV charger for commercial, fleet, and public charging applications.',
-        offers: { '@type': 'Offer', seller: { '@type': 'Organization', name: 'Greenspace E-Mobility' }, areaServed: ['Panama', 'Mexico', 'United States'] },
+        offers: { '@type': 'Offer', seller: { '@type': 'Organization', name: 'Greenspace E-mobility' }, areaServed: ['Panama', 'Mexico', 'United States'] },
         additionalProperty: [{ '@type': 'PropertyValue', name: 'Power Output', value: '180 kW' }],
       },
     },
@@ -63,7 +63,7 @@ const productsSchema = {
         name: 'Autel MaxiCharger AC 22kW',
         brand: { '@type': 'Brand', name: 'Autel Energy' },
         description: 'Level 2 three-phase 22 kW AC EV charger for residential, workplace, and commercial parking installations.',
-        offers: { '@type': 'Offer', seller: { '@type': 'Organization', name: 'Greenspace E-Mobility' }, areaServed: ['Panama', 'Mexico', 'United States'] },
+        offers: { '@type': 'Offer', seller: { '@type': 'Organization', name: 'Greenspace E-mobility' }, areaServed: ['Panama', 'Mexico', 'United States'] },
         additionalProperty: [{ '@type': 'PropertyValue', name: 'Power Output', value: '22 kW' }],
       },
     },
@@ -74,8 +74,8 @@ const productsSchema = {
         '@type': 'Product',
         name: 'Windrose Class 8 Electric Truck',
         brand: { '@type': 'Brand', name: 'Windrose' },
-        description: 'Class 8 electric semi-truck with 500 km range, 422 kWh battery, 480 kW motor power, and 6,000 Nm torque. Exclusive distributor in Latin America: Greenspace E-Mobility.',
-        offers: { '@type': 'Offer', seller: { '@type': 'Organization', name: 'Greenspace E-Mobility' }, areaServed: ['Panama', 'Mexico', 'Latin America'] },
+        description: 'Class 8 electric semi-truck with 500 km range, 422 kWh battery, 480 kW motor power, and 6,000 Nm torque. Exclusive distributor in Latin America: Greenspace E-mobility.',
+        offers: { '@type': 'Offer', seller: { '@type': 'Organization', name: 'Greenspace E-mobility' }, areaServed: ['Panama', 'Mexico', 'Latin America'] },
         additionalProperty: [
           { '@type': 'PropertyValue', name: 'Range', value: '500 km (310 miles)' },
           { '@type': 'PropertyValue', name: 'Battery Capacity', value: '422 kWh' },

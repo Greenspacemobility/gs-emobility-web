@@ -17,11 +17,24 @@ export default function SiteForm() {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => setForm({ ...form, [e.target.name]: e.target.value })
 
+  const [error, setError] = useState<string | null>(null)
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setStatus('sending')
-    await new Promise((r) => setTimeout(r, 1500))
-    setStatus('sent')
+    setError(null)
+    try {
+      const res = await fetch('/api/partner-site', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (!res.ok) throw new Error('Server error')
+      setStatus('sent')
+    } catch {
+      setStatus('idle')
+      setError('Something went wrong. Please try again or email us directly at info@gs-emobility.com')
+    }
   }
 
   if (status === 'sent') {
@@ -141,6 +154,10 @@ export default function SiteForm() {
           placeholder={t('messagePlaceholder')}
           className={`${inputClass} resize-none`} />
       </div>
+
+      {error && (
+        <p className="text-red-400 text-sm text-center">{error}</p>
+      )}
 
       <button
         type="submit"

@@ -18,7 +18,7 @@ export default function Footer() {
             <Link href={`/${locale}`} className="flex items-center mb-4">
               <Image
                 src="/images/logo-white.png"
-                alt="Greenspace E-Mobility"
+                alt="Greenspace E-mobility"
                 width={160}
                 height={44}
                 className="h-8 w-auto object-contain"

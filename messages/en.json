@@ -126,7 +126,7 @@
   "highway": {
     "badge": "Electric Highway",
     "introLabel": "Electric Highways",
-    "introText": "Greenspace E-Mobility is creating the new standard for cross-border transportation — an integrated network of Electric Highways and Green Hubs across Texas, Mexico, California, and Panama that will electrify the most critical freight corridors connecting the Americas.",
+    "introText": "Greenspace E-mobility is creating the new standard for cross-border transportation — an integrated network of Electric Highways and Green Hubs across Texas, Mexico, California, and Panama that will electrify the most critical freight corridors connecting the Americas.",
     "title": "Leading Green Cross-Border Transportation",
     "subtitle": "$354 billion in annual trade. 6 million truck crossings per year. Greenspace is building the charging infrastructure that electrifies North America's most strategic freight network — from Monterrey to Dallas, California, and Panama.",
     "corridorEyebrow": "The corridor by the numbers",
@@ -417,12 +417,12 @@
     "include5": "Management platform access",
     "include6": "Preventive maintenance",
     "platformBadge": "Software Included",
-    "platformTitle": "GS E-Mobility Digital Platform",
+    "platformTitle": "GS E-mobility Digital Platform",
     "platformDesc": "Manage your entire charging network, users and payments from our mobile app and OCPP web portal. Compatible with all AC and DC chargers.",
     "platformCta": "View platform"
   },
   "platform": {
-    "metaTitle": "Digital Platform — Greenspace E-Mobility",
+    "metaTitle": "Digital Platform — Greenspace E-mobility",
     "metaDesc": "Manage your charging infrastructure in real time with our OCPP app and web portal.",
     "badge": "Digital Platform",
     "heroTitle": "Control your charging infrastructure from anywhere",
@@ -682,7 +682,7 @@
     "successText": "Thank you — our technician will confirm your appointment and deliver a full quote within 24 hours of the visit."
   },
   "partnerSite": {
-    "metaTitle": "Partner Your Site — Greenspace E-Mobility",
+    "metaTitle": "Partner Your Site — Greenspace E-mobility",
     "metaDesc": "Have a strategic site in Panama, Mexico, or Texas? Co-invest with Greenspace to develop a high-power EV charging hub — combining your location with our technology and operations.",
     "badge": "Site Partnership",
     "heroTitle": "Have a site? Let's build a charging hub together.",
@@ -773,6 +773,6 @@
     "privacy": "Privacy",
     "terms": "Terms",
     "contact": "Contact",
-    "copyright": "© 2025 Greenspace E-Mobility. All rights reserved."
+    "copyright": "© 2025 Greenspace E-mobility. All rights reserved."
   }
 }

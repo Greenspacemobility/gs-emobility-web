@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import AnimateIn from '@/components/AnimateIn'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — Greenspace E-Mobility',
+  title: 'Privacy Policy — Greenspace E-mobility',
   description: 'How Greenspace E-mobility collects, uses, and protects your personal data.',
 }
 

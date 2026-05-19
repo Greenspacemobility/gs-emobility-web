@@ -79,7 +79,7 @@ export default function PlatformPage({ params: { locale } }: { params: { locale:
                 <div className="relative w-48 h-96 rounded-3xl overflow-hidden shadow-2xl shadow-black/50 self-end mb-8 ring-1 ring-white/10">
                   <Image
                     src="/images/platform-app-map.png"
-                    alt="GS E-Mobility app map"
+                    alt="GS E-mobility app map"
                     fill
                     className="object-cover object-top"
                   />
@@ -88,7 +88,7 @@ export default function PlatformPage({ params: { locale } }: { params: { locale:
                 <div className="relative w-52 h-[440px] rounded-3xl overflow-hidden shadow-2xl shadow-black/50 ring-2 ring-green-500/30 z-10">
                   <Image
                     src="/images/platform-app-charging.png"
-                    alt="GS E-Mobility app charging"
+                    alt="GS E-mobility app charging"
                     fill
                     className="object-cover object-top"
                   />
@@ -109,7 +109,7 @@ export default function PlatformPage({ params: { locale } }: { params: { locale:
               <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/40 ring-1 ring-white/10">
                 <Image
                   src="/images/platform-dashboard.png"
-                  alt="GS E-Mobility admin dashboard"
+                  alt="GS E-mobility admin dashboard"
                   width={900}
                   height={600}
                   className="w-full h-auto"
@@ -191,7 +191,7 @@ export default function PlatformPage({ params: { locale } }: { params: { locale:
                 <div className="relative w-56 h-[480px] rounded-3xl overflow-hidden shadow-2xl shadow-black/50 ring-2 ring-white/10">
                   <Image
                     src="/images/platform-app-map.png"
-                    alt="GS E-Mobility app"
+                    alt="GS E-mobility app"
                     fill
                     className="object-cover object-top"
                   />

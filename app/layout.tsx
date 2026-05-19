@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Greenspace E-Mobility',
+  title: 'Greenspace E-mobility',
   description: 'Leading cross-border electric infrastructure across the Americas.',
   icons: {
     icon: '/favicon.png',

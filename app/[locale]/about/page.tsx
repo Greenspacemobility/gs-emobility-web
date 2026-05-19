@@ -11,12 +11,12 @@ import Badge from '@/components/Badge'
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   const description = locale === 'es'
-    ? 'Greenspace E-Mobility: pioneros en infraestructura de carga eléctrica en América Latina. Operamos en Panamá, México, Texas y Noruega, acelerando la electrificación de flotas y corredores logísticos.'
-    : 'Greenspace E-Mobility: pioneers in EV charging infrastructure across Latin America. Operating in Panama, Mexico, Texas and Norway, accelerating fleet electrification and logistics corridor decarbonization.'
+    ? 'Greenspace E-mobility: pioneros en infraestructura de carga eléctrica en América Latina. Operamos en Panamá, México, Texas y Noruega, acelerando la electrificación de flotas y corredores logísticos.'
+    : 'Greenspace E-mobility: pioneers in EV charging infrastructure across Latin America. Operating in Panama, Mexico, Texas and Norway, accelerating fleet electrification and logistics corridor decarbonization.'
   return {
-    title: locale === 'es' ? 'Nosotros | Greenspace E-Mobility' : 'About Us | Greenspace E-Mobility',
+    title: locale === 'es' ? 'Nosotros | Greenspace E-mobility' : 'About Us | Greenspace E-mobility',
     description,
-    openGraph: { title: 'About Greenspace E-Mobility', description },
+    openGraph: { title: 'About Greenspace E-mobility', description },
   }
 }
 
@@ -114,7 +114,7 @@ export default function AboutPage({ params: { locale } }: { params: { locale: st
     { name: 'G-Corp',          category: 'Commercial Partner',           initials: 'GC' },
     // EV & Trucks
     { name: 'Windrose',        category: 'Class 8 Electric Trucks',      initials: 'WR' },
-    { name: 'Amara',           category: 'E-Mobility Partner',           initials: 'AM' },
+    { name: 'Amara',           category: 'E-mobility Partner',           initials: 'AM' },
   ]
 
   return (

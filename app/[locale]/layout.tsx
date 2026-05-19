@@ -1,10 +1,20 @@
 import type { Metadata } from 'next'
+import { Montserrat } from 'next/font/google'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { locales } from '@/i18n'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { Analytics } from '@vercel/analytics/next'
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  style: ['normal', 'italic'],
+  variable: '--font-montserrat',
+  display: 'swap',
+})
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
@@ -17,13 +27,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'hero' })
   const description = locale === 'es'
-    ? 'Greenspace E-Mobility construye y opera infraestructura de carga eléctrica de alta potencia en Panamá, México, Texas y Noruega. Carga ultrarrápida, flotas eléctricas, autopista eléctrica y camiones Windrose.'
-    : 'Greenspace E-Mobility builds and operates high-power EV charging infrastructure across Panama, Mexico, Texas and Norway. Ultra-fast charging hubs, fleet electrification, electric highway corridor, and Windrose electric trucks.'
+    ? 'Greenspace E-mobility construye y opera infraestructura de carga eléctrica de alta potencia en Panamá, México, Texas y Noruega. Carga ultrarrápida, flotas eléctricas, autopista eléctrica y camiones Windrose.'
+    : 'Greenspace E-mobility builds and operates high-power EV charging infrastructure across Panama, Mexico, Texas and Norway. Ultra-fast charging hubs, fleet electrification, electric highway corridor, and Windrose electric trucks.'
 
   return {
     title: {
-      default: 'Greenspace E-Mobility | EV Charging Infrastructure Americas',
-      template: '%s | Greenspace E-Mobility',
+      default: 'Greenspace E-mobility | EV Charging Infrastructure Americas',
+      template: '%s | Greenspace E-mobility',
     },
     description,
     keywords: [
@@ -35,9 +45,9 @@ export async function generateMetadata({
       'electrificación flotas', 'infraestructura carga eléctrica',
       'EV charging Monterrey Dallas', 'electric truck charging corridor',
     ],
-    authors: [{ name: 'Greenspace E-Mobility', url: 'https://www.gs-emobility.com' }],
-    creator: 'Greenspace E-Mobility',
-    publisher: 'Greenspace E-Mobility',
+    authors: [{ name: 'Greenspace E-mobility', url: 'https://www.gs-emobility.com' }],
+    creator: 'Greenspace E-mobility',
+    publisher: 'Greenspace E-mobility',
     alternates: {
       canonical: `https://www.gs-emobility.com/${locale}`,
       languages: {
@@ -46,10 +56,10 @@ export async function generateMetadata({
       },
     },
     openGraph: {
-      title: 'Greenspace E-Mobility | EV Charging Infrastructure Americas',
+      title: 'Greenspace E-mobility | EV Charging Infrastructure Americas',
       description,
       url: `https://www.gs-emobility.com/${locale}`,
-      siteName: 'Greenspace E-Mobility',
+      siteName: 'Greenspace E-mobility',
       locale: locale === 'es' ? 'es_MX' : 'en_US',
       type: 'website',
       images: [
@@ -57,13 +67,13 @@ export async function generateMetadata({
           url: 'https://www.gs-emobility.com/images/og-image.jpg',
           width: 1200,
           height: 630,
-          alt: 'Greenspace E-Mobility - EV Charging Infrastructure',
+          alt: 'Greenspace E-mobility - EV Charging Infrastructure',
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Greenspace E-Mobility | EV Charging Infrastructure Americas',
+      title: 'Greenspace E-mobility | EV Charging Infrastructure Americas',
       description,
       images: ['https://www.gs-emobility.com/images/og-image.jpg'],
     },
@@ -91,8 +101,8 @@ const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   '@id': 'https://www.gs-emobility.com/#organization',
-  name: 'Greenspace E-Mobility',
-  alternateName: ['Greenspace', 'GS E-Mobility', 'gs-emobility'],
+  name: 'Greenspace E-mobility',
+  alternateName: ['Greenspace', 'GS E-mobility', 'gs-emobility'],
   url: 'https://www.gs-emobility.com',
   logo: {
     '@type': 'ImageObject',
@@ -101,7 +111,7 @@ const organizationSchema = {
     height: 44,
   },
   image: 'https://www.gs-emobility.com/images/og-image.jpg',
-  description: 'Greenspace E-Mobility builds and operates high-power EV charging infrastructure across Panama, Mexico, Texas and Norway. Official distributor of Autel Energy EV chargers and exclusive distributor of Windrose Class 8 electric trucks in Latin America.',
+  description: 'Greenspace E-mobility builds and operates high-power EV charging infrastructure across Panama, Mexico, Texas and Norway. Official distributor of Autel Energy EV chargers and exclusive distributor of Windrose Class 8 electric trucks in Latin America.',
   foundingDate: '2020',
   numberOfEmployees: { '@type': 'QuantitativeValue', value: 20 },
   areaServed: ['Panama', 'Mexico', 'United States', 'Norway', 'Latin America'],
@@ -154,7 +164,7 @@ const localBusinessSchemas = [
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     '@id': 'https://www.gs-emobility.com/#panama',
-    name: 'Greenspace E-Mobility Panama',
+    name: 'Greenspace E-mobility Panama',
     parentOrganization: { '@id': 'https://www.gs-emobility.com/#organization' },
     url: 'https://www.gs-emobility.com',
     email: 'info@gs-emobility.com',
@@ -169,7 +179,7 @@ const localBusinessSchemas = [
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     '@id': 'https://www.gs-emobility.com/#mexico',
-    name: 'Greenspace E-Mobility Mexico',
+    name: 'Greenspace E-mobility Mexico',
     parentOrganization: { '@id': 'https://www.gs-emobility.com/#organization' },
     url: 'https://www.gs-emobility.com',
     email: 'info@gs-emobility.com',
@@ -196,7 +206,7 @@ export default async function LocaleLayout({
   const messages = await getMessages()
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className={montserrat.variable}>
       <head>
         <script
           type="application/ld+json"
@@ -216,6 +226,7 @@ export default async function LocaleLayout({
           <Header />
           <main>{children}</main>
           <Footer />
+          <Analytics />
         </NextIntlClientProvider>
       </body>
     </html>
