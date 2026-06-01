@@ -32,7 +32,7 @@ const pillars = [
     icon: Zap,
     title: 'Deployable Infrastructure',
     desc: 'Standardized, modular Green Hub design — replicable across every market. Each station follows the same blueprint: high-power charging, renewable energy, battery storage, and driver services. Built to scale fast.',
-    img: '/images/service-chargers.jpg',
+    img: '/images/service-installations.png',
   },
   {
     icon: Globe,
@@ -44,7 +44,7 @@ const pillars = [
     icon: Users,
     title: 'Proven Management Team',
     desc: 'Over a decade in EV charging, cross-border logistics, and energy infrastructure. Government partnerships in Mexico. Operational track record with DHL, Banco General, and leading fleet operators across four countries.',
-    img: '/images/projects/expo-emovilidad-panama-convention-center.jpg',
+    img: '/images/service-training.jpg',
   },
 ]
 
