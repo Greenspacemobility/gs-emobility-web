@@ -26,25 +26,25 @@ const pillars = [
     icon: Shield,
     title: 'First-Mover Advantage',
     desc: 'No fully integrated Class 8 electric freight corridor exists today between Mexico and the U.S. We are building the infrastructure before the market demands it — locking in locations, permits, and fleet contracts ahead of every competitor.',
-    img: '/images/service-installations.png',
+    img: '/images/projects/electric-highway-corridor.webp',
   },
   {
     icon: Zap,
     title: 'Deployable Infrastructure',
     desc: 'Standardized, modular Green Hub design — replicable across every market. Each station follows the same blueprint: high-power charging, renewable energy, battery storage, and driver services. Built to scale fast.',
-    img: '/images/hero-bg.jpg',
+    img: '/images/service-chargers.jpg',
   },
   {
     icon: Globe,
     title: 'Massive Market Opportunity',
     desc: 'The Americas\' most critical freight corridors move hundreds of billions in annual trade — with zero dedicated Class 8 electric charging infrastructure today. We are the first to solve this at scale.',
-    img: '/images/service-cooperation.jpg',
+    img: '/images/projects/windrose-greenspace-ruta-verde.jpg',
   },
   {
     icon: Users,
     title: 'Proven Management Team',
     desc: 'Over a decade in EV charging, cross-border logistics, and energy infrastructure. Government partnerships in Mexico. Operational track record with DHL, Banco General, and leading fleet operators across four countries.',
-    img: '/images/service-training.jpg',
+    img: '/images/projects/expo-emovilidad-panama-convention-center.jpg',
   },
 ]
 
@@ -277,7 +277,7 @@ export default function InvestorsPage({ params: { locale } }: { params: { locale
                 { phase: 'Phase 1', market: 'Texas, USA', status: 'active',  desc: 'Laredo–Dallas corridor — establishing the first high-power EV charging infrastructure on the U.S. side of the Mexico border, with initial Class 8 electric truck fleet deployment.' },
                 { phase: 'Phase 2', market: 'Monterrey, Mexico', status: 'building', desc: 'Codefront International Bridge and Monterrey hub — completing the first fully electric cross-border freight route connecting Mexico and the United States.' },
                 { phase: 'Phase 3', market: 'California, USA', status: 'planned',  desc: 'West Coast expansion — extending the network to the Pacific trade gateway and capturing major California freight corridors.' },
-                { phase: 'Phase 4', market: 'Panama City', status: 'planned',  desc: 'Panama Canal logistics zone — anchoring the southern end of the network and enabling electric freight operations across Latin America.' },
+                { phase: 'Phase 4', market: 'Panama City', status: 'active',  desc: 'Panama Canal logistics zone — anchoring the southern end of the network and enabling electric freight operations across Latin America.' },
               ].map((item, i) => (
                 <AnimateIn key={i} delay={i * 120} direction={i % 2 === 0 ? 'left' : 'right'}>
                   <div className={`flex gap-8 items-start ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
