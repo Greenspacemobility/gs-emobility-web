@@ -56,10 +56,10 @@ const structures = [
 ]
 
 const markets = [
-  { icon: MapPin, label: 'Texas, USA',       desc: 'Laredo–Dallas corridor. First phase in execution.' },
-  { icon: MapPin, label: 'Monterrey, Mexico', desc: 'Codefront Bridge + Monterrey hub. Full cross-border route.' },
-  { icon: MapPin, label: 'California, USA',   desc: 'West Coast expansion. Pacific trade gateway.' },
-  { icon: MapPin, label: 'Panama City',       desc: 'Panama Canal logistics zone. Southern anchor.' },
+  { icon: MapPin, label: 'Texas, USA',        desc: 'Laredo–Dallas corridor. Phase 1.' },
+  { icon: MapPin, label: 'Monterrey, Mexico', desc: 'Codefront Bridge + Monterrey hub. Phase 2.' },
+  { icon: MapPin, label: 'California, USA',   desc: 'West Coast expansion. Phase 3.' },
+  { icon: MapPin, label: 'Panama City',       desc: 'Panama Canal logistics zone. Phase 4.' },
 ]
 
 const moats = [
@@ -300,7 +300,7 @@ export default function InvestorsPage({ params: { locale } }: { params: { locale
                           {item.status === 'active' && (
                             <span className="text-xs text-green-400 flex items-center gap-1">
                               <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                              In execution
+                              Active
                             </span>
                           )}
                           {item.status === 'building' && (
