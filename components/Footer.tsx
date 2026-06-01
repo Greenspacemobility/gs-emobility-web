@@ -70,6 +70,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {[
                 { label: t('about'), href: `/${locale}/about` },
+                { label: t('investors'), href: `/${locale}/investors` },
                 { label: t('highway'), href: `/${locale}/electric-highway` },
                 { label: t('partners'), href: `/${locale}/about#partners` },
                 { label: t('partnerSite'), href: `/${locale}/partner-site` },
