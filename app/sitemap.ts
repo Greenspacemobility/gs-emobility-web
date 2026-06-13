@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next'
+import { ARTICLES } from '@/content/blog'
 
 const baseUrl = 'https://www.gs-emobility.com'
 const locales = ['en', 'es']
@@ -13,6 +14,7 @@ const pages = [
   { path: '/contact', priority: 0.8, changeFrequency: 'monthly' as const },
   { path: '/partner-site', priority: 0.7, changeFrequency: 'monthly' as const },
   { path: '/faq', priority: 0.85, changeFrequency: 'weekly' as const },
+  { path: '/blog', priority: 0.85, changeFrequency: 'weekly' as const },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -25,6 +27,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: new Date(),
         changeFrequency: page.changeFrequency,
         priority: page.priority,
+      })
+    }
+  }
+
+  // Individual blog articles (both locales)
+  for (const article of ARTICLES) {
+    for (const locale of locales) {
+      entries.push({
+        url: `${baseUrl}/${locale}/blog/${article.slug}`,
+        lastModified: new Date(article.date),
+        changeFrequency: 'monthly',
+        priority: 0.7,
       })
     }
   }

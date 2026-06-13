@@ -47,6 +47,7 @@ export default function Header() {
 
   const companyLinks = [
     { href: `/${locale}/about`,     label: t('about') },
+    { href: `/${locale}/blog`,      label: t('blog') },
     { href: `/${locale}/investors`, label: t('investors') },
   ]
 
