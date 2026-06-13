@@ -26,7 +26,7 @@ export async function generateMetadata({
   const c = locale === 'es' ? article.es : article.en
 
   return {
-    title: `${c.title} | Greenspace E-mobility`,
+    title: c.title, // layout template appends " | Greenspace E-mobility"
     description: c.metaDescription,
     keywords: article.keywords,
     alternates: {

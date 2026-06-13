@@ -11,8 +11,8 @@ import { getArticlesSorted } from '@/content/blog'
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   const isEs = locale === 'es'
   const title = isEs
-    ? 'Blog | Carga EV, Camiones Eléctricos y Movilidad Sostenible | Greenspace'
-    : 'Blog | EV Charging, Electric Trucks & Sustainable Mobility | Greenspace'
+    ? 'Blog | Carga EV, Camiones Eléctricos y Movilidad Sostenible'
+    : 'Blog | EV Charging, Electric Trucks & Sustainable Mobility'
   const description = isEs
     ? 'Perspectivas sobre infraestructura de carga EV, camiones eléctricos Clase 8, electrificación de flotas y la autopista eléctrica en Panamá, México, Texas y Noruega.'
     : 'Insights on EV charging infrastructure, Class 8 electric trucks, fleet electrification, and the electric highway across Panama, Mexico, Texas and Norway.'
