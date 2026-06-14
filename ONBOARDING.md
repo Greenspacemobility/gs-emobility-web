@@ -11,7 +11,7 @@ site for SEO, performance, accessibility, conversion, and content quality toward
 
 ## Where the project lives
 - Repo root: this directory (`gs-emobility-web`)
-- Verified company data: `../COMPANY-REFERENCE.md` (one level up — legal names, addresses, descriptions, socials, founding date 2020-09-22). Use it for any company facts.
+- Verified company data: `COMPANY-REFERENCE.md` (repo root — legal names, addresses, descriptions, socials, founding date 2020-09-22). Use it for any company facts.
 - Live site: https://www.gs-emobility.com
 
 ## Tech stack
