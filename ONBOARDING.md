@@ -25,7 +25,7 @@ site for SEO, performance, accessibility, conversion, and content quality toward
 ## How to run, validate, and deploy — READ THIS, there are gotchas
 - `npm run dev` — local dev server.
 - ⚠️ **`npm run build` / `next build` FAILS locally** on the current machine: `@parcel/watcher-darwin-arm64` native module is missing. This is environmental, NOT a code error. **To validate code, run `npx tsc --noEmit`** (typecheck) instead of build. Vercel's build environment is unaffected.
-- ⚠️ **Deploy with `npx vercel --prod`** (run from the repo). The GitHub push token is broken, so git-push auto-deploy does NOT work — always deploy via the Vercel CLI directly. Wait for "● Ready" via `npx vercel ls`.
+- ⚠️ **Deploy with `npx vercel --prod`** (run from the repo). The GitHub push token is broken, so git-push auto-deploy does NOT work — always deploy via the Vercel CLI directly. Wait for "● Ready" via `npx vercel ls`. **Do NOT deploy autonomously — see Guardrails: validate, show the diff, and wait for explicit approval before running the deploy.**
 - After deploy, verify live pages with `curl` (the site returns 403 to some bots but 200 to a normal browser UA + to Googlebot).
 - Commit messages: end with `Co-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>`.
 
@@ -68,13 +68,15 @@ home (`/`) · products · platform · electric-highway · projects · about · c
 7. **Tech hygiene**: fix the broken GitHub deploy path; resolve the local `@parcel/watcher` build issue.
 
 ## Guardrails
-- Validate every change with `npx tsc --noEmit` before deploying.
-- Deploy only via `npx vercel --prod`; confirm "● Ready" and curl-verify the affected pages.
+- **Ask before deploying — this is the default.** After making changes: run `npx tsc --noEmit`, then STOP and show the user the diff (`git diff`) plus a short summary. Do NOT run `npx vercel --prod` until the user explicitly approves. The user reviews everything before it goes live.
+- Validate every change with `npx tsc --noEmit` before requesting approval.
 - Make all copy changes in both `en.json` and `es.json`.
 - Never commit secrets or `.env*`. Never expose env var values.
-- For destructive or far-reaching changes, summarize the plan before applying.
+- Summarize the plan before applying any destructive or far-reaching change.
 
-## How to verify a change worked
-1. `npx tsc --noEmit` passes.
-2. `npx vercel --prod` → wait for Ready.
-3. `curl -A "Mozilla/5.0" https://www.gs-emobility.com/<path>` → check HTTP 200 + expected content (title, JSON-LD, copy).
+## Standard workflow for each change
+1. Make the edit(s).
+2. `npx tsc --noEmit` → must pass.
+3. Show `git diff` + a 1–2 line summary of what changed and why. **Wait for the user's go-ahead.**
+4. On approval: `git commit`, then `npx vercel --prod` → wait for "● Ready" via `npx vercel ls`.
+5. Verify live: `curl -A "Mozilla/5.0" https://www.gs-emobility.com/<path>` → confirm HTTP 200 + expected content (title, JSON-LD, copy).
