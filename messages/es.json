@@ -21,7 +21,17 @@
     "subtitle": "Greenspace E-mobility desarrolla hubs de carga de alta potencia, electrifica flotas y ejecuta proyectos de autopista eléctrica transfronteriza en las Américas — y asesora a actores líderes en Europa en hardware, estrategia y despliegue.",
     "proofLine": "11+ años de experiencia  ·  Presencia multimercado  ·  Camiones, flotas y carga de alta potencia",
     "cta1": "Ver Proyectos",
-    "cta2": "Autopista Eléctrica"
+    "cta2": "Autopista Eléctrica",
+    "marquee": "Ciudad de Panamá · Monterrey, México · Corredor Laredo–Dallas, Texas · Oslo, Noruega · Carga DC de Alta Potencia · Electrificación de Flotas · Green Hubs Solares"
+  },
+  "deployments": {
+    "badge": "Casos Reales",
+    "title": "Ya en operación, hoy",
+    "subtitle": "Desde flotas de logística hasta operaciones bancarias, Greenspace E-mobility está electrificando operaciones reales en todo Panamá ahora mismo.",
+    "videoLabel": "Ver la historia",
+    "dhlLabel": "Logística · Panamá",
+    "bancoLabel": "Banca · Panamá",
+    "cta": "Ver todos los proyectos"
   },
   "stats": {
     "title": "Construido con experiencia. Desplegado a escala.",
@@ -425,7 +435,7 @@
     "windroseCta": "Solicitar información del camión"
   },
   "platform": {
-    "metaTitle": "Plataforma Digital — Greenspace E-mobility",
+    "metaTitle": "Plataforma Digital",
     "metaDesc": "Gestiona tu infraestructura de carga en tiempo real con nuestra app y portal web OCPP.",
     "badge": "Plataforma Digital",
     "heroTitle": "Controla tu infraestructura de carga desde cualquier lugar",
@@ -441,7 +451,7 @@
     "dash4": "Compatible con cualquier cargador OCPP 1.6 / 2.0",
     "appBadge": "App Móvil",
     "appTitle": "La única app que conecta a todos los conductores",
-    "appDesc": "Los conductores pueden encontrar estaciones cercanas, reservar conectores y pagar desde el teléfono. La única app en la región donde puedes ver y acceder a todos los cargadores públicos y semipúblicos instalados.",
+    "appDesc": "Los conductores pueden encontrar estaciones cercanas, reservar conectores y pagar desde el teléfono. Una de las apps más completas de la región — visualiza y accede a los cargadores públicos y semipúblicos de nuestra red.",
     "app1": "Mapa interactivo con estaciones en tiempo real",
     "app2": "Inicio y fin de recarga desde el móvil",
     "app3": "Historial de sesiones y consumo",
@@ -641,7 +651,7 @@
     "faq2Q": "¿Ofrecen financiamiento?",
     "faq2A": "Trabajamos con aliados financieros para proyectos residenciales y comerciales. Contáctanos para conocer las opciones disponibles en tu país.",
     "faq3Q": "¿Qué vehículos son compatibles?",
-    "faq3A": "Todos nuestros cargadores son compatibles con cualquier vehículo eléctrico o híbrido enchufable del mercado (Tesla, BMW, Audi, Hyundai, KIA, etc.).",
+    "faq3A": "Todos nuestros cargadores son compatibles con cualquier vehículo eléctrico o híbrido enchufable del mercado — desde autos de pasajeros (Tesla, BMW, Audi, Hyundai, KIA) hasta vehículos comerciales y camiones eléctricos Clase 8 (conectores CCS1 y MCS compatibles).",
     "faq4Q": "¿Qué pasa si el cargador tiene una falla?",
     "faq4A": "Ofrecemos soporte técnico 24/7 y garantía del fabricante. En la mayoría de los casos resolvemos incidencias de forma remota o en menos de 48 horas.",
     "namePlaceholder": "Tu nombre",
@@ -759,7 +769,7 @@
     "successText": "Gracias — nuestro equipo de desarrollo revisará tu sitio y se pondrá en contacto en un plazo de 5 días hábiles."
   },
   "footer": {
-    "tagline": "La referencia en electromovilidad de la región.",
+    "tagline": "Construyendo la infraestructura eléctrica de las Américas.",
     "solutions": "Soluciones",
     "residential": "Carga Residencial",
     "commercial": "Carga Comercial",
@@ -776,7 +786,7 @@
     "privacy": "Privacidad",
     "terms": "Términos",
     "contact": "Contacto",
-    "copyright": "© 2025 Greenspace E-mobility. Todos los derechos reservados.",
+    "copyright": "© 2026 Greenspace E-mobility. Todos los derechos reservados.",
     "investors": "Inversores"
   }
 }

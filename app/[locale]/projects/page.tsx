@@ -15,7 +15,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
     ? 'Proyectos de carga eléctrica de Greenspace E-mobility: hubs de carga en Panamá, corredor México-Texas, flotas eléctricas comerciales y más. Infraestructura real en operación.'
     : 'Greenspace E-mobility projects: EV charging hubs in Panama, Mexico-Texas corridor, commercial fleet electrification and more. Real infrastructure in operation across the Americas.'
   return {
-    title: locale === 'es' ? 'Proyectos | Greenspace E-mobility' : 'Projects | Greenspace E-mobility',
+    title: locale === 'es' ? 'Proyectos' : 'Projects',
     description,
     keywords: ['EV charging projects Panama', 'electric highway project', 'fleet electrification Latin America', 'charging hub deployment'],
     openGraph: { title: 'Greenspace E-mobility Projects', description },

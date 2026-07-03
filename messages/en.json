@@ -21,7 +21,17 @@
     "subtitle": "Greenspace E-mobility develops high-power charging hubs, electrifies fleets, and delivers cross-border electric highway projects across the Americas — while advising leading industry players in Europe on hardware, strategy, and deployment.",
     "proofLine": "11+ years experience  ·  Multi-market execution  ·  Trucks, fleets & high-power charging",
     "cta1": "Explore Projects",
-    "cta2": "Electric Highway"
+    "cta2": "Electric Highway",
+    "marquee": "Panama City · Monterrey, Mexico · Laredo–Dallas Corridor, Texas · Oslo, Norway · High-Power DC Charging · Fleet Electrification · Solar Green Hubs"
+  },
+  "deployments": {
+    "badge": "Real Deployments",
+    "title": "Already on the road, today",
+    "subtitle": "From logistics fleets to banking operations, Greenspace E-mobility is electrifying real operations across Panama right now.",
+    "videoLabel": "Watch the story",
+    "dhlLabel": "Logistics · Panama",
+    "bancoLabel": "Banking · Panama",
+    "cta": "See all projects"
   },
   "stats": {
     "title": "Built on experience. Deployed at scale.",
@@ -425,7 +435,7 @@
     "platformCta": "View platform"
   },
   "platform": {
-    "metaTitle": "Digital Platform — Greenspace E-mobility",
+    "metaTitle": "Digital Platform",
     "metaDesc": "Manage your charging infrastructure in real time with our OCPP app and web portal.",
     "badge": "Digital Platform",
     "heroTitle": "Control your charging infrastructure from anywhere",
@@ -441,7 +451,7 @@
     "dash4": "Compatible with any OCPP 1.6 / 2.0 charger",
     "appBadge": "Mobile App",
     "appTitle": "The only app connecting all drivers",
-    "appDesc": "Drivers can find nearby stations, reserve connectors and pay from their phone. The only app in the region where you can see and access all publicly and semi-publicly installed chargers.",
+    "appDesc": "Drivers can find nearby stations, reserve connectors and pay from their phone. One of the most complete apps in the region — view and access publicly and semi-publicly installed chargers across our network.",
     "app1": "Interactive map with real-time station availability",
     "app2": "Start and stop charging sessions from mobile",
     "app3": "Session history and consumption tracking",
@@ -641,7 +651,7 @@
     "faq2Q": "Do you offer financing?",
     "faq2A": "We work with financial partners for residential and commercial projects. Contact us to learn about the options available in your country.",
     "faq3Q": "Which vehicles are compatible?",
-    "faq3A": "All our chargers are compatible with any electric or plug-in hybrid vehicle on the market (Tesla, BMW, Audi, Hyundai, KIA, etc.).",
+    "faq3A": "All our chargers are compatible with any electric or plug-in hybrid vehicle on the market — from passenger cars (Tesla, BMW, Audi, Hyundai, KIA) to commercial vehicles and Class 8 electric trucks (CCS1 and MCS connectors supported).",
     "faq4Q": "What happens if the charger has a fault?",
     "faq4A": "We provide 24/7 technical support and manufacturer warranty. In most cases we resolve incidents remotely or within 48 hours.",
     "namePlaceholder": "Your name",
@@ -759,7 +769,7 @@
     "successText": "Thank you — our development team will review your site and reach out within 5 business days."
   },
   "footer": {
-    "tagline": "The e-mobility reference in the region.",
+    "tagline": "Building the electric infrastructure of the Americas.",
     "solutions": "Solutions",
     "residential": "Residential Charging",
     "commercial": "Commercial Charging",
@@ -776,7 +786,7 @@
     "privacy": "Privacy",
     "terms": "Terms",
     "contact": "Contact",
-    "copyright": "© 2025 Greenspace E-mobility. All rights reserved.",
+    "copyright": "© 2026 Greenspace E-mobility. All rights reserved.",
     "investors": "Investors"
   }
 }

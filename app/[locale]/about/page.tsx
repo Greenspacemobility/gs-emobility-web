@@ -14,7 +14,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
     ? 'Greenspace E-mobility: pioneros en infraestructura de carga eléctrica en América Latina. Operamos en Panamá, México, Texas y Noruega, acelerando la electrificación de flotas y corredores logísticos.'
     : 'Greenspace E-mobility: pioneers in EV charging infrastructure across Latin America. Operating in Panama, Mexico, Texas and Norway, accelerating fleet electrification and logistics corridor decarbonization.'
   return {
-    title: locale === 'es' ? 'Nosotros | Greenspace E-mobility' : 'About Us | Greenspace E-mobility',
+    title: locale === 'es' ? 'Nosotros' : 'About Us',
     description,
     openGraph: { title: 'About Greenspace E-mobility', description },
   }
