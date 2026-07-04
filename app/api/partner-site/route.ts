@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
+import { checkRateLimit, getClientIp, FORM_RATE_LIMIT } from '@/lib/rate-limit'
+import { sanitizeField } from '@/lib/sanitize'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
@@ -37,6 +39,16 @@ const OWNERSHIP_LABELS: Record<string, string> = {
 }
 
 export async function POST(req: NextRequest) {
+  // Rate limiting — 5 submissions per IP per 15 minutes
+  const ip = getClientIp(req)
+  const rl = checkRateLimit(`partner-site:${ip}`, FORM_RATE_LIMIT)
+  if (!rl.allowed) {
+    return NextResponse.json(
+      { error: 'Too many requests. Please try again later.' },
+      { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+    )
+  }
+
   try {
     const body = await req.json()
     const { name, company, email, phone, country, siteType, address, power, ownership, message } = body
@@ -45,12 +57,21 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
     }
 
+    // Sanitize free-text fields before interpolating into HTML
+    // Enum fields (country, siteType, power, ownership) are resolved through lookup tables — safe as-is
+    const sName    = sanitizeField(name, 120)
+    const sCompany = sanitizeField(company, 120)
+    const sEmail   = sanitizeField(email, 254)
+    const sPhone   = sanitizeField(phone, 30)
+    const sAddress = sanitizeField(address, 300)
+    const sMessage = sanitizeField(message, 1000)
+
     const { error } = await resend.emails.send({
       from: 'Greenspace E-mobility <notifications@gs-emobility.com>',
       to: ['info@gs-emobility.com', 'william.pui@gs-emobility.com'],
       bcc: ['ruben.rock@gs-emobility.com', 'Moises.perez@gs-emobility.com', 'Mike.trevino@gs-emobility.com', 'horacio.delatorre@gs-emobility.com', 'roberpiere.villar@gs-emobility.com', 'john.parchment@gs-emobility.com', 'ricardo.zepeda@gs-emobility.com'],
-      replyTo: email,
-      subject: `🔌 New Site Submission: ${SITE_TYPE_LABELS[siteType] ?? siteType} in ${COUNTRY_LABELS[country] ?? country} — ${name}`,
+      replyTo: sEmail,
+      subject: `🔌 New Site Submission: ${SITE_TYPE_LABELS[siteType] ?? siteType} in ${COUNTRY_LABELS[country] ?? country} — ${sName}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 640px; margin: 0 auto;">
           <div style="background: #0a1628; padding: 28px 32px; border-radius: 12px 12px 0 0;">
@@ -64,19 +85,19 @@ export async function POST(req: NextRequest) {
             <table style="width: 100%; border-collapse: collapse; margin-bottom: 24px;">
               <tr>
                 <td style="padding: 7px 0; color: #6b7280; font-size: 13px; width: 140px;">Name</td>
-                <td style="padding: 7px 0; color: #111827; font-weight: 600;">${name}</td>
+                <td style="padding: 7px 0; color: #111827; font-weight: 600;">${sName}</td>
               </tr>
-              ${company ? `<tr>
+              ${sCompany ? `<tr>
                 <td style="padding: 7px 0; color: #6b7280; font-size: 13px;">Company</td>
-                <td style="padding: 7px 0; color: #111827;">${company}</td>
+                <td style="padding: 7px 0; color: #111827;">${sCompany}</td>
               </tr>` : ''}
               <tr>
                 <td style="padding: 7px 0; color: #6b7280; font-size: 13px;">Email</td>
-                <td style="padding: 7px 0;"><a href="mailto:${email}" style="color: #22c55e; font-weight: 600;">${email}</a></td>
+                <td style="padding: 7px 0;"><a href="mailto:${sEmail}" style="color: #22c55e; font-weight: 600;">${sEmail}</a></td>
               </tr>
-              ${phone ? `<tr>
+              ${sPhone ? `<tr>
                 <td style="padding: 7px 0; color: #6b7280; font-size: 13px;">Phone</td>
-                <td style="padding: 7px 0; color: #111827;">${phone}</td>
+                <td style="padding: 7px 0; color: #111827;">${sPhone}</td>
               </tr>` : ''}
             </table>
 
@@ -94,7 +115,7 @@ export async function POST(req: NextRequest) {
               </tr>
               <tr>
                 <td style="padding: 7px 0; color: #6b7280; font-size: 13px;">Address</td>
-                <td style="padding: 7px 0; color: #111827;">${address}</td>
+                <td style="padding: 7px 0; color: #111827;">${sAddress}</td>
               </tr>
               <tr>
                 <td style="padding: 7px 0; color: #6b7280; font-size: 13px;">Existing Power</td>
@@ -106,15 +127,15 @@ export async function POST(req: NextRequest) {
               </tr>
             </table>
 
-            ${message ? `
+            ${sMessage ? `
             <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 0 0 24px;" />
             <h3 style="color: #374151; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 10px;">Additional Notes</h3>
-            <p style="color: #111827; margin: 0; white-space: pre-wrap; font-size: 14px; line-height: 1.6;">${message}</p>
+            <p style="color: #111827; margin: 0; white-space: pre-wrap; font-size: 14px; line-height: 1.6;">${sMessage}</p>
             ` : ''}
 
             <div style="margin-top: 28px; padding: 16px 20px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px;">
               <p style="margin: 0; color: #15803d; font-size: 13px;">
-                <strong>Reply directly</strong> to this email to contact ${name} at <a href="mailto:${email}" style="color: #15803d;">${email}</a>
+                <strong>Reply directly</strong> to this email to contact ${sName} at <a href="mailto:${sEmail}" style="color: #15803d;">${sEmail}</a>
               </p>
             </div>
           </div>
