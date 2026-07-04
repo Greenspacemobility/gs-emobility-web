@@ -63,6 +63,13 @@ const nextConfig = {
       { source: '/plataforma', destination: '/es/platform', permanent: true },
       { source: '/es/plataforma', destination: '/es/platform', permanent: true },
       { source: '/en/plataforma', destination: '/en/platform', permanent: true },
+      // Legacy Wix product & contact pages
+      { source: '/cargadores-y-accesorios', destination: '/es/products', permanent: true },
+      { source: '/es/cargadores-y-accesorios', destination: '/es/products', permanent: true },
+      { source: '/en/cargadores-y-accesorios', destination: '/en/products', permanent: true },
+      { source: '/contact-3', destination: '/es/contact', permanent: true },
+      { source: '/es/contact-3', destination: '/es/contact', permanent: true },
+      { source: '/en/contact-3', destination: '/en/contact', permanent: true },
     ]
   },
 }
