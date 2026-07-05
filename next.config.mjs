@@ -11,6 +11,15 @@ const nextConfig = {
   async headers() {
     return [
       {
+        // Restrict CORS on API routes — only the site's own origin may call them cross-origin
+        source: '/api/(.*)',
+        headers: [
+          { key: 'Access-Control-Allow-Origin', value: 'https://www.gs-emobility.com' },
+          { key: 'Access-Control-Allow-Methods', value: 'POST, OPTIONS' },
+          { key: 'Access-Control-Allow-Headers', value: 'Content-Type' },
+        ],
+      },
+      {
         source: '/(.*)',
         headers: [
           // Clickjacking protection
