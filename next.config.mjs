@@ -29,18 +29,19 @@ const nextConfig = {
             key: 'Strict-Transport-Security',
             value: 'max-age=63072000; includeSubDomains; preload',
           },
-          // CSP in report-only mode — monitor before enforcing
-          // Tighten after reviewing reports; remove -Report-Only to enforce
+          // Enforced CSP — blocks XSS, data injection, and clickjacking
+          // 'unsafe-inline' required by Next.js inline scripts; 'unsafe-eval' required by some GTM tags
+          // Turnstile widget served from challenges.cloudflare.com
           {
-            key: 'Content-Security-Policy-Report-Only',
+            key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://static.cloudflareinsights.com",
+              "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://static.cloudflareinsights.com https://challenges.cloudflare.com",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com",
               "img-src 'self' data: blob: https:",
-              "connect-src 'self' https://www.google-analytics.com https://vitals.vercel-insights.com https://cloudflareinsights.com",
-              "frame-src 'none'",
+              "connect-src 'self' https://www.google-analytics.com https://vitals.vercel-insights.com https://cloudflareinsights.com https://challenges.cloudflare.com",
+              "frame-src https://challenges.cloudflare.com",
               "object-src 'none'",
               "base-uri 'self'",
               "form-action 'self'",
