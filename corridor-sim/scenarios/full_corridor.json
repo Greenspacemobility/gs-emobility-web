@@ -1,0 +1,242 @@
+{
+  "name": "Warehouse + Encinal + Waco",
+  "description": "Reference full-corridor deployment at all four sites.",
+  "fleet": [
+    {
+      "truck_type": "tesla_semi",
+      "count": 10,
+      "overrides": {}
+    },
+    {
+      "truck_type": "windrose_r700",
+      "count": 10,
+      "overrides": {}
+    }
+  ],
+  "sim_days": 7.0,
+  "warmup_days": 1.0,
+  "dispatch": {
+    "mode": "interval",
+    "headway_minutes": 60.0,
+    "wave_size": 4,
+    "wave_interval_minutes": 240.0,
+    "shift_hours": [
+      6.0,
+      22.0
+    ]
+  },
+  "route": {
+    "segments": [
+      {
+        "from_node": "Warehouse Laredo",
+        "to_node": "Fuel America Encinal",
+        "distance_miles": 40.0,
+        "avg_speed_mph": null,
+        "elevation_gain_ft": 0.0,
+        "weather_multiplier": 1.0,
+        "traffic_multiplier": 1.0
+      },
+      {
+        "from_node": "Fuel America Encinal",
+        "to_node": "San Antonio",
+        "distance_miles": 115.0,
+        "avg_speed_mph": null,
+        "elevation_gain_ft": 0.0,
+        "weather_multiplier": 1.0,
+        "traffic_multiplier": 1.0
+      },
+      {
+        "from_node": "San Antonio",
+        "to_node": "Austin",
+        "distance_miles": 80.0,
+        "avg_speed_mph": null,
+        "elevation_gain_ft": 0.0,
+        "weather_multiplier": 1.0,
+        "traffic_multiplier": 1.0
+      },
+      {
+        "from_node": "Austin",
+        "to_node": "Waco Area",
+        "distance_miles": 100.0,
+        "avg_speed_mph": null,
+        "elevation_gain_ft": 0.0,
+        "weather_multiplier": 1.0,
+        "traffic_multiplier": 1.0
+      },
+      {
+        "from_node": "Waco Area",
+        "to_node": "Warehouse Dallas",
+        "distance_miles": 95.0,
+        "avg_speed_mph": null,
+        "elevation_gain_ft": 0.0,
+        "weather_multiplier": 1.0,
+        "traffic_multiplier": 1.0
+      }
+    ],
+    "node_coords": {
+      "Warehouse Laredo": [
+        27.5306,
+        -99.4803
+      ],
+      "Fuel America Encinal": [
+        28.0414,
+        -99.355
+      ],
+      "San Antonio": [
+        29.4241,
+        -98.4936
+      ],
+      "Austin": [
+        30.2672,
+        -97.7431
+      ],
+      "Waco Area": [
+        31.5493,
+        -97.1467
+      ],
+      "Warehouse Dallas": [
+        32.7767,
+        -96.797
+      ]
+    }
+  },
+  "sites": [
+    {
+      "name": "Warehouse Laredo",
+      "is_warehouse": true,
+      "available_land_acres": 5.0,
+      "grid_connection_kw": 5000.0,
+      "transformer_limit_kw": 5000.0,
+      "utility_limit_kw": 5000.0,
+      "expansion_capable": true,
+      "construction_cost_usd": 200000.0,
+      "utility_connection_cost_usd": 250000.0,
+      "land_lease_usd_per_month": 0.0,
+      "energy_price_usd_per_kwh": 0.0,
+      "demand_charge_usd_per_kw_month": 0.0,
+      "operational_hours": [
+        0.0,
+        24.0
+      ],
+      "queue_spots": 6,
+      "deployment": [
+        {
+          "charger_type": "tesla_mcs",
+          "count": 2
+        },
+        {
+          "charger_type": "autel_mcs_2d",
+          "count": 2
+        }
+      ],
+      "dwell_minutes": 45.0
+    },
+    {
+      "name": "Fuel America Encinal",
+      "is_warehouse": false,
+      "available_land_acres": 3.0,
+      "grid_connection_kw": 5000.0,
+      "transformer_limit_kw": 5000.0,
+      "utility_limit_kw": 5000.0,
+      "expansion_capable": true,
+      "construction_cost_usd": 350000.0,
+      "utility_connection_cost_usd": 250000.0,
+      "land_lease_usd_per_month": 6000.0,
+      "energy_price_usd_per_kwh": 0.095,
+      "demand_charge_usd_per_kw_month": 13.0,
+      "operational_hours": [
+        0.0,
+        24.0
+      ],
+      "queue_spots": 4,
+      "deployment": [
+        {
+          "charger_type": "tesla_mcs",
+          "count": 1
+        },
+        {
+          "charger_type": "autel_mcs_3d",
+          "count": 1
+        }
+      ],
+      "dwell_minutes": 45.0
+    },
+    {
+      "name": "Waco Area",
+      "is_warehouse": false,
+      "available_land_acres": 2.5,
+      "grid_connection_kw": 5000.0,
+      "transformer_limit_kw": 5000.0,
+      "utility_limit_kw": 5000.0,
+      "expansion_capable": true,
+      "construction_cost_usd": 400000.0,
+      "utility_connection_cost_usd": 250000.0,
+      "land_lease_usd_per_month": 7000.0,
+      "energy_price_usd_per_kwh": 0.105,
+      "demand_charge_usd_per_kw_month": 14.0,
+      "operational_hours": [
+        0.0,
+        24.0
+      ],
+      "queue_spots": 4,
+      "deployment": [
+        {
+          "charger_type": "tesla_mcs",
+          "count": 1
+        },
+        {
+          "charger_type": "autel_mcs_3d",
+          "count": 1
+        }
+      ],
+      "dwell_minutes": 45.0
+    },
+    {
+      "name": "Warehouse Dallas",
+      "is_warehouse": true,
+      "available_land_acres": 4.0,
+      "grid_connection_kw": 5000.0,
+      "transformer_limit_kw": 5000.0,
+      "utility_limit_kw": 5000.0,
+      "expansion_capable": true,
+      "construction_cost_usd": 220000.0,
+      "utility_connection_cost_usd": 250000.0,
+      "land_lease_usd_per_month": 0.0,
+      "energy_price_usd_per_kwh": 0.1,
+      "demand_charge_usd_per_kw_month": 13.5,
+      "operational_hours": [
+        0.0,
+        24.0
+      ],
+      "queue_spots": 6,
+      "deployment": [
+        {
+          "charger_type": "tesla_mcs",
+          "count": 2
+        },
+        {
+          "charger_type": "autel_mcs_2d",
+          "count": 2
+        }
+      ],
+      "dwell_minutes": 45.0
+    }
+  ],
+  "weather_multiplier": 1.0,
+  "traffic_multiplier": 1.0,
+  "max_wait_minutes": 45.0,
+  "warehouse_charge_policy": "full",
+  "enroute_target_soc": null,
+  "economics": {
+    "discount_rate": 0.08,
+    "horizon_years": 10,
+    "revenue_per_trip_usd": 1200.0,
+    "maintenance_pct_of_hardware": 0.03,
+    "network_cost_usd_per_dispenser_month": 200.0,
+    "transformer_cost_usd_per_kw": 150.0,
+    "installation_pct_of_hardware": 0.15,
+    "civil_cost_usd_per_dispenser": 30000.0,
+    "replacement_year": 12
+  },
+  "random_seed": 42
+}

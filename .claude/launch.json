@@ -7,6 +7,12 @@
       "runtimeArgs": ["run", "dev"],
       "port": 3000,
       "autoPort": true
+    },
+    {
+      "name": "corridor-sim",
+      "runtimeExecutable": "corridor-sim/.venv/bin/streamlit",
+      "runtimeArgs": ["run", "corridor-sim/ui/app.py", "--server.port", "8501", "--server.headless", "true"],
+      "port": 8501
     }
   ]
 }

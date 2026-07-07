@@ -1,0 +1,162 @@
+{
+  "name": "Kyle single-hub corridor (Windrose)",
+  "description": "Case 1 Windrose: single hub at Kyle TX (mile 213, corridor midpoint). 80k lb, 80% departures. Warehouses stationary-charge to 80%.",
+  "fleet": [
+    {
+      "truck_type": "windrose_r700",
+      "count": 10,
+      "overrides": {
+        "max_soc": 0.8
+      }
+    }
+  ],
+  "sim_days": 8.0,
+  "warmup_days": 2.0,
+  "dispatch": {
+    "mode": "interval",
+    "headway_minutes": 45,
+    "wave_size": 4,
+    "wave_interval_minutes": 240.0,
+    "shift_hours": [
+      6.0,
+      22.0
+    ]
+  },
+  "route": {
+    "segments": [
+      {
+        "from_node": "Warehouse Laredo",
+        "to_node": "Kyle",
+        "distance_miles": 213,
+        "avg_speed_mph": null,
+        "elevation_gain_ft": 0.0,
+        "weather_multiplier": 1.0,
+        "traffic_multiplier": 1.0
+      },
+      {
+        "from_node": "Kyle",
+        "to_node": "Warehouse Dallas",
+        "distance_miles": 217,
+        "avg_speed_mph": null,
+        "elevation_gain_ft": 0.0,
+        "weather_multiplier": 1.0,
+        "traffic_multiplier": 1.0
+      }
+    ],
+    "node_coords": {
+      "Warehouse Laredo": [
+        27.5306,
+        -99.4803
+      ],
+      "Kyle": [
+        29.989,
+        -97.8772
+      ],
+      "Warehouse Dallas": [
+        32.7767,
+        -96.797
+      ]
+    }
+  },
+  "sites": [
+    {
+      "name": "Warehouse Laredo",
+      "is_warehouse": true,
+      "available_land_acres": 2.0,
+      "grid_connection_kw": 600,
+      "transformer_limit_kw": 600,
+      "utility_limit_kw": 600,
+      "expansion_capable": true,
+      "construction_cost_usd": 250000.0,
+      "utility_connection_cost_usd": 250000.0,
+      "land_lease_usd_per_month": 0.0,
+      "energy_price_usd_per_kwh": 0.0,
+      "demand_charge_usd_per_kw_month": 0.0,
+      "operational_hours": [
+        0.0,
+        24.0
+      ],
+      "queue_spots": 4,
+      "deployment": [
+        {
+          "charger_type": "autel_mcs_3d",
+          "count": 1
+        }
+      ],
+      "dwell_minutes": 45.0,
+      "charge_target_soc": 0.9
+    },
+    {
+      "name": "Kyle",
+      "is_warehouse": false,
+      "available_land_acres": 2.0,
+      "grid_connection_kw": 1700.0,
+      "transformer_limit_kw": 1700.0,
+      "utility_limit_kw": 1700.0,
+      "expansion_capable": true,
+      "construction_cost_usd": 400000.0,
+      "utility_connection_cost_usd": 250000.0,
+      "land_lease_usd_per_month": 4000.0,
+      "energy_price_usd_per_kwh": 0.1,
+      "demand_charge_usd_per_kw_month": 14.0,
+      "operational_hours": [
+        0.0,
+        24.0
+      ],
+      "queue_spots": 4,
+      "deployment": [
+        {
+          "charger_type": "autel_mcs_3d",
+          "count": 2
+        }
+      ],
+      "dwell_minutes": 45.0,
+      "retail_price_usd_per_kwh": 0.2,
+      "retail_price_external_usd_per_kwh": 0.3
+    },
+    {
+      "name": "Warehouse Dallas",
+      "is_warehouse": true,
+      "available_land_acres": 2.0,
+      "grid_connection_kw": 850,
+      "transformer_limit_kw": 850,
+      "utility_limit_kw": 850,
+      "expansion_capable": true,
+      "construction_cost_usd": 250000.0,
+      "utility_connection_cost_usd": 250000.0,
+      "land_lease_usd_per_month": 0.0,
+      "energy_price_usd_per_kwh": 0.1,
+      "demand_charge_usd_per_kw_month": 12.0,
+      "operational_hours": [
+        0.0,
+        24.0
+      ],
+      "queue_spots": 4,
+      "deployment": [
+        {
+          "charger_type": "autel_mcs_3d",
+          "count": 1
+        }
+      ],
+      "dwell_minutes": 45.0
+    }
+  ],
+  "weather_multiplier": 1.0,
+  "traffic_multiplier": 1.0,
+  "max_wait_minutes": 45.0,
+  "warehouse_charge_policy": "full",
+  "enroute_target_soc": 0.8,
+  "warehouse_charge_window_h": null,
+  "economics": {
+    "discount_rate": 0.08,
+    "horizon_years": 10,
+    "revenue_per_trip_usd": 1200.0,
+    "maintenance_pct_of_hardware": 0.03,
+    "network_cost_usd_per_dispenser_month": 200.0,
+    "transformer_cost_usd_per_kw": 150.0,
+    "installation_pct_of_hardware": 0.15,
+    "civil_cost_usd_per_dispenser": 30000.0,
+    "replacement_year": 12
+  },
+  "random_seed": 42
+}
