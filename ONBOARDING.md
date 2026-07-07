@@ -80,3 +80,71 @@ home (`/`) · products · platform · electric-highway · projects · about · c
 3. Show `git diff` + a 1–2 line summary of what changed and why. **Wait for the user's go-ahead.**
 4. On approval: `git commit`, then `npx vercel --prod` → wait for "● Ready" via `npx vercel ls`.
 5. Verify live: `curl -A "Mozilla/5.0" https://www.gs-emobility.com/<path>` → confirm HTTP 200 + expected content (title, JSON-LD, copy).
+
+---
+
+# CORRIDOR-SIM: EV freight corridor planner (`corridor-sim/`)
+
+This repo also hosts **Corridor-Sim**, our internal simulation and
+investment-planning tool for the I-35 Laredo↔Dallas electric truck corridor
+(separate from the website — pure Python, no Next.js involvement).
+
+## What it does
+Discrete-event simulation (SimPy) of our truck fleet, plus an infrastructure
+optimizer and financial model. It answers: where to put charging hubs, how
+many chargers of which vendor, what grid connection each site needs, and
+whether the investment pays back. Designs live as **scenario JSON files** in
+`corridor-sim/scenarios/`.
+
+## Quick start
+```bash
+cd corridor-sim
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+python -m pytest tests/ -q          # 50 tests, ~1s — run after ANY engine change
+streamlit run ui/app.py             # dashboard on localhost:8501
+```
+In the dashboard sidebar use **"Load saved scenario"**:
+- `kyle_warehouse_depots` — CURRENT recommended design
+- `kyle_20trucks_dual_standard` — earlier cabinet-based variant
+
+Headless studies live in `corridor-sim/examples/` (hub location sweep, grid
+requirements, warehouse depot sizing, Case-1 Windrose study).
+
+## Current recommended design (July 2026)
+- **Single owned hub at Kyle, TX (mile 215)** — replaces Encinal+Waco;
+  Windrose range physics pins the hub to mile 188–242.
+- Fleet: 10 Tesla Semi + 10 Windrose R700 at 80,000 lb, 80% departure rule.
+  **Policy: Tesla trucks charge only on Tesla hardware.**
+- Kyle (buys @$0.10/kWh, sells @$0.20 own / $0.30 third-party, charges every
+  truck to 90%): 1× Tesla V4 cabinet + 2 MCS posts, 1× Autel 1.2MW 3-gun
+  cabinet. Grid: 1.4 MW.
+- Warehouses (2h charge-while-loading, "hop" policy): per warehouse 2× Tesla
+  V4 Integrated 125 kW posts, 2× Lifeyounger 217 kWh mobiles (dual gun),
+  6× Autel 50 kW DC Wallboxes (3 per mobile — feeders, not truck chargers).
+  Laredo energy is free. Grid <500 kW each.
+- Results: 44.3 trips/day, 0 stranded, 0 rescues, **$3.10M total CAPEX**.
+- Mobile units double as roadside-rescue capacity (sellable service, in the
+  engine and the financial model).
+
+## Design rules encoded in the model — don't accidentally break
+1. Kyle charges to 90% (shrinks warehouse top-ups AND maximizes revenue).
+2. 3 Wallboxes per Lifeyounger (~140 kW, the unit's DC-input cap); fewer and
+   buffers can't recover between back-to-back sessions.
+3. Each Windrose needs a SOLO 180 kW gun during its warehouse break.
+4. Dispatch staggered at 75-min headways (we control truck flow).
+
+## Code map
+- `corridor_sim/vehicles/models.py` — truck registry
+- `corridor_sim/charging/chargers.py` — charger registry incl. **hardware
+  costs (PLACEHOLDER estimates — replace with real vendor quotes)**
+- `corridor_sim/sim/engine.py` — DES: truck agents, queues, mobile-buffer
+  physics, wallbox↔mobile pairing, roadside rescue
+- `corridor_sim/costs/model.py` — CAPEX/OPEX/NPV/two-tier charging revenue
+- `ui/app.py` — Streamlit dashboard (thin layer over the same engine)
+
+## Known placeholders needing real data
+- Charger hardware prices (Tesla V4, Autel cabinets/DT1500, Lifeyounger)
+- Tesla MCS charging curve (generic taper; datasheet pending)
+- Windrose MCS capability (currently modeled as CCS-group / Autel-only)
+- Kyle land/construction costs (Waco-like defaults)
