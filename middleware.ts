@@ -30,8 +30,12 @@ function handleInvestorsAuth(request: NextRequest) {
   const cookie = request.cookies.get('investors_access')
   const validToken = process.env.INVESTORS_ACCESS_TOKEN
 
-  // If no token configured, allow through (fail open — prevents lockout)
-  if (!validToken) return NextResponse.next()
+  // If no token configured in production, deny access (fail closed)
+  if (!validToken) {
+    const url = new URL('/investors-access', request.url)
+    url.searchParams.set('next', request.nextUrl.pathname)
+    return NextResponse.redirect(url)
+  }
 
   if (cookie?.value === validToken) return NextResponse.next()
 

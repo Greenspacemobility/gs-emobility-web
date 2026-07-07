@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { timingSafeEqual } from 'crypto'
 
 // Simple rate limiting — in-memory (resets on cold start, sufficient for low-traffic gating)
 const attempts = new Map<string, { count: number; resetAt: number }>()
@@ -39,11 +40,11 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Access not configured.' }, { status: 500 })
   }
 
-  // Timing-safe comparison to prevent timing attacks
+  // Constant-time comparison to prevent timing attacks
   const valid =
     typeof password === 'string' &&
     password.length === validToken.length &&
-    password === validToken
+    timingSafeEqual(Buffer.from(password), Buffer.from(validToken))
 
   if (!valid) {
     // Increment attempt counter

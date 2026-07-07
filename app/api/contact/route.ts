@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 import { checkRateLimit, getClientIp, FORM_RATE_LIMIT } from '@/lib/rate-limit'
 import { sanitizeField } from '@/lib/sanitize'
+import { verifyTurnstile } from '@/lib/turnstile'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
@@ -18,7 +19,13 @@ export async function POST(req: NextRequest) {
 
   try {
     const body = await req.json()
-    const { name, email, phone, interest, message } = body
+    const { name, email, phone, interest, message, turnstileToken } = body
+
+    // Verify Turnstile CAPTCHA token
+    const captchaOk = await verifyTurnstile(turnstileToken)
+    if (!captchaOk) {
+      return NextResponse.json({ error: 'CAPTCHA verification failed' }, { status: 403 })
+    }
 
     if (!name || !email || !message) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 })
