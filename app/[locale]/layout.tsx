@@ -53,6 +53,7 @@ export async function generateMetadata({
       languages: {
         'en': 'https://www.gs-emobility.com/en',
         'es': 'https://www.gs-emobility.com/es',
+        'x-default': 'https://www.gs-emobility.com/en',
       },
     },
     openGraph: {
