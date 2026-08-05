@@ -7,6 +7,7 @@ import {
 } from 'lucide-react'
 import AnimateIn from '@/components/AnimateIn'
 import Badge from '@/components/Badge'
+import { alternatesFor } from '@/lib/seo'
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   const title = locale === 'es' ? 'Inversores | Greenspace E-mobility' : 'Investors | Greenspace E-mobility'
@@ -14,6 +15,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
     ? 'Oportunidad de inversión en infraestructura de carga eléctrica y red de transporte de carga para camiones Clase 8 en América del Norte y Panamá.'
     : 'Investment opportunity in EV charging infrastructure and Class 8 electric freight network across North America and Panama.'
   return {
+    alternates: alternatesFor('/investors', locale),
     title,
     description,
     robots: { index: false, follow: false },
