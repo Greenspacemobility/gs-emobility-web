@@ -1,3 +1,4 @@
+import type { ComponentType } from 'react'
 import { useTranslations } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
@@ -26,8 +27,17 @@ export default function ProjectsPage({ params: { locale } }: { params: { locale:
   setRequestLocale(locale)
   const t = useTranslations('projects')
 
-  // Original video project cards
-  const videoProjects = [
+  // Video project cards
+  type VideoProject = {
+    key: string
+    video: string
+    poster: string
+    aspect?: '9/16' | '16/9'
+    href?: string
+    stats: { icon: ComponentType<{ className?: string }>; val: string; label: string }[]
+  }
+
+  const videoProjects: VideoProject[] = [
     {
       key: 'p1',
       video: '/videos/dhl-panama.mp4',
@@ -50,9 +60,30 @@ export default function ProjectsPage({ params: { locale } }: { params: { locale:
         { icon: Calendar,  val: t('p2Stat4Val'), label: t('p2Stat4Label') },
       ],
     },
+    {
+      key: 'p4',
+      video: '/videos/panama-convention-center.mp4',
+      poster: '/videos/panama-convention-center-poster.jpg',
+      aspect: '16/9' as const,
+      href: 'https://panamaconventions.com/guia-de-sostenibilidad/',
+      stats: [
+        { icon: Zap,       val: t('p4Stat1Val'), label: t('p4Stat1Label') },
+        { icon: Star,      val: t('p4Stat2Val'), label: t('p4Stat2Label') },
+        { icon: Building2, val: t('p4Stat3Val'), label: t('p4Stat3Label') },
+        { icon: Calendar,  val: t('p4Stat4Val'), label: t('p4Stat4Label') },
+      ],
+    },
   ]
 
   const mediaArticles = [
+    {
+      pub: t('m12Pub'), headline: t('m12Headline'),
+      href: 'https://lemob-news.com/dsv-deploys-10-windrose-electric-trucks-on-texas-mexico-freight-corridor/',
+    },
+    {
+      pub: t('m11Pub'), headline: t('m11Headline'),
+      href: 'https://electricdrives.tv/dsv-brings-electric-trucks-to-the-texas-mexico-freight-corridor-in-collaboration-with-allogic-and-greenspace/',
+    },
     {
       pub: t('m1Pub'), headline: t('m1Headline'),
       href: 'https://www.reuters.com/business/autos-transportation/chinese-electric-truck-maker-windrose-makes-first-us-delivery-2026-04-08/',
@@ -163,7 +194,7 @@ export default function ProjectsPage({ params: { locale } }: { params: { locale:
 
           {/* Video project cards (DHL + Banco General — keep unchanged) */}
           <div className="space-y-8 mb-8">
-            {videoProjects.map(({ key, video, poster, stats }, idx) => (
+            {videoProjects.map(({ key, video, poster, stats, aspect, href }, idx) => (
               <AnimateIn key={key} delay={idx * 120}>
                 <div className="glass rounded-3xl overflow-hidden border border-white/[0.08] hover:border-green-500/20 transition-colors">
                   <div className="grid lg:grid-cols-[5fr_7fr] gap-0">
@@ -174,6 +205,7 @@ export default function ProjectsPage({ params: { locale } }: { params: { locale:
                         src={video}
                         poster={poster}
                         label={t('videoLabel')}
+                        aspect={aspect ?? '9/16'}
                       />
                     </div>
 
@@ -203,7 +235,7 @@ export default function ProjectsPage({ params: { locale } }: { params: { locale:
                       </div>
 
                       {/* Partner strip */}
-                      <div className="flex items-center gap-3 pt-6 border-t border-white/[0.07]">
+                      <div className="flex flex-wrap items-center gap-3 pt-6 border-t border-white/[0.07]">
                         <span className="text-white/25 text-xs uppercase tracking-widest">Partner</span>
                         <div className="glass rounded-lg px-4 py-2">
                           <span className="font-display font-bold text-white/80 text-sm tracking-wider">
@@ -211,6 +243,17 @@ export default function ProjectsPage({ params: { locale } }: { params: { locale:
                           </span>
                           <span className="text-white/30 text-xs ml-2">Panama</span>
                         </div>
+                        {href && (
+                          <a
+                            href={href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="ml-auto flex items-center gap-2 text-green-400 text-sm font-semibold hover:gap-3 transition-all"
+                          >
+                            <ExternalLink className="w-4 h-4 shrink-0" />
+                            {t(`${key}LinkLabel` as any)}
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -219,53 +262,59 @@ export default function ProjectsPage({ params: { locale } }: { params: { locale:
             ))}
           </div>
 
-          {/* Panama Pacifico — horizontal card (no video) */}
-          <AnimateIn delay={240}>
-            <a
-              href="https://es.linkedin.com/posts/greenspace-emobility_gracias-apanama-pacificoywaste-revolution-activity-7196585424616624129-lvED"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block glass rounded-3xl overflow-hidden border border-white/[0.08] hover:border-green-500/20 transition-colors group"
-            >
-              <div className="p-8 lg:p-10 flex flex-col lg:flex-row lg:items-center gap-8">
-                {/* Left: info */}
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-xs font-semibold text-green-400 bg-green-500/10 px-3 py-1.5 rounded-full tracking-wide">
-                      {t('p3Badge')}
-                    </span>
+          {/* Horizontal cards (no video) — Panama Pacifico */}
+          {([
+            {
+              key: 'p3',
+              href: 'https://es.linkedin.com/posts/greenspace-emobility_gracias-apanama-pacificoywaste-revolution-activity-7196585424616624129-lvED',
+            },
+          ] as const).map(({ key, href }, idx) => (
+            <AnimateIn key={key} delay={240 + idx * 80}>
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block glass rounded-3xl overflow-hidden border border-white/[0.08] hover:border-green-500/20 transition-colors group mb-8 last:mb-0"
+              >
+                <div className="p-8 lg:p-10 flex flex-col lg:flex-row lg:items-center gap-8">
+                  {/* Left: info */}
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="text-xs font-semibold text-green-400 bg-green-500/10 px-3 py-1.5 rounded-full tracking-wide">
+                        {t(`${key}Badge` as any)}
+                      </span>
+                    </div>
+                    <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-3 leading-tight">
+                      {t(`${key}Title` as any)}
+                    </h2>
+                    <p className="text-white/55 leading-relaxed text-[0.9rem] mb-0">
+                      {t(`${key}Desc` as any)}
+                    </p>
                   </div>
-                  <h2 className="font-display text-2xl md:text-3xl font-bold text-white mb-3 leading-tight">
-                    {t('p3Title')}
-                  </h2>
-                  <p className="text-white/55 leading-relaxed text-[0.9rem] mb-0">
-                    {t('p3Desc')}
-                  </p>
-                </div>
 
-                {/* Right: stats + link */}
-                <div className="lg:w-64 shrink-0">
-                  <div className="grid grid-cols-2 gap-3 mb-5">
-                    {[
-                      { val: t('p3Stat1Val'), label: t('p3Stat1Label') },
-                      { val: t('p3Stat2Val'), label: t('p3Stat2Label') },
-                      { val: t('p3Stat3Val'), label: t('p3Stat3Label') },
-                      { val: t('p3Stat4Val'), label: t('p3Stat4Label') },
-                    ].map(({ val, label }, i) => (
-                      <div key={i} className="glass-forest rounded-xl p-3 text-center">
-                        <div className="font-display font-bold text-white text-sm">{val}</div>
-                        <div className="text-white/35 text-[10px] mt-0.5 leading-snug">{label}</div>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="flex items-center gap-2 text-green-400 text-sm font-semibold group-hover:gap-3 transition-all">
-                    <ExternalLink className="w-4 h-4 shrink-0" />
-                    {t('p3LinkLabel')}
+                  {/* Right: stats + link */}
+                  <div className="lg:w-64 shrink-0">
+                    <div className="grid grid-cols-2 gap-3 mb-5">
+                      {[1, 2, 3, 4].map((n) => (
+                        <div key={n} className="glass-forest rounded-xl p-3 text-center">
+                          <div className="font-display font-bold text-white text-sm">
+                            {t(`${key}Stat${n}Val` as any)}
+                          </div>
+                          <div className="text-white/35 text-[10px] mt-0.5 leading-snug">
+                            {t(`${key}Stat${n}Label` as any)}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="flex items-center gap-2 text-green-400 text-sm font-semibold group-hover:gap-3 transition-all">
+                      <ExternalLink className="w-4 h-4 shrink-0" />
+                      {t(`${key}LinkLabel` as any)}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </a>
-          </AnimateIn>
+              </a>
+            </AnimateIn>
+          ))}
         </div>
       </section>
 
