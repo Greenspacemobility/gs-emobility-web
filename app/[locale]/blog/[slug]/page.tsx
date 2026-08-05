@@ -34,6 +34,7 @@ export async function generateMetadata({
       languages: {
         en: `https://www.gs-emobility.com/en/blog/${slug}`,
         es: `https://www.gs-emobility.com/es/blog/${slug}`,
+        'x-default': `https://www.gs-emobility.com/en/blog/${slug}`,
       },
     },
     openGraph: {
