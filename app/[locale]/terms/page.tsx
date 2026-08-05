@@ -1,10 +1,17 @@
 import { setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import AnimateIn from '@/components/AnimateIn'
+import { alternatesFor } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Terms of Use — Greenspace E-mobility',
-  description: 'Terms and conditions for use of the Greenspace E-mobility website.',
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+  const isEs = locale === 'es'
+  return {
+    title: isEs ? 'Términos de Uso' : 'Terms of Use',
+    description: isEs
+      ? 'Términos y condiciones de uso del sitio web de Greenspace E-mobility.'
+      : 'Terms and conditions for use of the Greenspace E-mobility website.',
+    alternates: alternatesFor('/terms', locale),
+  }
 }
 
 export default function TermsPage({ params: { locale } }: { params: { locale: string } }) {
