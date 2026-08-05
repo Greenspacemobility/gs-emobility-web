@@ -6,6 +6,7 @@ import { ArrowRight, Clock } from 'lucide-react'
 import AnimateIn from '@/components/AnimateIn'
 import Badge from '@/components/Badge'
 import { getArticlesSorted } from '@/content/blog'
+import { alternatesFor } from '@/lib/seo'
 
 // ─── SEO Metadata ─────────────────────────────────────────────────────────────
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
@@ -24,13 +25,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
       'EV charging blog', 'electric truck insights', 'fleet electrification Mexico',
       'EV charging Panama', 'electric highway corridor', 'sustainable mobility Latin America',
     ],
-    alternates: {
-      canonical: `https://www.gs-emobility.com/${locale}/blog`,
-      languages: {
-        en: 'https://www.gs-emobility.com/en/blog',
-        es: 'https://www.gs-emobility.com/es/blog',
-      },
-    },
+    alternates: alternatesFor('/blog', locale),
   }
 }
 
