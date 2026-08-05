@@ -53,7 +53,7 @@ const FAQ_EN = [
       },
       {
         q: 'What makes Greenspace different from other EV charging companies?',
-        a: 'Greenspace is the only company in Latin America simultaneously offering: official Autel Energy charger distribution (up to 360 kW DC), exclusive Windrose Class 8 electric truck distribution, a proprietary smart charging management platform, and active development of the Mexico–Texas electric highway corridor. We are a vertically integrated, multi-country EV infrastructure operator.',
+        a: 'Greenspace is the only company in Latin America simultaneously offering: official Autel Energy charger distribution (up to 640 kW DC), exclusive Windrose Class 8 electric truck distribution, a proprietary smart charging management platform, and active development of the Mexico–Texas electric highway corridor. We are a vertically integrated, multi-country EV infrastructure operator.',
       },
     ],
   },
@@ -62,19 +62,19 @@ const FAQ_EN = [
     questions: [
       {
         q: 'Who is the official Autel Energy EV charger distributor in Panama and Mexico?',
-        a: 'Greenspace E-mobility is the official Autel Energy distributor for Panama, Mexico, and the United States. We carry the full MaxiCharger lineup from 7.2 kW Level 2 chargers up to 360 kW ultra-fast DC chargers.',
+        a: 'Greenspace E-mobility is the official Autel Energy distributor for Panama, Mexico, and the United States. We carry the full MaxiCharger lineup from 9.6 kW Level 2 chargers up to 360 kW ultra-fast DC chargers.',
       },
       {
         q: 'What EV charger models does Greenspace offer?',
-        a: 'We distribute the complete Autel Energy MaxiCharger range: AC chargers at 7.2 kW and 22 kW for home and workplace use; DC fast chargers at 60 kW, 120 kW, 180 kW, and 360 kW for commercial, public, and fleet applications. All models are OCPP-compatible and support smart charging management.',
+        a: 'We distribute the complete Autel Energy MaxiCharger range: AC chargers at 9.6 kW and 22 kW for home and workplace use; DC Fast chargers from 60 kW to 240 kW, and DC HiPower cabinets from 320 kW to 640 kW for commercial, public, and fleet applications. All models are OCPP-compatible and support smart charging management.',
       },
       {
         q: 'What is the most powerful EV charger available in Panama?',
-        a: 'Greenspace offers the Autel MaxiCharger DC 360 kW — one of the most powerful commercially available EV chargers in the market. At 360 kW, it can charge most EVs to 80% in under 20 minutes, making it ideal for highway hubs, fleet depots, and high-traffic commercial sites.',
+        a: 'Greenspace offers the Autel MaxiCharger DC HiPower — configurable from 320 kW to 640 kW per cabinet and delivering up to 480 kW to a single vehicle. At 480 kW, it can charge most EVs to 80% in under 20 minutes, making it ideal for highway hubs, fleet depots, and high-traffic commercial sites.',
       },
       {
         q: 'Do you offer home EV charger installation in Panama?',
-        a: 'Yes. Greenspace provides residential EV charger installation in Panama. We supply and install Level 2 AC chargers (7.2 kW to 22 kW), handle all electrical work and permits, and provide after-sales support. Contact us at info@gs-emobility.com for a free quote.',
+        a: 'Yes. Greenspace provides residential EV charger installation in Panama. We supply and install Level 2 AC chargers (9.6 kW to 22 kW), handle all electrical work and permits, and provide after-sales support. Contact us at info@gs-emobility.com for a free quote.',
       },
       {
         q: 'What is a DC fast charger and who needs one?',
@@ -91,7 +91,7 @@ const FAQ_EN = [
       },
       {
         q: 'What is the range of the Windrose electric truck?',
-        a: 'The Windrose Class 8 electric truck achieves up to 500 km (310 miles) of range per charge under standard load conditions. It carries a 422 kWh battery pack, produces 480 kW of motor power, and delivers 6,000 Nm of torque — making it competitive with diesel Class 8 trucks on performance while eliminating fuel costs.',
+        a: 'The Windrose Class 8 electric truck achieves up to 670 km (416 miles) of range per charge under load. It carries a 729 kWh battery pack, produces 1,045 kW of motor power, and delivers 6,000 Nm of torque — making it competitive with diesel Class 8 trucks on performance while eliminating fuel costs.',
       },
       {
         q: 'How long does it take to charge a Windrose electric truck?',
@@ -103,7 +103,7 @@ const FAQ_EN = [
       },
       {
         q: 'What is the payload capacity of the Windrose electric truck?',
-        a: 'The Windrose Class 8 electric truck supports up to 36 tonnes Gross Vehicle Weight (GVW), which is competitive with conventional diesel Class 8 semis. The electric drivetrain adds some weight versus diesel, but Windrose\'s engineering achieves comparable net payload for most freight applications.',
+        a: 'The Windrose Class 8 electric truck supports up to 98,000 lb (44.5 tonnes) Gross Combination Weight (GCW), which is competitive with conventional diesel Class 8 semis. The electric drivetrain adds some weight versus diesel, but Windrose\'s engineering achieves comparable net payload for most freight applications.',
       },
     ],
   },
@@ -116,7 +116,7 @@ const FAQ_EN = [
       },
       {
         q: 'Why is the Mexico–Texas electric highway important?',
-        a: 'The Mexico–US border region is one of the most active trade corridors in the world, with over $800 billion in annual trade and millions of truck crossings per year. The Monterrey–Dallas corridor alone handles a significant share of USMCA freight. Without DC fast charging infrastructure, electric trucks cannot viably operate on this route. Greenspace\'s Electric Highway solves this bottleneck, enabling decarbonization of cross-border freight.',
+        a: 'The Mexico–US border region is one of the most active trade corridors in the world, with $871.6 billion in two-way goods trade in 2025 (US Census Bureau) and millions of truck crossings per year. The Monterrey–Dallas corridor alone handles a significant share of USMCA freight. Without DC fast charging infrastructure, electric trucks cannot viably operate on this route. Greenspace\'s Electric Highway solves this bottleneck, enabling decarbonization of cross-border freight.',
       },
       {
         q: 'When will the Mexico–Texas electric highway be completed?',
@@ -174,7 +174,7 @@ const FAQ_ES = [
       },
       {
         q: '¿Qué diferencia a Greenspace de otras empresas de carga EV?',
-        a: 'Greenspace es la única empresa en Latinoamérica que combina: distribución oficial de cargadores Autel Energy (hasta 360 kW DC), distribución exclusiva de camiones eléctricos Windrose Clase 8, plataforma propia de gestión de carga inteligente, y desarrollo activo de la autopista eléctrica México–Texas. Somos un operador integrado verticalmente en múltiples países.',
+        a: 'Greenspace es la única empresa en Latinoamérica que combina: distribución oficial de cargadores Autel Energy (hasta 640 kW DC), distribución exclusiva de camiones eléctricos Windrose Clase 8, plataforma propia de gestión de carga inteligente, y desarrollo activo de la autopista eléctrica México–Texas. Somos un operador integrado verticalmente en múltiples países.',
       },
     ],
   },
@@ -183,15 +183,15 @@ const FAQ_ES = [
     questions: [
       {
         q: '¿Quién es el distribuidor oficial de cargadores Autel Energy en Panamá y México?',
-        a: 'Greenspace E-mobility es el distribuidor oficial de Autel Energy para Panamá, México y Estados Unidos. Ofrecemos toda la línea MaxiCharger, desde cargadores Level 2 de 7.2 kW hasta cargadores DC ultrarrápidos de 360 kW.',
+        a: 'Greenspace E-mobility es el distribuidor oficial de Autel Energy para Panamá, México y Estados Unidos. Ofrecemos toda la línea MaxiCharger, desde cargadores Level 2 de 9.6 kW hasta gabinetes DC HiPower de 640 kW.',
       },
       {
         q: '¿Qué modelos de cargadores EV ofrece Greenspace?',
-        a: 'Distribuimos la gama completa Autel Energy MaxiCharger: cargadores AC de 7.2 kW y 22 kW para hogar y lugar de trabajo; cargadores DC rápidos de 60 kW, 120 kW, 180 kW y 360 kW para aplicaciones comerciales, públicas y de flotas. Todos los modelos son compatibles con OCPP y gestión inteligente de carga.',
+        a: 'Distribuimos la gama completa Autel Energy MaxiCharger: cargadores AC de 9.6 kW y 22 kW para hogar y lugar de trabajo; cargadores DC Fast de 60 kW a 240 kW, y gabinetes DC HiPower de 320 kW a 640 kW para aplicaciones comerciales, públicas y de flotas. Todos los modelos son compatibles con OCPP y gestión inteligente de carga.',
       },
       {
         q: '¿Ofrecen instalación de cargadores para el hogar en Panamá?',
-        a: 'Sí. Greenspace proporciona instalación de cargadores EV residenciales en Panamá. Suministramos e instalamos cargadores AC Level 2 (7.2 kW a 22 kW), gestionamos todos los trabajos eléctricos y permisos, y ofrecemos soporte postventa. Contáctenos en info@gs-emobility.com para un presupuesto gratuito.',
+        a: 'Sí. Greenspace proporciona instalación de cargadores EV residenciales en Panamá. Suministramos e instalamos cargadores AC Level 2 (9.6 kW a 22 kW), gestionamos todos los trabajos eléctricos y permisos, y ofrecemos soporte postventa. Contáctenos en info@gs-emobility.com para un presupuesto gratuito.',
       },
     ],
   },
@@ -204,7 +204,7 @@ const FAQ_ES = [
       },
       {
         q: '¿Cuál es la autonomía del camión eléctrico Windrose?',
-        a: 'El camión Windrose Clase 8 alcanza hasta 500 km (310 millas) de autonomía por carga en condiciones de carga estándar. Cuenta con una batería de 422 kWh, 480 kW de potencia de motor y 6,000 Nm de torque, siendo competitivo con los camiones diésel Clase 8 en rendimiento.',
+        a: 'El camión Windrose Clase 8 alcanza hasta 670 km (416 millas) de autonomía por carga con carga útil. Cuenta con una batería de 729 kWh, 1.045 kW de potencia de motor y 6,000 Nm de torque, siendo competitivo con los camiones diésel Clase 8 en rendimiento.',
       },
       {
         q: '¿Puedo obtener un camión eléctrico Windrose para mi flota en México?',
