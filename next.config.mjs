@@ -80,6 +80,16 @@ const nextConfig = {
       { source: '/contact-3', destination: '/es/contact', permanent: true },
       { source: '/es/contact-3', destination: '/es/contact', permanent: true },
       { source: '/en/contact-3', destination: '/en/contact', permanent: true },
+      // Legacy Wix DC-charger & category pages (still indexed, currently 404)
+      { source: '/dc-chargers/:slug', destination: '/en/products', permanent: true },
+      { source: '/en/dc-chargers/:slug', destination: '/en/products', permanent: true },
+      { source: '/es/dc-chargers/:slug', destination: '/es/products', permanent: true },
+      { source: '/category/:slug', destination: '/en/products', permanent: true },
+      { source: '/en/category/:slug', destination: '/en/products', permanent: true },
+      { source: '/es/category/:slug', destination: '/es/products', permanent: true },
+      { source: '/partners', destination: '/en/about', permanent: true },
+      { source: '/en/partners', destination: '/en/about', permanent: true },
+      { source: '/es/partners', destination: '/es/about', permanent: true },
     ]
   },
 }
