@@ -5,6 +5,7 @@ import AnimateIn from '@/components/AnimateIn'
 import Badge from '@/components/Badge'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import { alternatesFor } from '@/lib/seo'
 
 // ─── SEO Metadata ─────────────────────────────────────────────────────────────
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
@@ -24,13 +25,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
       'Windrose electric truck FAQ', 'electric highway Mexico Texas questions',
       'fleet EV charging questions', 'EV charging Latin America FAQ',
     ],
-    alternates: {
-      canonical: `https://www.gs-emobility.com/${locale}/faq`,
-      languages: {
-        en: 'https://www.gs-emobility.com/en/faq',
-        es: 'https://www.gs-emobility.com/es/faq',
-      },
-    },
+    alternates: alternatesFor('/faq', locale),
   }
 }
 
