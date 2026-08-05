@@ -8,7 +8,7 @@ function buildCompetitivePrompt(weekNumber: number, year: number): string {
 - Builds and operates high-power EV charging infrastructure in Panama, Mexico (Monterrey), Texas (USA), and Norway (Oslo)
 - Is the official Autel Energy EV charger distributor in Panama, Mexico, and the USA
 - Is the exclusive Windrose Class 8 electric truck distributor in Latin America
-- Is developing the Mexico–Texas Electric Highway corridor (Monterrey → Dallas, 5 phases, 15 Green Hubs)
+- Is developing the Mexico–Texas Electric Highway corridor (Monterrey → Dallas, 4 phases, 12 Green Hubs)
 - Offers a smart charging management platform (OCPP-compatible)
 
 Generate a comprehensive WEEKLY COMPETITIVE INTELLIGENCE REPORT for Week ${weekNumber}, ${year}.
