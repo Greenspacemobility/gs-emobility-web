@@ -57,7 +57,7 @@ export default function ElectricHighwayPage({ params: { locale } }: { params: { 
     { phase: t('phase1Name'), year: t('phase1Year'), title: t('phase1Title'), desc: t('phase1Desc'), status: 'active'   },
     { phase: t('phase2Name'), year: t('phase2Year'), title: t('phase2Title'), desc: t('phase2Desc'), status: 'building' },
     { phase: t('phase3Name'), year: t('phase3Year'), title: t('phase3Title'), desc: t('phase3Desc'), status: 'planned'  },
-    { phase: t('phase4Name'), year: t('phase4Year'), title: t('phase4Title'), desc: t('phase4Desc'), status: 'planned'  },
+    { phase: t('phase4Name'), year: t('phase4Year'), title: t('phase4Title'), desc: t('phase4Desc'), status: 'active'   },
     { phase: t('phase5Name'), year: t('phase5Year'), title: t('phase5Title'), desc: t('phase5Desc'), status: 'planned'  },
   ]
 
