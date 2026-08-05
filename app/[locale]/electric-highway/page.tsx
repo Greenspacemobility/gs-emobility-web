@@ -10,6 +10,7 @@ import {
 import AnimateIn from '@/components/AnimateIn'
 import Badge from '@/components/Badge'
 import CountUp from '@/components/CountUp'
+import { alternatesFor } from '@/lib/seo'
 
 const HighwayMap = dynamic(() => import('@/components/HighwayMap'), { ssr: false })
 
@@ -18,7 +19,8 @@ export async function generateMetadata({ params: { locale } }: { params: { local
     ? 'Autopista Eléctrica Greenspace: red de 12 Green Hubs para camiones eléctricos Clase 8 en Texas, Monterrey, California y Panamá. Infraestructura de carga de alta potencia para flotas transfronterizas.'
     : 'Greenspace Electric Highway: 12 Green Hubs for Class 8 electric trucks across Texas, Monterrey, California, and Panama. High-power charging infrastructure for cross-border electric freight fleets.'
   return {
-    title: locale === 'es' ? 'Autopista Eléctrica | Red EV Texas–México–California–Panamá | Greenspace' : 'Electric Highway | EV Network Texas–Mexico–California–Panama | Greenspace',
+    alternates: alternatesFor('/electric-highway', locale),
+    title: locale === 'es' ? 'Corredor de Carga México–Texas' : 'Mexico–Texas Electric Truck Charging Corridor',
     description,
     keywords: ['electric highway Mexico Texas', 'EV corridor Monterrey Dallas', 'cross border electric truck charging', 'autopista eléctrica', 'corredor eléctrico Monterrey Laredo', 'electric truck California', 'EV charging Panama', 'Class 8 electric truck corridor'],
     openGraph: { title: 'Greenspace Electric Highway — Mexico to Texas EV Corridor', description },
