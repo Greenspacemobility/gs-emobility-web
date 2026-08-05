@@ -7,9 +7,12 @@ interface Props {
   src: string
   poster?: string
   label?: string
+  /** Source aspect ratio. Vertical (social) clips are 9/16; landscape site
+   *  footage is 16/9. Wrong value crops the frame, so set it per video. */
+  aspect?: '9/16' | '16/9'
 }
 
-export default function VideoPlayer({ src, poster, label }: Props) {
+export default function VideoPlayer({ src, poster, label, aspect = '9/16' }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [playing, setPlaying] = useState(false)
   const [ready, setReady] = useState(false)
@@ -26,9 +29,12 @@ export default function VideoPlayer({ src, poster, label }: Props) {
     }
   }
 
-  /* Vertical 9:16 aspect — max height constrained so it fits nicely */
+  /* Landscape clips need a wider box, portrait clips a narrow one, so the
+     rendered height stays comparable in the same grid cell. */
+  const maxW = aspect === '16/9' ? 'max-w-[560px]' : 'max-w-[280px]'
+
   return (
-    <div className="relative w-full max-w-[280px] mx-auto" style={{ aspectRatio: '9/16' }}>
+    <div className={`relative w-full ${maxW} mx-auto`} style={{ aspectRatio: aspect }}>
       {/* Video element */}
       <video
         ref={videoRef}
