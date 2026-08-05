@@ -8,12 +8,14 @@ import {
 } from 'lucide-react'
 import AnimateIn from '@/components/AnimateIn'
 import Badge from '@/components/Badge'
+import { alternatesFor } from '@/lib/seo'
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   const description = locale === 'es'
     ? 'Greenspace E-mobility: pioneros en infraestructura de carga eléctrica en América Latina. Operamos en Panamá, México, Texas y Noruega, acelerando la electrificación de flotas y corredores logísticos.'
     : 'Greenspace E-mobility: pioneers in EV charging infrastructure across Latin America. Operating in Panama, Mexico, Texas and Norway, accelerating fleet electrification and logistics corridor decarbonization.'
   return {
+    alternates: alternatesFor('/about', locale),
     title: locale === 'es' ? 'Nosotros' : 'About Us',
     description,
     openGraph: { title: 'About Greenspace E-mobility', description },
