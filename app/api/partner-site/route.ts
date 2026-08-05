@@ -4,7 +4,14 @@ import { checkRateLimit, getClientIp, FORM_RATE_LIMIT } from '@/lib/rate-limit'
 import { sanitizeField } from '@/lib/sanitize'
 import { verifyTurnstile } from '@/lib/turnstile'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Lazily constructed so `next build` never instantiates the client at
+// import time — otherwise page-data collection fails when RESEND_API_KEY
+// is absent (e.g. local builds without the secret).
+let _resend: Resend | null = null
+function resendClient(): Resend {
+  if (!_resend) _resend = new Resend(process.env.RESEND_API_KEY)
+  return _resend
+}
 
 const SITE_TYPE_LABELS: Record<string, string> = {
   gas_station: 'Gas Station',
@@ -73,7 +80,7 @@ export async function POST(req: NextRequest) {
     const sAddress = sanitizeField(address, 300)
     const sMessage = sanitizeField(message, 1000)
 
-    const { error } = await resend.emails.send({
+    const { error } = await resendClient().emails.send({
       from: 'Greenspace E-mobility <notifications@gs-emobility.com>',
       to: ['info@gs-emobility.com', 'william.pui@gs-emobility.com'],
       bcc: ['ruben.rock@gs-emobility.com', 'Moises.perez@gs-emobility.com', 'Mike.trevino@gs-emobility.com', 'horacio.delatorre@gs-emobility.com', 'roberpiere.villar@gs-emobility.com', 'john.parchment@gs-emobility.com', 'ricardo.zepeda@gs-emobility.com'],
