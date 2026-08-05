@@ -5,6 +5,7 @@ import { MapPin, Zap, TrendingUp, Shield, CheckCircle2, ArrowRight } from 'lucid
 import AnimateIn from '@/components/AnimateIn'
 import Badge from '@/components/Badge'
 import SiteForm from '@/components/SiteForm'
+import { alternatesFor } from '@/lib/seo'
 
 export async function generateMetadata({
   params: { locale },
@@ -12,7 +13,11 @@ export async function generateMetadata({
   params: { locale: string }
 }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'partnerSite' })
-  return { title: t('metaTitle'), description: t('metaDesc') }
+  return {
+    title: t('metaTitle'),
+    description: t('metaDesc'),
+    alternates: alternatesFor('/partner-site', locale),
+  }
 }
 
 export default function PartnerSitePage({
