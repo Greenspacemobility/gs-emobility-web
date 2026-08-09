@@ -22,6 +22,8 @@ export interface ChargerModel {
   /** Technical feature bullets (language-neutral) */
   features: string[]
   image?: string
+  /** 'light' renders the card's image panel on white — for photos with white/gray backgrounds */
+  imageBg?: 'light'
   /** Path under /public, e.g. "/datasheets/….pdf" */
   datasheet?: string
   /** Restrict visibility label to a market, e.g. 'CO' → Colombia */
@@ -47,6 +49,7 @@ export const chargerCatalog: ChargerModel[] = [
       'Wi-Fi · Bluetooth · Ethernet · 4G',
       'OCPP 1.6J · IP65 · CE',
     ],
+    image: '/images/products/autel-ac-wallbox.png',
     datasheet: '/datasheets/autel-maxicharger-ac-wallbox-iec.pdf',
     schemaDesc: 'Level 2 AC EV charger, 7.4 to 22 kW, Type 2 connector, OCPP 1.6J, for residential and commercial installations.',
   },
@@ -84,6 +87,7 @@ export const chargerCatalog: ChargerModel[] = [
       'ISO 15118 Plug & Charge · dynamic load balancing',
       'OCPP 1.6J · NEMA 3R · cable management',
     ],
+    image: '/images/products/autel-ac-floor-standing.png',
     datasheet: '/datasheets/autel-maxicharger-ac-floor-standing.pdf',
     schemaDesc: 'Dual-port floor-standing AC charger, 2×19.2 kW, SAE J1772, ISO 15118 Plug & Charge, for workplace and commercial parking.',
   },
@@ -121,7 +125,7 @@ export const chargerCatalog: ChargerModel[] = [
       '27" screen with advertising portal',
       'OCPP 1.6J→2.0.1 · ISO 15118 PnC · Eichrecht opt.',
     ],
-    image: '/images/products/autel-dc-series.jpg',
+    image: '/images/products/autel-dc-fast-iec.png',
     datasheet: '/datasheets/autel-maxicharger-dc-fast-iec.pdf',
     schemaDesc: 'DC fast charger 60 to 240 kW, CCS2, up to 400 A, 27-inch advertising display, OCPP, for public charging and fleets (IEC markets).',
   },
@@ -140,6 +144,7 @@ export const chargerCatalog: ChargerModel[] = [
       '27" touchscreen · ISO 15118 Plug & Charge',
       'Dynamic load balancing · remote diagnostics',
     ],
+    image: '/images/products/autel-dc-fast-na.png',
     datasheet: '/datasheets/autel-maxicharger-dc-fast-120-240kw-na.pdf',
     schemaDesc: 'DC fast charger 60 to 240 kW in 20 kW increments, dual CCS1, ISO 15118 Plug & Charge, for North American markets.',
   },
@@ -158,6 +163,7 @@ export const chargerCatalog: ChargerModel[] = [
       '1–4 outputs · modular, 5-min module swap',
       'Cable management · POS payment · voice prompts',
     ],
+    image: '/images/products/autel-dh480.png',
     datasheet: '/datasheets/autel-maxicharger-dh480.pdf',
     schemaDesc: 'All-in-one 480 kW DC ultra-fast charger with up to 4 outputs and 480 kW to a single vehicle, for charging hubs and corridors.',
   },
@@ -214,6 +220,8 @@ export const chargerCatalog: ChargerModel[] = [
       '208/240 Vac input · NEMA 4X',
       'Energy resilience & demand-response ready',
     ],
+    image: '/images/products/autel-dc-v2x.png',
+    imageBg: 'light',
     datasheet: '/datasheets/autel-dc-v2x.pdf',
     schemaDesc: 'Bidirectional 7/12 kW DC charger (V2X) enabling vehicle-to-grid and backup power applications, CCS1 or CHAdeMO.',
   },
@@ -234,6 +242,7 @@ export const chargerCatalog: ChargerModel[] = [
       'Up to 200 A per connector',
       'IP54 / IK10 · OCPP 1.6J & 2.0.1',
     ],
+    image: '/images/products/sinexcel-sec-60-compact.png',
     schemaDesc: 'Compact 60 kW DC fast charger with small footprint, dual CCS2, OCPP 1.6J/2.0.1, for space-constrained sites.',
   },
   {
@@ -251,6 +260,8 @@ export const chargerCatalog: ChargerModel[] = [
       '15" HD touchscreen · RFID / APP / NFC',
       'OCPP 1.6J · IP55 / IK10 · CE · TÜV',
     ],
+    image: '/images/products/sinexcel-sec-60.png',
+    imageBg: 'light',
     datasheet: '/datasheets/sinexcel-sec-60kw.pdf',
     schemaDesc: 'Integrated 60 kW DC fast charger, CCS2 and CHAdeMO options, OCPP 1.6J, CE and TÜV certified, for fleets and public charging.',
   },
@@ -269,6 +280,8 @@ export const chargerCatalog: ChargerModel[] = [
       '15" HD touchscreen · RFID / APP / NFC',
       'OCPP 1.6J · IP55 / IK10 · CE · TÜV',
     ],
+    image: '/images/products/sinexcel-sec-80.png',
+    imageBg: 'light',
     datasheet: '/datasheets/sinexcel-sec-80kw.pdf',
     schemaDesc: 'Integrated 80 kW DC fast charger, dual CCS2, OCPP 1.6J, CE and TÜV certified, high power density for depots and public sites.',
   },
@@ -287,6 +300,7 @@ export const chargerCatalog: ChargerModel[] = [
       '15" HD touchscreen · barrier-free design',
       'OCPP 1.6J · IP55 / IK10 · CE · TÜV',
     ],
+    image: '/images/products/sinexcel-sec-120.png',
     datasheet: '/datasheets/sinexcel-sec-120kw.pdf',
     schemaDesc: 'Integrated 120 kW DC fast charger with 350 A continuous output, dual CCS2, OCPP 1.6J, for buses, trucks and high-traffic sites.',
   },
@@ -324,6 +338,8 @@ export const chargerCatalog: ChargerModel[] = [
       '7" LCD touchscreen · QR / RFID / PnC',
       'OCPP 1.6J · IP54 / IK10',
     ],
+    image: '/images/products/lumos-f1-30.png',
+    imageBg: 'light',
     schemaDesc: 'Wall-mounted 30 kW DC charger, single CCS2, OCPP 1.6J, ideal entry point for dealerships and workplaces.',
   },
   {
@@ -341,6 +357,8 @@ export const chargerCatalog: ChargerModel[] = [
       '7" LCD touchscreen · QR / RFID / PnC',
       'OCPP 1.6J · IP54 / IK10',
     ],
+    image: '/images/products/lumos-f-series.png',
+    imageBg: 'light',
     schemaDesc: 'Integrated 60 kW DC fast charger, dual CCS2, OCPP 1.6J, for retail, fleet and destination charging.',
   },
   {
@@ -358,6 +376,8 @@ export const chargerCatalog: ChargerModel[] = [
       '10" LCD touchscreen · QR / RFID / PnC',
       'OCPP 1.6J · IP54 / IK10',
     ],
+    image: '/images/products/lumos-f-series.png',
+    imageBg: 'light',
     schemaDesc: 'Integrated 180 kW DC fast charger, dual CCS2 up to 300 A, OCPP 1.6J, for public fast charging and fleet depots.',
   },
   {

@@ -226,7 +226,7 @@ function ChargerCard({ model, locale, t }: { model: ChargerModel; locale: string
       onClick={e => e.stopPropagation()}
     >
       {/* Product image / placeholder */}
-      <div className="bg-white/[0.04] flex items-center justify-center p-6 h-48 relative">
+      <div className={`flex items-center justify-center p-6 h-48 relative ${model.imageBg === 'light' ? 'bg-white' : 'bg-white/[0.04]'}`}>
         {model.image ? (
           <Image
             src={model.image}
