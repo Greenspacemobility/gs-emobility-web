@@ -6,10 +6,15 @@ import AnimateIn from '@/components/AnimateIn'
 import Badge from '@/components/Badge'
 import ContactForm from '@/components/ContactForm'
 import BookVisitForm from '@/components/BookVisitForm'
+import { alternatesFor } from '@/lib/seo'
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'contact' })
-  return { title: t('badge'), description: t('subtitle') }
+  return {
+    title: t('badge'),
+    description: t('subtitle'),
+    alternates: alternatesFor('/contact', locale),
+  }
 }
 
 export default function ContactPage({ params: { locale } }: { params: { locale: string } }) {

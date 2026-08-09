@@ -1,10 +1,17 @@
 import { setRequestLocale } from 'next-intl/server'
 import type { Metadata } from 'next'
 import AnimateIn from '@/components/AnimateIn'
+import { alternatesFor } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Privacy Policy — Greenspace E-mobility',
-  description: 'How Greenspace E-mobility collects, uses, and protects your personal data.',
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+  const isEs = locale === 'es'
+  return {
+    title: isEs ? 'Política de Privacidad' : 'Privacy Policy',
+    description: isEs
+      ? 'Cómo Greenspace E-mobility recopila, usa y protege tus datos personales.'
+      : 'How Greenspace E-mobility collects, uses, and protects your personal data.',
+    alternates: alternatesFor('/privacy', locale),
+  }
 }
 
 export default function PrivacyPage({ params: { locale } }: { params: { locale: string } }) {

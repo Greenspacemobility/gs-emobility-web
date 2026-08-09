@@ -10,12 +10,14 @@ import Link from 'next/link'
 import AnimateIn from '@/components/AnimateIn'
 import Badge from '@/components/Badge'
 import VideoPlayer from '@/components/VideoPlayer'
+import { alternatesFor } from '@/lib/seo'
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   const description = locale === 'es'
     ? 'Proyectos de carga eléctrica de Greenspace E-mobility: hubs de carga en Panamá, corredor México-Texas, flotas eléctricas comerciales y más. Infraestructura real en operación.'
     : 'Greenspace E-mobility projects: EV charging hubs in Panama, Mexico-Texas corridor, commercial fleet electrification and more. Real infrastructure in operation across the Americas.'
   return {
+    alternates: alternatesFor('/projects', locale),
     title: locale === 'es' ? 'Proyectos' : 'Projects',
     description,
     keywords: ['EV charging projects Panama', 'electric highway project', 'fleet electrification Latin America', 'charging hub deployment'],

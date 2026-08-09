@@ -53,6 +53,7 @@ export async function generateMetadata({
       languages: {
         'en': 'https://www.gs-emobility.com/en',
         'es': 'https://www.gs-emobility.com/es',
+        'x-default': 'https://www.gs-emobility.com/en',
       },
     },
     openGraph: {
@@ -149,10 +150,10 @@ const organizationSchema = {
     '@type': 'OfferCatalog',
     name: 'EV Charging & Electric Vehicle Products',
     itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Autel MaxiCharger DC 360kW', description: 'Ultra-fast DC EV charger, 360 kW output' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Autel MaxiCharger DC HiPower', description: 'DC fast charging, 320–640 kW cabinet, up to 480 kW per vehicle' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Autel MaxiCharger DC 180kW', description: 'High-power DC EV charger, 180 kW output' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Autel MaxiCharger AC 22kW', description: 'Level 2 AC EV charger, 22 kW output' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Windrose Class 8 Electric Truck', description: 'Class 8 electric semi-truck, 500 km range, 422 kWh battery, exclusive Latin America distributor' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Product', name: 'Windrose Class 8 Electric Truck', description: 'Class 8 electric semi-truck, 670 km loaded range, 729 kWh battery, exclusive Latin America distributor' } },
       { '@type': 'Offer', itemOffered: { '@type': 'SoftwareApplication', name: 'Greenspace Charging Management Platform', applicationCategory: 'BusinessApplication', description: 'OCPP-compatible smart EV charging network management software' } },
     ],
   },

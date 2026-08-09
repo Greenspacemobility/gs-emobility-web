@@ -9,10 +9,15 @@ import {
 } from 'lucide-react'
 import AnimateIn from '@/components/AnimateIn'
 import Badge from '@/components/Badge'
+import { alternatesFor } from '@/lib/seo'
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'platform' })
-  return { title: t('metaTitle'), description: t('metaDesc') }
+  return {
+    title: t('metaTitle'),
+    description: t('metaDesc'),
+    alternates: alternatesFor('/platform', locale),
+  }
 }
 
 export default function PlatformPage({ params: { locale } }: { params: { locale: string } }) {

@@ -241,3 +241,145 @@ h1.font-display,
   outline: 2px solid rgba(0, 200, 83, 0.6);
   outline-offset: 2px;
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   STATE-OF-THE-ART VISUAL LAYER — cinematic + techy
+   Bespoke, code-generated backdrops & motion. All GPU-cheap (transform/opacity).
+   Everything degrades gracefully and respects prefers-reduced-motion.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─── Cinematic hero: slow Ken-Burns drift on the background photo ───────── */
+@keyframes kenburns {
+  0%   { transform: scale(1.06) translate3d(0, 0, 0); }
+  100% { transform: scale(1.16) translate3d(-1.5%, -2%, 0); }
+}
+.animate-kenburns {
+  animation: kenburns 26s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+/* ─── Aurora mesh — drifting forest/electric-green light blooms ──────────── */
+@keyframes auroraDrift {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  33%  { transform: translate3d(6%, -4%, 0) scale(1.12); }
+  66%  { transform: translate3d(-5%, 5%, 0) scale(0.94); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+.aurora-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  will-change: transform;
+  pointer-events: none;
+}
+.aurora-blob.b1 { animation: auroraDrift 22s ease-in-out infinite; }
+.aurora-blob.b2 { animation: auroraDrift 28s ease-in-out infinite reverse; }
+.aurora-blob.b3 { animation: auroraDrift 34s ease-in-out infinite; }
+
+/* ─── Tech grid — perspective "energy floor" + flat dot matrix ───────────── */
+.grid-perspective {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(0, 200, 83, 0.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 200, 83, 0.14) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 100%, #000 0%, transparent 75%);
+          mask-image: radial-gradient(ellipse 70% 60% at 50% 100%, #000 0%, transparent 75%);
+  transform: perspective(620px) rotateX(62deg) scale(2.2);
+  transform-origin: bottom center;
+  opacity: 0.5;
+}
+.grid-dots {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(0, 200, 83, 0.18) 1px, transparent 1.4px);
+  background-size: 26px 26px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 10%, transparent 70%);
+          mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 10%, transparent 70%);
+}
+
+/* ─── Energy lines — traveling current along SVG paths ───────────────────── */
+@keyframes currentFlow {
+  to { stroke-dashoffset: -240; }
+}
+.energy-line {
+  stroke-dasharray: 6 18;
+  animation: currentFlow 3.2s linear infinite;
+}
+.energy-line.slow { animation-duration: 5s; }
+.energy-line.fast { animation-duration: 2.1s; }
+
+/* Pulsing network nodes */
+@keyframes nodePulse {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50%      { opacity: 1;    transform: scale(1.35); }
+}
+.node-pulse { animation: nodePulse 3s ease-in-out infinite; transform-origin: center; }
+
+/* ─── Scanning sweep (subtle moving light bar) ───────────────────────────── */
+@keyframes sweep {
+  0%   { transform: translateX(-120%); opacity: 0; }
+  40%  { opacity: 0.5; }
+  100% { transform: translateX(220%); opacity: 0; }
+}
+.scan-sweep {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 40%;
+  background: linear-gradient(100deg, transparent, rgba(0, 232, 122, 0.10), transparent);
+  animation: sweep 9s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ─── Marquee — infinite scrolling proof/market strip ────────────────────── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee 32s linear infinite;
+}
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+
+/* ─── Film grain / vignette for cinematic framing ────────────────────────── */
+.cine-vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 120% 80% at 50% 30%, transparent 45%, rgba(6, 14, 9, 0.55) 100%),
+    linear-gradient(to bottom, rgba(6, 14, 9, 0.35) 0%, transparent 25%, transparent 60%, rgba(6, 14, 9, 0.92) 100%);
+}
+
+/* Animated underline accent for headings */
+@keyframes lineGrow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* Hover lift for cards */
+.lift {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+.lift:hover { transform: translateY(-6px); }
+
+/* ─── Honour reduced-motion preference ───────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .animate-kenburns,
+  .aurora-blob,
+  .energy-line,
+  .node-pulse,
+  .scan-sweep,
+  .animate-marquee {
+    animation: none !important;
+  }
+  .animate-kenburns { transform: scale(1.08); }
+}

@@ -6,82 +6,70 @@ import { ArrowRight, CheckCircle2, Home, Building2, Car, Sun, Monitor, Truck, Za
 import AnimateIn from '@/components/AnimateIn'
 import Badge from '@/components/Badge'
 import BrandSelector from '@/components/BrandSelector'
+import { alternatesFor } from '@/lib/seo'
+import { chargerCatalog, brandNames } from '@/lib/chargers'
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   const description = locale === 'es'
-    ? 'Cargadores EV Autel de alta potencia, camiones eléctricos Windrose Clase 8, y plataforma de gestión de carga. Distribuidor oficial en Panamá, México y Texas.'
-    : 'Autel high-power EV chargers, Windrose Class 8 electric trucks, and smart charging management platform. Official distributor in Panama, Mexico and Texas.'
+    ? 'Catálogo completo de cargadores EV: Autel, Sinexcel, Lumosenergy (Gresgying) y Sungrow — AC 7,4–22 kW y DC 30–640 kW — más camiones eléctricos Windrose Clase 8 y plataforma de gestión de carga. Distribuidor oficial en Panamá, México, Texas y Colombia.'
+    : 'Full EV charger catalogue: Autel, Sinexcel, Lumosenergy (Gresgying) and Sungrow — AC 7.4–22 kW and DC 30–640 kW — plus Windrose Class 8 electric trucks and smart charging management platform. Official distributor in Panama, Mexico, Texas and Colombia.'
   return {
-    title: locale === 'es' ? 'Productos | Cargadores EV y Camiones Eléctricos | Greenspace' : 'Products | EV Chargers & Electric Trucks | Greenspace',
+    alternates: alternatesFor('/products', locale),
+    title: locale === 'es' ? 'Catálogo de Cargadores EV — AC y DC 7,4–640 kW' : 'EV Charger Catalogue — AC & DC 7.4–640 kW',
     description,
-    keywords: ['Autel EV charger distributor', 'Windrose electric truck', 'MaxiCharger DC', 'EV charger Panama', 'Class 8 electric truck Latin America', 'fleet charging solutions'],
+    keywords: [
+      'Autel EV charger distributor', 'Sinexcel SEC DC charger', 'Gresgying DC charger', 'Lumosenergy charger', 'Sungrow IDC charger Colombia',
+      'Windrose electric truck', 'MaxiCharger DC', 'DC fast charger Latin America', 'EV charger Panama', 'EV charger datasheet',
+      'Class 8 electric truck Latin America', 'fleet charging solutions',
+    ],
     openGraph: { title: 'Greenspace E-mobility Products — EV Chargers & Electric Trucks', description },
   }
 }
 
-// Product + ItemList schema for AI citation and Google rich results
+// Product + ItemList schema for AI citation and Google rich results.
+// Charger entries are generated from the catalogue in lib/chargers.ts,
+// so the schema always matches what is rendered on the page.
 const productsSchema = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
   name: 'Greenspace E-mobility Products',
-  description: 'EV chargers, electric trucks, and charging management software distributed by Greenspace E-mobility in Panama, Mexico, and the USA.',
+  description: 'EV chargers from Autel Energy, Sinexcel, Lumosenergy (Gresgying) and Sungrow, electric trucks, and charging management software distributed by Greenspace E-mobility in Panama, Mexico, the USA and Colombia.',
   url: 'https://www.gs-emobility.com/en/products',
   itemListElement: [
-    {
+    ...chargerCatalog.map((c, i) => ({
       '@type': 'ListItem',
-      position: 1,
+      position: i + 1,
       item: {
         '@type': 'Product',
-        name: 'Autel MaxiCharger DC 360kW',
-        brand: { '@type': 'Brand', name: 'Autel Energy' },
-        description: 'Ultra-fast 360 kW DC EV charger. Charges most EVs from 20% to 80% in under 20 minutes. Ideal for highway hubs, fleet depots, and high-traffic commercial locations.',
-        offers: { '@type': 'Offer', seller: { '@type': 'Organization', name: 'Greenspace E-mobility' }, areaServed: ['Panama', 'Mexico', 'United States'] },
+        name: `${brandNames[c.brand].split(' · ')[0]} ${c.model}`,
+        brand: { '@type': 'Brand', name: brandNames[c.brand] },
+        description: c.schemaDesc,
+        offers: {
+          '@type': 'Offer',
+          seller: { '@type': 'Organization', name: 'Greenspace E-mobility' },
+          areaServed: c.market === 'CO' ? ['Colombia'] : ['Panama', 'Mexico', 'United States', 'Colombia'],
+        },
         additionalProperty: [
-          { '@type': 'PropertyValue', name: 'Power Output', value: '360 kW' },
-          { '@type': 'PropertyValue', name: 'Connector Types', value: 'CCS1, CCS2, CHAdeMO' },
-          { '@type': 'PropertyValue', name: 'Protocol', value: 'OCPP 1.6 / 2.0' },
+          { '@type': 'PropertyValue', name: 'Power Output', value: c.power },
+          { '@type': 'PropertyValue', name: 'Connector Types', value: c.connectors },
         ],
       },
-    },
+    })),
     {
       '@type': 'ListItem',
-      position: 2,
-      item: {
-        '@type': 'Product',
-        name: 'Autel MaxiCharger DC 180kW',
-        brand: { '@type': 'Brand', name: 'Autel Energy' },
-        description: 'High-power 180 kW DC fast EV charger for commercial, fleet, and public charging applications.',
-        offers: { '@type': 'Offer', seller: { '@type': 'Organization', name: 'Greenspace E-mobility' }, areaServed: ['Panama', 'Mexico', 'United States'] },
-        additionalProperty: [{ '@type': 'PropertyValue', name: 'Power Output', value: '180 kW' }],
-      },
-    },
-    {
-      '@type': 'ListItem',
-      position: 3,
-      item: {
-        '@type': 'Product',
-        name: 'Autel MaxiCharger AC 22kW',
-        brand: { '@type': 'Brand', name: 'Autel Energy' },
-        description: 'Level 2 three-phase 22 kW AC EV charger for residential, workplace, and commercial parking installations.',
-        offers: { '@type': 'Offer', seller: { '@type': 'Organization', name: 'Greenspace E-mobility' }, areaServed: ['Panama', 'Mexico', 'United States'] },
-        additionalProperty: [{ '@type': 'PropertyValue', name: 'Power Output', value: '22 kW' }],
-      },
-    },
-    {
-      '@type': 'ListItem',
-      position: 4,
+      position: chargerCatalog.length + 1,
       item: {
         '@type': 'Product',
         name: 'Windrose Class 8 Electric Truck',
         brand: { '@type': 'Brand', name: 'Windrose' },
-        description: 'Class 8 electric semi-truck with 500 km range, 422 kWh battery, 480 kW motor power, and 6,000 Nm torque. Exclusive distributor in Latin America: Greenspace E-mobility.',
+        description: 'Class 8 electric semi-truck with 670 km (416 mi) loaded range, 729 kWh battery and 1,045 kW peak power. Exclusive distributor in Latin America: Greenspace E-mobility.',
         offers: { '@type': 'Offer', seller: { '@type': 'Organization', name: 'Greenspace E-mobility' }, areaServed: ['Panama', 'Mexico', 'Latin America'] },
         additionalProperty: [
-          { '@type': 'PropertyValue', name: 'Range', value: '500 km (310 miles)' },
-          { '@type': 'PropertyValue', name: 'Battery Capacity', value: '422 kWh' },
-          { '@type': 'PropertyValue', name: 'Motor Power', value: '480 kW' },
-          { '@type': 'PropertyValue', name: 'Torque', value: '6,000 Nm' },
-          { '@type': 'PropertyValue', name: 'GVW', value: '36 tonnes' },
+          { '@type': 'PropertyValue', name: 'Range', value: '670 km (416 miles), loaded' },
+          { '@type': 'PropertyValue', name: 'Battery Capacity', value: '729 kWh' },
+          { '@type': 'PropertyValue', name: 'Peak Power', value: '1,045 kW (approx. 1,400 hp)' },
+          
+          { '@type': 'PropertyValue', name: 'GCW', value: '98,000 lb (44.5 tonnes)' },
           { '@type': 'PropertyValue', name: 'Charge Time (20-80%)', value: '60 minutes' },
         ],
       },
