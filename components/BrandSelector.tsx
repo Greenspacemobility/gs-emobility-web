@@ -14,6 +14,8 @@ import { chargerCatalog, brandNames, type BrandId, type ChargerModel } from '@/l
 const brandStyles: Record<BrandId, {
   color: string; accentColor: string; borderColor: string; glowColor: string
   initials: string; cardHover: string; badgeColor: string; check: string; cta: string
+  /** Official brand logo (rendered on a white chip); falls back to initials */
+  logo?: string
 }> = {
   autel: {
     color: 'from-blue-500/20 to-navy-700',
@@ -21,6 +23,7 @@ const brandStyles: Record<BrandId, {
     borderColor: 'border-blue-500/40',
     glowColor: 'shadow-[0_0_30px_rgba(59,130,246,0.12)]',
     initials: 'AE',
+    logo: '/images/brands/autel.png',
     cardHover: 'hover:border-blue-500/25',
     badgeColor: 'bg-blue-500/15 text-blue-400 border border-blue-500/20',
     check: 'text-blue-400',
@@ -32,6 +35,7 @@ const brandStyles: Record<BrandId, {
     borderColor: 'border-green-500/40',
     glowColor: 'shadow-[0_0_30px_rgba(34,197,94,0.12)]',
     initials: 'SX',
+    logo: '/images/brands/sinexcel.png',
     cardHover: 'hover:border-green-500/25',
     badgeColor: 'bg-green-500/15 text-green-400 border border-green-500/20',
     check: 'text-green-400',
@@ -43,6 +47,7 @@ const brandStyles: Record<BrandId, {
     borderColor: 'border-purple-500/40',
     glowColor: 'shadow-[0_0_30px_rgba(168,85,247,0.12)]',
     initials: 'LE',
+    logo: '/images/brands/lumosenergy.png',
     cardHover: 'hover:border-purple-500/25',
     badgeColor: 'bg-purple-500/15 text-purple-400 border border-purple-500/20',
     check: 'text-purple-400',
@@ -145,9 +150,15 @@ export default function BrandSelector() {
                     style={{ backgroundImage: 'radial-gradient(circle at 30% 30%, rgba(255,255,255,0.15) 0%, transparent 60%)' }}
                   />
                   <div className="text-center">
-                    <div className="w-14 h-14 rounded-2xl glass flex items-center justify-center border border-white/10 mx-auto mb-2.5">
-                      <span className={`font-display font-bold text-lg ${s.accentColor}`}>{s.initials}</span>
-                    </div>
+                    {s.logo ? (
+                      <div className="h-14 px-6 rounded-xl bg-white flex items-center justify-center mx-auto mb-2.5 w-fit max-w-[210px]">
+                        <Image src={s.logo} alt={brandNames[id]} width={170} height={44} className="object-contain h-7 w-auto" />
+                      </div>
+                    ) : (
+                      <div className="w-14 h-14 rounded-2xl glass flex items-center justify-center border border-white/10 mx-auto mb-2.5">
+                        <span className={`font-display font-bold text-lg ${s.accentColor}`}>{s.initials}</span>
+                      </div>
+                    )}
                     <h3 className="font-display font-bold text-white text-lg leading-tight px-2">{brandNames[id]}</h3>
                   </div>
                 </div>
