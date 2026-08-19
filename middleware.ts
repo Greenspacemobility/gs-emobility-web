@@ -17,6 +17,11 @@ export default async function middleware(request: NextRequest) {
     return handlePortalAuth(request)
   }
 
+  // Investors access page — non-localized, must skip intl locale routing
+  if (pathname === '/investors-access') {
+    return NextResponse.next()
+  }
+
   // Investors page — password-gate sensitive business information
   if (pathname.match(/^\/(en|es)\/investors$/)) {
     return handleInvestorsAuth(request)
