@@ -2,6 +2,18 @@ import createNextIntlPlugin from 'next-intl/plugin'
 
 const withNextIntl = createNextIntlPlugin('./i18n.ts')
 
+/** React Fast Refresh evaluates strings at runtime, so dev needs 'unsafe-eval'.
+ *  Production keeps the stricter policy — never ship 'unsafe-eval'. */
+const isDev = process.env.NODE_ENV === 'development'
+const scriptSrc = [
+  "script-src 'self' 'unsafe-inline'",
+  isDev ? "'unsafe-eval'" : null,
+  'https://www.googletagmanager.com',
+  'https://www.google-analytics.com',
+  'https://static.cloudflareinsights.com',
+  'https://challenges.cloudflare.com',
+].filter(Boolean).join(' ')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -39,13 +51,13 @@ const nextConfig = {
             value: 'max-age=63072000; includeSubDomains; preload',
           },
           // Enforced CSP — blocks XSS, data injection, and clickjacking
-          // 'unsafe-inline' required by Next.js inline scripts; 'unsafe-eval' required by some GTM tags
+          // 'unsafe-inline' required by Next.js inline scripts; 'unsafe-eval' added in dev only (Fast Refresh)
           // Turnstile widget served from challenges.cloudflare.com
           {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://static.cloudflareinsights.com https://challenges.cloudflare.com",
+              scriptSrc,
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com",
               "img-src 'self' data: blob: https:",

@@ -14,6 +14,8 @@ import { chargerCatalog, brandNames, type BrandId, type ChargerModel } from '@/l
 const brandStyles: Record<BrandId, {
   color: string; accentColor: string; borderColor: string; glowColor: string
   initials: string; cardHover: string; badgeColor: string; check: string; cta: string
+  /** Solid brand colour used by the Featured badge */
+  solidBadge: string
   /** Official brand logo (rendered on a white chip); falls back to initials */
   logo?: string
 }> = {
@@ -23,6 +25,7 @@ const brandStyles: Record<BrandId, {
     borderColor: 'border-blue-500/40',
     glowColor: 'shadow-[0_0_30px_rgba(59,130,246,0.12)]',
     initials: 'AE',
+    solidBadge: 'bg-blue-500',
     logo: '/images/brands/autel.png',
     cardHover: 'hover:border-blue-500/25',
     badgeColor: 'bg-blue-500/15 text-blue-400 border border-blue-500/20',
@@ -35,6 +38,7 @@ const brandStyles: Record<BrandId, {
     borderColor: 'border-green-500/40',
     glowColor: 'shadow-[0_0_30px_rgba(34,197,94,0.12)]',
     initials: 'SX',
+    solidBadge: 'bg-green-500',
     logo: '/images/brands/sinexcel.png',
     cardHover: 'hover:border-green-500/25',
     badgeColor: 'bg-green-500/15 text-green-400 border border-green-500/20',
@@ -47,6 +51,7 @@ const brandStyles: Record<BrandId, {
     borderColor: 'border-purple-500/40',
     glowColor: 'shadow-[0_0_30px_rgba(168,85,247,0.12)]',
     initials: 'LE',
+    solidBadge: 'bg-purple-500',
     logo: '/images/brands/lumosenergy.png',
     cardHover: 'hover:border-purple-500/25',
     badgeColor: 'bg-purple-500/15 text-purple-400 border border-purple-500/20',
@@ -59,6 +64,7 @@ const brandStyles: Record<BrandId, {
     borderColor: 'border-amber-500/40',
     glowColor: 'shadow-[0_0_30px_rgba(245,158,11,0.12)]',
     initials: 'SG',
+    solidBadge: 'bg-amber-500',
     cardHover: 'hover:border-amber-500/25',
     badgeColor: 'bg-amber-500/15 text-amber-400 border border-amber-500/20',
     check: 'text-amber-400',
@@ -82,7 +88,6 @@ export default function BrandSelector() {
   }> = [
     {
       id: 'autel',
-      highlight: true,
       lines: [
         { icon: Zap,             label: t('ac'),      desc: t('autelAc') },
         { icon: BatteryCharging, label: t('dc'),      desc: t('autelDc') },
@@ -91,6 +96,7 @@ export default function BrandSelector() {
     },
     {
       id: 'sinexcel',
+      highlight: true,
       lines: [
         { icon: BatteryCharging, label: t('dc'),      desc: t('sinexcelDc') },
         { icon: Battery,         label: t('storage'), desc: t('sinexcelStorage') },
@@ -127,13 +133,13 @@ export default function BrandSelector() {
                 key={id}
                 onClick={() => toggle(id)}
                 className={`relative glass rounded-2xl overflow-hidden flex flex-col h-full cursor-pointer transition-all duration-300 hover:scale-[1.01]
-                  ${isOpen ? `${s.borderColor} ${s.glowColor}` : highlight ? `${s.borderColor} shadow-[0_0_30px_rgba(59,130,246,0.12)]` : 'hover:border-white/15'}
+                  ${isOpen || highlight ? `${s.borderColor} ${s.glowColor}` : 'hover:border-white/15'}
                 `}
                 style={{ transitionProperty: 'transform, border-color, box-shadow' }}
               >
                 {/* Featured / market badge */}
                 {highlight && (
-                  <div className="absolute top-4 right-4 text-[10px] font-bold text-white bg-blue-500 px-2 py-1 rounded-full uppercase tracking-wider z-10">
+                  <div className={`absolute top-4 right-4 text-[10px] font-bold text-white ${s.solidBadge} px-2 py-1 rounded-full uppercase tracking-wider z-10`}>
                     {t('featured')}
                   </div>
                 )}
