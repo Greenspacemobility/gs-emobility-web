@@ -17,32 +17,8 @@ export default async function middleware(request: NextRequest) {
     return handlePortalAuth(request)
   }
 
-  // Investors page — password-gate sensitive business information
-  if (pathname.match(/^\/(en|es)\/investors$/)) {
-    return handleInvestorsAuth(request)
-  }
-
   // All other routes — next-intl locale routing
   return intlMiddleware(request)
-}
-
-function handleInvestorsAuth(request: NextRequest) {
-  const cookie = request.cookies.get('investors_access')
-  const validToken = process.env.INVESTORS_ACCESS_TOKEN
-
-  // If no token configured in production, deny access (fail closed)
-  if (!validToken) {
-    const url = new URL('/investors-access', request.url)
-    url.searchParams.set('next', request.nextUrl.pathname)
-    return NextResponse.redirect(url)
-  }
-
-  if (cookie?.value === validToken) return NextResponse.next()
-
-  // Redirect to access request page, preserving the intended destination
-  const url = new URL('/investors-access', request.url)
-  url.searchParams.set('next', request.nextUrl.pathname)
-  return NextResponse.redirect(url)
 }
 
 async function handlePortalAuth(request: NextRequest) {
