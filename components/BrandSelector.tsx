@@ -70,6 +70,19 @@ const brandStyles: Record<BrandId, {
     check: 'text-amber-400',
     cta: 'bg-amber-500/10 hover:bg-amber-500 border-amber-500/20 hover:border-amber-500 text-amber-400',
   },
+  greenspace: {
+    color: 'from-teal-500/20 to-navy-700',
+    accentColor: 'text-teal-400',
+    borderColor: 'border-teal-500/40',
+    glowColor: 'shadow-[0_0_30px_rgba(20,184,166,0.12)]',
+    initials: 'GS',
+    solidBadge: 'bg-teal-500',
+    logo: '/images/logo-dark.png',
+    cardHover: 'hover:border-teal-500/25',
+    badgeColor: 'bg-teal-500/15 text-teal-400 border border-teal-500/20',
+    check: 'text-teal-400',
+    cta: 'bg-teal-500/10 hover:bg-teal-500 border-teal-500/20 hover:border-teal-500 text-teal-400',
+  },
 }
 
 export default function BrandSelector() {
@@ -117,6 +130,13 @@ export default function BrandSelector() {
         { icon: Sun,             label: t('solar'), desc: t('sungrowSolar') },
       ],
     },
+    {
+      id: 'greenspace',
+      lines: [
+        { icon: Zap,             label: t('ac'), desc: t('greenspaceAc') },
+        { icon: BatteryCharging, label: t('dc'), desc: t('greenspaceDc') },
+      ],
+    },
   ]
 
   return (
@@ -124,7 +144,7 @@ export default function BrandSelector() {
       <div className="container-wide">
 
         {/* ── Brand cards ─────────────────────────────────────── */}
-        <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-6 mb-0">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-0">
           {brands.map(({ id, highlight, marketTag, lines }) => {
             const s = brandStyles[id]
             const isOpen = open === id

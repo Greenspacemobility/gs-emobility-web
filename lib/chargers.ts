@@ -5,7 +5,7 @@
 // in /public/datasheets — do not edit values without a source.
 // ─────────────────────────────────────────────────────────────
 
-export type BrandId = 'autel' | 'sinexcel' | 'lumosenergy' | 'sungrow'
+export type BrandId = 'autel' | 'sinexcel' | 'lumosenergy' | 'sungrow' | 'greenspace'
 
 export interface ChargerModel {
   id: string
@@ -469,15 +469,71 @@ export const chargerCatalog: ChargerModel[] = [
     market: 'CO',
     schemaDesc: 'DC fast charger configurable 60 to 180 kW, dual CCS2 up to 380 A, MID metering, IP65/C5, 3-year warranty. Available for projects in Colombia.',
   },
+  // ── Greenspace E-mobility (own line) ──────────────────────
+  // Manufactured to Greenspace specification by Shenzhen EN Plus
+  // Tech (EN+). Specs from the EN+ US product quotation, 20-May-2025.
+  // OEM is intentionally not surfaced on the site — own-brand line.
+  {
+    id: 'greenspace-ac010k',
+    brand: 'greenspace',
+    model: 'AC010K-AU-35',
+    badge: 'AC Level 2 · 9.6 kW',
+    powerKw: 9.6,
+    power: '9.6 kW (240 V × 40 A)',
+    category: 'AC',
+    connectors: 'SAE J1772',
+    features: [
+      'SAE J1772 · 23 ft tethered cable',
+      'NEMA 14-50P plug · plug & play install',
+      'RFID · Bluetooth · Wi-Fi',
+      'NEMA 4 enclosure',
+    ],
+    schemaDesc: 'Level 2 AC EV charger, 9.6 kW, SAE J1772 with 23 ft tethered cable, NEMA 4 enclosure, RFID and Wi-Fi, for homes and destination charging.',
+  },
+  {
+    id: 'greenspace-ac012k',
+    brand: 'greenspace',
+    model: 'AC012K-HU-35',
+    badge: 'AC Level 2 · 12 kW',
+    powerKw: 12,
+    power: '12 kW (240 V × 50 A)',
+    category: 'AC',
+    connectors: 'SAE J1772',
+    features: [
+      'SAE J1772 · 25 ft tethered cable',
+      'NEMA 14-50P plug · plug & play install',
+      'RFID · Bluetooth · Wi-Fi',
+      'NEMA 4 enclosure',
+    ],
+    schemaDesc: 'Level 2 AC EV charger, 12 kW, SAE J1772 with 25 ft tethered cable, NEMA 4 enclosure, RFID and Wi-Fi, for homes, workplaces and destination charging.',
+  },
+  {
+    id: 'greenspace-dc30',
+    brand: 'greenspace',
+    model: '30 kW DC',
+    badge: 'DC · 30 kW',
+    powerKw: 30,
+    power: '30 kW',
+    category: 'DC',
+    connectors: 'Type 1',
+    features: [
+      '96% efficiency · 10" display',
+      'ISO 15118 Plug & Charge',
+      'Wi-Fi · Bluetooth · Ethernet · 4G',
+      'IP65 · UL · FCC · Energy Star',
+    ],
+    schemaDesc: 'DC fast charger, 30 kW, ISO 15118 Plug and Charge, 96% efficiency, IP65 enclosure, UL and FCC certified, for commercial and destination charging.',
+  },
 ]
 
-export const brandOrder: BrandId[] = ['autel', 'sinexcel', 'lumosenergy', 'sungrow']
+export const brandOrder: BrandId[] = ['autel', 'sinexcel', 'lumosenergy', 'sungrow', 'greenspace']
 
 export const brandNames: Record<BrandId, string> = {
   autel: 'Autel Energy',
   sinexcel: 'Sinexcel',
   lumosenergy: 'Lumosenergy · Gresgying',
   sungrow: 'Sungrow',
+  greenspace: 'Greenspace E-mobility',
 }
 
 export function chargersByBrand(brand: BrandId): ChargerModel[] {

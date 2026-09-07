@@ -439,7 +439,9 @@
     "datasheetOnRequest": "Datasheet on request",
     "sungrowDc": "IDC series DC fast chargers from 49.9 to 180 kW — IP65 with C5 anti-corrosion rating and 3-year factory warranty.",
     "sungrowSolar": "World-leading power electronics manufacturer — solar inverters and storage from the same factory as the charger.",
-    "sungrowNote": "Sungrow IDC series chargers are offered by Greenspace for projects in Colombia, where Sungrow operates with local structure, RETIE product certification and CIF delivery to a Colombian port."
+    "sungrowNote": "Sungrow IDC series chargers are offered by Greenspace for projects in Colombia, where Sungrow operates with local structure, RETIE product certification and CIF delivery to a Colombian port.",
+    "greenspaceAc": "Own-brand Level 2 chargers at 9.6 kW and 12 kW, SAE J1772 with tethered cable, RFID and Wi-Fi — built for homes, hotels and workplaces.",
+    "greenspaceDc": "30 kW DC unit with ISO 15118 Plug & Charge, 96% efficiency and IP65 enclosure — UL, FCC and Energy Star certified."
   },
   "platform": {
     "metaTitle": "Digital Platform",

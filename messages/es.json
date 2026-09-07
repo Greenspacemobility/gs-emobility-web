@@ -439,7 +439,9 @@
     "datasheetOnRequest": "Ficha técnica bajo solicitud",
     "sungrowDc": "Cargadores DC serie IDC de 49,9 a 180 kW: IP65 con grado de anticorrosión C5 y 3 años de garantía de fábrica.",
     "sungrowSolar": "Fabricante líder mundial de electrónica de potencia: inversores solares y almacenamiento de la misma fábrica que el cargador.",
-    "sungrowNote": "Los cargadores Sungrow serie IDC se ofrecen a través de Greenspace para proyectos en Colombia, donde Sungrow opera con estructura local, certificado de producto RETIE y entrega CIF en puerto colombiano."
+    "sungrowNote": "Los cargadores Sungrow serie IDC se ofrecen a través de Greenspace para proyectos en Colombia, donde Sungrow opera con estructura local, certificado de producto RETIE y entrega CIF en puerto colombiano.",
+    "greenspaceAc": "Cargadores de marca propia de 9,6 kW y 12 kW, SAE J1772 con cable integrado, RFID y Wi-Fi: para hogares, hoteles y centros de trabajo.",
+    "greenspaceDc": "Unidad DC de 30 kW con ISO 15118 Plug & Charge, 96% de eficiencia y envolvente IP65: certificada UL, FCC y Energy Star."
   },
   "platform": {
     "metaTitle": "Plataforma Digital",
