@@ -482,6 +482,8 @@ export const chargerCatalog: ChargerModel[] = [
     power: '9.6 kW (240 V × 40 A)',
     category: 'AC',
     connectors: 'SAE J1772',
+    image: '/images/products/greenspace-ac010k.jpg',
+    imageBg: 'light',
     features: [
       'SAE J1772 · 23 ft tethered cable',
       'NEMA 14-50P plug · plug & play install',
@@ -499,6 +501,8 @@ export const chargerCatalog: ChargerModel[] = [
     power: '12 kW (240 V × 50 A)',
     category: 'AC',
     connectors: 'SAE J1772',
+    image: '/images/products/greenspace-ac012k.jpg',
+    imageBg: 'light',
     features: [
       'SAE J1772 · 25 ft tethered cable',
       'NEMA 14-50P plug · plug & play install',
@@ -516,6 +520,8 @@ export const chargerCatalog: ChargerModel[] = [
     power: '30 kW',
     category: 'DC',
     connectors: 'Type 1',
+    image: '/images/products/greenspace-dc30.jpg',
+    imageBg: 'light',
     features: [
       '96% efficiency · 10" display',
       'ISO 15118 Plug & Charge',
