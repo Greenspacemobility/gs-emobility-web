@@ -11,6 +11,6 @@ const HighwayMapInner = dynamic(() => import('./HighwayMapInner'), {
   ),
 })
 
-export default function HighwayMap() {
-  return <HighwayMapInner />
+export default function HighwayMap({ networkInset = false }: { networkInset?: boolean }) {
+  return <HighwayMapInner networkInset={networkInset} />
 }

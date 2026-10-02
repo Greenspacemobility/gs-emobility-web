@@ -32,8 +32,66 @@ const allCities = [...corridorCities, ...triangleCities]
 const [mty, lrd, sat, tpl, dal] = corridorCities.map(c => c.pos)
 const [hou] = triangleCities.map(c => c.pos)
 
-export default function HighwayMapInner() {
+/* Hubs that sit outside the Mexico–Texas corridor view: the rest of the
+   core (phases 1–4) network. Same green as the corridor — one network. */
+const outlyingHubs: { name: string; sub: string; pos: [number, number] }[] = [
+  { name: 'California',  sub: 'Phase 3 · 4 Green Hubs', pos: [35.3, -119.4] },
+  { name: 'Panama City', sub: 'Phase 4 · 2 Green Hubs', pos: [8.98,  -79.52] },
+]
+
+/* Small locator map, shown over the corner of the corridor map so the two
+   markets that are off the corridor are still visible on the page. */
+function NetworkInset() {
   return (
+    <div className="hidden md:block absolute bottom-4 left-4 z-[1000] w-[212px] rounded-xl overflow-hidden border border-white/10 bg-navy-900/85 backdrop-blur-sm">
+      <p className="text-white/30 text-[9px] uppercase tracking-[0.18em] px-3 pt-2.5 pb-1.5">
+        Rest of the network
+      </p>
+      <div style={{ height: 116 }}>
+        <MapContainer
+          bounds={[[6.5, -124.5], [39.5, -76.5]]}
+          style={{ width: '100%', height: '100%' }}
+          zoomControl={false}
+          dragging={false}
+          scrollWheelZoom={false}
+          doubleClickZoom={false}
+          touchZoom={false}
+          keyboard={false}
+          attributionControl={false}
+          zoomSnap={0}
+        >
+          <TileLayer
+            url="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}"
+            maxZoom={16}
+          />
+          {outlyingHubs.map(h => (
+            <CircleMarker
+              key={h.name}
+              center={h.pos}
+              radius={5}
+              pathOptions={{ fillColor: '#00C853', color: 'white', weight: 1.5, fillOpacity: 1 }}
+            />
+          ))}
+        </MapContainer>
+      </div>
+      <div className="px-3 py-2.5 space-y-1.5 border-t border-white/[0.07]">
+        {outlyingHubs.map(h => (
+          <div key={h.name} className="flex items-start gap-2">
+            <span className="mt-[5px] w-1.5 h-1.5 rounded-full shrink-0" style={{ background: '#00C853' }} />
+            <span className="leading-tight">
+              <span className="block text-white/75 text-[10px] font-semibold">{h.name}</span>
+              <span className="block text-white/35 text-[9px]">{h.sub}</span>
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+export default function HighwayMapInner({ networkInset = false }: { networkInset?: boolean }) {
+  return (
+    <div style={{ position: 'relative', width: '100%', height: '100%' }}>
     <MapContainer
       center={[29.4, -97.8]}
       zoom={5}
@@ -100,5 +158,8 @@ export default function HighwayMapInner() {
         </CircleMarker>
       ))}
     </MapContainer>
+
+      {networkInset && <NetworkInset />}
+    </div>
   )
 }
