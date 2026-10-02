@@ -82,7 +82,7 @@ const FAQ_EN = [
     questions: [
       {
         q: 'Who is the Windrose electric truck distributor in Latin America?',
-        a: 'Greenspace E-mobility is the exclusive distributor of Windrose Class 8 electric trucks in Latin America. We cover Panama, Mexico, and other markets across the region.',
+        a: 'Greenspace E-mobility is the authorized distributor of Windrose Class 8 electric trucks in Panama, Mexico and Texas.',
       },
       {
         q: 'What is the range of the Windrose electric truck?',
@@ -195,7 +195,7 @@ const FAQ_ES = [
     questions: [
       {
         q: '¿Quién distribuye los camiones eléctricos Windrose en Latinoamérica?',
-        a: 'Greenspace E-mobility es el distribuidor exclusivo de camiones eléctricos Windrose Clase 8 en Latinoamérica, con presencia en Panamá y México (Monterrey).',
+        a: 'Greenspace E-mobility es el distribuidor autorizado de camiones eléctricos Windrose Clase 8 en Panamá, México y Texas.',
       },
       {
         q: '¿Cuál es la autonomía del camión eléctrico Windrose?',

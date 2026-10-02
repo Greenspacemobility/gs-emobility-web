@@ -20,7 +20,7 @@ import { alternatesFor } from '@/lib/seo'
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   const isEs = locale === 'es'
   const description = isEs
-    ? 'Greenspace E-mobility es la empresa líder en infraestructura de carga eléctrica en Panamá y México. Distribuidor oficial de cargadores Autel Energy (hasta 640 kW DC HiPower) y distribuidor exclusivo de camiones eléctricos Windrose Clase 8 en Latinoamérica. Autopista eléctrica México–Texas.'
+    ? 'Greenspace E-mobility es la empresa líder en infraestructura de carga eléctrica en Panamá y México. Distribuidor oficial de cargadores Autel Energy (hasta 640 kW DC HiPower) y distribuidor autorizado de camiones eléctricos Windrose Clase 8 en Panamá, México y Texas. Autopista eléctrica México–Texas.'
     : 'Greenspace E-mobility is the leading EV charging infrastructure company in Panama and Mexico. Official Autel Energy charger distributor (up to 640 kW DC HiPower) and exclusive Windrose Class 8 electric truck distributor in Latin America. Building the Mexico–Texas electric highway.'
   return {
     title: 'Greenspace E-mobility | EV Charging Infrastructure & Electric Trucks Americas',
@@ -584,7 +584,7 @@ const homepageFAQSchema = {
     {
       '@type': 'Question',
       name: 'Who distributes Windrose electric trucks in Latin America?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Greenspace E-mobility is the exclusive distributor of Windrose Class 8 electric trucks in Latin America, with operations in Panama and Monterrey, Mexico. The Windrose truck offers up to 670 km (416 mi) loaded range and a 729 kWh battery.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Greenspace E-mobility is the authorized distributor of Windrose Class 8 electric trucks in Panama, Mexico and Texas, with operations in Panama and Monterrey, Mexico. The Windrose truck offers up to 670 km (416 mi) loaded range and a 729 kWh battery.' },
     },
     {
       '@type': 'Question',
