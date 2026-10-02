@@ -27,25 +27,25 @@ const pillars = [
   {
     icon: Shield,
     title: 'First-Mover Advantage',
-    desc: 'No fully integrated Class 8 electric freight corridor exists today between Mexico and the U.S. We are building the infrastructure before the market demands it — locking in locations, permits, and fleet contracts ahead of every competitor.',
+    desc: 'No integrated Class 8 electric freight corridor exists between Mexico and the U.S. — and we are already running on it. The first Windrose Class 8 in U.S. commercial service has worked the Laredo–Dallas lane with Allogic Transport since April 2026, past 20,000 electric miles, while the hubs that will serve it are being built. Locations, interconnections and fleet contracts are being secured ahead of the market.',
     img: '/images/projects/electric-highway-corridor.webp',
   },
   {
     icon: Zap,
     title: 'Deployable Infrastructure',
-    desc: 'Standardized, modular Green Hub design — replicable across every market. Each station follows the same blueprint: high-power charging, renewable energy, battery storage, and driver services. Built to scale fast.',
+    desc: 'Standardized, modular Green Hub design, replicable across every market. Each site follows the same blueprint: high-power charging sized three times day-one demand behind a single medium-voltage interconnection, on-site solar, battery storage and driver services. Expanding a hub means adding a dispenser, not redoing the civil works.',
     img: '/images/service-installations.png',
   },
   {
     icon: Globe,
     title: 'Massive Market Opportunity',
-    desc: 'The Americas\' most critical freight corridors move hundreds of billions in annual trade — with zero dedicated Class 8 electric charging infrastructure today. We are the first to solve this at scale.',
+    desc: 'Port Laredo alone moved $354 billion in trade in 2025, and 2.95 million trucks entered the U.S. there — 38.8% of every truck arriving from Mexico. There is no dedicated Class 8 electric charging on that corridor today.',
     img: '/images/projects/windrose-greenspace-ruta-verde.jpg',
   },
   {
     icon: Users,
     title: 'Proven Management Team',
-    desc: 'Over a decade in EV charging, cross-border logistics, and energy infrastructure. Government partnerships in Mexico. Operational track record with DHL, Banco General, and leading fleet operators across four countries.',
+    desc: 'A team of five with Tesla, Circle K, Aker, CEMEX and MAERSK backgrounds, a U.S. general manager based in Laredo, and an operating record in Panama since 2022 — charging the Banco General fleet, the largest in the country, and DHL Express. A binational cargo route agreement signed with the Government of Nuevo León.',
     img: '/images/service-training.jpg',
   },
 ]
@@ -58,20 +58,22 @@ const structures = [
 ]
 
 const markets = [
-  { icon: MapPin, label: 'Texas, USA',        desc: 'Laredo–Dallas corridor. Phase 1.' },
-  { icon: MapPin, label: 'Monterrey, Mexico', desc: 'Codefront Bridge + Monterrey hub. Phase 2.' },
-  { icon: MapPin, label: 'California, USA',   desc: 'West Coast expansion. Phase 3.' },
-  { icon: MapPin, label: 'Panama City',       desc: 'Panama Canal logistics zone. Phase 4.' },
+  { icon: MapPin, label: 'Texas, USA',       desc: 'I-35 Laredo–Dallas. Phase 1 · 4 Green Hubs.' },
+  { icon: MapPin, label: 'Monterrey, Mexico', desc: 'Monterrey–Laredo binational route, signed with Nuevo León.' },
+  { icon: MapPin, label: 'Texas Triangle',   desc: 'I-10 and I-45 via Houston. Phase 2 · 4 Green Hubs.' },
+  { icon: MapPin, label: 'I-10 West, USA',   desc: 'El Paso – Phoenix – LA/Long Beach. Phase 3 · 3 Green Hubs.' },
+  { icon: MapPin, label: 'Panama',           desc: 'Four Green Hub sites in permitting. Operating since 2022.' },
 ]
 
 const moats = [
-  'Commercial partnerships signed with Mexican state governments',
-  'Codefront International Bridge — exclusive logistics corridor access',
-  'Electric truck distribution rights for Latin America',
-  'Proprietary OCPP-compatible charging management platform',
-  'Operational track record: DHL, Banco General fleet electrification',
+  'Binational cargo route agreement signed with the Government of Nuevo León (September 2025)',
+  'First Windrose Class 8 in commercial service in the United States — Laredo–Dallas since April 2026',
+  'DSV: ten Windrose Class 8 units announced July 2026, with 25 more in 2027',
+  'Authorized Windrose electric truck distributor for Panama, Mexico and Texas',
+  'Vendor-neutral, OCPP-based charging operations across Autel, Sinexcel, LumosEnergy, Sungrow and EN+ hardware',
+  'Operating record since 2022: the Banco General fleet, the largest in Panama, and DHL Express',
   'Multi-market regulatory experience across four countries',
-  'Manufacturer warranty buy-back program per truck unit',
+  'OEM buy-back on every truck unit at 400,000 miles or five years',
 ]
 
 export default function InvestorsPage({ params: { locale } }: { params: { locale: string } }) {
@@ -100,7 +102,7 @@ export default function InvestorsPage({ params: { locale } }: { params: { locale
           </AnimateIn>
           <AnimateIn delay={200}>
             <p className="text-white/50 text-xl max-w-2xl mx-auto leading-relaxed mb-4">
-              Greenspace E-mobility is building the first fully integrated electric freight network connecting Mexico, the United States, California, and Panama — purpose-built for Class 8 trucks.
+              Greenspace E-mobility is building the first fully integrated electric freight network connecting Mexico, Texas, the U.S. West and Panama — purpose-built for Class 8 trucks.
             </p>
           </AnimateIn>
           <AnimateIn delay={250}>
@@ -178,7 +180,7 @@ export default function InvestorsPage({ params: { locale } }: { params: { locale
           <AnimateIn>
             <p className="text-center text-white/25 text-[10px] uppercase tracking-[0.2em] mb-10">Active & Planned Markets</p>
           </AnimateIn>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {markets.map(({ icon: Icon, label, desc }, i) => (
               <AnimateIn key={i} delay={i * 80}>
                 <div className="text-center glass rounded-2xl p-6 hover:border-green-500/20 transition-colors">
@@ -240,7 +242,7 @@ export default function InvestorsPage({ params: { locale } }: { params: { locale
                   Why Greenspace wins this market
                 </h2>
                 <p className="text-white/50 leading-relaxed mb-8">
-                  Building physical infrastructure takes years of relationships, permits, and capital. We have a head start that competitors cannot replicate in the near term — across government partnerships, exclusive rights, and operational track record.
+                  Building physical infrastructure takes years of relationships, permits, and capital. We have a head start that competitors cannot replicate in the near term — across government agreements, secured sites and interconnections, and an operating record that goes back to 2022.
                 </p>
                 <Link
                   href={`/${locale}/contact`}
@@ -276,10 +278,11 @@ export default function InvestorsPage({ params: { locale } }: { params: { locale
             <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-green-500/50 via-green-500/20 to-transparent" />
             <div className="space-y-10">
               {[
-                { phase: 'Phase 1', market: 'Texas, USA', status: 'active',  desc: 'Laredo–Dallas corridor — establishing the first high-power EV charging infrastructure on the U.S. side of the Mexico border, with initial Class 8 electric truck fleet deployment.' },
-                { phase: 'Phase 2', market: 'Monterrey, Mexico', status: 'building', desc: 'Codefront International Bridge and Monterrey hub — completing the first fully electric cross-border freight route connecting Mexico and the United States.' },
-                { phase: 'Phase 3', market: 'California, USA', status: 'planned',  desc: 'West Coast expansion — extending the network to the Pacific trade gateway and capturing major California freight corridors.' },
-                { phase: 'Phase 4', market: 'Panama City', status: 'active',  desc: 'Panama Canal logistics zone — anchoring the southern end of the network and enabling electric freight operations across Latin America.' },
+                { phase: 'Phase 1', market: 'I-35 Texas', status: 'active',  desc: 'Four Green Hubs between Laredo and Dallas — Encinal/Laredo, Kyle/Buda, Waco–Dallas and Lancaster — plus depot charging at DSV sites. The first Windrose Class 8 in U.S. commercial service has run this lane since April 2026.' },
+                { phase: 'Mexico',  market: 'Monterrey–Laredo', status: 'building', desc: 'Binational electric cargo route agreed with the Government of Nuevo León in September 2025, with a hub planned at the Colombia Bridge crossing — making the Monterrey–Laredo–Dallas lane fully electric.' },
+                { phase: 'Phase 2', market: 'Texas Triangle', status: 'planned',  desc: 'Four Green Hubs on I-10 between San Antonio and Houston and I-45 between Houston and Dallas, closing the loop for Port Houston volumes and DFW distribution.' },
+                { phase: 'Phase 3', market: 'I-10 West', status: 'planned',  desc: 'Three Green Hubs west along I-10 — El Paso, Phoenix and Los Angeles/Long Beach — reaching the Pacific trade gateway, the ZEV-mandate freight market and a second border crossing.' },
+                { phase: 'Panama',  market: 'Open now', status: 'active',  desc: 'Four Green Hub sites in permitting and design — Costa del Este, Vía España, Chitré and David — anchored by fleets Greenspace has charged since 2022, with the Canal logistics route as the next step.' },
               ].map((item, i) => (
                 <AnimateIn key={i} delay={i * 120} direction={i % 2 === 0 ? 'left' : 'right'}>
                   <div className={`flex gap-8 items-start ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>

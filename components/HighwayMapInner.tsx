@@ -33,10 +33,10 @@ const [mty, lrd, sat, tpl, dal] = corridorCities.map(c => c.pos)
 const [hou] = triangleCities.map(c => c.pos)
 
 /* Hubs that sit outside the Mexico–Texas corridor view: the rest of the
-   core (phases 1–4) network. Same green as the corridor — one network. */
+   network: the I-10 West corridor and Panama. Same green as the corridor — one network. */
 const outlyingHubs: { name: string; sub: string; pos: [number, number] }[] = [
-  { name: 'California',  sub: 'Phase 3 · 4 Green Hubs', pos: [35.3, -119.4] },
-  { name: 'Panama City', sub: 'Phase 4 · 2 Green Hubs', pos: [8.98,  -79.52] },
+  { name: 'I-10 West',   sub: 'Phase 3 · 3 Green Hubs', pos: [34.0, -114.0] },
+  { name: 'Panama',      sub: 'Open now · 4 hub sites', pos: [8.98,  -79.52] },
 ]
 
 /* Small locator map, shown over the corner of the corridor map so the two

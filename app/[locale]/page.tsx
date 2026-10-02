@@ -256,8 +256,8 @@ function HighwayTeaser() {
               <div className="absolute top-4 left-4 z-[1000] glass rounded-xl px-3 py-2.5 border border-white/10 space-y-1.5">
                 <p className="text-white/30 text-[9px] uppercase tracking-widest mb-2">{t('mapTitle')}</p>
                 {[
-                  { color: '#00C853', label: 'Hwy 85 MX + I-35 US · Phases 1–2' },
-                  { color: '#38BDF8', label: 'Texas Triangle · Phase 5' },
+                  { color: '#00C853', label: 'I-35 US + Hwy 85 MX · Phase 1' },
+                  { color: '#38BDF8', label: 'Texas Triangle · Phase 2' },
                 ].map(({ color, label }) => (
                   <div key={label} className="flex items-center gap-2">
                     <span className="inline-block w-5 h-[2px] rounded-full shrink-0" style={{ background: color }} />
@@ -273,7 +273,7 @@ function HighwayTeaser() {
                 </div>
                 <div>
                   <p className="text-white font-semibold text-xs">Monterrey → Dallas + Texas Triangle</p>
-                  <p className="text-white/40 text-[10px]">Phases 1–2 + 5 · 15 Green Hubs across 4 markets</p>
+                  <p className="text-white/40 text-[10px]">Phases 1–2 · 15 Green Hubs by 2032</p>
                 </div>
               </div>
             </div>
@@ -589,7 +589,7 @@ const homepageFAQSchema = {
     {
       '@type': 'Question',
       name: 'Is there an electric highway between Mexico and Texas?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Yes. Greenspace E-mobility is developing the Mexico–Texas Electric Highway: a DC fast charging corridor along Highway 85 in Mexico and I-35 in the USA connecting Monterrey to Dallas and the Texas Triangle, planned across 4 phases with 12 Green Hubs.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. Greenspace E-mobility is developing the Mexico–Texas Electric Highway: a DC fast charging corridor along Highway 85 in Mexico and I-35 in the USA connecting Monterrey to Dallas and the Texas Triangle, planned across three corridor phases plus Panama, 15 Green Hubs by 2032.' },
     },
     {
       '@type': 'Question',

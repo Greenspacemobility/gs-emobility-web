@@ -16,8 +16,8 @@ const HighwayMap = dynamic(() => import('@/components/HighwayMap'), { ssr: false
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   const description = locale === 'es'
-    ? 'Autopista Eléctrica Greenspace: red de 12 Green Hubs para camiones eléctricos Clase 8 en Texas, Monterrey, California y Panamá. Infraestructura de carga de alta potencia para flotas transfronterizas.'
-    : 'Greenspace Electric Highway: 12 Green Hubs for Class 8 electric trucks across Texas, Monterrey, California, and Panama. High-power charging infrastructure for cross-border electric freight fleets.'
+    ? 'Autopista Eléctrica Greenspace: red de 15 Green Hubs para camiones eléctricos Clase 8 en Texas, Monterrey, el corredor I-10 Oeste y Panamá. Infraestructura de carga de alta potencia para flotas transfronterizas.'
+    : 'Greenspace Electric Highway: 15 Green Hubs for Class 8 electric trucks across Texas, Monterrey, the I-10 West corridor, and Panama. High-power charging infrastructure for cross-border electric freight fleets.'
   return {
     alternates: alternatesFor('/electric-highway', locale),
     title: locale === 'es' ? 'Corredor de Carga México–Texas' : 'Mexico–Texas Electric Truck Charging Corridor',
@@ -56,11 +56,14 @@ export default function ElectricHighwayPage({ params: { locale } }: { params: { 
   ]
 
   const timeline = [
+    /* Timeline order follows the corridor, not the key names: Phase 1 (I-35 Texas),
+       the signed Monterrey-Laredo route, Phase 2 (Texas Triangle), Phase 3
+       (I-10 West), then Panama, which is open now and runs in parallel. */
     { phase: t('phase1Name'), year: t('phase1Year'), title: t('phase1Title'), desc: t('phase1Desc'), status: 'active'   },
-    { phase: t('phase2Name'), year: t('phase2Year'), title: t('phase2Title'), desc: t('phase2Desc'), status: 'building' },
+    { phase: t('phase5Name'), year: t('phase5Year'), title: t('phase5Title'), desc: t('phase5Desc'), status: 'building' },
+    { phase: t('phase2Name'), year: t('phase2Year'), title: t('phase2Title'), desc: t('phase2Desc'), status: 'planned'  },
     { phase: t('phase3Name'), year: t('phase3Year'), title: t('phase3Title'), desc: t('phase3Desc'), status: 'planned'  },
     { phase: t('phase4Name'), year: t('phase4Year'), title: t('phase4Title'), desc: t('phase4Desc'), status: 'active'   },
-    { phase: t('phase5Name'), year: t('phase5Year'), title: t('phase5Title'), desc: t('phase5Desc'), status: 'planned'  },
   ]
 
   return (
@@ -323,7 +326,7 @@ export default function ElectricHighwayPage({ params: { locale } }: { params: { 
         </div>
       </section>
 
-      {/* Phase 5 — Texas Triangle spotlight */}
+      {/* Phase 2 — Texas Triangle spotlight */}
       <section className="section-padding relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-sky-500/5 via-transparent to-navy-900/0 pointer-events-none" />
         <div className="container-wide relative z-10">
@@ -336,13 +339,13 @@ export default function ElectricHighwayPage({ params: { locale } }: { params: { 
                   <div className="flex-1">
                     <span className="inline-flex items-center gap-2 text-sky-400 text-xs font-bold uppercase tracking-widest bg-sky-400/10 border border-sky-400/25 rounded-full px-4 py-1.5 mb-6">
                       <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
-                      {t('phase5Name')} · {t('phase5Year')} · {t('statusPlanned')}
+                      {t('phase2Name')} · {t('phase2Year')} · {t('statusPlanned')}
                     </span>
                     <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
-                      {t('phase5Title')}
+                      {t('phase2Title')}
                     </h2>
                     <p className="text-white/55 leading-relaxed mb-8 max-w-xl">
-                      {t('phase5Desc')}
+                      {t('phase2Desc')}
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                       {[
