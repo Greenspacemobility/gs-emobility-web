@@ -234,7 +234,15 @@ h1.font-display,
 .highway-map-tooltip::before {
   display: none !important;
 }
-.leaflet-control-attribution { display: none !important; }
+/* Basemap credit — required by the tile provider, kept visually quiet. */
+.leaflet-control-attribution {
+  background: rgba(4, 12, 6, 0.5) !important;
+  color: rgba(255, 255, 255, 0.3) !important;
+  font-size: 9px !important;
+  padding: 1px 5px !important;
+  border-radius: 5px 0 0 0 !important;
+}
+.leaflet-control-attribution a { color: rgba(255, 255, 255, 0.4) !important; }
 
 /* ─── Focus rings (accessibility) ───────────────────────────────────────── */
 :focus-visible {

@@ -44,11 +44,16 @@ export default function HighwayMapInner() {
       doubleClickZoom={false}
       touchZoom={false}
       keyboard={false}
-      attributionControl={false}
+      attributionControl={true}
     >
+      {/* Basemap: Esri "Dark Gray Canvas" (keyless public tile service).
+          CARTO's free basemaps.cartocdn.com endpoint began requiring an API
+          key and now returns "API KEY REQUIRED" placeholder tiles, which is
+          why the map rendered as a watermark grid. */}
       <TileLayer
-        url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
-        attribution='&copy; OpenStreetMap &copy; CARTO'
+        url="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}"
+        attribution='Tiles &copy; Esri'
+        maxZoom={16}
       />
 
       {/* Main corridor: Monterrey → Laredo → San Antonio → Temple → Dallas */}
