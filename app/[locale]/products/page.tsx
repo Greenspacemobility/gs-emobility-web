@@ -62,7 +62,7 @@ const productsSchema = {
         '@type': 'Product',
         name: 'Windrose Class 8 Electric Truck',
         brand: { '@type': 'Brand', name: 'Windrose' },
-        description: 'Class 8 electric semi-truck with 670 km (416 mi) loaded range, 729 kWh battery and 1,045 kW peak power. Exclusive distributor in Latin America: Greenspace E-mobility.',
+        description: 'Class 8 electric semi-truck with 670 km (416 mi) loaded range, 729 kWh battery and 1,045 kW peak power. Authorized distributor for Panama, Mexico and Texas: Greenspace E-mobility.',
         offers: { '@type': 'Offer', seller: { '@type': 'Organization', name: 'Greenspace E-mobility' }, areaServed: ['Panama', 'Mexico', 'Latin America'] },
         additionalProperty: [
           { '@type': 'PropertyValue', name: 'Range', value: '670 km (416 miles), loaded' },
