@@ -79,6 +79,14 @@ export default function ProjectsPage({ params: { locale } }: { params: { locale:
 
   const mediaArticles = [
     {
+      pub: t('m13Pub'), headline: t('m13Headline'),
+      href: 'https://www.electrive.com/2026/07/23/dsv-orders-10-windrose-electric-trucks-for-us-mexico-freight/',
+    },
+    {
+      pub: t('m14Pub'), headline: t('m14Headline'),
+      href: 'https://mexicobusiness.news/logistics/news/dsv-deploys-electric-trucks-us-mexico-freight-corridor',
+    },
+    {
       pub: t('m12Pub'), headline: t('m12Headline'),
       href: 'https://lemob-news.com/dsv-deploys-10-windrose-electric-trucks-on-texas-mexico-freight-corridor/',
     },
@@ -87,8 +95,24 @@ export default function ProjectsPage({ params: { locale } }: { params: { locale:
       href: 'https://electricdrives.tv/dsv-brings-electric-trucks-to-the-texas-mexico-freight-corridor-in-collaboration-with-allogic-and-greenspace/',
     },
     {
+      pub: t('m15Pub'), headline: t('m15Headline'),
+      href: 'https://www.sustainabletruckvan.com/windrose-truck-delivery-dsv-usa-mexico/',
+    },
+    {
+      pub: t('m16Pub'), headline: t('m16Headline'),
+      href: 'https://fuelcellsworks.com/2026/07/23/electric/dsv-backs-10-truck-electric-freight-deployment-on-texas-mexico-corridor',
+    },
+    {
+      pub: t('m17Pub'), headline: t('m17Headline'),
+      href: 'https://blogs.edf.org/energyexchange/2026/08/11/july-2026-electric-trucks-buses-round-up/',
+    },
+    {
       pub: t('m1Pub'), headline: t('m1Headline'),
       href: 'https://www.reuters.com/business/autos-transportation/chinese-electric-truck-maker-windrose-makes-first-us-delivery-2026-04-08/',
+    },
+    {
+      pub: t('m18Pub'), headline: t('m18Headline'),
+      href: 'https://t21.us/greenspace-e-mobility-boosts-electromobility-between-mexico-and-the-us-with-windrose/',
     },
     {
       pub: t('m2Pub'), headline: t('m2Headline'),
