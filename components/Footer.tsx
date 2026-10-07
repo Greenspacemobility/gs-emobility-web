@@ -12,7 +12,7 @@ export default function Footer() {
   return (
     <footer className="bg-navy-900 border-t border-green-500/10">
       <div className="container-wide py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href={`/${locale}`} className="flex items-center mb-4">
@@ -76,6 +76,26 @@ export default function Footer() {
                 { label: t('partners'), href: `/${locale}/about#partners` },
                 { label: t('partnerSite'), href: `/${locale}/partner-site` },
                 { label: t('faq'), href: `/${locale}/faq` },
+              ].map(({ label, href }) => (
+                <li key={href}>
+                  <Link href={href} className="text-white/50 hover:text-green-400 text-sm transition-colors">
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Markets — one page per country: the entry point for
+              "<service> in <country>" searches. */}
+          <div>
+            <h4 className="text-white font-semibold mb-5 text-sm uppercase tracking-widest">{t('markets')}</h4>
+            <ul className="space-y-3">
+              {[
+                { label: t('mPanama'),   href: `/${locale}/panama` },
+                { label: t('mMexico'),   href: `/${locale}/mexico` },
+                { label: t('mUsa'),      href: `/${locale}/usa` },
+                { label: t('mColombia'), href: `/${locale}/colombia` },
               ].map(({ label, href }) => (
                 <li key={href}>
                   <Link href={href} className="text-white/50 hover:text-green-400 text-sm transition-colors">

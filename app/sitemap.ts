@@ -15,6 +15,11 @@ const pages = [
   { path: '/partner-site', priority: 0.7, changeFrequency: 'monthly' as const },
   { path: '/faq', priority: 0.85, changeFrequency: 'weekly' as const },
   { path: '/blog', priority: 0.85, changeFrequency: 'weekly' as const },
+  // Market landing pages — the entry point for "<service> in <country>" searches.
+  { path: '/panama',   priority: 0.95, changeFrequency: 'monthly' as const },
+  { path: '/mexico',   priority: 0.95, changeFrequency: 'monthly' as const },
+  { path: '/usa',      priority: 0.95, changeFrequency: 'monthly' as const },
+  { path: '/colombia', priority: 0.9,  changeFrequency: 'monthly' as const },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {

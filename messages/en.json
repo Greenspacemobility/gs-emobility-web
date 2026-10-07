@@ -825,6 +825,11 @@
     "terms": "Terms",
     "contact": "Contact",
     "copyright": "© 2026 Greenspace E-mobility. All rights reserved.",
-    "investors": "Investors"
+    "investors": "Investors",
+    "markets": "Markets",
+    "mPanama": "Panama",
+    "mMexico": "Mexico",
+    "mUsa": "United States",
+    "mColombia": "Colombia"
   }
 }
