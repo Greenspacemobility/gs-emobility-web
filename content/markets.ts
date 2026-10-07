@@ -75,7 +75,7 @@ export const MARKETS: Market[] = [
     region: 'Panama City',
     copy: {
       es: {
-        metaTitle: 'Cargadores para vehículos eléctricos en Panamá | Greenspace E-mobility',
+        metaTitle: 'Cargadores para vehículos eléctricos en Panamá',
         metaDesc: 'Suministro, instalación y operación de cargadores para vehículos eléctricos en Panamá. Carga AC y DC rápida para empresas, flotas, hoteles y edificios. Operando desde 2022 con DHL Express y Banco General.',
         badge: 'Panamá',
         h1: 'Cargadores para vehículos eléctricos en Panamá',
@@ -108,7 +108,7 @@ export const MARKETS: Market[] = [
         ctaLabel: 'Solicitar evaluación de sitio',
       },
       en: {
-        metaTitle: 'EV charging in Panama — chargers, fleets and hubs | Greenspace E-mobility',
+        metaTitle: 'EV charging in Panama — chargers, fleets and hubs',
         metaDesc: 'Supply, installation and operation of EV chargers in Panama. AC and DC fast charging for business, fleets, hotels and buildings. Operating since 2022 with DHL Express and Banco General.',
         badge: 'Panama',
         h1: 'EV charging infrastructure in Panama',
@@ -150,7 +150,7 @@ export const MARKETS: Market[] = [
     region: 'Monterrey, Nuevo León',
     copy: {
       es: {
-        metaTitle: 'Cargadores para vehículos eléctricos en México | Greenspace E-mobility',
+        metaTitle: 'Cargadores para vehículos eléctricos en México',
         metaDesc: 'Infraestructura de carga para vehículos eléctricos en México: carga rápida DC, carga para flotas y camiones de carga. Ruta binacional Monterrey–Laredo acordada con el Gobierno de Nuevo León.',
         badge: 'México',
         h1: 'Cargadores para vehículos eléctricos en México',
@@ -180,7 +180,7 @@ export const MARKETS: Market[] = [
         ctaLabel: 'Hablar con un especialista',
       },
       en: {
-        metaTitle: 'EV charging in Mexico — fleets, trucks and corridor hubs | Greenspace E-mobility',
+        metaTitle: 'EV charging in Mexico — fleets, trucks and corridor hubs',
         metaDesc: 'EV charging infrastructure in Mexico: DC fast charging, fleet charging and freight charging. Monterrey–Laredo binational route agreed with the Government of Nuevo León.',
         badge: 'Mexico',
         h1: 'EV charging infrastructure in Mexico',
@@ -219,7 +219,7 @@ export const MARKETS: Market[] = [
     region: 'Laredo, Texas',
     copy: {
       es: {
-        metaTitle: 'Cargadores para vehículos eléctricos en Estados Unidos | Greenspace E-mobility',
+        metaTitle: 'Cargadores para vehículos eléctricos en Estados Unidos',
         metaDesc: 'Infraestructura de carga para camiones eléctricos Clase 8 en Texas y el corredor I-35. Green Hubs entre Laredo y Dallas, carga en depósito y operación. Primer Windrose Clase 8 en servicio comercial en EE.UU.',
         badge: 'Estados Unidos',
         h1: 'Cargadores para vehículos eléctricos en Estados Unidos',
@@ -249,7 +249,7 @@ export const MARKETS: Market[] = [
         ctaLabel: 'Hablar con un especialista',
       },
       en: {
-        metaTitle: 'EV charging in the United States — I-35 corridor and depots | Greenspace E-mobility',
+        metaTitle: 'EV charging in the United States — I-35 corridor and depots',
         metaDesc: 'Charging infrastructure for Class 8 electric trucks in Texas and the I-35 corridor. Green Hubs between Laredo and Dallas, depot charging and operations. First Windrose Class 8 in US commercial service.',
         badge: 'United States',
         h1: 'EV charging infrastructure in the United States',
@@ -288,7 +288,7 @@ export const MARKETS: Market[] = [
     region: 'Colombia',
     copy: {
       es: {
-        metaTitle: 'Cargadores para vehículos eléctricos en Colombia | Greenspace E-mobility',
+        metaTitle: 'Cargadores para vehículos eléctricos en Colombia',
         metaDesc: 'Suministro, diseño e instalación de cargadores para vehículos eléctricos en Colombia. Carga AC y DC rápida para empresas, flotas y edificios, con operación sobre OCPP.',
         badge: 'Colombia',
         h1: 'Cargadores para vehículos eléctricos en Colombia',
@@ -318,7 +318,7 @@ export const MARKETS: Market[] = [
         ctaLabel: 'Hablar con un especialista',
       },
       en: {
-        metaTitle: 'EV charging in Colombia — supply, design and operation | Greenspace E-mobility',
+        metaTitle: 'EV charging in Colombia — supply, design and operation',
         metaDesc: 'Supply, design and installation of EV chargers in Colombia. AC and DC fast charging for business, fleets and buildings, operated over OCPP.',
         badge: 'Colombia',
         h1: 'EV charging infrastructure in Colombia',
