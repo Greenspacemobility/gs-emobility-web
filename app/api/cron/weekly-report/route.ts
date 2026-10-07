@@ -7,7 +7,7 @@ function buildCompetitivePrompt(weekNumber: number, year: number): string {
   return `You are a senior market intelligence analyst for Greenspace E-mobility, a company that:
 - Builds and operates high-power EV charging infrastructure in Panama, Mexico (Monterrey), Texas (USA), and Norway (Oslo)
 - Is the official Autel Energy EV charger distributor in Panama, Mexico, and the USA
-- Is the exclusive Windrose Class 8 electric truck distributor in Latin America
+- Is the authorized Windrose Class 8 electric truck distributor for Panama, Mexico and Texas
 - Is developing the Mexico–Texas Electric Highway corridor (Monterrey → Dallas, 4 phases, 12 Green Hubs)
 - Offers a smart charging management platform (OCPP-compatible)
 

@@ -48,7 +48,7 @@ const FAQ_EN = [
       },
       {
         q: 'What makes Greenspace different from other EV charging companies?',
-        a: 'Greenspace is the only company in Latin America simultaneously offering: official Autel Energy charger distribution (up to 640 kW DC), exclusive Windrose Class 8 electric truck distribution, a proprietary smart charging management platform, and active development of the Mexico–Texas electric highway corridor. We are a vertically integrated, multi-country EV infrastructure operator.',
+        a: 'Greenspace combines four things that are rarely found together: official Autel Energy charger distribution (up to 640 kW DC), authorized Windrose Class 8 electric truck distribution for Panama, Mexico and Texas, vendor-neutral OCPP-based charging operations, and active development of the Mexico–Texas electric highway corridor. We are a vertically integrated, multi-country EV infrastructure operator with an operating record in Panama since 2022.',
       },
     ],
   },
@@ -169,7 +169,7 @@ const FAQ_ES = [
       },
       {
         q: '¿Qué diferencia a Greenspace de otras empresas de carga EV?',
-        a: 'Greenspace es la única empresa en Latinoamérica que combina: distribución oficial de cargadores Autel Energy (hasta 640 kW DC), distribución exclusiva de camiones eléctricos Windrose Clase 8, plataforma propia de gestión de carga inteligente, y desarrollo activo de la autopista eléctrica México–Texas. Somos un operador integrado verticalmente en múltiples países.',
+        a: 'Greenspace combine cuatro capacidades que rara vez se encuentran juntas: distribución oficial de cargadores Autel Energy (hasta 640 kW DC), distribución autorizada de camiones eléctricos Windrose Clase 8 para Panamá, México y Texas, operación de carga basada en OCPP e independiente de fabricante, y desarrollo activo de la autopista eléctrica México–Texas. Somos un operador de infraestructura de carga integrado verticalmente, con operación en Panamá desde 2022.',
       },
     ],
   },

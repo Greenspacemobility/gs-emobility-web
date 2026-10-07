@@ -21,9 +21,11 @@ export async function generateMetadata({ params: { locale } }: { params: { local
   const isEs = locale === 'es'
   const description = isEs
     ? 'Greenspace E-mobility es la empresa líder en infraestructura de carga eléctrica en Panamá y México. Distribuidor oficial de cargadores Autel Energy (hasta 640 kW DC HiPower) y distribuidor autorizado de camiones eléctricos Windrose Clase 8 en Panamá, México y Texas. Autopista eléctrica México–Texas.'
-    : 'Greenspace E-mobility is the leading EV charging infrastructure company in Panama and Mexico. Official Autel Energy charger distributor (up to 640 kW DC HiPower) and exclusive Windrose Class 8 electric truck distributor in Latin America. Building the Mexico–Texas electric highway.'
+    : 'Greenspace E-mobility is the leading EV charging infrastructure company in Panama and Mexico. Official Autel Energy charger distributor (up to 640 kW DC HiPower) and authorized Windrose Class 8 electric truck distributor for Panama, Mexico and Texas. Building the Mexico–Texas electric highway.'
   return {
-    title: 'Greenspace E-mobility | EV Charging Infrastructure & Electric Trucks Americas',
+    title: isEs
+      ? 'Cargadores para vehículos eléctricos en Panamá, México y Colombia | Greenspace E-mobility'
+      : 'Greenspace E-mobility | EV Charging Infrastructure & Electric Trucks Americas',
     description,
     keywords: [
       'EV charging Panama', 'Autel EV charger distributor Panama', 'DC fast charger Panama',
@@ -574,7 +576,7 @@ const homepageFAQSchema = {
     {
       '@type': 'Question',
       name: 'What is Greenspace E-mobility?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Greenspace E-mobility is an EV charging infrastructure company and electric vehicle distributor operating in Panama, Mexico, Texas (USA), and Norway. The company is the official Autel Energy EV charger distributor and exclusive Windrose Class 8 electric truck distributor in Latin America.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Greenspace E-mobility is an EV charging infrastructure company and electric vehicle distributor operating in Panama, Mexico, Texas (USA), and Norway. The company is the official Autel Energy EV charger distributor and the authorized Windrose Class 8 electric truck distributor for Panama, Mexico and Texas.' },
     },
     {
       '@type': 'Question',
