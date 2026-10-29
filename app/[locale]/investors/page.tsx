@@ -11,7 +11,8 @@ import { alternatesFor } from '@/lib/seo'
 import { INVESTORS_COPY } from '@/content/investors'
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
-  const title = locale === 'es' ? 'Inversores | Greenspace E-mobility' : 'Investors | Greenspace E-mobility'
+  // The locale layout appends "| Greenspace E-mobility" via the title template.
+  const title = locale === 'es' ? 'Inversores' : 'Investors'
   const description = locale === 'es'
     ? 'Oportunidad de inversión en infraestructura de carga eléctrica y red de transporte de carga para camiones Clase 8 en América del Norte y Panamá.'
     : 'Investment opportunity in EV charging infrastructure and Class 8 electric freight network across North America and Panama.'
