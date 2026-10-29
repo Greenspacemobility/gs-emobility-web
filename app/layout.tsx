@@ -5,8 +5,13 @@ export const metadata: Metadata = {
   title: 'Greenspace E-mobility',
   description: 'Leading cross-border electric infrastructure across the Americas.',
   icons: {
-    icon: '/favicon.png',
-    apple: '/favicon.png',
+    // favicon.png era el logotipo horizontal (184x58): ilegible en 16 px.
+    // Ahora el isotipo en blanco sobre el verde de marca, en lienzo cuadrado.
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png', sizes: '512x512' },
+    ],
+    apple: '/apple-icon.png',
   },
 }
 
