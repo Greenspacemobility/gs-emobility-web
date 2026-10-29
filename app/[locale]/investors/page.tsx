@@ -8,6 +8,7 @@ import {
 import AnimateIn from '@/components/AnimateIn'
 import Badge from '@/components/Badge'
 import { alternatesFor } from '@/lib/seo'
+import { INVESTORS_COPY } from '@/content/investors'
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   const title = locale === 'es' ? 'Inversores | Greenspace E-mobility' : 'Investors | Greenspace E-mobility'
@@ -23,61 +24,28 @@ export async function generateMetadata({ params: { locale } }: { params: { local
   }
 }
 
-const pillars = [
-  {
-    icon: Shield,
-    title: 'First-Mover Advantage',
-    desc: 'No integrated Class 8 electric freight corridor exists between Mexico and the U.S. — and we are already running on it. The first Windrose Class 8 in U.S. commercial service has worked the Laredo–Dallas lane with Allogic Transport since April 2026, past 20,000 electric miles, while the hubs that will serve it are being built. Locations, interconnections and fleet contracts are being secured ahead of the market.',
-    img: '/images/projects/electric-highway-corridor.webp',
-  },
-  {
-    icon: Zap,
-    title: 'Deployable Infrastructure',
-    desc: 'Standardized, modular Green Hub design, replicable across every market. Each site follows the same blueprint: high-power charging sized three times day-one demand behind a single medium-voltage interconnection, on-site solar, battery storage and driver services. Expanding a hub means adding a dispenser, not redoing the civil works.',
-    img: '/images/service-installations.png',
-  },
-  {
-    icon: Globe,
-    title: 'Massive Market Opportunity',
-    desc: 'Port Laredo alone moved $354 billion in trade in 2025, and 2.95 million trucks entered the U.S. there — 38.8% of every truck arriving from Mexico. There is no dedicated Class 8 electric charging on that corridor today.',
-    img: '/images/projects/windrose-greenspace-ruta-verde.jpg',
-  },
-  {
-    icon: Users,
-    title: 'Proven Management Team',
-    desc: 'A team of five with Tesla, Circle K, Aker, CEMEX and MAERSK backgrounds, a U.S. general manager based in Laredo, and an operating record in Panama since 2022 — charging the Banco General fleet, the largest in the country, and DHL Express. A binational cargo route agreement signed with the Government of Nuevo León.',
-    img: '/images/service-training.jpg',
-  },
+/* Icons and imagery stay here; the words live in content/investors.ts so the
+   page can be served in Spanish as well as English. */
+const PILLAR_META = [
+  { icon: Shield, img: '/images/projects/electric-highway-corridor.webp' },
+  { icon: Zap,    img: '/images/service-installations.png' },
+  { icon: Globe,  img: '/images/projects/windrose-greenspace-ruta-verde.jpg' },
+  { icon: Users,  img: '/images/service-training.jpg' },
 ]
 
-const structures = [
-  { icon: TrendingUp, title: 'Equity / Preferred Equity',   desc: 'Direct ownership stake with preferred return structure. Flexible investor and sponsor ownership split.' },
-  { icon: Building2,  title: 'Joint Venture (JV)',           desc: 'Co-develop specific Green Hub stations or market segments — Texas, Mexico, California, or Panama as standalone SPVs.' },
-  { icon: Truck,      title: 'Fleet Leasing Structure',      desc: 'Asset-backed leasing of Class 8 electric trucks. Fixed lease rate and fixed energy price per long-term fleet agreement.' },
-  { icon: Shield,     title: 'Infrastructure SPV',           desc: 'Asset ownership of charging stations via Special Purpose Vehicle. Predominantly asset-based — tangible, insured, long-life infrastructure.' },
-]
+const STRUCTURE_ICONS = [TrendingUp, Building2, Truck, Shield]
 
-const markets = [
-  { icon: MapPin, label: 'Texas, USA',       desc: 'I-35 Laredo–Dallas. Phase 1 · 4 Green Hubs.' },
-  { icon: MapPin, label: 'Monterrey, Mexico', desc: 'Monterrey–Laredo binational route, signed with Nuevo León.' },
-  { icon: MapPin, label: 'Texas Triangle',   desc: 'I-10 and I-45 via Houston. Phase 2 · 4 Green Hubs.' },
-  { icon: MapPin, label: 'I-10 West, USA',   desc: 'El Paso – Phoenix – LA/Long Beach. Phase 3 · 3 Green Hubs.' },
-  { icon: MapPin, label: 'Panama',           desc: 'Four Green Hub sites in permitting. Operating since 2022.' },
-]
-
-const moats = [
-  'Binational cargo route agreement signed with the Government of Nuevo León (September 2025)',
-  'First Windrose Class 8 in commercial service in the United States — Laredo–Dallas since April 2026',
-  'DSV: ten Windrose Class 8 units announced July 2026, with 25 more in 2027',
-  'Authorized Windrose electric truck distributor for Panama, Mexico and Texas',
-  'Vendor-neutral, OCPP-based charging operations across Autel, Sinexcel, LumosEnergy, Sungrow and EN+ hardware',
-  'Operating record since 2022: the Banco General fleet, the largest in Panama, and DHL Express',
-  'Multi-market regulatory experience across four countries',
-  'OEM buy-back on every truck unit at 400,000 miles or five years',
-]
+const TIMELINE_STATUS = ['active', 'building', 'planned', 'planned', 'active'] as const
 
 export default function InvestorsPage({ params: { locale } }: { params: { locale: string } }) {
   setRequestLocale(locale)
+  const c = locale === 'es' ? INVESTORS_COPY.es : INVESTORS_COPY.en
+
+  const pillars    = PILLAR_META.map((m, i) => ({ ...m, ...c.pillars[i] }))
+  const structures = STRUCTURE_ICONS.map((icon, i) => ({ icon, ...c.structures[i] }))
+  const markets    = c.markets.map(m => ({ icon: MapPin, ...m }))
+  const moats      = c.moats
+  const timeline   = c.timeline.map((t, i) => ({ ...t, status: TIMELINE_STATUS[i] }))
 
   return (
     <>
@@ -92,22 +60,22 @@ export default function InvestorsPage({ params: { locale } }: { params: { locale
 
         <div className="container-wide relative z-10 text-center py-24">
           <AnimateIn>
-            <Badge className="mb-8">Investor Relations</Badge>
+            <Badge className="mb-8">{c.heroBadge}</Badge>
           </AnimateIn>
           <AnimateIn delay={100}>
             <h1 className="font-display text-5xl md:text-7xl font-bold text-white mb-6 leading-[1.05] max-w-4xl mx-auto">
-              Investment in<br />
-              <span className="text-gradient">impactful infrastructure</span>
+              {c.heroTitleTop}<br />
+              <span className="text-gradient">{c.heroTitleAccent}</span>
             </h1>
           </AnimateIn>
           <AnimateIn delay={200}>
             <p className="text-white/50 text-xl max-w-2xl mx-auto leading-relaxed mb-4">
-              Greenspace E-mobility is building the first fully integrated electric freight network connecting Mexico, Texas, the U.S. West and Panama — purpose-built for Class 8 trucks.
+              {c.heroLead}
             </p>
           </AnimateIn>
           <AnimateIn delay={250}>
             <p className="text-white/30 text-sm max-w-xl mx-auto mb-12">
-              Our solution benefits customers and stakeholders by using fewer resources to provide a better service — increasing margins and creating value without the need for government subsidies.
+              {c.heroSub}
             </p>
           </AnimateIn>
           <AnimateIn delay={350}>
@@ -116,14 +84,14 @@ export default function InvestorsPage({ params: { locale } }: { params: { locale
                 href={`/${locale}/contact`}
                 className="group inline-flex items-center gap-2 bg-green-500 hover:bg-green-400 text-navy-900 font-semibold px-8 py-4 rounded-2xl transition-all glow-green text-base"
               >
-                Request Investor Deck
+                {c.ctaDeck}
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               <a
                 href="#why"
                 className="inline-flex items-center gap-2 glass hover:border-white/20 text-white/70 hover:text-white font-semibold px-8 py-4 rounded-2xl transition-all text-base"
               >
-                Learn More
+                {c.ctaLearnMore}
               </a>
             </div>
           </AnimateIn>
@@ -135,12 +103,12 @@ export default function InvestorsPage({ params: { locale } }: { params: { locale
         <div className="container-wide">
           <AnimateIn>
             <div className="text-center mb-16">
-              <p className="text-green-400 text-xs font-bold uppercase tracking-[0.25em] mb-4">The Investment Case</p>
+              <p className="text-green-400 text-xs font-bold uppercase tracking-[0.25em] mb-4">{c.caseEyebrow}</p>
               <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">
-                Why Greenspace E-mobility
+                {c.caseTitle}
               </h2>
               <p className="text-white/40 max-w-xl mx-auto">
-                Our operation uses fewer resources to provide a better service to the market — increasing margins and creating value without the need for government subsidies, or tax dollars.
+                {c.caseLead}
               </p>
             </div>
           </AnimateIn>
@@ -178,7 +146,7 @@ export default function InvestorsPage({ params: { locale } }: { params: { locale
       <section className="py-16 border-y border-white/[0.06]">
         <div className="container-wide">
           <AnimateIn>
-            <p className="text-center text-white/25 text-[10px] uppercase tracking-[0.2em] mb-10">Active & Planned Markets</p>
+            <p className="text-center text-white/25 text-[10px] uppercase tracking-[0.2em] mb-10">{c.marketsEyebrow}</p>
           </AnimateIn>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {markets.map(({ icon: Icon, label, desc }, i) => (
@@ -198,15 +166,15 @@ export default function InvestorsPage({ params: { locale } }: { params: { locale
       <section className="section-padding">
         <div className="container-wide">
           <div className="text-center mb-16">
-            <AnimateIn><Badge className="mb-6">Investment Structures</Badge></AnimateIn>
+            <AnimateIn><Badge className="mb-6">{c.structuresBadge}</Badge></AnimateIn>
             <AnimateIn delay={100}>
               <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">
-                Multiple entry points
+                {c.structuresTitle}
               </h2>
             </AnimateIn>
             <AnimateIn delay={200}>
               <p className="text-white/40 max-w-xl mx-auto">
-                Flexible structures depending on your mandate — from equity participation to asset-backed SPV ownership.
+                {c.structuresLead}
               </p>
             </AnimateIn>
           </div>
@@ -237,18 +205,18 @@ export default function InvestorsPage({ params: { locale } }: { params: { locale
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <AnimateIn>
               <div>
-                <Badge className="mb-6">Competitive Moat</Badge>
+                <Badge className="mb-6">{c.moatBadge}</Badge>
                 <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                  Why Greenspace wins this market
+                  {c.moatTitle}
                 </h2>
                 <p className="text-white/50 leading-relaxed mb-8">
-                  Building physical infrastructure takes years of relationships, permits, and capital. We have a head start that competitors cannot replicate in the near term — across government agreements, secured sites and interconnections, and an operating record that goes back to 2022.
+                  {c.moatLead}
                 </p>
                 <Link
                   href={`/${locale}/contact`}
                   className="group inline-flex items-center gap-2 bg-green-500 hover:bg-green-400 text-navy-900 font-semibold px-7 py-3.5 rounded-xl transition-all glow-green-sm"
                 >
-                  Request Full Investor Deck
+                  {c.moatCta}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
@@ -271,19 +239,13 @@ export default function InvestorsPage({ params: { locale } }: { params: { locale
       <section className="section-padding">
         <div className="container-wide">
           <div className="text-center mb-16">
-            <AnimateIn><h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">Phased deployment plan</h2></AnimateIn>
-            <AnimateIn delay={100}><p className="text-white/40 max-w-xl mx-auto">A structured rollout across four strategic markets — Texas, Monterrey, California, and Panama — built to de-risk each phase before the next begins.</p></AnimateIn>
+            <AnimateIn><h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">{c.roadmapTitle}</h2></AnimateIn>
+            <AnimateIn delay={100}><p className="text-white/40 max-w-xl mx-auto">{c.roadmapLead}</p></AnimateIn>
           </div>
           <div className="relative">
             <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-green-500/50 via-green-500/20 to-transparent" />
             <div className="space-y-10">
-              {[
-                { phase: 'Phase 1', market: 'I-35 Texas', status: 'active',  desc: 'Four Green Hubs between Laredo and Dallas — Encinal/Laredo, Kyle/Buda, Waco–Dallas and Lancaster — plus depot charging at DSV sites. The first Windrose Class 8 in U.S. commercial service has run this lane since April 2026.' },
-                { phase: 'Mexico',  market: 'Monterrey–Laredo', status: 'building', desc: 'Binational electric cargo route agreed with the Government of Nuevo León in September 2025, with a hub planned at the Colombia Bridge crossing — making the Monterrey–Laredo–Dallas lane fully electric.' },
-                { phase: 'Phase 2', market: 'Texas Triangle', status: 'planned',  desc: 'Four Green Hubs on I-10 between San Antonio and Houston and I-45 between Houston and Dallas, closing the loop for Port Houston volumes and DFW distribution.' },
-                { phase: 'Phase 3', market: 'I-10 West', status: 'planned',  desc: 'Three Green Hubs west along I-10 — El Paso, Phoenix and Los Angeles/Long Beach — reaching the Pacific trade gateway, the ZEV-mandate freight market and a second border crossing.' },
-                { phase: 'Panama',  market: 'Open now', status: 'active',  desc: 'Four Green Hub sites in permitting and design — Costa del Este, Vía España, Chitré and David — anchored by fleets Greenspace has charged since 2022, with the Canal logistics route as the next step.' },
-              ].map((item, i) => (
+              {timeline.map((item, i) => (
                 <AnimateIn key={i} delay={i * 120} direction={i % 2 === 0 ? 'left' : 'right'}>
                   <div className={`flex gap-8 items-start ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                     <div className="flex-1 hidden md:block" />
@@ -305,11 +267,11 @@ export default function InvestorsPage({ params: { locale } }: { params: { locale
                           {item.status === 'active' && (
                             <span className="text-xs text-green-400 flex items-center gap-1">
                               <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                              Active
+                              {c.statusActive}
                             </span>
                           )}
                           {item.status === 'building' && (
-                            <span className="text-xs text-yellow-400/80">In Development</span>
+                            <span className="text-xs text-yellow-400/80">{c.statusBuilding}</span>
                           )}
                         </div>
                         <h3 className="font-display font-bold text-white text-xl mb-2">{item.market}</h3>
@@ -332,22 +294,22 @@ export default function InvestorsPage({ params: { locale } }: { params: { locale
               <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 via-transparent to-navy-700/20" />
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-0.5 bg-gradient-to-r from-transparent via-green-500/60 to-transparent" />
               <div className="relative z-10">
-                <Badge className="mb-6">Ready to invest?</Badge>
+                <Badge className="mb-6">{c.finalBadge}</Badge>
                 <h2 className="font-display text-3xl md:text-5xl font-bold text-white mb-4">
-                  Join the electric freight revolution
+                  {c.finalTitle}
                 </h2>
                 <p className="text-white/50 max-w-xl mx-auto mb-2">
-                  We are actively raising for our current deployment phase. Request the full investor deck, financial model, and project documentation.
+                  {c.finalLead}
                 </p>
                 <p className="text-white/25 text-xs max-w-lg mx-auto mb-10">
-                  This page is intended for qualified investors only.
+                  {c.finalNote}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link
                     href={`/${locale}/contact`}
                     className="group inline-flex items-center gap-2 bg-green-500 hover:bg-green-400 text-navy-900 font-semibold px-8 py-4 rounded-2xl transition-all glow-green"
                   >
-                    Request Investor Deck
+                    {c.ctaDeck}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
                   <a
