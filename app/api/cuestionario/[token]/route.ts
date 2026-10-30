@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { loadInvite, saveAnswers, isTokenShaped } from '@/lib/questionnaire'
+import { loadInvite, saveAnswers, isTokenShaped, RpcError } from '@/lib/questionnaire'
 import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
 
 export const dynamic = 'force-dynamic'
@@ -11,8 +11,12 @@ export async function GET(_req: NextRequest, { params }: { params: Promise<{ tok
     const data = await loadInvite(token)
     if (!data) return NextResponse.json({ error: 'no encontrado' }, { status: 404 })
     return NextResponse.json(data)
-  } catch {
-    return NextResponse.json({ error: 'error del servidor' }, { status: 500 })
+  } catch (e) {
+    // El motivo se expone solo como etiqueta y código: ayuda a diagnosticar
+    // sin filtrar nada de la base ni de las credenciales.
+    const causa = e instanceof RpcError ? `${e.causa}:${e.status}` : 'desconocida'
+    console.error('q_load falló:', causa, e instanceof RpcError ? e.detalle : e)
+    return NextResponse.json({ error: 'error del servidor', causa }, { status: 500 })
   }
 }
 

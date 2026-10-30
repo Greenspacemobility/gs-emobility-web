@@ -23,10 +23,16 @@ export interface InviteData {
 /** Las tablas están cerradas por RLS: todo pasa por funciones security definer
  *  que validan el token dentro de Postgres. La clave anónima por sí sola no
  *  puede leer ni escribir nada. */
+export class RpcError extends Error {
+  constructor(public causa: string, public status: number, public detalle = '') {
+    super(`${causa} (${status})`)
+  }
+}
+
 async function rpc<T>(fn: string, args: Record<string, unknown>): Promise<T | null> {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-  if (!url || !key) throw new Error('Supabase no está configurado')
+  if (!url || !key) throw new RpcError('sin-configurar', 0)
 
   const res = await fetch(`${url}/rest/v1/rpc/${fn}`, {
     method: 'POST',
@@ -38,7 +44,13 @@ async function rpc<T>(fn: string, args: Record<string, unknown>): Promise<T | nu
     body: JSON.stringify(args),
     cache: 'no-store',
   })
-  if (!res.ok) throw new Error(`RPC ${fn}: ${res.status}`)
+  if (!res.ok) {
+    // El cuerpo puede traer el motivo de PostgREST; se recorta y se guarda
+    // para el diagnóstico, nunca se devuelve al cliente final.
+    let detalle = ''
+    try { detalle = (await res.text()).slice(0, 300) } catch { /* vacío */ }
+    throw new RpcError(`rpc-${fn}`, res.status, detalle)
+  }
   const data = await res.json()
   return (data ?? null) as T | null
 }
