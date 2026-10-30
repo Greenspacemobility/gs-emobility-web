@@ -3,6 +3,7 @@ import { Resend } from 'resend'
 import { loadInvite, submitInvite, isTokenShaped, TEMPLATES } from '@/lib/questionnaire'
 import { checkRateLimit, getClientIp } from '@/lib/rate-limit'
 import { escapeHtml } from '@/lib/sanitize'
+import { crearHojaDeCalculo } from '@/lib/google-sheets'
 
 export const dynamic = 'force-dynamic'
 
@@ -25,13 +26,30 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ tok
     if (!result) return NextResponse.json({ error: 'no encontrado' }, { status: 404 })
     if (result.ya_enviado) return NextResponse.json({ ya_enviado: true })
 
+    const tpl = TEMPLATES[invite.template]
+    const quien = [invite.client_name, invite.operation_name].filter(Boolean).join(' · ')
+    const answers = (invite.answers ?? {}) as Record<string, unknown>
+
+    // La hoja de cálculo en Drive es un extra: si la cuenta de servicio no está
+    // configurada devuelve null, y si Google falla el envío ya quedó guardado.
+    let hoja: { url: string } | null = null
+    try {
+      if (tpl) {
+        hoja = await crearHojaDeCalculo({
+          template: tpl,
+          answers,
+          cliente: invite.client_name ?? '',
+          operadora: invite.operation_name ?? '',
+          subtitulo: invite.subtitle ?? '',
+        })
+      }
+    } catch (e) {
+      console.error('Hoja de cálculo no creada:', e)
+    }
+
     // El aviso por correo es cortesía: si Resend falla, el envío ya quedó guardado
     // en la base y no se le dice al cliente que algo salió mal.
     try {
-      const tpl = TEMPLATES[invite.template]
-      const quien = [invite.client_name, invite.operation_name].filter(Boolean).join(' · ')
-      const answers = (invite.answers ?? {}) as Record<string, unknown>
-
       const filas: string[] = []
       for (const s of tpl?.sections ?? []) {
         filas.push(`<tr><td colspan="2" style="padding:18px 0 6px;font:600 13px system-ui;color:#0b1b2b">${escapeHtml(s.title)}</td></tr>`)
@@ -56,6 +74,9 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ tok
           `<h2 style="font:700 18px system-ui;color:#0b1b2b">Cuestionario completado</h2>` +
           `<p style="font:400 13px system-ui;color:#5b6b7c">${escapeHtml(quien)}` +
           (invite.subtitle ? ` — ${escapeHtml(invite.subtitle)}` : '') + `</p>` +
+          (hoja
+            ? `<p style="font:600 13px system-ui;margin:16px 0"><a href="${escapeHtml(hoja.url)}" style="color:#0b7a4b">Abrir las respuestas en Google Sheets &rsaquo;</a></p>`
+            : '') +
           `<table style="width:100%;border-collapse:collapse">${filas.join('')}</table>` +
           (adjuntos ? `<h3 style="font:600 14px system-ui;color:#0b1b2b;margin-top:22px">Archivos adjuntos</h3><ul style="font:400 13px system-ui;color:#0b1b2b">${adjuntos}</ul>` : '') +
           `</div>`,
@@ -64,7 +85,7 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ tok
       console.error('Aviso por correo no enviado:', e)
     }
 
-    return NextResponse.json({ enviado: true })
+    return NextResponse.json({ enviado: true, hoja: hoja?.url ?? null })
   } catch {
     return NextResponse.json({ error: 'error del servidor' }, { status: 500 })
   }
