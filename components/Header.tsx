@@ -52,6 +52,10 @@ export default function Header() {
   ]
 
   const isCompanyActive = companyLinks.some(l => pathname === l.href)
+  // Las páginas de cuestionario son privadas y para un cliente concreto:
+  // no deben llevar la navegación comercial del sitio.
+  if (pathname?.includes('/cuestionario/')) return null
+
 
   return (
     <header

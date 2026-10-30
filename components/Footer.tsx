@@ -2,12 +2,17 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import { useTranslations, useLocale } from 'next-intl'
 import { Mail, MapPin, Instagram, Linkedin, Twitter, Youtube } from 'lucide-react'
 
 export default function Footer() {
+  const pathname = usePathname()
   const t = useTranslations('footer')
   const locale = useLocale()
+  // Igual que la cabecera: fuera del formulario privado.
+  if (pathname?.includes('/cuestionario/')) return null
+
 
   return (
     <footer className="bg-navy-900 border-t border-green-500/10">
