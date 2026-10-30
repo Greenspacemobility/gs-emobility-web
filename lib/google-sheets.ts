@@ -3,12 +3,20 @@ import type { QuestionnaireTemplate } from '@/content/questionnaires/types'
 
 /** Crea una hoja de cálculo en Google Drive con las respuestas del cuestionario.
  *
- *  Usa una cuenta de servicio: se firma un JWT con su clave privada, se cambia
- *  por un token de acceso y se llama a las APIs de Drive y Sheets. No se añade
- *  ninguna dependencia — basta con `crypto` de Node.
+ *  Hay dos caminos y se prefiere el primero:
  *
- *  Si faltan las variables de entorno la función devuelve null y quien la llama
- *  sigue adelante: la hoja es un extra, nunca el sitio donde vive el dato.
+ *  1 · GOOGLE_SHEETS_WEBHOOK_URL — un Apps Script publicado desde la cuenta de
+ *      Greenspace (el código está en docs/hoja-de-calculo-apps-script.gs). La
+ *      hoja la crea Google con la identidad del dueño de la cuenta, así que
+ *      queda en su Drive, a su nombre, sin Google Cloud y sin claves.
+ *
+ *  2 · Cuenta de servicio (GOOGLE_SERVICE_ACCOUNT_EMAIL + _KEY): se firma un
+ *      JWT con su clave privada y se llama a las APIs de Drive y Sheets. Ojo:
+ *      una cuenta de servicio no tiene cuota de almacenamiento propia, así que
+ *      el destino tiene que ser una unidad compartida.
+ *
+ *  Sin ninguna de las dos la función devuelve null y quien la llama sigue
+ *  adelante: la hoja es un extra, nunca el sitio donde vive el dato.
  */
 
 const SCOPES = [
@@ -110,16 +118,38 @@ export async function crearHojaDeCalculo(opciones: {
   operadora: string
   subtitulo: string
 }): Promise<{ url: string } | null> {
-  const token = await accessToken()
-  if (!token) return null
-
-  const carpeta = process.env.GOOGLE_DRIVE_FOLDER_ID
   const enviado = new Date().toLocaleDateString('es-MX', {
     year: 'numeric', month: 'long', day: 'numeric',
   })
   const quien = [opciones.cliente, opciones.operadora].filter(Boolean).join(' - ')
   // Sin guiones bajos en el nombre: espacios y guiones normales.
   const nombre = `Cuestionario diagnostico - ${quien} - ${enviado}`
+
+  const armar = () => construirPestanas(opciones.template, opciones.answers, {
+    cliente: opciones.cliente, operadora: opciones.operadora,
+    subtitulo: opciones.subtitulo, enviado,
+  })
+
+  // Camino 1 · Apps Script en la cuenta de Greenspace
+  const webhook = process.env.GOOGLE_SHEETS_WEBHOOK_URL
+  if (webhook) {
+    const res = await fetch(webhook, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ nombre, pestanas: armar() }),
+      redirect: 'follow',
+    })
+    if (!res.ok) throw new Error(`apps script: ${res.status} ${(await res.text()).slice(0, 200)}`)
+    const j = await res.json()
+    if (!j?.url) throw new Error(`apps script sin url: ${JSON.stringify(j).slice(0, 200)}`)
+    return { url: j.url as string }
+  }
+
+  // Camino 2 · Cuenta de servicio
+  const token = await accessToken()
+  if (!token) return null
+
+  const carpeta = process.env.GOOGLE_DRIVE_FOLDER_ID
 
   // 1 · Crear el archivo ya dentro de la carpeta de destino
   const crear = await fetch(
@@ -137,10 +167,7 @@ export async function crearHojaDeCalculo(opciones: {
   if (!crear.ok) throw new Error(`drive crear: ${crear.status} ${(await crear.text()).slice(0, 200)}`)
   const { id, webViewLink } = await crear.json()
 
-  const pestanas = construirPestanas(opciones.template, opciones.answers, {
-    cliente: opciones.cliente, operadora: opciones.operadora,
-    subtitulo: opciones.subtitulo, enviado,
-  })
+  const pestanas = armar()
 
   // 2 · Renombrar la primera pestaña y crear las demás
   const peticiones: unknown[] = [
