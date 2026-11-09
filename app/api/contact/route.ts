@@ -47,7 +47,7 @@ export async function POST(req: NextRequest) {
 
     const { error } = await resendClient().emails.send({
       from: 'Greenspace E-mobility <notifications@gs-emobility.com>',
-      to: ['info@gs-emobility.com', 'william.pui@gs-emobility.com'],
+      to: ['info@gs-emobility.com', 'william.pui@gs-emobility.com', 'joshue.aguilar@gs-emobility.com'],
       bcc: ['ruben.rock@gs-emobility.com', 'Moises.perez@gs-emobility.com', 'Mike.trevino@gs-emobility.com', 'horacio.delatorre@gs-emobility.com', 'roberpiere.villar@gs-emobility.com', 'john.parchment@gs-emobility.com', 'ricardo.zepeda@gs-emobility.com'],
       replyTo: sEmail,
       subject: `New Contact: ${sInterest || 'General Inquiry'} — ${sName}`,
